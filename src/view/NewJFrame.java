@@ -6,23 +6,111 @@
 package view;
 
 import java.awt.CardLayout;
+import java.awt.Color;
+import java.awt.Image;
+import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.Timer;
+import model.Billpayment;
+import model.Billtype;
+import model.Employee;
+import model.EmployeeLeaveModel;
+import model.EmployeeModel;
+import model.EmployeeType;
+import model.SMModel;
+import model.Suppliers;
+import net.proteanit.sql.DbUtils;
+import service.EmpDB;
+import service.SMServiceImpl;
+import service.employeeValidator;
 
 /**
  *
  * @author Thanuja Chamika
  */
 public class NewJFrame extends javax.swing.JFrame {
+    
+    Connection conn = null;
+    PreparedStatement pst = null;
+    ResultSet rs = null;
+    EmpDB globalEmpDB = new EmpDB();
 
     /**
      * Creates new form NewJFrame
      */
     public NewJFrame() {
         initComponents();
+         settingImages(jLabel18, "C:\\Users\\thanu\\OneDrive\\Documents\\NetBeansProjects\\ITP\\src\\images\\attedance.png");
+        
+        
+        showDate();
+        showTime();
+    }
+    
+    public void settingImages(JLabel s1, String path) {
+        ImageIcon myimage = new ImageIcon(Toolkit.getDefaultToolkit().getImage(path));
+
+        Image img1 = myimage.getImage();
+        Image img2 = img1.getScaledInstance(s1.getWidth(), s1.getHeight(), Image.SCALE_SMOOTH);
+
+        ImageIcon i = new ImageIcon(img2);
+
+        s1.setIcon(i);
+    }
+    
+    void showDate() {
+        Date d = new Date();
+        SimpleDateFormat s = new SimpleDateFormat("dd-MM-yyyy");
+        jLabel15.setText(s.format(d));
+    }
+
+    void showTime() {
+        new Timer(0, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Date d = new Date();
+                SimpleDateFormat s = new SimpleDateFormat("hh:mm:ss");
+                jLabel16.setText(s.format(d));
+            }
+
+        }).start();
     }
     
     void viewPanel(String cname) {
         CardLayout cL = (CardLayout) jPanel3.getLayout();
         cL.show(jPanel3, cname);
+    }
+    
+    void refreshTable(List sList){
+        org.jdesktop.swingbinding.JTableBinding jTableBinding = org.jdesktop.swingbinding.SwingBindings.createJTableBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, billpaymentList, jTable1);
+        org.jdesktop.swingbinding.JTableBinding.ColumnBinding columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${type}"));
+        columnBinding.setColumnName("Type");
+        columnBinding.setColumnClass(model.Billtype.class);
+        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${eid}"));
+        columnBinding.setColumnName("Eid");
+        columnBinding.setColumnClass(model.Employee.class);
+        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${amount}"));
+        columnBinding.setColumnName("Amount");
+        columnBinding.setColumnClass(Integer.class);
+        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${month}"));
+        columnBinding.setColumnName("Month");
+        columnBinding.setColumnClass(Integer.class);
+        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${pid}"));
+        columnBinding.setColumnName("Pid");
+        columnBinding.setColumnClass(Integer.class);
+        bindingGroup.addBinding(jTableBinding);
+        jTableBinding.bind();
     }
 
     /**
@@ -33,8 +121,16 @@ public class NewJFrame extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        bindingGroup = new org.jdesktop.beansbinding.BindingGroup();
 
         jLabel2 = new javax.swing.JLabel();
+        ITPPUEntityManager = java.beans.Beans.isDesignTime() ? null : javax.persistence.Persistence.createEntityManagerFactory("ITPPU").createEntityManager();
+        billpaymentQuery = java.beans.Beans.isDesignTime() ? null : ITPPUEntityManager.createQuery("SELECT b FROM Billpayment b");
+        billpaymentList = java.beans.Beans.isDesignTime() ? java.util.Collections.emptyList() : billpaymentQuery.getResultList();
+        billtypeQuery = java.beans.Beans.isDesignTime() ? null : ITPPUEntityManager.createQuery("SELECT b FROM Billtype b");
+        billtypeList = java.beans.Beans.isDesignTime() ? java.util.Collections.emptyList() : billtypeQuery.getResultList();
+        employeeQuery = java.beans.Beans.isDesignTime() ? null : ITPPUEntityManager.createQuery("SELECT e FROM Employee e");
+        employeeList = java.beans.Beans.isDesignTime() ? java.util.Collections.emptyList() : employeeQuery.getResultList();
         jPanel1 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
@@ -47,11 +143,22 @@ public class NewJFrame extends javax.swing.JFrame {
         jButton8 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         SaMjPanel8 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
-        SuMjPanel6 = new javax.swing.JPanel();
+        btnViewReports = new javax.swing.JButton();
+        btnHandleReturns = new javax.swing.JButton();
+        btnRegisterCustomers = new javax.swing.JButton();
+        btnGenerateBills = new javax.swing.JButton();
+        sumPanel16 = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
+        SuMReport = new javax.swing.JButton();
+        SuMUpdate = new javax.swing.JButton();
+        SuMPlace = new javax.swing.JButton();
+        SuMAdd = new javax.swing.JButton();
         CMjPanel10 = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         FMjPanel11 = new javax.swing.JPanel();
@@ -59,18 +166,183 @@ public class NewJFrame extends javax.swing.JFrame {
         IMjPanel5 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         PMjPanel7 = new javax.swing.JPanel();
+        jButton10 = new javax.swing.JButton();
+        jButton11 = new javax.swing.JButton();
+        jButton12 = new javax.swing.JButton();
+        jButton13 = new javax.swing.JButton();
         PMjLabel6 = new javax.swing.JLabel();
+        PM1jPanel4 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jPanel4 = new javax.swing.JPanel();
+        jComboBox2 = new javax.swing.JComboBox<>();
+        jTextField2 = new javax.swing.JTextField();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jButton9 = new javax.swing.JButton();
+        jButton15 = new javax.swing.JButton();
+        jTextField1 = new javax.swing.JTextField();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jButton14 = new javax.swing.JButton();
         DMjPanel9 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         EMjPanel4 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
+        attendanceEmpNavBtn = new javax.swing.JButton();
+        leaveEmpNavBtn = new javax.swing.JButton();
+        regEmpNavBtn = new javax.swing.JButton();
+        addEmpCatNavBtn = new javax.swing.JButton();
+        empLeaveMgmtNavBtn = new javax.swing.JButton();
+        jLabel18 = new javax.swing.JLabel();
+        addEmpCard1 = new javax.swing.JPanel();
+        addEmpTitleTxt = new javax.swing.JLabel();
+        empNameLabel = new javax.swing.JLabel();
+        empNameBox = new javax.swing.JTextField();
+        empNICBox = new javax.swing.JTextField();
+        empNicLabel = new javax.swing.JLabel();
+        empAddressLabel = new javax.swing.JLabel();
+        empAddressBox = new javax.swing.JTextField();
+        empPhoneLabel = new javax.swing.JLabel();
+        empPhoneBox = new javax.swing.JTextField();
+        empEmailLabel = new javax.swing.JLabel();
+        empEmailBox = new javax.swing.JTextField();
+        empTypeLabel = new javax.swing.JLabel();
+        emptypeComboBox = new javax.swing.JComboBox<>();
+        deleteEmpBtn = new javax.swing.JButton();
+        registerEmpBtn1 = new javax.swing.JButton();
+        updateEmpBtn = new javax.swing.JButton();
+        jSeparator1 = new javax.swing.JSeparator();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        empTable = new javax.swing.JTable();
+        emIDLabel = new javax.swing.JLabel();
+        empIdBox = new javax.swing.JTextField();
+        attendanceEmpCard = new javax.swing.JPanel();
+        empDateLabel = new javax.swing.JLabel();
+        empSignOutBtn = new javax.swing.JButton();
+        empSignInBtn = new javax.swing.JButton();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        empAttendanceTable = new javax.swing.JTable();
+        empLeaveCard = new javax.swing.JPanel();
+        empRemLeaveLabel = new javax.swing.JLabel();
+        empRemLeavBox = new javax.swing.JTextField();
+        empstartDateBox = new javax.swing.JTextField();
+        empstartDateLabel = new javax.swing.JLabel();
+        empEndDateBox = new javax.swing.JTextField();
+        empEndDateLabel = new javax.swing.JLabel();
+        empDaysLabel = new javax.swing.JLabel();
+        empDaysBox = new javax.swing.JTextField();
+        empReasonLabel = new javax.swing.JLabel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        empReasonText = new javax.swing.JTextArea();
+        empLeaveRequestBtn = new javax.swing.JButton();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        empRequestTable = new javax.swing.JTable();
+        empLeaveStatusLabel = new javax.swing.JLabel();
+        empLeaveStatusBox = new javax.swing.JTextField();
+        addCatergoryPanel = new javax.swing.JPanel();
+        empAddTypeLabel = new javax.swing.JLabel();
+        empTypeIdBox = new javax.swing.JTextField();
+        empSalaryLabel = new javax.swing.JLabel();
+        empSalaryBox = new javax.swing.JTextField();
+        empLeaveLabel = new javax.swing.JLabel();
+        empLeaveBox = new javax.swing.JTextField();
+        updateEmpTypeBtn = new javax.swing.JButton();
+        deleteEmpTypeBtn = new javax.swing.JButton();
+        addEmpTypeBtn = new javax.swing.JButton();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        empCatergoryTable = new javax.swing.JTable();
+        empTypeIdLabel = new javax.swing.JLabel();
+        empTypeBox1 = new javax.swing.JTextField();
+        empLeaveMgmtPanel = new javax.swing.JPanel();
+        empReasonLabel_mgmt = new javax.swing.JLabel();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        empReasonText_mgmt = new javax.swing.JTextArea();
+        empApproveRequestBtn_mgmt = new javax.swing.JButton();
+        empstartDateBox_mgmt = new javax.swing.JTextField();
+        empstartDateLabel_mgmt = new javax.swing.JLabel();
+        empEndDateBox_mgmt = new javax.swing.JTextField();
+        empEndDateLabel_mgmt = new javax.swing.JLabel();
+        empDaysLabel_mgmt = new javax.swing.JLabel();
+        empDaysBox_mgmt = new javax.swing.JTextField();
+        empID_mgmt1 = new javax.swing.JTextField();
+        empstartDateLabel_mgmt1 = new javax.swing.JLabel();
+        empEndDateBox_mgmt1 = new javax.swing.JTextField();
+        empEndDateLabel_mgmt1 = new javax.swing.JLabel();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        empLeaveRequestTable = new javax.swing.JTable();
+        empRejectRequestBtn_mgmt = new javax.swing.JButton();
+        empLeaveReqIDLabel_mgmt = new javax.swing.JLabel();
+        empLeaveReqID_mgmt = new javax.swing.JTextField();
+        smViewReports = new javax.swing.JPanel();
+        smGenerateBills = new javax.swing.JPanel();
+        smjLabel4 = new javax.swing.JLabel();
+        custp = new javax.swing.JTextField();
+        smjLabel5 = new javax.swing.JLabel();
+        btnNxtGenerateBill = new javax.swing.JButton();
+        btnBackGenerateBill1 = new javax.swing.JButton();
+        custpaymentmethod = new javax.swing.JComboBox<>();
+        btnChkCustId = new javax.swing.JButton();
+        smCustIdStatus = new javax.swing.JLabel();
+        smjLabel6 = new javax.swing.JLabel();
+        smdisref = new javax.swing.JTextField();
+        smjLabel7 = new javax.swing.JLabel();
+        smitemid = new javax.swing.JTextField();
+        smjLabel8 = new javax.swing.JLabel();
+        smitemqty = new javax.swing.JTextField();
+        smbtnadditem = new javax.swing.JButton();
+        smbtndeleteitem = new javax.swing.JButton();
+        jScrollPane9 = new javax.swing.JScrollPane();
+        smbilltable = new javax.swing.JTable();
+        smqtystatus = new javax.swing.JLabel();
+        smdisrefstatus = new javax.swing.JLabel();
+        smreset = new javax.swing.JButton();
+        smRegisterCustomers = new javax.swing.JPanel();
+        smReturnHandle = new javax.swing.JPanel();
+        jScrollPane10 = new javax.swing.JScrollPane();
+        smviewreturnstable = new javax.swing.JTable();
+        smenterbillid = new javax.swing.JLabel();
+        smshowitemid = new javax.swing.JLabel();
+        smshowitemname = new javax.swing.JLabel();
+        smtxtfieldenterbillid = new javax.swing.JTextField();
+        smtxtitemid = new javax.swing.JTextField();
+        smtxtitemname = new javax.swing.JTextField();
+        smbtnsearchbillid = new javax.swing.JButton();
+        smbtndeleteitemreturns = new javax.swing.JButton();
+        smsalesidreturns = new javax.swing.JLabel();
+        smsalesidreturnsbox = new javax.swing.JTextField();
+        smGenerateBills2 = new javax.swing.JPanel();
+        smjLabel9 = new javax.swing.JLabel();
+        smtotbillamt = new javax.swing.JTextField();
+        smjLabel10 = new javax.swing.JLabel();
+        smcashamtpaid = new javax.swing.JTextField();
+        smjLabelch = new javax.swing.JLabel();
+        smchangedis = new javax.swing.JTextField();
+        SUMjComboBox3 = new javax.swing.JPanel();
+        SUMjComboBox1 = new javax.swing.JComboBox();
+        SUMjTextField4 = new javax.swing.JTextField();
+        SUMjTextField3 = new javax.swing.JTextField();
+        SUMjTextField2 = new javax.swing.JTextField();
+        SUMjTextField1 = new javax.swing.JTextField();
+        SUMjButton10 = new javax.swing.JButton();
+        SUMjButton9 = new javax.swing.JButton();
+        SUJMjLabel15 = new javax.swing.JLabel();
+        SUMjLabel14 = new javax.swing.JLabel();
+        SUMjLabel13 = new javax.swing.JLabel();
+        SUMjLabel12 = new javax.swing.JLabel();
+        SUMjLabel7 = new javax.swing.JLabel();
+        SUMjLabel6 = new javax.swing.JLabel();
+        SUMMjTextField3 = new javax.swing.JTextField();
+        SUMMjLabel19 = new javax.swing.JLabel();
+        SUaddressName = new javax.swing.JTextField();
 
         jLabel2.setText("jLabel2");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setSize(new java.awt.Dimension(0, 0));
 
-        jPanel1.setBackground(new java.awt.Color(0, 153, 255));
+        jPanel1.setBackground(new java.awt.Color(19, 39, 79));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3.setFont(new java.awt.Font("Segoe UI Historic", 1, 36)); // NOI18N
@@ -87,6 +359,7 @@ public class NewJFrame extends javax.swing.JFrame {
         });
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, -1, -1));
 
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empmen.png"))); // NOI18N
         jButton2.setText("Employee management");
         jButton2.setPreferredSize(new java.awt.Dimension(263, 40));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -94,7 +367,7 @@ public class NewJFrame extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 260, -1, -1));
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 260, 260, -1));
 
         jButton3.setText("Inventory management");
         jButton3.setPreferredSize(new java.awt.Dimension(263, 40));
@@ -150,27 +423,51 @@ public class NewJFrame extends javax.swing.JFrame {
         });
         jPanel1.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 680, -1, -1));
 
-        jPanel2.setBackground(new java.awt.Color(0, 153, 255));
+        jPanel2.setBackground(new java.awt.Color(102, 102, 102));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI Historic", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Wijesinghe Motors");
+
+        jLabel15.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel15.setText("jLabel15");
+
+        jLabel16.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel16.setText("jLabel16");
+
+        jLabel17.setText("jLabel17");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(338, 338, 338)
+                .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(123, 123, 123)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, 131, Short.MAX_VALUE)
+                    .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(38, 38, 38))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(37, Short.MAX_VALUE))
+                .addGap(22, 22, 22)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(22, 22, 22))))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         jPanel3.setMaximumSize(new java.awt.Dimension(0, 0));
@@ -179,21 +476,70 @@ public class NewJFrame extends javax.swing.JFrame {
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
         jLabel8.setText("Sales management");
 
+        btnViewReports.setText("View Reports");
+        btnViewReports.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnViewReportsActionPerformed(evt);
+            }
+        });
+
+        btnHandleReturns.setText("Handle Returns");
+        btnHandleReturns.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnHandleReturnsActionPerformed(evt);
+            }
+        });
+
+        btnRegisterCustomers.setText("Register Customers");
+        btnRegisterCustomers.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegisterCustomersActionPerformed(evt);
+            }
+        });
+
+        btnGenerateBills.setText("Generate Bills");
+        btnGenerateBills.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGenerateBillsActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout SaMjPanel8Layout = new javax.swing.GroupLayout(SaMjPanel8);
         SaMjPanel8.setLayout(SaMjPanel8Layout);
         SaMjPanel8Layout.setHorizontalGroup(
             SaMjPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(SaMjPanel8Layout.createSequentialGroup()
-                .addGap(361, 361, 361)
-                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 566, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(216, Short.MAX_VALUE))
+                .addGroup(SaMjPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(SaMjPanel8Layout.createSequentialGroup()
+                        .addGap(355, 355, 355)
+                        .addGroup(SaMjPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(SaMjPanel8Layout.createSequentialGroup()
+                                .addComponent(btnRegisterCustomers)
+                                .addGap(197, 197, 197)
+                                .addComponent(btnViewReports, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(SaMjPanel8Layout.createSequentialGroup()
+                                .addComponent(btnGenerateBills, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(187, 187, 187)
+                                .addComponent(btnHandleReturns))))
+                    .addGroup(SaMjPanel8Layout.createSequentialGroup()
+                        .addGap(318, 318, 318)
+                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 566, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(1407, Short.MAX_VALUE))
         );
         SaMjPanel8Layout.setVerticalGroup(
             SaMjPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(SaMjPanel8Layout.createSequentialGroup()
-                .addGap(247, 247, 247)
+                .addGap(46, 46, 46)
                 .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(376, Short.MAX_VALUE))
+                .addGap(111, 111, 111)
+                .addGroup(SaMjPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnGenerateBills)
+                    .addComponent(btnHandleReturns))
+                .addGap(218, 218, 218)
+                .addGroup(SaMjPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnRegisterCustomers)
+                    .addComponent(btnViewReports))
+                .addContainerGap(450, Short.MAX_VALUE))
         );
 
         jPanel3.add(SaMjPanel8, "card6");
@@ -201,24 +547,65 @@ public class NewJFrame extends javax.swing.JFrame {
         jLabel12.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
         jLabel12.setText("Suppliers management");
 
-        javax.swing.GroupLayout SuMjPanel6Layout = new javax.swing.GroupLayout(SuMjPanel6);
-        SuMjPanel6.setLayout(SuMjPanel6Layout);
-        SuMjPanel6Layout.setHorizontalGroup(
-            SuMjPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(SuMjPanel6Layout.createSequentialGroup()
-                .addGap(314, 314, 314)
-                .addComponent(jLabel12)
-                .addContainerGap(344, Short.MAX_VALUE))
+        SuMReport.setText("REPORTS");
+        SuMReport.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SuMReportActionPerformed(evt);
+            }
+        });
+
+        SuMUpdate.setText("VIEW/UPDATE/DELETE/SEARCH SUPPLIERS");
+
+        SuMPlace.setText("PLACE RDERS");
+
+        SuMAdd.setText("ADD SUPPLIERS");
+        SuMAdd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SuMAddActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout sumPanel16Layout = new javax.swing.GroupLayout(sumPanel16);
+        sumPanel16.setLayout(sumPanel16Layout);
+        sumPanel16Layout.setHorizontalGroup(
+            sumPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(sumPanel16Layout.createSequentialGroup()
+                .addGroup(sumPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(sumPanel16Layout.createSequentialGroup()
+                        .addGap(382, 382, 382)
+                        .addComponent(jLabel12))
+                    .addGroup(sumPanel16Layout.createSequentialGroup()
+                        .addGap(233, 233, 233)
+                        .addGroup(sumPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(SuMReport, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(sumPanel16Layout.createSequentialGroup()
+                                .addComponent(SuMAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(71, 71, 71)
+                                .addComponent(SuMUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 318, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(52, 52, 52)
+                                .addComponent(SuMPlace, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(1280, Short.MAX_VALUE))
         );
-        SuMjPanel6Layout.setVerticalGroup(
-            SuMjPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(SuMjPanel6Layout.createSequentialGroup()
-                .addGap(259, 259, 259)
-                .addComponent(jLabel12)
-                .addContainerGap(390, Short.MAX_VALUE))
+        sumPanel16Layout.setVerticalGroup(
+            sumPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(sumPanel16Layout.createSequentialGroup()
+                .addGroup(sumPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(sumPanel16Layout.createSequentialGroup()
+                        .addGap(163, 163, 163)
+                        .addComponent(jLabel12)
+                        .addGap(153, 153, 153)
+                        .addComponent(SuMAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(sumPanel16Layout.createSequentialGroup()
+                        .addGap(363, 363, 363)
+                        .addGroup(sumPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(SuMUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(SuMPlace, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(60, 60, 60)
+                .addComponent(SuMReport, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(453, Short.MAX_VALUE))
         );
 
-        jPanel3.add(SuMjPanel6, "card4");
+        jPanel3.add(sumPanel16, "card4");
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
         jLabel10.setText("Customer management");
@@ -230,7 +617,7 @@ public class NewJFrame extends javax.swing.JFrame {
             .addGroup(CMjPanel10Layout.createSequentialGroup()
                 .addGap(324, 324, 324)
                 .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 550, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(269, Short.MAX_VALUE))
+                .addContainerGap(1417, Short.MAX_VALUE))
         );
         CMjPanel10Layout.setVerticalGroup(
             CMjPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -252,14 +639,14 @@ public class NewJFrame extends javax.swing.JFrame {
             .addGroup(FMjPanel11Layout.createSequentialGroup()
                 .addGap(287, 287, 287)
                 .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 603, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(253, Short.MAX_VALUE))
+                .addContainerGap(1401, Short.MAX_VALUE))
         );
         FMjPanel11Layout.setVerticalGroup(
             FMjPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(FMjPanel11Layout.createSequentialGroup()
                 .addGap(201, 201, 201)
                 .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(448, Short.MAX_VALUE))
+                .addContainerGap(700, Short.MAX_VALUE))
         );
 
         jPanel3.add(FMjPanel11, "card9");
@@ -274,17 +661,30 @@ public class NewJFrame extends javax.swing.JFrame {
             .addGroup(IMjPanel5Layout.createSequentialGroup()
                 .addGap(292, 292, 292)
                 .addComponent(jLabel5)
-                .addContainerGap(355, Short.MAX_VALUE))
+                .addContainerGap(1503, Short.MAX_VALUE))
         );
         IMjPanel5Layout.setVerticalGroup(
             IMjPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(IMjPanel5Layout.createSequentialGroup()
                 .addGap(252, 252, 252)
                 .addComponent(jLabel5)
-                .addContainerGap(397, Short.MAX_VALUE))
+                .addContainerGap(649, Short.MAX_VALUE))
         );
 
         jPanel3.add(IMjPanel5, "card3");
+
+        jButton10.setText("Insert bill payments");
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton10ActionPerformed(evt);
+            }
+        });
+
+        jButton11.setText("Search bill payments");
+
+        jButton12.setText("Generate reports");
+
+        jButton13.setText("Calculate salary");
 
         PMjLabel6.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
         PMjLabel6.setText("Payments management");
@@ -294,19 +694,209 @@ public class NewJFrame extends javax.swing.JFrame {
         PMjPanel7Layout.setHorizontalGroup(
             PMjPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PMjPanel7Layout.createSequentialGroup()
-                .addGap(286, 286, 286)
-                .addComponent(PMjLabel6)
-                .addContainerGap(361, Short.MAX_VALUE))
+                .addGroup(PMjPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PMjPanel7Layout.createSequentialGroup()
+                        .addGap(454, 454, 454)
+                        .addGroup(PMjPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton13)
+                            .addGroup(PMjPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jButton12)
+                                .addComponent(jButton11)
+                                .addComponent(jButton10))))
+                    .addGroup(PMjPanel7Layout.createSequentialGroup()
+                        .addGap(311, 311, 311)
+                        .addComponent(PMjLabel6)))
+                .addContainerGap(1484, Short.MAX_VALUE))
         );
+
+        PMjPanel7Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jButton10, jButton11, jButton12, jButton13});
+
         PMjPanel7Layout.setVerticalGroup(
             PMjPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PMjPanel7Layout.createSequentialGroup()
-                .addGap(256, 256, 256)
+                .addGap(57, 57, 57)
                 .addComponent(PMjLabel6)
-                .addContainerGap(393, Short.MAX_VALUE))
+                .addGap(91, 91, 91)
+                .addComponent(jButton10)
+                .addGap(40, 40, 40)
+                .addComponent(jButton11)
+                .addGap(43, 43, 43)
+                .addComponent(jButton12)
+                .addGap(38, 38, 38)
+                .addComponent(jButton13)
+                .addContainerGap(532, Short.MAX_VALUE))
         );
 
         jPanel3.add(PMjPanel7, "card5");
+
+        org.jdesktop.swingbinding.JTableBinding jTableBinding = org.jdesktop.swingbinding.SwingBindings.createJTableBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, billpaymentList, jTable1);
+        org.jdesktop.swingbinding.JTableBinding.ColumnBinding columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${type}"));
+        columnBinding.setColumnName("Type");
+        columnBinding.setColumnClass(model.Billtype.class);
+        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${eid}"));
+        columnBinding.setColumnName("Eid");
+        columnBinding.setColumnClass(model.Employee.class);
+        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${amount}"));
+        columnBinding.setColumnName("Amount");
+        columnBinding.setColumnClass(Integer.class);
+        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${month}"));
+        columnBinding.setColumnName("Month");
+        columnBinding.setColumnClass(Integer.class);
+        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${pid}"));
+        columnBinding.setColumnName("Pid");
+        columnBinding.setColumnClass(Integer.class);
+        bindingGroup.addBinding(jTableBinding);
+        jTableBinding.bind();
+
+        jScrollPane1.setViewportView(jTable1);
+
+        jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 5));
+
+        jComboBox2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+
+        org.jdesktop.swingbinding.JComboBoxBinding jComboBoxBinding = org.jdesktop.swingbinding.SwingBindings.createJComboBoxBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, employeeList, jComboBox2);
+        bindingGroup.addBinding(jComboBoxBinding);
+
+        jTextField2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+
+        jLabel14.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel14.setText("Bill amount :");
+
+        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel7.setText("Inserted by (Emp. ID) :");
+
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel6.setText("Bill type :");
+
+        jLabel13.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel13.setText("Bill month :");
+
+        jButton9.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jButton9.setText("Insert");
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
+
+        jButton15.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jButton15.setText("Delete");
+
+        jTextField1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+
+        jComboBox1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+
+        jComboBoxBinding = org.jdesktop.swingbinding.SwingBindings.createJComboBoxBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, billtypeList, jComboBox1);
+        bindingGroup.addBinding(jComboBoxBinding);
+
+        jButton14.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jButton14.setText("Update");
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jButton9)
+                        .addGap(63, 63, 63))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addGap(108, 108, 108)
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel6)
+                                    .addComponent(jLabel13)
+                                    .addComponent(jLabel14)))
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jLabel7)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jButton14)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
+                        .addComponent(jButton15)
+                        .addGap(55, 55, 55))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(28, 28, 28)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextField1)
+                            .addComponent(jComboBox1, 0, 149, Short.MAX_VALUE)
+                            .addComponent(jTextField2)
+                            .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+        );
+
+        jPanel4Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jComboBox1, jComboBox2, jTextField1, jTextField2});
+
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(32, 32, 32)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(28, 28, 28)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(31, 31, 31)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTextField2)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(6, 6, 6)))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jComboBox2)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGap(35, 35, 35)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton9)
+                    .addComponent(jButton14)
+                    .addComponent(jButton15))
+                .addGap(33, 33, 33))
+        );
+
+        javax.swing.GroupLayout PM1jPanel4Layout = new javax.swing.GroupLayout(PM1jPanel4);
+        PM1jPanel4.setLayout(PM1jPanel4Layout);
+        PM1jPanel4Layout.setHorizontalGroup(
+            PM1jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PM1jPanel4Layout.createSequentialGroup()
+                .addGroup(PM1jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PM1jPanel4Layout.createSequentialGroup()
+                        .addGap(334, 334, 334)
+                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(PM1jPanel4Layout.createSequentialGroup()
+                        .addGap(110, 110, 110)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 974, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(1207, Short.MAX_VALUE))
+        );
+        PM1jPanel4Layout.setVerticalGroup(
+            PM1jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PM1jPanel4Layout.createSequentialGroup()
+                .addGap(130, 130, 130)
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(86, 86, 86)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(258, Short.MAX_VALUE))
+        );
+
+        jPanel3.add(PM1jPanel4, "card10");
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
         jLabel9.setText("Delivery management");
@@ -318,14 +908,14 @@ public class NewJFrame extends javax.swing.JFrame {
             .addGroup(DMjPanel9Layout.createSequentialGroup()
                 .addGap(372, 372, 372)
                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 543, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(228, Short.MAX_VALUE))
+                .addContainerGap(1376, Short.MAX_VALUE))
         );
         DMjPanel9Layout.setVerticalGroup(
             DMjPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(DMjPanel9Layout.createSequentialGroup()
                 .addGap(228, 228, 228)
                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(400, Short.MAX_VALUE))
+                .addContainerGap(652, Short.MAX_VALUE))
         );
 
         jPanel3.add(DMjPanel9, "card7");
@@ -335,31 +925,1373 @@ public class NewJFrame extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
         jLabel4.setText("Employee management");
 
+        attendanceEmpNavBtn.setText("Attendance");
+        attendanceEmpNavBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                attendanceEmpNavBtnActionPerformed(evt);
+            }
+        });
+
+        leaveEmpNavBtn.setText("Leave Request");
+        leaveEmpNavBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                leaveEmpNavBtnActionPerformed(evt);
+            }
+        });
+
+        regEmpNavBtn.setText("Register Employee");
+        regEmpNavBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                regEmpNavBtnActionPerformed(evt);
+            }
+        });
+
+        addEmpCatNavBtn.setText("Add catergory");
+        addEmpCatNavBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addEmpCatNavBtnActionPerformed(evt);
+            }
+        });
+
+        empLeaveMgmtNavBtn.setText("Leave Mangement");
+        empLeaveMgmtNavBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                empLeaveMgmtNavBtnActionPerformed(evt);
+            }
+        });
+
+        jLabel18.setText("jLabel18");
+
         javax.swing.GroupLayout EMjPanel4Layout = new javax.swing.GroupLayout(EMjPanel4);
         EMjPanel4.setLayout(EMjPanel4Layout);
         EMjPanel4Layout.setHorizontalGroup(
             EMjPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(EMjPanel4Layout.createSequentialGroup()
-                .addGap(314, 314, 314)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 553, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(276, Short.MAX_VALUE))
+                .addGroup(EMjPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(EMjPanel4Layout.createSequentialGroup()
+                        .addGap(275, 275, 275)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 553, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(EMjPanel4Layout.createSequentialGroup()
+                        .addGap(181, 181, 181)
+                        .addComponent(attendanceEmpNavBtn)
+                        .addGap(136, 136, 136)
+                        .addComponent(leaveEmpNavBtn)
+                        .addGap(59, 59, 59)
+                        .addComponent(regEmpNavBtn)
+                        .addGap(70, 70, 70)
+                        .addComponent(addEmpCatNavBtn)
+                        .addGap(72, 72, 72)
+                        .addComponent(empLeaveMgmtNavBtn))
+                    .addGroup(EMjPanel4Layout.createSequentialGroup()
+                        .addGap(164, 164, 164)
+                        .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(1172, Short.MAX_VALUE))
         );
         EMjPanel4Layout.setVerticalGroup(
             EMjPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(EMjPanel4Layout.createSequentialGroup()
-                .addGap(252, 252, 252)
+                .addGap(112, 112, 112)
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(358, Short.MAX_VALUE))
+                .addGap(122, 122, 122)
+                .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(89, 89, 89)
+                .addGroup(EMjPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(attendanceEmpNavBtn)
+                    .addComponent(leaveEmpNavBtn)
+                    .addComponent(regEmpNavBtn)
+                    .addComponent(addEmpCatNavBtn)
+                    .addComponent(empLeaveMgmtNavBtn))
+                .addContainerGap(395, Short.MAX_VALUE))
         );
 
         jPanel3.add(EMjPanel4, "card2");
+
+        addEmpTitleTxt.setFont(new java.awt.Font("SansSerif", 1, 36)); // NOI18N
+        addEmpTitleTxt.setForeground(new java.awt.Color(255, 255, 255));
+        addEmpTitleTxt.setText("Add/Edit Employee ");
+
+        empNameLabel.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        empNameLabel.setForeground(new java.awt.Color(255, 255, 255));
+        empNameLabel.setText("Name");
+
+        empNameBox.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+
+        empNICBox.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+
+        empNicLabel.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        empNicLabel.setForeground(new java.awt.Color(255, 255, 255));
+        empNicLabel.setText("NIC");
+
+        empAddressLabel.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        empAddressLabel.setForeground(new java.awt.Color(255, 255, 255));
+        empAddressLabel.setText("Address");
+
+        empAddressBox.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        empAddressBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                empAddressBoxActionPerformed(evt);
+            }
+        });
+
+        empPhoneLabel.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        empPhoneLabel.setForeground(new java.awt.Color(255, 255, 255));
+        empPhoneLabel.setText("Phone");
+
+        empPhoneBox.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+
+        empEmailLabel.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        empEmailLabel.setForeground(new java.awt.Color(255, 255, 255));
+        empEmailLabel.setText("Email");
+
+        empEmailBox.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+
+        empTypeLabel.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        empTypeLabel.setForeground(new java.awt.Color(255, 255, 255));
+        empTypeLabel.setText("Type");
+
+        emptypeComboBox.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        emptypeComboBox.setForeground(new java.awt.Color(51, 51, 51));
+        emptypeComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cashier", "Manager", "Driver", "Labourer" }));
+
+        deleteEmpBtn.setBackground(new java.awt.Color(160, 31, 38));
+        deleteEmpBtn.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        deleteEmpBtn.setForeground(new java.awt.Color(255, 255, 255));
+        deleteEmpBtn.setText("Delete");
+        deleteEmpBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteEmpBtnActionPerformed(evt);
+            }
+        });
+
+        registerEmpBtn1.setBackground(new java.awt.Color(0, 102, 51));
+        registerEmpBtn1.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        registerEmpBtn1.setForeground(new java.awt.Color(255, 255, 255));
+        registerEmpBtn1.setText("Register");
+        registerEmpBtn1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                registerEmpBtn1ActionPerformed(evt);
+            }
+        });
+
+        updateEmpBtn.setBackground(new java.awt.Color(28, 47, 123));
+        updateEmpBtn.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        updateEmpBtn.setForeground(new java.awt.Color(255, 255, 255));
+        updateEmpBtn.setText("Update");
+        updateEmpBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                updateEmpBtnActionPerformed(evt);
+            }
+        });
+
+        jSeparator1.setForeground(new java.awt.Color(255, 255, 255));
+        jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
+
+        empTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        empTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                empTableMouseClicked(evt);
+            }
+        });
+        jScrollPane2.setViewportView(empTable);
+
+        emIDLabel.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        emIDLabel.setForeground(new java.awt.Color(255, 255, 255));
+        emIDLabel.setText("ID");
+
+        empIdBox.setEditable(false);
+        empIdBox.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        empIdBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                empIdBoxActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout addEmpCard1Layout = new javax.swing.GroupLayout(addEmpCard1);
+        addEmpCard1.setLayout(addEmpCard1Layout);
+        addEmpCard1Layout.setHorizontalGroup(
+            addEmpCard1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(addEmpCard1Layout.createSequentialGroup()
+                .addGap(100, 100, 100)
+                .addGroup(addEmpCard1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(addEmpCard1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(addEmpCard1Layout.createSequentialGroup()
+                            .addComponent(registerEmpBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(30, 30, 30)
+                            .addComponent(updateEmpBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(deleteEmpBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(addEmpCard1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addEmpCard1Layout.createSequentialGroup()
+                                .addGroup(addEmpCard1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(empAddressLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(empNicLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(empPhoneLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(empEmailLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(empTypeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(addEmpCard1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(emptypeComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(addEmpCard1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(empPhoneBox, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(empNICBox)
+                                        .addComponent(empAddressBox)
+                                        .addComponent(empEmailBox, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addEmpCard1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(addEmpCard1Layout.createSequentialGroup()
+                                    .addComponent(empNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(empNameBox, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(addEmpTitleTxt))))
+                    .addGroup(addEmpCard1Layout.createSequentialGroup()
+                        .addComponent(emIDLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(empIdBox, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(233, 233, 233)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 737, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(718, Short.MAX_VALUE))
+        );
+        addEmpCard1Layout.setVerticalGroup(
+            addEmpCard1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(addEmpCard1Layout.createSequentialGroup()
+                .addGap(35, 35, 35)
+                .addComponent(jSeparator1)
+                .addGap(35, 35, 35))
+            .addGroup(addEmpCard1Layout.createSequentialGroup()
+                .addGap(60, 60, 60)
+                .addGroup(addEmpCard1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 591, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(addEmpCard1Layout.createSequentialGroup()
+                        .addComponent(addEmpTitleTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(26, 26, 26)
+                        .addGroup(addEmpCard1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(emIDLabel)
+                            .addComponent(empIdBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(addEmpCard1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(empNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(empNameBox, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(25, 25, 25)
+                        .addGroup(addEmpCard1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(empNicLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(empNICBox, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(25, 25, 25)
+                        .addGroup(addEmpCard1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(empAddressLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(empAddressBox, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(25, 25, 25)
+                        .addGroup(addEmpCard1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(empPhoneBox, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(empPhoneLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(25, 25, 25)
+                        .addGroup(addEmpCard1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(empEmailLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(empEmailBox, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(25, 25, 25)
+                        .addGroup(addEmpCard1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(empTypeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(emptypeComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(100, 100, 100)
+                        .addGroup(addEmpCard1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(deleteEmpBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(updateEmpBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(registerEmpBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(297, Short.MAX_VALUE))
+        );
+
+        jPanel3.add(addEmpCard1, "addEmpCard1");
+
+        attendanceEmpCard.setBackground(new java.awt.Color(51, 51, 51));
+
+        empDateLabel.setFont(new java.awt.Font("SansSerif", 0, 36)); // NOI18N
+        empDateLabel.setForeground(new java.awt.Color(255, 255, 255));
+        empDateLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        empSignOutBtn.setBackground(new java.awt.Color(160, 31, 38));
+        empSignOutBtn.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        empSignOutBtn.setForeground(new java.awt.Color(255, 255, 255));
+        empSignOutBtn.setText("Sign Out");
+        empSignOutBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                empSignOutBtnActionPerformed(evt);
+            }
+        });
+
+        empSignInBtn.setBackground(new java.awt.Color(0, 102, 51));
+        empSignInBtn.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        empSignInBtn.setForeground(new java.awt.Color(255, 255, 255));
+        empSignInBtn.setText("Sign In");
+        empSignInBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                empSignInBtnActionPerformed(evt);
+            }
+        });
+
+        empAttendanceTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane3.setViewportView(empAttendanceTable);
+
+        javax.swing.GroupLayout attendanceEmpCardLayout = new javax.swing.GroupLayout(attendanceEmpCard);
+        attendanceEmpCard.setLayout(attendanceEmpCardLayout);
+        attendanceEmpCardLayout.setHorizontalGroup(
+            attendanceEmpCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(attendanceEmpCardLayout.createSequentialGroup()
+                .addGap(567, 567, 567)
+                .addGroup(attendanceEmpCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(attendanceEmpCardLayout.createSequentialGroup()
+                        .addComponent(empSignInBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 226, Short.MAX_VALUE)
+                        .addComponent(empSignOutBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(empDateLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jScrollPane3))
+                .addContainerGap(1026, Short.MAX_VALUE))
+        );
+        attendanceEmpCardLayout.setVerticalGroup(
+            attendanceEmpCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(attendanceEmpCardLayout.createSequentialGroup()
+                .addGap(85, 85, 85)
+                .addComponent(empDateLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 248, Short.MAX_VALUE)
+                .addGroup(attendanceEmpCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(empSignInBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(empSignOutBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(44, 44, 44)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(52, 52, 52))
+        );
+
+        jPanel3.add(attendanceEmpCard, "attendanceEmpCard");
+
+        empLeaveCard.setBackground(new java.awt.Color(51, 51, 51));
+
+        empRemLeaveLabel.setFont(new java.awt.Font("SansSerif", 0, 24)); // NOI18N
+        empRemLeaveLabel.setForeground(new java.awt.Color(255, 255, 255));
+        empRemLeaveLabel.setText("Remaining Annual Leave: ");
+
+        empRemLeavBox.setBackground(new java.awt.Color(51, 51, 51));
+        empRemLeavBox.setFont(new java.awt.Font("SansSerif", 0, 24)); // NOI18N
+        empRemLeavBox.setForeground(new java.awt.Color(255, 255, 255));
+        empRemLeavBox.setBorder(null);
+        empRemLeavBox.setDisabledTextColor(new java.awt.Color(255, 255, 255));
+
+        empstartDateBox.setFont(new java.awt.Font("SansSerif", 0, 24)); // NOI18N
+
+        empstartDateLabel.setFont(new java.awt.Font("SansSerif", 0, 24)); // NOI18N
+        empstartDateLabel.setForeground(new java.awt.Color(255, 255, 255));
+        empstartDateLabel.setText("Start Date");
+
+        empEndDateBox.setFont(new java.awt.Font("SansSerif", 0, 24)); // NOI18N
+
+        empEndDateLabel.setFont(new java.awt.Font("SansSerif", 0, 24)); // NOI18N
+        empEndDateLabel.setForeground(new java.awt.Color(255, 255, 255));
+        empEndDateLabel.setText("End Date");
+
+        empDaysLabel.setFont(new java.awt.Font("SansSerif", 0, 24)); // NOI18N
+        empDaysLabel.setForeground(new java.awt.Color(255, 255, 255));
+        empDaysLabel.setText("Number of Days");
+
+        empDaysBox.setFont(new java.awt.Font("SansSerif", 0, 24)); // NOI18N
+
+        empReasonLabel.setFont(new java.awt.Font("SansSerif", 0, 24)); // NOI18N
+        empReasonLabel.setForeground(new java.awt.Color(255, 255, 255));
+        empReasonLabel.setText("Reason");
+
+        empReasonText.setColumns(20);
+        empReasonText.setRows(5);
+        jScrollPane4.setViewportView(empReasonText);
+
+        empLeaveRequestBtn.setBackground(new java.awt.Color(0, 102, 51));
+        empLeaveRequestBtn.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        empLeaveRequestBtn.setForeground(new java.awt.Color(255, 255, 255));
+        empLeaveRequestBtn.setText("Send Request");
+        empLeaveRequestBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                empLeaveRequestBtnActionPerformed(evt);
+            }
+        });
+
+        empRequestTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        empRequestTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                empRequestTableMouseClicked(evt);
+            }
+        });
+        jScrollPane7.setViewportView(empRequestTable);
+
+        empLeaveStatusLabel.setFont(new java.awt.Font("SansSerif", 0, 24)); // NOI18N
+        empLeaveStatusLabel.setForeground(new java.awt.Color(255, 255, 255));
+
+        empLeaveStatusBox.setEditable(false);
+        empLeaveStatusBox.setBackground(new java.awt.Color(51, 51, 51));
+        empLeaveStatusBox.setFont(new java.awt.Font("SansSerif", 0, 24)); // NOI18N
+        empLeaveStatusBox.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        empLeaveStatusBox.setBorder(null);
+
+        javax.swing.GroupLayout empLeaveCardLayout = new javax.swing.GroupLayout(empLeaveCard);
+        empLeaveCard.setLayout(empLeaveCardLayout);
+        empLeaveCardLayout.setHorizontalGroup(
+            empLeaveCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(empLeaveCardLayout.createSequentialGroup()
+                .addGroup(empLeaveCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(empLeaveCardLayout.createSequentialGroup()
+                        .addGap(170, 170, 170)
+                        .addGroup(empLeaveCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(empReasonLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(empDaysLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(empEndDateLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(empRemLeaveLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(empstartDateLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(empLeaveStatusLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(empLeaveCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(empEndDateBox, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(empDaysBox, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 460, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(empRemLeavBox, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(empstartDateBox, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(empLeaveStatusBox, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(219, 219, 219)
+                        .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(empLeaveCardLayout.createSequentialGroup()
+                        .addGap(602, 602, 602)
+                        .addComponent(empLeaveRequestBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(672, Short.MAX_VALUE))
+        );
+        empLeaveCardLayout.setVerticalGroup(
+            empLeaveCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(empLeaveCardLayout.createSequentialGroup()
+                .addGap(119, 119, 119)
+                .addGroup(empLeaveCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, empLeaveCardLayout.createSequentialGroup()
+                        .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 497, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(empLeaveCardLayout.createSequentialGroup()
+                        .addGroup(empLeaveCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(empRemLeaveLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(empRemLeavBox, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(30, 30, 30)
+                        .addGroup(empLeaveCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(empstartDateBox, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(empstartDateLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(30, 30, 30)
+                        .addGroup(empLeaveCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(empEndDateLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(empEndDateBox, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(30, 30, 30)
+                        .addGroup(empLeaveCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(empDaysLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(empDaysBox, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(30, 30, 30)
+                        .addGroup(empLeaveCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(empReasonLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(27, 27, 27)
+                        .addGroup(empLeaveCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(empLeaveStatusLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(empLeaveStatusBox, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 182, Short.MAX_VALUE)
+                        .addComponent(empLeaveRequestBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(89, 89, 89))))
+        );
+
+        jPanel3.add(empLeaveCard, "empLeaveCard");
+
+        addCatergoryPanel.setBackground(new java.awt.Color(51, 51, 51));
+
+        empAddTypeLabel.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        empAddTypeLabel.setForeground(new java.awt.Color(255, 255, 255));
+        empAddTypeLabel.setText("Type");
+
+        empTypeIdBox.setEditable(false);
+        empTypeIdBox.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+
+        empSalaryLabel.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        empSalaryLabel.setForeground(new java.awt.Color(255, 255, 255));
+        empSalaryLabel.setText("Basic Salary");
+
+        empSalaryBox.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+
+        empLeaveLabel.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        empLeaveLabel.setForeground(new java.awt.Color(255, 255, 255));
+        empLeaveLabel.setText("Annual Leave");
+
+        empLeaveBox.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+
+        updateEmpTypeBtn.setBackground(new java.awt.Color(28, 47, 123));
+        updateEmpTypeBtn.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        updateEmpTypeBtn.setForeground(new java.awt.Color(255, 255, 255));
+        updateEmpTypeBtn.setText("Update");
+        updateEmpTypeBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                updateEmpTypeBtnActionPerformed(evt);
+            }
+        });
+
+        deleteEmpTypeBtn.setBackground(new java.awt.Color(160, 31, 38));
+        deleteEmpTypeBtn.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        deleteEmpTypeBtn.setForeground(new java.awt.Color(255, 255, 255));
+        deleteEmpTypeBtn.setText("Delete");
+        deleteEmpTypeBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteEmpTypeBtnActionPerformed(evt);
+            }
+        });
+
+        addEmpTypeBtn.setBackground(new java.awt.Color(0, 102, 51));
+        addEmpTypeBtn.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        addEmpTypeBtn.setForeground(new java.awt.Color(255, 255, 255));
+        addEmpTypeBtn.setText("Add");
+        addEmpTypeBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addEmpTypeBtnActionPerformed(evt);
+            }
+        });
+
+        empCatergoryTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        empCatergoryTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                empCatergoryTableMouseClicked(evt);
+            }
+        });
+        jScrollPane5.setViewportView(empCatergoryTable);
+
+        empTypeIdLabel.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        empTypeIdLabel.setForeground(new java.awt.Color(255, 255, 255));
+        empTypeIdLabel.setText("Type ID");
+
+        empTypeBox1.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+
+        javax.swing.GroupLayout addCatergoryPanelLayout = new javax.swing.GroupLayout(addCatergoryPanel);
+        addCatergoryPanel.setLayout(addCatergoryPanelLayout);
+        addCatergoryPanelLayout.setHorizontalGroup(
+            addCatergoryPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(addCatergoryPanelLayout.createSequentialGroup()
+                .addGap(151, 151, 151)
+                .addGroup(addCatergoryPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(addCatergoryPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(addCatergoryPanelLayout.createSequentialGroup()
+                            .addComponent(empSalaryLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(empSalaryBox, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(addCatergoryPanelLayout.createSequentialGroup()
+                            .addComponent(empAddTypeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(empTypeBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(addCatergoryPanelLayout.createSequentialGroup()
+                            .addComponent(empLeaveLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(empLeaveBox, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(addCatergoryPanelLayout.createSequentialGroup()
+                        .addComponent(addEmpTypeBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(32, 32, 32)
+                        .addComponent(updateEmpTypeBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(36, 36, 36)
+                        .addComponent(deleteEmpTypeBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(addCatergoryPanelLayout.createSequentialGroup()
+                        .addComponent(empTypeIdLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(26, 26, 26)
+                        .addComponent(empTypeIdBox, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(156, 156, 156)))
+                .addGap(487, 487, 487)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 442, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(764, Short.MAX_VALUE))
+        );
+        addCatergoryPanelLayout.setVerticalGroup(
+            addCatergoryPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(addCatergoryPanelLayout.createSequentialGroup()
+                .addGroup(addCatergoryPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(addCatergoryPanelLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 408, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, addCatergoryPanelLayout.createSequentialGroup()
+                        .addGap(160, 160, 160)
+                        .addGroup(addCatergoryPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(empTypeIdLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(empTypeIdBox, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(addCatergoryPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(addCatergoryPanelLayout.createSequentialGroup()
+                                .addGap(65, 65, 65)
+                                .addComponent(empAddTypeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(63, 63, 63))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addCatergoryPanelLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(empTypeBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(53, 53, 53)))
+                        .addGroup(addCatergoryPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(empSalaryLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(empSalaryBox, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(54, 54, 54)
+                        .addGroup(addCatergoryPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(empLeaveLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(empLeaveBox, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(63, 63, 63)
+                        .addGroup(addCatergoryPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(addEmpTypeBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(updateEmpTypeBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(deleteEmpTypeBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(354, Short.MAX_VALUE))
+        );
+
+        jPanel3.add(addCatergoryPanel, "addCatergoryPanel");
+
+        empLeaveMgmtPanel.setBackground(new java.awt.Color(51, 51, 51));
+
+        empReasonLabel_mgmt.setFont(new java.awt.Font("SansSerif", 0, 24)); // NOI18N
+        empReasonLabel_mgmt.setForeground(new java.awt.Color(255, 255, 255));
+        empReasonLabel_mgmt.setText("Reason");
+
+        empReasonText_mgmt.setEditable(false);
+        empReasonText_mgmt.setColumns(20);
+        empReasonText_mgmt.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        empReasonText_mgmt.setRows(5);
+        jScrollPane6.setViewportView(empReasonText_mgmt);
+
+        empApproveRequestBtn_mgmt.setBackground(new java.awt.Color(0, 102, 51));
+        empApproveRequestBtn_mgmt.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        empApproveRequestBtn_mgmt.setForeground(new java.awt.Color(255, 255, 255));
+        empApproveRequestBtn_mgmt.setText("Approve Request");
+        empApproveRequestBtn_mgmt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                empApproveRequestBtn_mgmtActionPerformed(evt);
+            }
+        });
+
+        empstartDateBox_mgmt.setEditable(false);
+        empstartDateBox_mgmt.setFont(new java.awt.Font("SansSerif", 0, 24)); // NOI18N
+
+        empstartDateLabel_mgmt.setFont(new java.awt.Font("SansSerif", 0, 24)); // NOI18N
+        empstartDateLabel_mgmt.setForeground(new java.awt.Color(255, 255, 255));
+        empstartDateLabel_mgmt.setText("Start Date");
+
+        empEndDateBox_mgmt.setEditable(false);
+        empEndDateBox_mgmt.setFont(new java.awt.Font("SansSerif", 0, 24)); // NOI18N
+
+        empEndDateLabel_mgmt.setFont(new java.awt.Font("SansSerif", 0, 24)); // NOI18N
+        empEndDateLabel_mgmt.setForeground(new java.awt.Color(255, 255, 255));
+        empEndDateLabel_mgmt.setText("End Date");
+
+        empDaysLabel_mgmt.setFont(new java.awt.Font("SansSerif", 0, 24)); // NOI18N
+        empDaysLabel_mgmt.setForeground(new java.awt.Color(255, 255, 255));
+        empDaysLabel_mgmt.setText("Number of Days");
+
+        empDaysBox_mgmt.setEditable(false);
+        empDaysBox_mgmt.setFont(new java.awt.Font("SansSerif", 0, 24)); // NOI18N
+
+        empID_mgmt1.setEditable(false);
+        empID_mgmt1.setFont(new java.awt.Font("SansSerif", 0, 24)); // NOI18N
+
+        empstartDateLabel_mgmt1.setFont(new java.awt.Font("SansSerif", 0, 24)); // NOI18N
+        empstartDateLabel_mgmt1.setForeground(new java.awt.Color(255, 255, 255));
+        empstartDateLabel_mgmt1.setText("Employee ID");
+
+        empEndDateBox_mgmt1.setEditable(false);
+        empEndDateBox_mgmt1.setFont(new java.awt.Font("SansSerif", 0, 24)); // NOI18N
+
+        empEndDateLabel_mgmt1.setFont(new java.awt.Font("SansSerif", 0, 24)); // NOI18N
+        empEndDateLabel_mgmt1.setForeground(new java.awt.Color(255, 255, 255));
+        empEndDateLabel_mgmt1.setText("Employee Name");
+
+        empLeaveRequestTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        empLeaveRequestTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                empLeaveRequestTableMouseClicked(evt);
+            }
+        });
+        jScrollPane8.setViewportView(empLeaveRequestTable);
+
+        empRejectRequestBtn_mgmt.setBackground(new java.awt.Color(204, 0, 0));
+        empRejectRequestBtn_mgmt.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        empRejectRequestBtn_mgmt.setForeground(new java.awt.Color(255, 255, 255));
+        empRejectRequestBtn_mgmt.setText("Reject Request");
+        empRejectRequestBtn_mgmt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                empRejectRequestBtn_mgmtActionPerformed(evt);
+            }
+        });
+
+        empLeaveReqIDLabel_mgmt.setFont(new java.awt.Font("SansSerif", 0, 24)); // NOI18N
+        empLeaveReqIDLabel_mgmt.setForeground(new java.awt.Color(255, 255, 255));
+        empLeaveReqIDLabel_mgmt.setText("Request ID");
+
+        empLeaveReqID_mgmt.setEditable(false);
+        empLeaveReqID_mgmt.setFont(new java.awt.Font("SansSerif", 0, 24)); // NOI18N
+
+        javax.swing.GroupLayout empLeaveMgmtPanelLayout = new javax.swing.GroupLayout(empLeaveMgmtPanel);
+        empLeaveMgmtPanel.setLayout(empLeaveMgmtPanelLayout);
+        empLeaveMgmtPanelLayout.setHorizontalGroup(
+            empLeaveMgmtPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(empLeaveMgmtPanelLayout.createSequentialGroup()
+                .addGap(170, 170, 170)
+                .addGroup(empLeaveMgmtPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(empReasonLabel_mgmt, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(empDaysLabel_mgmt, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(empEndDateLabel_mgmt, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(empstartDateLabel_mgmt, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(empEndDateLabel_mgmt1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(empstartDateLabel_mgmt1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(empLeaveReqIDLabel_mgmt, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(empLeaveMgmtPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(empLeaveMgmtPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(empLeaveMgmtPanelLayout.createSequentialGroup()
+                            .addComponent(empApproveRequestBtn_mgmt, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(empRejectRequestBtn_mgmt, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(empEndDateBox_mgmt1, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(empID_mgmt1, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(empEndDateBox_mgmt, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(empDaysBox_mgmt, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 460, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(empstartDateBox_mgmt, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(empLeaveReqID_mgmt, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(99, 99, 99)
+                .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 588, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(656, Short.MAX_VALUE))
+        );
+        empLeaveMgmtPanelLayout.setVerticalGroup(
+            empLeaveMgmtPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, empLeaveMgmtPanelLayout.createSequentialGroup()
+                .addGroup(empLeaveMgmtPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(empLeaveMgmtPanelLayout.createSequentialGroup()
+                        .addGap(60, 60, 60)
+                        .addComponent(jScrollPane8))
+                    .addGroup(empLeaveMgmtPanelLayout.createSequentialGroup()
+                        .addGap(28, 28, 28)
+                        .addGroup(empLeaveMgmtPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(empLeaveReqIDLabel_mgmt, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(empLeaveReqID_mgmt, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(empLeaveMgmtPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(empLeaveMgmtPanelLayout.createSequentialGroup()
+                                .addComponent(empID_mgmt1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(30, 30, 30)
+                                .addComponent(empEndDateBox_mgmt1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(empLeaveMgmtPanelLayout.createSequentialGroup()
+                                .addComponent(empstartDateLabel_mgmt1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(30, 30, 30)
+                                .addComponent(empEndDateLabel_mgmt1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 147, Short.MAX_VALUE)
+                        .addGroup(empLeaveMgmtPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(empstartDateBox_mgmt, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(empstartDateLabel_mgmt, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(30, 30, 30)
+                        .addGroup(empLeaveMgmtPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(empEndDateLabel_mgmt, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(empEndDateBox_mgmt, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(30, 30, 30)
+                        .addGroup(empLeaveMgmtPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(empDaysLabel_mgmt, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(empDaysBox_mgmt, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(34, 34, 34)
+                        .addGroup(empLeaveMgmtPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(empReasonLabel_mgmt, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(37, 37, 37)
+                .addGroup(empLeaveMgmtPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(empApproveRequestBtn_mgmt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(empRejectRequestBtn_mgmt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(112, 112, 112))
+        );
+
+        jPanel3.add(empLeaveMgmtPanel, "empLeaveMgmtPanel");
+
+        smViewReports.setBackground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout smViewReportsLayout = new javax.swing.GroupLayout(smViewReports);
+        smViewReports.setLayout(smViewReportsLayout);
+        smViewReportsLayout.setHorizontalGroup(
+            smViewReportsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 2291, Short.MAX_VALUE)
+        );
+        smViewReportsLayout.setVerticalGroup(
+            smViewReportsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 959, Short.MAX_VALUE)
+        );
+
+        jPanel3.add(smViewReports, "smViewReports");
+
+        smGenerateBills.setBackground(new java.awt.Color(255, 255, 255));
+
+        smjLabel4.setText("Enter Customer Mobile Number");
+
+        smjLabel5.setText("Enter Payment Method for Bill");
+
+        btnNxtGenerateBill.setText("Proceed");
+        btnNxtGenerateBill.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNxtGenerateBillActionPerformed(evt);
+            }
+        });
+
+        btnBackGenerateBill1.setText("Back");
+        btnBackGenerateBill1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBackGenerateBill1ActionPerformed(evt);
+            }
+        });
+
+        custpaymentmethod.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cash", "Cheque", "Card" }));
+
+        btnChkCustId.setText("Go");
+        btnChkCustId.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnChkCustIdActionPerformed(evt);
+            }
+        });
+
+        smCustIdStatus.setForeground(new java.awt.Color(255, 0, 0));
+
+        smjLabel6.setText("Enter  Refunds");
+
+        smdisref.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                smdisrefKeyReleased(evt);
+            }
+        });
+
+        smjLabel7.setText("Enter Item Id");
+
+        smjLabel8.setText("Enter Item Qty");
+
+        smitemqty.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                smitemqtyKeyPressed(evt);
+            }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                smitemqtyKeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                smitemqtyKeyTyped(evt);
+            }
+        });
+
+        smbtnadditem.setText("Add Item");
+        smbtnadditem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                smbtnadditemActionPerformed(evt);
+            }
+        });
+
+        smbtndeleteitem.setText("Delete Item");
+        smbtndeleteitem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                smbtndeleteitemActionPerformed(evt);
+            }
+        });
+
+        smbilltable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Item Id", "Item Name", "Qty", "Amount"
+            }
+        ));
+        smbilltable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                smbilltableMouseClicked(evt);
+            }
+        });
+        jScrollPane9.setViewportView(smbilltable);
+
+        smreset.setText("Reset");
+        smreset.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                smresetActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout smGenerateBillsLayout = new javax.swing.GroupLayout(smGenerateBills);
+        smGenerateBills.setLayout(smGenerateBillsLayout);
+        smGenerateBillsLayout.setHorizontalGroup(
+            smGenerateBillsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(smGenerateBillsLayout.createSequentialGroup()
+                .addGap(37, 37, 37)
+                .addGroup(smGenerateBillsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, smGenerateBillsLayout.createSequentialGroup()
+                        .addComponent(smjLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(custpaymentmethod, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(smGenerateBillsLayout.createSequentialGroup()
+                        .addComponent(btnBackGenerateBill1, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(95, 95, 95)
+                        .addComponent(smreset, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnNxtGenerateBill, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(smGenerateBillsLayout.createSequentialGroup()
+                        .addComponent(smjLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(smdisref, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(smGenerateBillsLayout.createSequentialGroup()
+                        .addComponent(smjLabel4)
+                        .addGap(51, 51, 51)
+                        .addComponent(custp, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnChkCustId))
+                    .addGroup(smGenerateBillsLayout.createSequentialGroup()
+                        .addGroup(smGenerateBillsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(smjLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(smjLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(smGenerateBillsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(smitemid, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(smitemqty, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(31, 31, 31)
+                        .addGroup(smGenerateBillsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(smbtnadditem, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(smbtndeleteitem, javax.swing.GroupLayout.DEFAULT_SIZE, 124, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addGap(1508, 1508, 1508))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, smGenerateBillsLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(smCustIdStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 403, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(1543, 1543, 1543))
+            .addGroup(smGenerateBillsLayout.createSequentialGroup()
+                .addGroup(smGenerateBillsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(smGenerateBillsLayout.createSequentialGroup()
+                        .addGap(139, 139, 139)
+                        .addComponent(smqtystatus, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 553, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(smGenerateBillsLayout.createSequentialGroup()
+                        .addGap(104, 104, 104)
+                        .addComponent(smdisrefstatus, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(918, 918, 918))
+        );
+        smGenerateBillsLayout.setVerticalGroup(
+            smGenerateBillsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(smGenerateBillsLayout.createSequentialGroup()
+                .addGap(49, 49, 49)
+                .addGroup(smGenerateBillsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(smGenerateBillsLayout.createSequentialGroup()
+                        .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 401, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(smGenerateBillsLayout.createSequentialGroup()
+                        .addGroup(smGenerateBillsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(smjLabel4)
+                            .addGroup(smGenerateBillsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(custp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnChkCustId)))
+                        .addGap(18, 18, 18)
+                        .addComponent(smCustIdStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(109, 109, 109)
+                        .addGroup(smGenerateBillsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(smbtnadditem)
+                            .addComponent(smitemid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(smjLabel7))
+                        .addGap(18, 18, 18)
+                        .addGroup(smGenerateBillsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(smjLabel8)
+                            .addComponent(smitemqty, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(smbtndeleteitem))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(smqtystatus, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 351, Short.MAX_VALUE)
+                        .addGroup(smGenerateBillsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(smjLabel5)
+                            .addComponent(custpaymentmethod, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(23, 23, 23)
+                        .addGroup(smGenerateBillsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(smjLabel6)
+                            .addComponent(smdisref, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(smGenerateBillsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(smGenerateBillsLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(smdisrefstatus, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(smGenerateBillsLayout.createSequentialGroup()
+                                .addGap(75, 75, 75)
+                                .addGroup(smGenerateBillsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(btnNxtGenerateBill)
+                                    .addComponent(smreset)
+                                    .addComponent(btnBackGenerateBill1))))
+                        .addGap(102, 102, 102))))
+        );
+
+        jPanel3.add(smGenerateBills, "smGenerateBills");
+
+        smRegisterCustomers.setBackground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout smRegisterCustomersLayout = new javax.swing.GroupLayout(smRegisterCustomers);
+        smRegisterCustomers.setLayout(smRegisterCustomersLayout);
+        smRegisterCustomersLayout.setHorizontalGroup(
+            smRegisterCustomersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 2291, Short.MAX_VALUE)
+        );
+        smRegisterCustomersLayout.setVerticalGroup(
+            smRegisterCustomersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 959, Short.MAX_VALUE)
+        );
+
+        jPanel3.add(smRegisterCustomers, "smRegisterCustomers");
+
+        smReturnHandle.setBackground(new java.awt.Color(255, 255, 255));
+
+        smviewreturnstable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "Sales Id", "Item Id", "ItemQty"
+            }
+        ));
+        smviewreturnstable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                smviewreturnstableMouseClicked(evt);
+            }
+        });
+        jScrollPane10.setViewportView(smviewreturnstable);
+
+        smenterbillid.setText("Enter Bill Id");
+
+        smshowitemid.setText("Item Id");
+
+        smshowitemname.setText("Item Name");
+
+        smbtnsearchbillid.setText("Search");
+        smbtnsearchbillid.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                smbtnsearchbillidActionPerformed(evt);
+            }
+        });
+
+        smbtndeleteitemreturns.setText("Delete");
+        smbtndeleteitemreturns.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                smbtndeleteitemreturnsActionPerformed(evt);
+            }
+        });
+
+        smsalesidreturns.setText("Sales Id");
+
+        javax.swing.GroupLayout smReturnHandleLayout = new javax.swing.GroupLayout(smReturnHandle);
+        smReturnHandle.setLayout(smReturnHandleLayout);
+        smReturnHandleLayout.setHorizontalGroup(
+            smReturnHandleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, smReturnHandleLayout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addGroup(smReturnHandleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(smenterbillid, javax.swing.GroupLayout.DEFAULT_SIZE, 232, Short.MAX_VALUE)
+                    .addComponent(smshowitemid, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(smshowitemname, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(smsalesidreturns, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(smReturnHandleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(smbtndeleteitemreturns, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(smbtnsearchbillid, javax.swing.GroupLayout.DEFAULT_SIZE, 189, Short.MAX_VALUE)
+                    .addComponent(smtxtfieldenterbillid)
+                    .addComponent(smtxtitemid)
+                    .addComponent(smtxtitemname)
+                    .addComponent(smsalesidreturnsbox))
+                .addGap(85, 85, 85)
+                .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(1291, Short.MAX_VALUE))
+        );
+        smReturnHandleLayout.setVerticalGroup(
+            smReturnHandleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(smReturnHandleLayout.createSequentialGroup()
+                .addGroup(smReturnHandleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(smReturnHandleLayout.createSequentialGroup()
+                        .addGap(183, 183, 183)
+                        .addGroup(smReturnHandleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(smenterbillid, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(smtxtfieldenterbillid, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addComponent(smbtnsearchbillid, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(102, 102, 102)
+                        .addGroup(smReturnHandleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(smsalesidreturns, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(smsalesidreturnsbox, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addGroup(smReturnHandleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(smtxtitemid, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(smshowitemid, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(smReturnHandleLayout.createSequentialGroup()
+                        .addGap(195, 195, 195)
+                        .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
+                .addGroup(smReturnHandleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(smtxtitemname, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(smshowitemname, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(29, 29, 29)
+                .addComponent(smbtndeleteitemreturns, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(354, Short.MAX_VALUE))
+        );
+
+        jPanel3.add(smReturnHandle, "smReturnHandle");
+
+        smjLabel9.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
+        smjLabel9.setText("Total Bill Amount");
+
+        smtotbillamt.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
+        smtotbillamt.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                smtotbillamtMouseMoved(evt);
+            }
+        });
+
+        smjLabel10.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
+        smjLabel10.setText("Cash / Amount Paid");
+
+        smcashamtpaid.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
+
+        smjLabelch.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
+        smjLabelch.setText("Change ");
+
+        smchangedis.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
+        smchangedis.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                smchangedisMouseMoved(evt);
+            }
+        });
+
+        javax.swing.GroupLayout smGenerateBills2Layout = new javax.swing.GroupLayout(smGenerateBills2);
+        smGenerateBills2.setLayout(smGenerateBills2Layout);
+        smGenerateBills2Layout.setHorizontalGroup(
+            smGenerateBills2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(smGenerateBills2Layout.createSequentialGroup()
+                .addGap(118, 118, 118)
+                .addGroup(smGenerateBills2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(smjLabelch, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(smjLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(smjLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(66, 66, 66)
+                .addGroup(smGenerateBills2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(smtotbillamt)
+                    .addComponent(smcashamtpaid)
+                    .addComponent(smchangedis, javax.swing.GroupLayout.DEFAULT_SIZE, 455, Short.MAX_VALUE))
+                .addContainerGap(1233, Short.MAX_VALUE))
+        );
+        smGenerateBills2Layout.setVerticalGroup(
+            smGenerateBills2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(smGenerateBills2Layout.createSequentialGroup()
+                .addGap(107, 107, 107)
+                .addGroup(smGenerateBills2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(smtotbillamt)
+                    .addComponent(smjLabel10))
+                .addGap(74, 74, 74)
+                .addGroup(smGenerateBills2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(smcashamtpaid, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(smjLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(smGenerateBills2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(smGenerateBills2Layout.createSequentialGroup()
+                        .addGap(54, 54, 54)
+                        .addComponent(smjLabelch, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, smGenerateBills2Layout.createSequentialGroup()
+                        .addGap(63, 63, 63)
+                        .addComponent(smchangedis, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(512, Short.MAX_VALUE))
+        );
+
+        jPanel3.add(smGenerateBills2, "smGenerateBills2");
+
+        SUMjComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Preferred", "Emergency", " " }));
+
+        SUMjTextField2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SUMjTextField2ActionPerformed(evt);
+            }
+        });
+
+        SUMjButton10.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        SUMjButton10.setText("RESET");
+        SUMjButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SUMjButton10ActionPerformed(evt);
+            }
+        });
+
+        SUMjButton9.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        SUMjButton9.setText("ADD");
+        SUMjButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SUMjButton9ActionPerformed(evt);
+            }
+        });
+
+        SUJMjLabel15.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        SUJMjLabel15.setText("STATUS            :");
+
+        SUMjLabel14.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        SUMjLabel14.setText("TYPE                :");
+
+        SUMjLabel13.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        SUMjLabel13.setText("PHONE NUMBER :");
+
+        SUMjLabel12.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        SUMjLabel12.setText("E-MAIL              :");
+
+        SUMjLabel7.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        SUMjLabel7.setText("NAME                :");
+
+        SUMjLabel6.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        SUMjLabel6.setText("SUPPLIER ID       :");
+
+        SUMMjLabel19.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        SUMMjLabel19.setText("ADDRESS          :");
+
+        SUaddressName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SUaddressNameActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout SUMjComboBox3Layout = new javax.swing.GroupLayout(SUMjComboBox3);
+        SUMjComboBox3.setLayout(SUMjComboBox3Layout);
+        SUMjComboBox3Layout.setHorizontalGroup(
+            SUMjComboBox3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(SUMjComboBox3Layout.createSequentialGroup()
+                .addGap(51, 51, 51)
+                .addGroup(SUMjComboBox3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(SUMjComboBox3Layout.createSequentialGroup()
+                        .addComponent(SUMjButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 102, Short.MAX_VALUE)
+                        .addComponent(SUMjButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(SUMjComboBox3Layout.createSequentialGroup()
+                        .addGroup(SUMjComboBox3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(SUJMjLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(SUMjLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(SUMjLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(SUMjLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(SUMjLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(SUMjLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(SUMMjLabel19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(48, 48, 48)
+                        .addGroup(SUMjComboBox3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(SUMjTextField1)
+                            .addComponent(SUMjTextField2)
+                            .addComponent(SUMjTextField3)
+                            .addComponent(SUMjTextField4)
+                            .addComponent(SUMjComboBox1, 0, 243, Short.MAX_VALUE)
+                            .addComponent(SUMMjTextField3)
+                            .addComponent(SUaddressName))))
+                .addContainerGap(1748, Short.MAX_VALUE))
+        );
+        SUMjComboBox3Layout.setVerticalGroup(
+            SUMjComboBox3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(SUMjComboBox3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(SUMjComboBox3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(SUMjLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE)
+                    .addComponent(SUMjTextField1))
+                .addGap(18, 18, 18)
+                .addGroup(SUMjComboBox3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(SUMjTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(SUMjLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(36, 36, 36)
+                .addGroup(SUMjComboBox3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(SUMjLabel12)
+                    .addComponent(SUMjTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(36, 36, 36)
+                .addGroup(SUMjComboBox3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(SUMjLabel13)
+                    .addComponent(SUMjTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(35, 35, 35)
+                .addGroup(SUMjComboBox3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(SUMjLabel14)
+                    .addComponent(SUMjComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(37, 37, 37)
+                .addGroup(SUMjComboBox3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(SUJMjLabel15)
+                    .addComponent(SUMMjTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(44, 44, 44)
+                .addGroup(SUMjComboBox3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(SUaddressName)
+                    .addComponent(SUMMjLabel19, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                .addGroup(SUMjComboBox3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(SUMjButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(SUMjButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(39, 39, 39))
+        );
+
+        jPanel3.add(SUMjComboBox3, "SUMaddsuppliers");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -374,7 +2306,7 @@ public class NewJFrame extends javax.swing.JFrame {
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        jPanel1.getAccessibleContext().setAccessibleParent(null);
+        bindingGroup.bind();
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -419,6 +2351,743 @@ public class NewJFrame extends javax.swing.JFrame {
         viewPanel("card7");
     }//GEN-LAST:event_jButton6ActionPerformed
 
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        // TODO add your handling code here:
+        Billpayment b = new Billpayment();
+        
+        b.setType((Billtype) jComboBox1.getSelectedItem());
+        b.setMonth(10);
+        b.setAmount(1000);
+        b.setEid((Employee) jComboBox2.getSelectedItem());
+        
+        ITPPUEntityManager.getTransaction().begin();
+        ITPPUEntityManager.persist(b);
+        ITPPUEntityManager.getTransaction().commit();
+        
+        JOptionPane.showMessageDialog(rootPane, "Record inserted", "Info", 1);
+        
+        billpaymentList.clear();
+        billpaymentList = billpaymentQuery.getResultList();
+        refreshTable(billtypeList);
+    }//GEN-LAST:event_jButton9ActionPerformed
+
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+        // TODO add your handling code here:
+        viewPanel("card10");
+    }//GEN-LAST:event_jButton10ActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void attendanceEmpNavBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_attendanceEmpNavBtnActionPerformed
+
+        viewPanel("attendanceEmpCard");
+        globalEmpDB.empAttendanceTableLoad(jTable1);
+
+        //set system date for attendance
+        empDateLabel.setText(java.util.Calendar.getInstance().getTime().toString());
+    }//GEN-LAST:event_attendanceEmpNavBtnActionPerformed
+
+    private void leaveEmpNavBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_leaveEmpNavBtnActionPerformed
+
+        viewPanel("empLeaveCard");
+
+        globalEmpDB.empLeaveRequestTableLoad(empRequestTable);
+
+        //calc remaining leave
+        int remLeave = globalEmpDB.calcRemLeave(5);
+
+        empRemLeavBox.setText(Integer.toString(remLeave));
+
+        empLeaveStatusBox.setBackground(Color.DARK_GRAY);
+        empLeaveStatusLabel.setText("");
+        empLeaveStatusBox.setText("");
+
+    }//GEN-LAST:event_leaveEmpNavBtnActionPerformed
+
+    private void regEmpNavBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_regEmpNavBtnActionPerformed
+
+        viewPanel("addEmpCard1");
+
+        globalEmpDB.empTableLoad(empTable);
+
+    }//GEN-LAST:event_regEmpNavBtnActionPerformed
+
+    private void addEmpCatNavBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addEmpCatNavBtnActionPerformed
+        viewPanel("addCatergoryPanel");
+        globalEmpDB.empCatergoryTableLoad(empCatergoryTable);
+    }//GEN-LAST:event_addEmpCatNavBtnActionPerformed
+
+    private void empLeaveMgmtNavBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_empLeaveMgmtNavBtnActionPerformed
+        viewPanel("empLeaveMgmtPanel");
+        globalEmpDB.empLeaveRequestTableLoad(empLeaveRequestTable);
+    }//GEN-LAST:event_empLeaveMgmtNavBtnActionPerformed
+
+    private void empAddressBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_empAddressBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_empAddressBoxActionPerformed
+
+    private void deleteEmpBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteEmpBtnActionPerformed
+
+        int response = JOptionPane.showConfirmDialog(null, "Do you really want to delete selected employee?");
+
+        if(response == 0){
+
+            String id  = empIdBox.getText();
+
+            globalEmpDB.deleteEmp(id);
+            globalEmpDB.empTableLoad(empTable);
+        }
+    }//GEN-LAST:event_deleteEmpBtnActionPerformed
+
+    private void registerEmpBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerEmpBtn1ActionPerformed
+
+        //Get data from form
+        try{
+
+            String name = empNameBox.getText();
+            String nic = empNICBox.getText();
+            String address = empAddressBox.getText();
+            int phone = Integer.parseInt(empPhoneBox.getText());
+            String email = empEmailBox.getText();
+            int type = (int)emptypeComboBox.getSelectedIndex();
+            int phoneLength = Integer.toString(phone).length();
+
+            EmpDB db = new EmpDB();
+
+            //Check for duplicate entries
+            if(db.checkRepeat(nic) == false){
+                //Form field validation
+                //Check empty fields
+                if(name.equals("")||nic.equals("")||address.equals("")||email.equals("")|| phoneLength == 0){
+
+                    JOptionPane.showMessageDialog(addEmpCard1, "Fill all form fields! Enter 'None' if non-existant");
+
+                }
+                //Validate email
+                else if(!employeeValidator.isValidEmailAddress(email)){
+
+                    JOptionPane.showMessageDialog(addEmpCard1, "Enter valid email address!");
+                }
+                else if(phoneLength != 10){
+
+                    JOptionPane.showMessageDialog(addEmpCard1, "Enter phone number with 10 digits!");
+                }
+                else if(nic.length() < 10 || nic.length() > 12){
+
+                    JOptionPane.showMessageDialog(addEmpCard1, "NIC must contain between 10-12 characters!");
+                }
+
+                //If no errors
+                else{
+                    int response = JOptionPane.showConfirmDialog(null, "Do you really want to register this employee?");
+                    if(response == 0){
+                        //Send data to model
+                        EmployeeModel e1 = new EmployeeModel(name, nic, address, email, type, phone);
+
+                        //Call method to access DB
+
+                        db.addEmployee(e1);
+
+                        globalEmpDB.empTableLoad(empTable);
+                    }
+                }
+            }
+            else{
+
+                JOptionPane.showMessageDialog(addEmpCard1, "Employee already exists!");
+            }
+        }
+        //Catch converting invalid phone numbers
+        catch(NumberFormatException e){
+            JOptionPane.showMessageDialog(addEmpCard1, "Enter valid phone number!");
+        }
+
+    }//GEN-LAST:event_registerEmpBtn1ActionPerformed
+
+    private void updateEmpBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateEmpBtnActionPerformed
+
+        int response = JOptionPane.showConfirmDialog(null, "Do you really want to update?");
+        if(response == 0){
+
+            String empID = empIdBox.getText();
+            String empName = empNameBox.getText();
+            String empNic = empNICBox.getText();
+            String empAddress = empAddressBox.getText();
+            int phone = Integer.parseInt(empPhoneBox.getText());
+            String empEmail = empEmailBox.getText();
+            int empType = emptypeComboBox.getSelectedIndex();
+            int phoneLength = Integer.toString(phone).length();
+
+            if(empName.equals("")||empNic.equals("")||empAddress.equals("")||empEmail.equals("")|| phoneLength == 0){
+
+                JOptionPane.showMessageDialog(addEmpCard1, "Fill all form fields! Enter 'None' if non-existant");
+
+            }
+            //Validate email
+            else if(!employeeValidator.isValidEmailAddress(empEmail)){
+
+                JOptionPane.showMessageDialog(addEmpCard1, "Enter valid email address!");
+            }
+            else if(phoneLength != 10){
+
+                JOptionPane.showMessageDialog(addEmpCard1, "Enter phone number with 10 digits!");
+            }
+            else if(empNic.length() < 10 || empNic.length() > 12){
+
+                JOptionPane.showMessageDialog(addEmpCard1, "NIC must contain between 10-12 characters!");
+            }
+
+            else{
+                //Send data to model
+                EmployeeModel e1 = new EmployeeModel(empName, empNic, empAddress, empEmail,empType, phone);
+                e1.setEmpId(Integer.parseInt(empID));
+                //Call method to access DB
+
+                globalEmpDB.updateEmployee(e1);
+
+                globalEmpDB.empTableLoad(empTable);
+            }
+
+        }
+    }//GEN-LAST:event_updateEmpBtnActionPerformed
+
+    private void empTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_empTableMouseClicked
+
+        //Access emp table row
+
+        int empTableRow = empTable.getSelectedRow();
+
+        String empID = empTable.getValueAt(empTableRow, 0).toString();
+        String empName = empTable.getValueAt(empTableRow, 1).toString();
+        String empNic = empTable.getValueAt(empTableRow, 2).toString();
+        String empAddress = empTable.getValueAt(empTableRow, 3).toString();
+        String empPhone = empTable.getValueAt(empTableRow, 4).toString();;
+        String empEmail = empTable.getValueAt(empTableRow, 5).toString();
+        String empType = empTable.getValueAt(empTableRow, 6).toString();
+
+        int empTypeIndex = Integer.parseInt(empType);
+
+        empIdBox.setText(empID);
+        empNameBox.setText(empName);
+        empNICBox.setText(empNic);
+        empAddressBox.setText(empAddress);
+        empPhoneBox.setText(empPhone);
+        empEmailBox.setText(empEmail);
+        emptypeComboBox.setSelectedIndex(empTypeIndex);
+
+    }//GEN-LAST:event_empTableMouseClicked
+
+    private void empIdBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_empIdBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_empIdBoxActionPerformed
+
+    private void empSignOutBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_empSignOutBtnActionPerformed
+
+        String popupMsg = "Sign out for "+java.util.Calendar.getInstance().getTime().toString()+" ?";
+
+        int signInResponse = JOptionPane.showConfirmDialog(null, popupMsg);
+
+        //temp hard coded id must be changed
+        int id = 5;
+
+        if(signInResponse == 0){
+
+            globalEmpDB.empSignIn(id);
+
+        }
+
+        globalEmpDB.empAttendanceTableLoad(jTable1);
+
+    }//GEN-LAST:event_empSignOutBtnActionPerformed
+
+    private void empSignInBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_empSignInBtnActionPerformed
+
+        String popupMsg = "Sign in for "+java.util.Calendar.getInstance().getTime().toString()+" ?";
+
+        int signInResponse = JOptionPane.showConfirmDialog(null, popupMsg);
+
+        //temp hard coded id must be changed
+        int id = 5;
+
+        if(signInResponse == 0){
+
+            globalEmpDB.empSignIn(id);
+
+        }
+
+        globalEmpDB.empAttendanceTableLoad(empAttendanceTable);
+
+    }//GEN-LAST:event_empSignInBtnActionPerformed
+
+    private void empLeaveRequestBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_empLeaveRequestBtnActionPerformed
+        try{
+            int empID = 5;
+            int remLeave = Integer.parseInt(empRemLeavBox.getText());
+            String startDate = empstartDateBox.getText();
+            String endDate = empEndDateBox.getText();
+            String reason = empReasonText.getText();
+            int noOfDays = Integer.parseInt(empDaysBox.getText());
+
+            Calendar cal = Calendar.getInstance();
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            String currentDate = sdf.format(cal.getTime());
+
+            //Validate empty fields
+            if(startDate.equals("") || endDate.equals("") || reason.equals("")){
+                JOptionPane.showMessageDialog(null, "Please fill all form fields!");
+            }
+            //Validate number of days
+            else if(noOfDays == 0 || noOfDays > remLeave){
+                JOptionPane.showMessageDialog(null, "Number of days cannot be zero or exceed remaining leave amount!");
+            }
+            //Validate date format
+            else if(!employeeValidator.isValidDate(startDate)){
+
+                JOptionPane.showMessageDialog(null, "Please use yyyy/MM/dd format to enter starting date and ending date!");
+            }
+            //Validate date format
+            else if(!employeeValidator.isValidDate(endDate)){
+
+                JOptionPane.showMessageDialog(null, "Please use yyyy/MM/dd format to enter starting date and ending date!");
+            }
+            //Validate start date before end date
+            else if(!employeeValidator.isDateGreater(startDate, endDate)){
+
+                JOptionPane.showMessageDialog(null, "Starting date must be before ending date!");
+
+            }
+            //Validate startDate is greater than current date
+            else if(employeeValidator.isDateGreater(startDate, currentDate)){
+
+                JOptionPane.showMessageDialog(null, "Starting date cannot be before todays date!");
+
+            }
+            //Check overlap
+            else if (globalEmpDB.checkLeaveRequestOverlap(empID, startDate, endDate)){
+
+                JOptionPane.showMessageDialog(null, "Request overlaps a previous request!");
+
+            }
+            else{
+                EmployeeLeaveModel empLeave = new EmployeeLeaveModel(empID, startDate, endDate, noOfDays, reason);
+
+                globalEmpDB.addEmpLeaveRequest(empLeave);
+
+                globalEmpDB.empLeaveRequestTableLoad(empRequestTable);
+            }
+        }
+        catch(NumberFormatException e){
+            JOptionPane.showMessageDialog(null, "Number of days must be an integer!");
+        }
+
+    }//GEN-LAST:event_empLeaveRequestBtnActionPerformed
+
+    private void empRequestTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_empRequestTableMouseClicked
+
+        int leaveTableRow = empRequestTable.getSelectedRow();
+
+        String startDate = empRequestTable.getValueAt(leaveTableRow, 2).toString();
+        String endDate = empRequestTable.getValueAt(leaveTableRow, 3).toString();
+        String nDays = empRequestTable.getValueAt(leaveTableRow, 4).toString();
+        String reason = empRequestTable.getValueAt(leaveTableRow, 7).toString();
+
+        String approved = empRequestTable.getValueAt(leaveTableRow, 5).toString();
+        String rejected = empRequestTable.getValueAt(leaveTableRow, 6).toString();
+
+        empstartDateBox.setText(startDate);
+        empEndDateBox.setText(endDate);
+        empDaysBox.setText(nDays);
+        empReasonText.setText(reason);
+        empLeaveStatusLabel.setText("Request Status");
+
+        if(approved.equals("true")){
+
+            empLeaveStatusBox.setText("  Request Approved  ");
+            empLeaveStatusBox.setBackground(Color.GREEN);
+            empLeaveStatusBox.setForeground(Color.WHITE);
+        }
+        else if(rejected.equals("true")){
+            empLeaveStatusBox.setText("  Request Rejected  ");
+            empLeaveStatusBox.setBackground(Color.RED);
+            empLeaveStatusBox.setForeground(Color.WHITE);
+        }
+        else{
+            empLeaveStatusBox.setText("  Request Pending  ");
+            empLeaveStatusBox.setBackground(Color.BLUE);
+            empLeaveStatusBox.setForeground(Color.WHITE);
+        }
+
+    }//GEN-LAST:event_empRequestTableMouseClicked
+
+    private void updateEmpTypeBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateEmpTypeBtnActionPerformed
+
+        try{
+
+            int typeId = Integer.parseInt(empTypeIdBox.getText());
+            String typeName = empTypeBox1.getText();
+            double basicSal = Double.parseDouble(empSalaryBox.getText());
+            int vacationDays = Integer.parseInt(empLeaveBox.getText());
+
+            if(typeName.equals("")){
+
+                JOptionPane.showMessageDialog(addEmpCard1, "Employee type cannot be empty!");
+            }
+            else{
+                EmployeeType empType = new EmployeeType(typeName, basicSal, vacationDays);
+                empType.setEmpTypeId(typeId);
+
+                globalEmpDB.updateEmpType(empType);
+
+                globalEmpDB.empCatergoryTableLoad(empCatergoryTable);
+            }
+        }
+        catch(NumberFormatException e){
+
+            JOptionPane.showMessageDialog(addEmpCard1, "Please ensure salary and vacation days are numeric!");
+
+        }
+
+    }//GEN-LAST:event_updateEmpTypeBtnActionPerformed
+
+    private void deleteEmpTypeBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteEmpTypeBtnActionPerformed
+
+        int typeId = Integer.parseInt(empTypeIdBox.getText());
+
+        globalEmpDB.deleteEmpType(typeId);
+
+        globalEmpDB.empCatergoryTableLoad(empCatergoryTable);
+
+    }//GEN-LAST:event_deleteEmpTypeBtnActionPerformed
+
+    private void addEmpTypeBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addEmpTypeBtnActionPerformed
+
+        try{
+            String empType = empTypeIdBox.getText();
+            double empSalary = Double.parseDouble(empSalaryBox.getText());
+            int empLeave = Integer.parseInt(empLeaveBox.getText());
+
+            if(empType.equals("")){
+
+                JOptionPane.showMessageDialog(null, "Employee Type cannot be empty!");
+
+            }
+            else{
+
+                EmployeeType empTypeObj = new EmployeeType(empType,empSalary,empLeave);
+
+                globalEmpDB.addEmpType(empTypeObj);
+            }
+        }catch(NumberFormatException e){
+
+            JOptionPane.showMessageDialog(null, "Salary and vaction days must be numeric!");
+
+        }
+
+    }//GEN-LAST:event_addEmpTypeBtnActionPerformed
+
+    private void empCatergoryTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_empCatergoryTableMouseClicked
+
+        int selectedRow = empCatergoryTable.getSelectedRow();
+
+        String typeId = empCatergoryTable.getValueAt(selectedRow, 0).toString();
+        String type = empCatergoryTable.getValueAt(selectedRow, 1).toString();
+        String basicSal = empCatergoryTable.getValueAt(selectedRow, 2).toString();
+        String vacDays = empCatergoryTable.getValueAt(selectedRow, 3).toString();
+
+        empTypeIdBox.setText(typeId);
+        empTypeBox1.setText(type);
+        empSalaryBox.setText(basicSal);
+        empLeaveBox.setText(vacDays);
+
+    }//GEN-LAST:event_empCatergoryTableMouseClicked
+
+    private void empApproveRequestBtn_mgmtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_empApproveRequestBtn_mgmtActionPerformed
+
+        try{
+            int requestId = Integer.parseInt(empLeaveReqID_mgmt.getText());
+
+            globalEmpDB.approveLeaveRequest(requestId);
+
+            globalEmpDB.empLeaveRequestTableLoad(empLeaveRequestTable);
+
+        }
+        catch(Exception e){
+
+            JOptionPane.showMessageDialog(null, "Please select a request first!");
+
+        }
+
+    }//GEN-LAST:event_empApproveRequestBtn_mgmtActionPerformed
+
+    private void empLeaveRequestTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_empLeaveRequestTableMouseClicked
+
+        int leaveTableRow = empLeaveRequestTable.getSelectedRow();
+        EmployeeModel e1;
+
+        String empId = empLeaveRequestTable.getValueAt(leaveTableRow, 1).toString();
+        String requestId = empLeaveRequestTable.getValueAt(leaveTableRow, 0).toString();
+        String empName ;
+        String startDate = empLeaveRequestTable.getValueAt(leaveTableRow, 2).toString();
+        String endDate = empLeaveRequestTable.getValueAt(leaveTableRow, 3).toString();
+        String nDays = empLeaveRequestTable.getValueAt(leaveTableRow, 4).toString();
+        String reason = empLeaveRequestTable.getValueAt(leaveTableRow, 7).toString();
+
+        empID_mgmt1.setText(empId);
+        empLeaveReqID_mgmt.setText(requestId);
+        empstartDateBox_mgmt.setText(startDate);
+        empEndDateBox_mgmt.setText(endDate);
+        empDaysBox_mgmt.setText(nDays);
+        empReasonText_mgmt.setText(reason);
+
+        e1 = globalEmpDB.findEmpById(Integer.parseInt(empId));
+
+        empEndDateBox_mgmt1.setText(e1.getName());
+
+    }//GEN-LAST:event_empLeaveRequestTableMouseClicked
+
+    private void empRejectRequestBtn_mgmtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_empRejectRequestBtn_mgmtActionPerformed
+
+        try{
+            int requestId = Integer.parseInt(empLeaveReqID_mgmt.getText());
+
+            globalEmpDB.rejectLeaveRequest(requestId);
+
+            globalEmpDB.empLeaveRequestTableLoad(empLeaveRequestTable);
+
+        }
+        catch(Exception e){
+
+            JOptionPane.showMessageDialog(null, "Please select a request first!");
+
+        }
+    }//GEN-LAST:event_empRejectRequestBtn_mgmtActionPerformed
+
+    private void btnViewReportsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewReportsActionPerformed
+        // TODO add your handling code here:
+        viewPanel("smViewReports");
+    }//GEN-LAST:event_btnViewReportsActionPerformed
+
+    private void btnHandleReturnsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHandleReturnsActionPerformed
+        // TODO add your handling code here:
+        SMServiceImpl sms1 = new SMServiceImpl();
+        smviewreturnstable.setModel(DbUtils.resultSetToTableModel(sms1.deleteallfrmsalestable()));
+        smsalesidreturnsbox.setText("");
+        smtxtitemid.setText("");
+        smtxtitemname.setText("");
+        smtxtfieldenterbillid.setText("");
+        viewPanel("smReturnHandle");
+    }//GEN-LAST:event_btnHandleReturnsActionPerformed
+
+    private void btnRegisterCustomersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegisterCustomersActionPerformed
+        // TODO add your handling code here:
+        viewPanel("smRegisterCustomers");
+    }//GEN-LAST:event_btnRegisterCustomersActionPerformed
+
+    private void btnGenerateBillsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerateBillsActionPerformed
+        // TODO add your handling code here:
+        custp.setText("");
+        smCustIdStatus.setText("");
+        smdisref.setText("");
+        smitemqty.setText("");
+        smqtystatus.setText("");
+        smdisrefstatus.setText("");
+        smitemid.setText("");
+        smitemqty.setText("");
+        SMServiceImpl sms1 = new SMServiceImpl();
+        sms1.deleteallfrmbill();
+        smbilltable.setModel(DbUtils.resultSetToTableModel(sms1.getbillitems()));
+
+        viewPanel("smGenerateBills");
+    }//GEN-LAST:event_btnGenerateBillsActionPerformed
+
+    private void btnNxtGenerateBillActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNxtGenerateBillActionPerformed
+        // TODO add your handling code here:
+        smtotbillamt.setText("");
+        smcashamtpaid.setText("");
+        smchangedis.setText("");
+
+        SMModel sm = new SMModel();
+        sm.setcustp(custp.getText());
+        sm.setReturnAmt(Double.parseDouble(smdisref.getText()));
+        sm.setPayType((String) custpaymentmethod.getSelectedItem());
+        SMServiceImpl sms1 = new SMServiceImpl();
+        sms1.generatebill(sm);
+        sms1.deleteallfrmbill();
+        viewPanel("smGenerateBills2");
+    }//GEN-LAST:event_btnNxtGenerateBillActionPerformed
+
+    private void btnBackGenerateBill1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackGenerateBill1ActionPerformed
+        // TODO add your handling code here:
+        viewPanel("smMain");
+    }//GEN-LAST:event_btnBackGenerateBill1ActionPerformed
+
+    private void btnChkCustIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChkCustIdActionPerformed
+        // TODO add your handling code here:
+        SMModel sm1 = new SMModel();
+        sm1.setcustp(custp.getText());
+        SMServiceImpl sms1 = new SMServiceImpl();
+        if(sms1.customerTableLoad(sm1)){
+            smCustIdStatus.setText("  Valid Customer, Please Continue With the Ongoing Bill");
+        }
+        else{
+            smCustIdStatus.setText("Invalid Customer, Use Anonymous Id or Register Customer");
+        }
+    }//GEN-LAST:event_btnChkCustIdActionPerformed
+
+    private void smdisrefKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_smdisrefKeyReleased
+        // TODO add your handling code here:
+        try{
+            double disref = Double.parseDouble(smdisref.getText());
+            smdisrefstatus.setText("");
+
+        }catch(NumberFormatException e){
+            smdisrefstatus.setText("Enter a Valid Value");
+        }
+    }//GEN-LAST:event_smdisrefKeyReleased
+
+    private void smitemqtyKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_smitemqtyKeyPressed
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_smitemqtyKeyPressed
+
+    private void smitemqtyKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_smitemqtyKeyReleased
+        // TODO add your handling code here:
+        try{
+            int qtyno = Integer.parseInt(smitemqty.getText());
+            smqtystatus.setText("");
+
+        }catch(NumberFormatException e){
+            smqtystatus.setText("Enter a Valid Value");
+        }
+    }//GEN-LAST:event_smitemqtyKeyReleased
+
+    private void smitemqtyKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_smitemqtyKeyTyped
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_smitemqtyKeyTyped
+
+    private void smbtnadditemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_smbtnadditemActionPerformed
+        // TODO add your handling code here:
+        SMModel sm1 = new SMModel();
+        sm1.setItemId(Integer.parseInt(smitemid.getText()));
+        sm1.setQty(Integer.parseInt(smitemqty.getText()));
+        SMServiceImpl sms1 = new SMServiceImpl();
+        if(sms1.addtobill(sm1)){
+            smqtystatus.setText("");
+        }
+        else{
+            smqtystatus.setText("Error");
+        }
+
+        smbilltable.setModel(DbUtils.resultSetToTableModel(sms1.getbillitems()));
+    }//GEN-LAST:event_smbtnadditemActionPerformed
+
+    private void smbtndeleteitemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_smbtndeleteitemActionPerformed
+        // TODO add your handling code here:
+        SMModel sm1 = new SMModel();
+        sm1.setItemId(Integer.parseInt(smitemid.getText()));
+        SMServiceImpl sms1 = new SMServiceImpl();
+        sms1.deleteitemfrmbill(sm1);
+        smbilltable.setModel(DbUtils.resultSetToTableModel(sms1.getbillitems()));
+    }//GEN-LAST:event_smbtndeleteitemActionPerformed
+
+    private void smbilltableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_smbilltableMouseClicked
+        // TODO add your handling code here:
+        int smrow = smbilltable.getSelectedRow();
+        String smitemid1;
+        String smqty1;
+        smitemid1 = smbilltable.getValueAt(smrow, 0).toString();
+        smqty1 = smbilltable.getValueAt(smrow, 2).toString();
+        smitemid.setText(smitemid1);
+        smitemqty.setText(smqty1);
+
+    }//GEN-LAST:event_smbilltableMouseClicked
+
+    private void smresetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_smresetActionPerformed
+        // TODO add your handling code here:
+        SMServiceImpl sms1 = new SMServiceImpl();
+        sms1.deleteallfrmbill();
+        smbilltable.setModel(DbUtils.resultSetToTableModel(sms1.getbillitems()));
+    }//GEN-LAST:event_smresetActionPerformed
+
+    private void smviewreturnstableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_smviewreturnstableMouseClicked
+        // TODO add your handling code here:
+        int smrowselected = smviewreturnstable.getSelectedRow();
+        String smsalesidr;
+        String smitemidr;
+        String smqtyr;
+        smsalesidr = smviewreturnstable.getValueAt(smrowselected, 0).toString();
+        smitemidr = smviewreturnstable.getValueAt(smrowselected, 1).toString();
+        smqtyr = smviewreturnstable.getValueAt(smrowselected, 2).toString();
+        smsalesidreturnsbox.setText(smsalesidr);
+        smtxtitemid.setText(smitemidr);
+        smtxtitemname.setText(smqtyr);
+    }//GEN-LAST:event_smviewreturnstableMouseClicked
+
+    private void smbtnsearchbillidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_smbtnsearchbillidActionPerformed
+        // TODO add your handling code here:
+        SMModel sm1 = new SMModel();
+        sm1.setBillId(Integer.parseInt(smtxtfieldenterbillid.getText()));
+        SMServiceImpl sms1 = new SMServiceImpl();
+        sms1.getbillitemsforreturns(sm1);
+        smviewreturnstable.setModel(DbUtils.resultSetToTableModel(sms1.getbillitemsforreturns(sm1)));
+    }//GEN-LAST:event_smbtnsearchbillidActionPerformed
+
+    private void smbtndeleteitemreturnsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_smbtndeleteitemreturnsActionPerformed
+        // TODO add your handling code here:
+        SMModel sm1 = new SMModel();
+        sm1.setsalesId(Integer.parseInt(smsalesidreturnsbox.getText()));
+        sm1.setBillId(Integer.parseInt(smtxtfieldenterbillid.getText()));
+        SMServiceImpl sms1 = new SMServiceImpl();
+        sms1.deleteitemfrmsales(sm1);
+        sms1.getbillitemsforreturns(sm1);
+        smviewreturnstable.setModel(DbUtils.resultSetToTableModel(sms1.getbillitemsforreturns(sm1)));
+    }//GEN-LAST:event_smbtndeleteitemreturnsActionPerformed
+
+    private void smtotbillamtMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_smtotbillamtMouseMoved
+        // TODO add your handling code here:
+        SMServiceImpl sms1 = new SMServiceImpl();
+        smtotbillamt.setText(Double.toString(sms1.returnbillamt()));
+        String smcashpaid = smcashamtpaid.getText();
+        smchangedis.setText(Double.toString(-sms1.returnbillamt() + Double.parseDouble(smcashpaid)));
+    }//GEN-LAST:event_smtotbillamtMouseMoved
+
+    private void smchangedisMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_smchangedisMouseMoved
+        // TODO add your handling code here:
+        SMServiceImpl sms1 = new SMServiceImpl();
+        smtotbillamt.setText(Double.toString(sms1.returnbillamt()));
+        String smcashpaid = smcashamtpaid.getText();
+        smchangedis.setText(Double.toString(-sms1.returnbillamt() + Double.parseDouble(smcashpaid)));
+    }//GEN-LAST:event_smchangedisMouseMoved
+
+    private void SuMReportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SuMReportActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SuMReportActionPerformed
+
+    private void SuMAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SuMAddActionPerformed
+        // TODO add your handling code here:
+        viewPanel("SUMaddsuppliers");
+    }//GEN-LAST:event_SuMAddActionPerformed
+
+    private void SUMjTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SUMjTextField2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SUMjTextField2ActionPerformed
+
+    private void SUMjButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SUMjButton10ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SUMjButton10ActionPerformed
+
+    private void SUMjButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SUMjButton9ActionPerformed
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_SUMjButton9ActionPerformed
+
+    private void SUaddressNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SUaddressNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SUaddressNameActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -460,11 +3129,125 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JPanel EMjPanel4;
     private javax.swing.JPanel FMjPanel11;
     private javax.swing.JPanel IMjPanel5;
+    private javax.persistence.EntityManager ITPPUEntityManager;
+    private javax.swing.JPanel PM1jPanel4;
     private javax.swing.JLabel PMjLabel6;
     private javax.swing.JPanel PMjPanel7;
+    private javax.swing.JLabel SUJMjLabel15;
+    private javax.swing.JLabel SUMMjLabel19;
+    private javax.swing.JTextField SUMMjTextField3;
+    private javax.swing.JButton SUMjButton10;
+    private javax.swing.JButton SUMjButton9;
+    private javax.swing.JComboBox SUMjComboBox1;
+    private javax.swing.JPanel SUMjComboBox3;
+    private javax.swing.JLabel SUMjLabel12;
+    private javax.swing.JLabel SUMjLabel13;
+    private javax.swing.JLabel SUMjLabel14;
+    private javax.swing.JLabel SUMjLabel6;
+    private javax.swing.JLabel SUMjLabel7;
+    private javax.swing.JTextField SUMjTextField1;
+    private javax.swing.JTextField SUMjTextField2;
+    private javax.swing.JTextField SUMjTextField3;
+    private javax.swing.JTextField SUMjTextField4;
+    private javax.swing.JTextField SUaddressName;
     private javax.swing.JPanel SaMjPanel8;
-    private javax.swing.JPanel SuMjPanel6;
+    private javax.swing.JButton SuMAdd;
+    private javax.swing.JButton SuMPlace;
+    private javax.swing.JButton SuMReport;
+    private javax.swing.JButton SuMUpdate;
+    private javax.swing.JPanel addCatergoryPanel;
+    private javax.swing.JPanel addEmpCard1;
+    private javax.swing.JButton addEmpCatNavBtn;
+    private javax.swing.JLabel addEmpTitleTxt;
+    private javax.swing.JButton addEmpTypeBtn;
+    private javax.swing.JPanel attendanceEmpCard;
+    private javax.swing.JButton attendanceEmpNavBtn;
+    private java.util.List<model.Billpayment> billpaymentList;
+    private javax.persistence.Query billpaymentQuery;
+    private java.util.List<model.Billtype> billtypeList;
+    private javax.persistence.Query billtypeQuery;
+    private javax.swing.JButton btnBackGenerateBill1;
+    private javax.swing.JButton btnChkCustId;
+    private javax.swing.JButton btnGenerateBills;
+    private javax.swing.JButton btnHandleReturns;
+    private javax.swing.JButton btnNxtGenerateBill;
+    private javax.swing.JButton btnRegisterCustomers;
+    private javax.swing.JButton btnViewReports;
+    private javax.swing.JTextField custp;
+    private javax.swing.JComboBox<String> custpaymentmethod;
+    private javax.swing.JButton deleteEmpBtn;
+    private javax.swing.JButton deleteEmpTypeBtn;
+    private javax.swing.JLabel emIDLabel;
+    private javax.swing.JLabel empAddTypeLabel;
+    private javax.swing.JTextField empAddressBox;
+    private javax.swing.JLabel empAddressLabel;
+    private javax.swing.JButton empApproveRequestBtn_mgmt;
+    private javax.swing.JTable empAttendanceTable;
+    private javax.swing.JTable empCatergoryTable;
+    private javax.swing.JLabel empDateLabel;
+    private javax.swing.JTextField empDaysBox;
+    private javax.swing.JTextField empDaysBox_mgmt;
+    private javax.swing.JLabel empDaysLabel;
+    private javax.swing.JLabel empDaysLabel_mgmt;
+    private javax.swing.JTextField empEmailBox;
+    private javax.swing.JLabel empEmailLabel;
+    private javax.swing.JTextField empEndDateBox;
+    private javax.swing.JTextField empEndDateBox_mgmt;
+    private javax.swing.JTextField empEndDateBox_mgmt1;
+    private javax.swing.JLabel empEndDateLabel;
+    private javax.swing.JLabel empEndDateLabel_mgmt;
+    private javax.swing.JLabel empEndDateLabel_mgmt1;
+    private javax.swing.JTextField empID_mgmt1;
+    private javax.swing.JTextField empIdBox;
+    private javax.swing.JTextField empLeaveBox;
+    private javax.swing.JPanel empLeaveCard;
+    private javax.swing.JLabel empLeaveLabel;
+    private javax.swing.JButton empLeaveMgmtNavBtn;
+    private javax.swing.JPanel empLeaveMgmtPanel;
+    private javax.swing.JLabel empLeaveReqIDLabel_mgmt;
+    private javax.swing.JTextField empLeaveReqID_mgmt;
+    private javax.swing.JButton empLeaveRequestBtn;
+    private javax.swing.JTable empLeaveRequestTable;
+    private javax.swing.JTextField empLeaveStatusBox;
+    private javax.swing.JLabel empLeaveStatusLabel;
+    private javax.swing.JTextField empNICBox;
+    private javax.swing.JTextField empNameBox;
+    private javax.swing.JLabel empNameLabel;
+    private javax.swing.JLabel empNicLabel;
+    private javax.swing.JTextField empPhoneBox;
+    private javax.swing.JLabel empPhoneLabel;
+    private javax.swing.JLabel empReasonLabel;
+    private javax.swing.JLabel empReasonLabel_mgmt;
+    private javax.swing.JTextArea empReasonText;
+    private javax.swing.JTextArea empReasonText_mgmt;
+    private javax.swing.JButton empRejectRequestBtn_mgmt;
+    private javax.swing.JTextField empRemLeavBox;
+    private javax.swing.JLabel empRemLeaveLabel;
+    private javax.swing.JTable empRequestTable;
+    private javax.swing.JTextField empSalaryBox;
+    private javax.swing.JLabel empSalaryLabel;
+    private javax.swing.JButton empSignInBtn;
+    private javax.swing.JButton empSignOutBtn;
+    private javax.swing.JTable empTable;
+    private javax.swing.JTextField empTypeBox1;
+    private javax.swing.JTextField empTypeIdBox;
+    private javax.swing.JLabel empTypeIdLabel;
+    private javax.swing.JLabel empTypeLabel;
+    private java.util.List<model.Employee> employeeList;
+    private javax.persistence.Query employeeQuery;
+    private javax.swing.JTextField empstartDateBox;
+    private javax.swing.JTextField empstartDateBox_mgmt;
+    private javax.swing.JLabel empstartDateLabel;
+    private javax.swing.JLabel empstartDateLabel_mgmt;
+    private javax.swing.JLabel empstartDateLabel_mgmt1;
+    private javax.swing.JComboBox<String> emptypeComboBox;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton10;
+    private javax.swing.JButton jButton11;
+    private javax.swing.JButton jButton12;
+    private javax.swing.JButton jButton13;
+    private javax.swing.JButton jButton14;
+    private javax.swing.JButton jButton15;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -472,18 +3255,88 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
+    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane10;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JScrollPane jScrollPane8;
+    private javax.swing.JScrollPane jScrollPane9;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JButton leaveEmpNavBtn;
+    private javax.swing.JButton regEmpNavBtn;
+    private javax.swing.JButton registerEmpBtn1;
+    private javax.swing.JLabel smCustIdStatus;
+    private javax.swing.JPanel smGenerateBills;
+    private javax.swing.JPanel smGenerateBills2;
+    private javax.swing.JPanel smRegisterCustomers;
+    private javax.swing.JPanel smReturnHandle;
+    private javax.swing.JPanel smViewReports;
+    private javax.swing.JTable smbilltable;
+    private javax.swing.JButton smbtnadditem;
+    private javax.swing.JButton smbtndeleteitem;
+    private javax.swing.JButton smbtndeleteitemreturns;
+    private javax.swing.JButton smbtnsearchbillid;
+    private javax.swing.JTextField smcashamtpaid;
+    private javax.swing.JTextField smchangedis;
+    private javax.swing.JTextField smdisref;
+    private javax.swing.JLabel smdisrefstatus;
+    private javax.swing.JLabel smenterbillid;
+    private javax.swing.JTextField smitemid;
+    private javax.swing.JTextField smitemqty;
+    private javax.swing.JLabel smjLabel10;
+    private javax.swing.JLabel smjLabel4;
+    private javax.swing.JLabel smjLabel5;
+    private javax.swing.JLabel smjLabel6;
+    private javax.swing.JLabel smjLabel7;
+    private javax.swing.JLabel smjLabel8;
+    private javax.swing.JLabel smjLabel9;
+    private javax.swing.JLabel smjLabelch;
+    private javax.swing.JLabel smqtystatus;
+    private javax.swing.JButton smreset;
+    private javax.swing.JLabel smsalesidreturns;
+    private javax.swing.JTextField smsalesidreturnsbox;
+    private javax.swing.JLabel smshowitemid;
+    private javax.swing.JLabel smshowitemname;
+    private javax.swing.JTextField smtotbillamt;
+    private javax.swing.JTextField smtxtfieldenterbillid;
+    private javax.swing.JTextField smtxtitemid;
+    private javax.swing.JTextField smtxtitemname;
+    private javax.swing.JTable smviewreturnstable;
+    private javax.swing.JPanel sumPanel16;
+    private javax.swing.JButton updateEmpBtn;
+    private javax.swing.JButton updateEmpTypeBtn;
+    private org.jdesktop.beansbinding.BindingGroup bindingGroup;
     // End of variables declaration//GEN-END:variables
 }
