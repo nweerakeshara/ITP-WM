@@ -35,14 +35,19 @@ import model.Employee;
 import model.EmployeeLeaveModel;
 import model.EmployeeModel;
 import model.EmployeeType;
+import model.ItemSupModel;
 import model.SMModel;
 import model.Suppliers;
+import model.SupplyModel;
+import model.orderModel;
 import net.proteanit.sql.DbUtils;
 import service.CusDB;
 import service.EmpDB;
 import service.IM_Service;
 import service.SMServiceImpl;
 import service.employeeValidator;
+import service.supDB;
+import service.supplierValidator;
 
 /**
  *
@@ -54,6 +59,7 @@ public class NewJFrame extends javax.swing.JFrame {
     PreparedStatement pst = null;
     ResultSet rs = null;
     EmpDB globalEmpDB = new EmpDB();
+    supDB globalSupDB = new supDB();
 
     /**
      * Creates new form NewJFrame
@@ -176,12 +182,6 @@ public class NewJFrame extends javax.swing.JFrame {
         btnHandleReturns = new javax.swing.JButton();
         btnRegisterCustomers = new javax.swing.JButton();
         btnGenerateBills = new javax.swing.JButton();
-        sumPanel16 = new javax.swing.JPanel();
-        jLabel12 = new javax.swing.JLabel();
-        SuMReport = new javax.swing.JButton();
-        SuMUpdate = new javax.swing.JButton();
-        SuMPlace = new javax.swing.JButton();
-        SuMAdd = new javax.swing.JButton();
         CMjPanel10 = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         AddCustomers = new javax.swing.JButton();
@@ -349,23 +349,6 @@ public class NewJFrame extends javax.swing.JFrame {
         smcashamtpaid = new javax.swing.JTextField();
         smjLabelch = new javax.swing.JLabel();
         smchangedis = new javax.swing.JTextField();
-        SUMjComboBox3 = new javax.swing.JPanel();
-        SUMjComboBox1 = new javax.swing.JComboBox();
-        SUMjTextField4 = new javax.swing.JTextField();
-        SUMjTextField3 = new javax.swing.JTextField();
-        SUMjTextField2 = new javax.swing.JTextField();
-        SUMjTextField1 = new javax.swing.JTextField();
-        SUMjButton10 = new javax.swing.JButton();
-        SUMjButton9 = new javax.swing.JButton();
-        SUJMjLabel15 = new javax.swing.JLabel();
-        SUMjLabel14 = new javax.swing.JLabel();
-        SUMjLabel13 = new javax.swing.JLabel();
-        SUMjLabel12 = new javax.swing.JLabel();
-        SUMjLabel7 = new javax.swing.JLabel();
-        SUMjLabel6 = new javax.swing.JLabel();
-        SUMMjTextField3 = new javax.swing.JTextField();
-        SUMMjLabel19 = new javax.swing.JLabel();
-        SUaddressName = new javax.swing.JTextField();
         pmSearchBillPayments = new javax.swing.JPanel();
         jLabel19 = new javax.swing.JLabel();
         jTextField3 = new javax.swing.JTextField();
@@ -466,6 +449,42 @@ public class NewJFrame extends javax.swing.JFrame {
         IM_A_success = new javax.swing.JLabel();
         IM_A_name_error_lbl = new javax.swing.JLabel();
         IM_A_brand_error_lbl = new javax.swing.JLabel();
+        sumPanel16 = new javax.swing.JPanel();
+        jLabel12 = new javax.swing.JLabel();
+        SuMOrder = new javax.swing.JButton();
+        SuMPlace = new javax.swing.JButton();
+        SuMAdd = new javax.swing.JButton();
+        supOrderDetails = new javax.swing.JPanel();
+        OrderIdlabel = new javax.swing.JLabel();
+        itemIdLabel = new javax.swing.JLabel();
+        qtyLabel = new javax.swing.JLabel();
+        amountLabel = new javax.swing.JLabel();
+        suppIdlabel = new javax.swing.JLabel();
+        orderIDtxt = new javax.swing.JTextField();
+        quantitytxt = new javax.swing.JTextField();
+        amounttxt = new javax.swing.JTextField();
+        placeOrder = new javax.swing.JButton();
+        Ordrtble = new javax.swing.JScrollPane();
+        orderTable = new javax.swing.JTable();
+        supIDcombo = new javax.swing.JComboBox();
+        Itemcombo = new javax.swing.JComboBox();
+        Deletebtnorder = new javax.swing.JButton();
+        supAddDetails = new javax.swing.JPanel();
+        supPno = new javax.swing.JTextField();
+        supEmail = new javax.swing.JTextField();
+        supName = new javax.swing.JTextField();
+        supID = new javax.swing.JTextField();
+        supUpdatebtn = new javax.swing.JButton();
+        supAddbtn = new javax.swing.JButton();
+        supNolabel = new javax.swing.JLabel();
+        supEmaillabel = new javax.swing.JLabel();
+        supNamelabel = new javax.swing.JLabel();
+        supIdlabel = new javax.swing.JLabel();
+        supAddresslabel = new javax.swing.JLabel();
+        supAddress = new javax.swing.JTextField();
+        supTble = new javax.swing.JScrollPane();
+        supTable = new javax.swing.JTable();
+        supDeletebtn = new javax.swing.JButton();
 
         jLabel2.setText("jLabel2");
 
@@ -692,65 +711,6 @@ public class NewJFrame extends javax.swing.JFrame {
         );
 
         jPanel3.add(SaMjPanel8, "card6");
-
-        jLabel12.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
-        jLabel12.setText("Suppliers management");
-
-        SuMReport.setText("REPORTS");
-        SuMReport.setPreferredSize(new java.awt.Dimension(232, 232));
-        SuMReport.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SuMReportActionPerformed(evt);
-            }
-        });
-
-        SuMUpdate.setText("VIEW/UPDATE/DELETE/SEARCH SUPPLIERS");
-
-        SuMPlace.setText("PLACE RDERS");
-        SuMPlace.setPreferredSize(new java.awt.Dimension(232, 232));
-
-        SuMAdd.setText("ADD SUPPLIERS");
-        SuMAdd.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SuMAddActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout sumPanel16Layout = new javax.swing.GroupLayout(sumPanel16);
-        sumPanel16.setLayout(sumPanel16Layout);
-        sumPanel16Layout.setHorizontalGroup(
-            sumPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(sumPanel16Layout.createSequentialGroup()
-                .addContainerGap(184, Short.MAX_VALUE)
-                .addComponent(SuMAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(123, 123, 123)
-                .addGroup(sumPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(sumPanel16Layout.createSequentialGroup()
-                        .addComponent(SuMUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(106, 106, 106)
-                        .addComponent(SuMPlace, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(75, 75, 75)
-                        .addComponent(SuMReport, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(615, 615, 615))
-                    .addGroup(sumPanel16Layout.createSequentialGroup()
-                        .addComponent(jLabel12)
-                        .addGap(0, 0, Short.MAX_VALUE))))
-        );
-        sumPanel16Layout.setVerticalGroup(
-            sumPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(sumPanel16Layout.createSequentialGroup()
-                .addGap(83, 83, 83)
-                .addComponent(jLabel12)
-                .addGap(173, 173, 173)
-                .addGroup(sumPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(SuMAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(SuMUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(SuMPlace, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(SuMReport, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(722, Short.MAX_VALUE))
-        );
-
-        jPanel3.add(sumPanel16, "card4");
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
         jLabel10.setText("Customer management");
@@ -2417,128 +2377,6 @@ public class NewJFrame extends javax.swing.JFrame {
 
         jPanel3.add(smGenerateBills2, "smGenerateBills2");
 
-        SUMjComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Preferred", "Emergency", " " }));
-
-        SUMjTextField2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SUMjTextField2ActionPerformed(evt);
-            }
-        });
-
-        SUMjButton10.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        SUMjButton10.setText("RESET");
-        SUMjButton10.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SUMjButton10ActionPerformed(evt);
-            }
-        });
-
-        SUMjButton9.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        SUMjButton9.setText("ADD");
-        SUMjButton9.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SUMjButton9ActionPerformed(evt);
-            }
-        });
-
-        SUJMjLabel15.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        SUJMjLabel15.setText("STATUS            :");
-
-        SUMjLabel14.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        SUMjLabel14.setText("TYPE                :");
-
-        SUMjLabel13.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        SUMjLabel13.setText("PHONE NUMBER :");
-
-        SUMjLabel12.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        SUMjLabel12.setText("E-MAIL              :");
-
-        SUMjLabel7.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        SUMjLabel7.setText("NAME                :");
-
-        SUMjLabel6.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        SUMjLabel6.setText("SUPPLIER ID       :");
-
-        SUMMjLabel19.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        SUMMjLabel19.setText("ADDRESS          :");
-
-        SUaddressName.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SUaddressNameActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout SUMjComboBox3Layout = new javax.swing.GroupLayout(SUMjComboBox3);
-        SUMjComboBox3.setLayout(SUMjComboBox3Layout);
-        SUMjComboBox3Layout.setHorizontalGroup(
-            SUMjComboBox3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(SUMjComboBox3Layout.createSequentialGroup()
-                .addGap(51, 51, 51)
-                .addGroup(SUMjComboBox3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(SUMjComboBox3Layout.createSequentialGroup()
-                        .addComponent(SUMjButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 102, Short.MAX_VALUE)
-                        .addComponent(SUMjButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(SUMjComboBox3Layout.createSequentialGroup()
-                        .addGroup(SUMjComboBox3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(SUJMjLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(SUMjLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(SUMjLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(SUMjLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(SUMjLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(SUMjLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(SUMMjLabel19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(48, 48, 48)
-                        .addGroup(SUMjComboBox3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(SUMjTextField1)
-                            .addComponent(SUMjTextField2)
-                            .addComponent(SUMjTextField3)
-                            .addComponent(SUMjTextField4)
-                            .addComponent(SUMjComboBox1, 0, 243, Short.MAX_VALUE)
-                            .addComponent(SUMMjTextField3)
-                            .addComponent(SUaddressName))))
-                .addContainerGap(1488, Short.MAX_VALUE))
-        );
-        SUMjComboBox3Layout.setVerticalGroup(
-            SUMjComboBox3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(SUMjComboBox3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(SUMjComboBox3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(SUMjLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE)
-                    .addComponent(SUMjTextField1))
-                .addGap(18, 18, 18)
-                .addGroup(SUMjComboBox3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(SUMjTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(SUMjLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(36, 36, 36)
-                .addGroup(SUMjComboBox3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(SUMjLabel12)
-                    .addComponent(SUMjTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(36, 36, 36)
-                .addGroup(SUMjComboBox3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(SUMjLabel13)
-                    .addComponent(SUMjTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(35, 35, 35)
-                .addGroup(SUMjComboBox3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(SUMjLabel14)
-                    .addComponent(SUMjComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(37, 37, 37)
-                .addGroup(SUMjComboBox3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(SUJMjLabel15)
-                    .addComponent(SUMMjTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(44, 44, 44)
-                .addGroup(SUMjComboBox3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(SUaddressName)
-                    .addComponent(SUMMjLabel19, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 673, Short.MAX_VALUE)
-                .addGroup(SUMjComboBox3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(SUMjButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(SUMjButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(39, 39, 39))
-        );
-
-        jPanel3.add(SUMjComboBox3, "SUMaddsuppliers");
-
         jLabel19.setText("Search");
 
         jTextField3.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -3274,6 +3112,339 @@ public class NewJFrame extends javax.swing.JFrame {
 
         jPanel3.add(IMadd, "IM_add");
 
+        jLabel12.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
+        jLabel12.setText("Suppliers management");
+
+        SuMOrder.setText("ORDER DETAILS");
+        SuMOrder.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SuMOrderActionPerformed(evt);
+            }
+        });
+
+        SuMPlace.setText("REPORT");
+
+        SuMAdd.setText("SUPPLIER DETAILS");
+        SuMAdd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SuMAddActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout sumPanel16Layout = new javax.swing.GroupLayout(sumPanel16);
+        sumPanel16.setLayout(sumPanel16Layout);
+        sumPanel16Layout.setHorizontalGroup(
+            sumPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(sumPanel16Layout.createSequentialGroup()
+                .addGroup(sumPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(sumPanel16Layout.createSequentialGroup()
+                        .addGap(382, 382, 382)
+                        .addComponent(jLabel12))
+                    .addGroup(sumPanel16Layout.createSequentialGroup()
+                        .addGap(247, 247, 247)
+                        .addComponent(SuMAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(58, 58, 58)
+                        .addComponent(SuMOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 318, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(47, 47, 47)
+                        .addComponent(SuMPlace, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(1024, Short.MAX_VALUE))
+        );
+        sumPanel16Layout.setVerticalGroup(
+            sumPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(sumPanel16Layout.createSequentialGroup()
+                .addGap(163, 163, 163)
+                .addComponent(jLabel12)
+                .addGap(114, 114, 114)
+                .addGroup(sumPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(SuMAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(SuMOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(SuMPlace, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(897, Short.MAX_VALUE))
+        );
+
+        jPanel3.add(sumPanel16, "sumPanel16");
+
+        supOrderDetails.setPreferredSize(new java.awt.Dimension(2291, 974));
+
+        OrderIdlabel.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        OrderIdlabel.setText("ORDER ID              :");
+
+        itemIdLabel.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        itemIdLabel.setText(" ITEM ID                :");
+
+        qtyLabel.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        qtyLabel.setText("ORDER QUANTITY   :");
+
+        amountLabel.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        amountLabel.setText("NET AMOUNT         : ");
+
+        suppIdlabel.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        suppIdlabel.setText("SUPPLIER ID          :");
+
+        orderIDtxt.setEditable(false);
+        orderIDtxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                orderIDtxtActionPerformed(evt);
+            }
+        });
+
+        placeOrder.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        placeOrder.setText("PLACE ORDER");
+        placeOrder.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                placeOrderActionPerformed(evt);
+            }
+        });
+
+        orderTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Order ID", "Item ID", "Order Qty", "Net Amount", "Supplier ID", "Date ", "Approved", "Rejected", "Received"
+            }
+        ));
+        orderTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                orderTableMouseClicked(evt);
+            }
+        });
+        Ordrtble.setViewportView(orderTable);
+
+        supIDcombo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                supIDcomboActionPerformed(evt);
+            }
+        });
+
+        Deletebtnorder.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        Deletebtnorder.setText("DELETE");
+        Deletebtnorder.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DeletebtnorderActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout supOrderDetailsLayout = new javax.swing.GroupLayout(supOrderDetails);
+        supOrderDetails.setLayout(supOrderDetailsLayout);
+        supOrderDetailsLayout.setHorizontalGroup(
+            supOrderDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(supOrderDetailsLayout.createSequentialGroup()
+                .addGroup(supOrderDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(supOrderDetailsLayout.createSequentialGroup()
+                        .addGap(47, 47, 47)
+                        .addGroup(supOrderDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(supOrderDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(qtyLabel)
+                                .addComponent(OrderIdlabel, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(itemIdLabel))
+                        .addGap(29, 29, 29)
+                        .addGroup(supOrderDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(quantitytxt)
+                            .addComponent(orderIDtxt)
+                            .addComponent(Itemcombo, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(136, 136, 136)
+                        .addGroup(supOrderDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(suppIdlabel)
+                            .addComponent(amountLabel)
+                            .addComponent(placeOrder))
+                        .addGap(30, 30, 30)
+                        .addGroup(supOrderDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(supIDcombo, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(amounttxt, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Deletebtnorder, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(supOrderDetailsLayout.createSequentialGroup()
+                        .addGap(86, 86, 86)
+                        .addComponent(Ordrtble, javax.swing.GroupLayout.PREFERRED_SIZE, 874, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(1071, Short.MAX_VALUE))
+        );
+        supOrderDetailsLayout.setVerticalGroup(
+            supOrderDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(supOrderDetailsLayout.createSequentialGroup()
+                .addGap(62, 62, 62)
+                .addGroup(supOrderDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(OrderIdlabel)
+                    .addComponent(orderIDtxt, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(suppIdlabel)
+                    .addComponent(supIDcombo, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(supOrderDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(supOrderDetailsLayout.createSequentialGroup()
+                        .addGap(72, 72, 72)
+                        .addGroup(supOrderDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(itemIdLabel)
+                            .addComponent(Itemcombo, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(supOrderDetailsLayout.createSequentialGroup()
+                        .addGap(86, 86, 86)
+                        .addGroup(supOrderDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(amounttxt, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(amountLabel))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 186, Short.MAX_VALUE)
+                .addGroup(supOrderDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, supOrderDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(qtyLabel)
+                        .addComponent(quantitytxt, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(placeOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Deletebtnorder, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(47, 47, 47)
+                .addComponent(Ordrtble, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(338, Short.MAX_VALUE))
+        );
+
+        jPanel3.add(supOrderDetails, "supOrderDetails");
+
+        supName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                supNameActionPerformed(evt);
+            }
+        });
+
+        supID.setEditable(false);
+
+        supUpdatebtn.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        supUpdatebtn.setText("UPDATE");
+        supUpdatebtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                supUpdatebtnActionPerformed(evt);
+            }
+        });
+
+        supAddbtn.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        supAddbtn.setText("ADD");
+        supAddbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                supAddbtnActionPerformed(evt);
+            }
+        });
+
+        supNolabel.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        supNolabel.setText("PHONE NUMBER :");
+
+        supEmaillabel.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        supEmaillabel.setText("E-MAIL              :");
+
+        supNamelabel.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        supNamelabel.setText("NAME                :");
+
+        supIdlabel.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        supIdlabel.setText("SUPPLIER ID       :");
+
+        supAddresslabel.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        supAddresslabel.setText("ADDRESS          :");
+
+        supAddress.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                supAddressActionPerformed(evt);
+            }
+        });
+
+        supTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "ID", "NAME", "E-MAIL", "PHONE NO", "ADDRESS"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        supTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                supTableMouseClicked(evt);
+            }
+        });
+        supTble.setViewportView(supTable);
+
+        supDeletebtn.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        supDeletebtn.setText("DELETE");
+        supDeletebtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                supDeletebtnActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout supAddDetailsLayout = new javax.swing.GroupLayout(supAddDetails);
+        supAddDetails.setLayout(supAddDetailsLayout);
+        supAddDetailsLayout.setHorizontalGroup(
+            supAddDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(supAddDetailsLayout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addGroup(supAddDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(supAddDetailsLayout.createSequentialGroup()
+                        .addComponent(supAddbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                        .addComponent(supUpdatebtn, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(supDeletebtn, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(supAddDetailsLayout.createSequentialGroup()
+                        .addGroup(supAddDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(supNolabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(supIdlabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(supNamelabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(supEmaillabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(supAddresslabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(48, 48, 48)
+                        .addGroup(supAddDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(supAddDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(supName, javax.swing.GroupLayout.DEFAULT_SIZE, 243, Short.MAX_VALUE)
+                                .addComponent(supEmail)
+                                .addComponent(supPno)
+                                .addComponent(supAddress))
+                            .addComponent(supID, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(102, 102, 102)
+                .addComponent(supTble, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(954, Short.MAX_VALUE))
+        );
+        supAddDetailsLayout.setVerticalGroup(
+            supAddDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(supAddDetailsLayout.createSequentialGroup()
+                .addGroup(supAddDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(supAddDetailsLayout.createSequentialGroup()
+                        .addGap(118, 118, 118)
+                        .addGroup(supAddDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(supIdlabel, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(supID, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(44, 44, 44)
+                        .addGroup(supAddDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(supNamelabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(supName, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(44, 44, 44)
+                        .addGroup(supAddDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(supEmaillabel)
+                            .addComponent(supEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(44, 44, 44)
+                        .addGroup(supAddDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(supNolabel)
+                            .addComponent(supPno, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(44, 44, 44)
+                        .addGroup(supAddDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(supAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(supAddresslabel, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(50, 50, 50))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, supAddDetailsLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(supTble, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                .addGroup(supAddDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE, false)
+                    .addComponent(supDeletebtn, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(supUpdatebtn, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(supAddbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(669, Short.MAX_VALUE))
+        );
+
+        jPanel3.add(supAddDetails, "supAddDetails");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -3301,7 +3472,7 @@ public class NewJFrame extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        viewPanel("card4");
+        viewPanel("sumPanel16");
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -3343,22 +3514,32 @@ public class NewJFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
         Billpayment b = new Billpayment();
         
-       
-        
-        b.setType((Billtype) jComboBox1.getSelectedItem());
-        b.setMonth(Integer.parseInt(jTextField1.getText()));
-        b.setAmount(Integer.parseInt(jTextField2.getText()));
-        b.setEid((Employee) jComboBox2.getSelectedItem());
-        
-        ITPPUEntityManager.getTransaction().begin();
-        ITPPUEntityManager.persist(b);
-        ITPPUEntityManager.getTransaction().commit();
-        
-        JOptionPane.showMessageDialog(rootPane, "Record inserted", "Info", 1);
-        
-        billpaymentList.clear();
-        billpaymentList = billpaymentQuery.getResultList();
-        refreshTable(billtypeList);
+        try{
+           String amount = jTextField2.getText();
+           String month = jTextField1.getText();
+           
+           if(amount.equals("")|| month.equals("")){   
+               JOptionPane.showMessageDialog(null, "Please fill all form fields!");
+           }
+           else{
+                b.setType((Billtype) jComboBox1.getSelectedItem());
+                b.setMonth(Integer.parseInt(jTextField1.getText()));
+                b.setAmount(Integer.parseInt(jTextField2.getText()));
+                b.setEid((Employee) jComboBox2.getSelectedItem());
+
+                ITPPUEntityManager.getTransaction().begin();
+                ITPPUEntityManager.persist(b);
+                ITPPUEntityManager.getTransaction().commit();
+
+                JOptionPane.showMessageDialog(rootPane, "Record inserted", "Info", 1);
+
+                billpaymentList.clear();
+                billpaymentList = billpaymentQuery.getResultList();
+                refreshTable(billtypeList);
+           }
+       }catch(NumberFormatException e){
+           JOptionPane.showMessageDialog(null, "Amount and month must be numeric!");
+       }
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
@@ -4078,32 +4259,6 @@ public class NewJFrame extends javax.swing.JFrame {
         smchangedis.setText(Double.toString(-sms1.returnbillamt() + Double.parseDouble(smcashpaid)));
     }//GEN-LAST:event_smchangedisMouseMoved
 
-    private void SuMReportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SuMReportActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_SuMReportActionPerformed
-
-    private void SuMAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SuMAddActionPerformed
-        // TODO add your handling code here:
-        viewPanel("SUMaddsuppliers");
-    }//GEN-LAST:event_SuMAddActionPerformed
-
-    private void SUMjTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SUMjTextField2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_SUMjTextField2ActionPerformed
-
-    private void SUMjButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SUMjButton10ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_SUMjButton10ActionPerformed
-
-    private void SUMjButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SUMjButton9ActionPerformed
-        // TODO add your handling code here:
-
-    }//GEN-LAST:event_SUMjButton9ActionPerformed
-
-    private void SUaddressNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SUaddressNameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_SUaddressNameActionPerformed
-
     private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
         // TODO add your handling code here:
         Billpayment b = ITPPUEntityManager.find(Billpayment.class, Integer.parseInt(jTextField4.getText()));
@@ -4124,25 +4279,44 @@ public class NewJFrame extends javax.swing.JFrame {
 
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
         // TODO add your handling code here:
-        Billpayment b = ITPPUEntityManager.find(Billpayment.class, Integer.parseInt(jTextField4.getText()));
+               String amount = jTextField2.getText();
+        String month = jTextField1.getText();
+        
+        try{
+        
+        if(amount.equals("") || month.equals("")){
+            
+            JOptionPane.showMessageDialog(null, "Please fill all form fields!");
+            
+        }
+        
+        else{
+            
+                Billpayment b = ITPPUEntityManager.find(Billpayment.class, Integer.parseInt(jTextField4.getText()));
 
-        int r = JOptionPane.showConfirmDialog(rootPane, "Update : " + b.getPid(), "Confirmation", JOptionPane.YES_NO_CANCEL_OPTION);
+                int r = JOptionPane.showConfirmDialog(rootPane, "Update"   + b.getPid(), "Confirmation", JOptionPane.YES_NO_CANCEL_OPTION);
 
-        if (r == JOptionPane.YES_OPTION) {
-            b.setType((Billtype) jComboBox1.getSelectedItem());
-            b.setMonth(Integer.parseInt(jTextField1.getText()));
-            b.setAmount(Integer.parseInt(jTextField2.getText()));
-            b.setEid((Employee) jComboBox2.getSelectedItem());
+                if (r == JOptionPane.YES_OPTION) {
+                    b.setType((Billtype) jComboBox1.getSelectedItem());
+                    b.setMonth(Integer.parseInt(jTextField1.getText()));
+                    b.setAmount(Integer.parseInt(jTextField2.getText()));
+                    b.setEid((Employee) jComboBox2.getSelectedItem());
 
-            ITPPUEntityManager.getTransaction().begin();
-            ITPPUEntityManager.persist(b);
-            ITPPUEntityManager.getTransaction().commit();
-            JOptionPane.showMessageDialog(rootPane, "Record Updated", "Info", 1);
+                    ITPPUEntityManager.getTransaction().begin();
+                    ITPPUEntityManager.persist(b);
+                    ITPPUEntityManager.getTransaction().commit();
+                    JOptionPane.showMessageDialog(rootPane, "Record Updated", "Info", 1);
 
-            billpaymentList.clear();
-            billpaymentList = billpaymentQuery.getResultList();
-            refreshTable(billpaymentList);
+                    billpaymentList.clear();
+                    billpaymentList = billpaymentQuery.getResultList();
+                    refreshTable(billpaymentList);
 
+                }
+            }
+        }
+        catch(NumberFormatException e){
+            
+            JOptionPane.showMessageDialog(null, "Please ensure amount and month are numneric!");
         }
         
     }//GEN-LAST:event_jButton14ActionPerformed
@@ -4701,6 +4875,307 @@ public class NewJFrame extends javax.swing.JFrame {
 
     }//GEN-LAST:event_IM_add_btnActionPerformed
 
+    private void SuMOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SuMOrderActionPerformed
+        // TODO add your handling code here:
+        globalSupDB.orderTableLoad(orderTable);
+        viewPanel("supOrderDetails");
+
+        ResultSet type = globalSupDB.getSupCategory();
+        ResultSet type1 = globalSupDB.getItemCategory();
+
+        try{
+
+            Vector<SupplyModel> vector = new Vector<>();
+
+            while(type.next()){
+
+                SupplyModel s1 = new SupplyModel(type.getInt("supplierId"),type.getString("supplierName"));
+
+                vector.addElement(s1);
+
+            }
+
+            supIDcombo.setModel(new DefaultComboBoxModel(vector));
+
+        }catch(SQLException ex){
+
+            System.out.println("ex");
+
+        }
+
+        try{
+
+            Vector<ItemSupModel> vector2 = new Vector<>();
+
+            while(type1.next()){
+
+                ItemSupModel i1 = new ItemSupModel(type1.getInt("itemId"),type1.getString("itemName"));
+
+                vector2.addElement(i1);
+
+            }
+
+            Itemcombo.setModel(new DefaultComboBoxModel(vector2));
+
+        }catch(SQLException ex){
+
+            System.out.println("ex");
+
+        }
+
+    }//GEN-LAST:event_SuMOrderActionPerformed
+
+    private void SuMAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SuMAddActionPerformed
+        // TODO add your handling code here:
+        globalSupDB.supTableLoad(supTable);
+        viewPanel("supAddDetails");
+    }//GEN-LAST:event_SuMAddActionPerformed
+
+    private void orderIDtxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_orderIDtxtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_orderIDtxtActionPerformed
+
+    private void placeOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_placeOrderActionPerformed
+        // TODO add your handling code here:
+
+        try{
+
+            SupplyModel s1;
+            ItemSupModel i2;
+            String amount = amounttxt.getText();
+            String qty = quantitytxt.getText();
+            s1 = (SupplyModel)supIDcombo.getSelectedItem();
+            i2 = (ItemSupModel)Itemcombo.getSelectedItem();
+            int sid = s1.getSupId();
+            int Iid = i2.getId();
+
+            if(amount.equals("")|| qty.equals("")){
+
+                JOptionPane.showMessageDialog(supOrderDetails,"Enter positive values to the fields");
+
+            }
+            else if(Double.parseDouble(amount) == 0 || Integer.parseInt(qty) == 0){
+
+                JOptionPane.showMessageDialog(supOrderDetails,"Fields should not be zero...Enter a positive Value!");
+
+            }
+
+            else{
+
+                int response = JOptionPane.showConfirmDialog(null, "Do you really want to Place the order");
+
+                if(response == 0){
+                    //Send data to model
+                    try{
+                        orderModel o2 = new orderModel(Integer.parseInt(qty),Double.parseDouble(amount));
+
+                        //Call method to access DB
+
+                        globalSupDB.addOrder(o2,sid,Iid);
+
+                        globalSupDB.orderTableLoad(orderTable);}catch(NumberFormatException e){
+
+                        JOptionPane.showMessageDialog(supOrderDetails, "Enter valid inputs!");
+
+                    }
+                }
+
+            }
+
+        }catch(Exception e){
+
+            JOptionPane.showMessageDialog(supOrderDetails, "Enter valid inputs!");
+
+        }
+    }//GEN-LAST:event_placeOrderActionPerformed
+
+    private void orderTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_orderTableMouseClicked
+        // TODO add your handling code here:
+        int ordrowselected = orderTable.getSelectedRow();
+        String orderID;
+        String itemID;
+        String qty;
+        String supID;
+        String amount;
+        orderID = orderTable.getValueAt(ordrowselected, 0).toString();
+        itemID = orderTable.getValueAt(ordrowselected, 1).toString();
+        qty = orderTable.getValueAt(ordrowselected, 2).toString();
+        amount = orderTable.getValueAt(ordrowselected, 3).toString();
+        supID = orderTable.getValueAt(ordrowselected, 4).toString();
+
+        orderIDtxt.setText(orderID);
+        Itemcombo.setSelectedItem(itemID);
+        supIDcombo.setSelectedItem(supID);
+        quantitytxt.setText(qty);
+        amounttxt.setText(amount);
+
+    }//GEN-LAST:event_orderTableMouseClicked
+
+    private void supIDcomboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_supIDcomboActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_supIDcomboActionPerformed
+
+    private void DeletebtnorderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeletebtnorderActionPerformed
+        // TODO add your handling code here:
+        int response = JOptionPane.showConfirmDialog(null, "Do you really want to delete selected order?");
+
+        if(response == 0){
+
+            String id  = orderIDtxt.getText();
+
+            globalSupDB.deleteorder(id);
+            globalSupDB.orderTableLoad(orderTable);
+        }
+
+    }//GEN-LAST:event_DeletebtnorderActionPerformed
+
+    private void supNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_supNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_supNameActionPerformed
+
+    private void supUpdatebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_supUpdatebtnActionPerformed
+        // TODO add your handling code here:
+
+        int response = JOptionPane.showConfirmDialog(null, "Do you really want to update?");
+        if(response == 0){
+            String name = supName.getText();
+            String email = supEmail.getText();
+            String phone = supPno.getText();
+            int id = Integer.parseInt(supID.getText());
+            //int phoneLength = Integer.toString(phone).length();
+            String address = supAddress.getText();
+
+            supDB db = new supDB();
+
+            if(name.equals("")||email.equals("")||phone.isEmpty()||address.equals("")){
+
+                JOptionPane.showMessageDialog(supAddDetails,"Fill all form fields! Enter 'None' if non-existant");
+
+            }
+            else if(!supplierValidator.isValidEmailAddress(email)){
+
+                JOptionPane.showMessageDialog(supAddDetails, "Enter valid email address!");
+            }
+            else if(phone.length() != 10){
+                JOptionPane.showMessageDialog(supAddDetails, "Enter phone number with 10 digits!");
+            }
+            else{
+
+                try{
+                    SupplyModel s1 = new SupplyModel(name, email, Integer.parseInt(phone), address);
+                    s1.setSupId(id);
+
+                    globalSupDB.updateSupplier(s1);
+
+                    globalSupDB.supTableLoad(supTable);
+                }catch(Exception e){
+
+                    JOptionPane.showMessageDialog(supAddDetails, "Enter valid phone number!");
+
+                }
+            }
+
+        }
+
+    }//GEN-LAST:event_supUpdatebtnActionPerformed
+
+    private void supAddbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_supAddbtnActionPerformed
+        // TODO add your handling code here:
+        try{
+            String name = supName.getText();
+            String email = supEmail.getText();
+            String phone = supPno.getText();
+            //int phoneLength = Integer.toString(phone).length();
+            String address = supAddress.getText();
+
+            supDB db = new supDB();
+            if(db.checkRepeat(email) == false){
+
+                if(name.equals("")||email.equals("")||phone.isEmpty()||address.equals("")){
+
+                    JOptionPane.showMessageDialog(supAddDetails,"Fill all form fields! Enter 'None' if non-existant");
+
+                }
+                else if(!supplierValidator.isValidEmailAddress(email)){
+
+                    JOptionPane.showMessageDialog(supAddDetails, "Enter valid email address!");
+                }
+                else if(phone.length() != 10){
+                    JOptionPane.showMessageDialog(supAddDetails, "Enter phone number with 10 digits!");
+                }
+                else{
+
+                    int response = JOptionPane.showConfirmDialog(null, "Do you really want to register this supplier?");
+
+                    if(response == 0){
+                        //Send data to model
+                        try{
+                            SupplyModel s1 = new SupplyModel(name, email, Integer.parseInt(phone), address);
+
+                            globalSupDB.addSupply(s1);
+
+                            globalSupDB.supTableLoad(supTable);
+                        }catch(NumberFormatException e){
+                            JOptionPane.showMessageDialog(supAddDetails, "Enter valid phone number!");
+
+                            //Call method to access DB
+
+                        }
+                    }
+                }
+            }
+            else{
+
+                JOptionPane.showMessageDialog(supAddDetails, "supplier is already exists");
+            }
+
+        }catch(NumberFormatException e){
+            JOptionPane.showMessageDialog(supAddDetails, "Enter valid phone number!");
+
+            System.out.println(e);
+
+        }
+    }//GEN-LAST:event_supAddbtnActionPerformed
+
+    private void supAddressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_supAddressActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_supAddressActionPerformed
+
+    private void supTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_supTableMouseClicked
+        // TODO add your handling code here:
+        int suprowselected = supTable.getSelectedRow();
+        String ID;
+        String name;
+        String email;
+        String phone;
+        String address;
+        ID = supTable.getValueAt(suprowselected, 0).toString();
+        name = supTable.getValueAt(suprowselected, 1).toString();
+        email = supTable.getValueAt(suprowselected, 2).toString();
+        phone = supTable.getValueAt(suprowselected, 3).toString();
+        address = supTable.getValueAt(suprowselected, 4).toString();
+
+        supID.setText(ID);
+        supName.setText(name);
+        supEmail.setText(email);
+        supPno.setText(phone);
+        supAddress.setText(address);
+    }//GEN-LAST:event_supTableMouseClicked
+
+    private void supDeletebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_supDeletebtnActionPerformed
+        // TODO add your handling code here:
+        int response = JOptionPane.showConfirmDialog(null, "Do you really want to delete selected supplier?");
+
+        if(response == 0){
+
+            String id  = supID.getText();
+
+            globalSupDB.deletesup(id);
+            globalSupDB.supTableLoad(supTable);
+        }
+
+    }//GEN-LAST:event_supDeletebtnActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -4740,6 +5215,7 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JButton AddCustomers;
     private javax.swing.JPanel CMjPanel10;
     private javax.swing.JPanel DMjPanel9;
+    private javax.swing.JButton Deletebtnorder;
     private javax.swing.JPanel EMjPanel4;
     private javax.swing.JPanel FMjPanel11;
     private javax.swing.JLabel ID_Val;
@@ -4797,32 +5273,17 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JTextField I_name;
     private javax.swing.JTextField I_qty;
     private javax.swing.JTextField I_type;
+    private javax.swing.JComboBox Itemcombo;
     private javax.swing.JButton ManageCustomers;
+    private javax.swing.JLabel OrderIdlabel;
+    private javax.swing.JScrollPane Ordrtble;
     private javax.swing.JLabel PMjLabel6;
     private javax.swing.JPanel PMjPanel7;
     private javax.swing.JButton Reports;
-    private javax.swing.JLabel SUJMjLabel15;
-    private javax.swing.JLabel SUMMjLabel19;
-    private javax.swing.JTextField SUMMjTextField3;
-    private javax.swing.JButton SUMjButton10;
-    private javax.swing.JButton SUMjButton9;
-    private javax.swing.JComboBox SUMjComboBox1;
-    private javax.swing.JPanel SUMjComboBox3;
-    private javax.swing.JLabel SUMjLabel12;
-    private javax.swing.JLabel SUMjLabel13;
-    private javax.swing.JLabel SUMjLabel14;
-    private javax.swing.JLabel SUMjLabel6;
-    private javax.swing.JLabel SUMjLabel7;
-    private javax.swing.JTextField SUMjTextField1;
-    private javax.swing.JTextField SUMjTextField2;
-    private javax.swing.JTextField SUMjTextField3;
-    private javax.swing.JTextField SUMjTextField4;
-    private javax.swing.JTextField SUaddressName;
     private javax.swing.JPanel SaMjPanel8;
     private javax.swing.JButton SuMAdd;
+    private javax.swing.JButton SuMOrder;
     private javax.swing.JButton SuMPlace;
-    private javax.swing.JButton SuMReport;
-    private javax.swing.JButton SuMUpdate;
     private javax.swing.JPanel addCatergoryPanel;
     private javax.swing.JPanel addEmpCard1;
     private javax.swing.JButton addEmpCatNavBtn;
@@ -4833,6 +5294,8 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel address_val;
     private javax.swing.JLabel address_val_U2;
     private javax.swing.JTextField adress_cus_u;
+    private javax.swing.JLabel amountLabel;
+    private javax.swing.JTextField amounttxt;
     private javax.swing.JPanel attendanceEmpCard;
     private javax.swing.JButton attendanceEmpNavBtn;
     private java.util.List<model.Billpayment> billpaymentList;
@@ -4933,6 +5396,7 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> emptypeComboBox;
     private javax.swing.JLabel head_add_cus;
     private javax.swing.JLabel id_cus;
+    private javax.swing.JLabel itemIdLabel;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
@@ -5007,13 +5471,18 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JTextField name_cus_u;
     private javax.swing.JLabel name_val;
     private javax.swing.JLabel name_val_U;
+    private javax.swing.JTextField orderIDtxt;
+    private javax.swing.JTable orderTable;
     private javax.swing.JTextField phoneBoxCus;
     private javax.swing.JLabel phone_cus;
     private javax.swing.JLabel phone_cus_u;
     private javax.swing.JLabel phone_val;
     private javax.swing.JLabel phone_val_U1;
+    private javax.swing.JButton placeOrder;
     private javax.swing.JPanel pmInsertBillPayments;
     private javax.swing.JPanel pmSearchBillPayments;
+    private javax.swing.JLabel qtyLabel;
+    private javax.swing.JTextField quantitytxt;
     private javax.swing.JButton regEmpNavBtn;
     private javax.swing.JButton registerEmpBtn1;
     private javax.swing.JButton reset_cus_add;
@@ -5056,6 +5525,25 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JTable smviewreturnstable;
     private javax.swing.JButton submit_cuss_add;
     private javax.swing.JPanel sumPanel16;
+    private javax.swing.JPanel supAddDetails;
+    private javax.swing.JButton supAddbtn;
+    private javax.swing.JTextField supAddress;
+    private javax.swing.JLabel supAddresslabel;
+    private javax.swing.JButton supDeletebtn;
+    private javax.swing.JTextField supEmail;
+    private javax.swing.JLabel supEmaillabel;
+    private javax.swing.JTextField supID;
+    private javax.swing.JComboBox supIDcombo;
+    private javax.swing.JLabel supIdlabel;
+    private javax.swing.JTextField supName;
+    private javax.swing.JLabel supNamelabel;
+    private javax.swing.JLabel supNolabel;
+    private javax.swing.JPanel supOrderDetails;
+    private javax.swing.JTextField supPno;
+    private javax.swing.JTable supTable;
+    private javax.swing.JScrollPane supTble;
+    private javax.swing.JButton supUpdatebtn;
+    private javax.swing.JLabel suppIdlabel;
     private javax.swing.JButton updateEmpBtn;
     private javax.swing.JButton updateEmpTypeBtn;
     private javax.swing.JButton update_cus_u;
