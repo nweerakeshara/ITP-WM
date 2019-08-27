@@ -40,6 +40,7 @@ import model.Suppliers;
 import net.proteanit.sql.DbUtils;
 import service.CusDB;
 import service.EmpDB;
+import service.IM_Service;
 import service.SMServiceImpl;
 import service.employeeValidator;
 
@@ -57,6 +58,8 @@ public class NewJFrame extends javax.swing.JFrame {
     /**
      * Creates new form NewJFrame
      */
+    IM_Service IM_table = new IM_Service();
+    
     public NewJFrame() {
         initComponents();
         
@@ -188,6 +191,9 @@ public class NewJFrame extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         IMjPanel5 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
+        IM_search = new javax.swing.JButton();
+        IM_update_delete = new javax.swing.JButton();
+        IM_add = new javax.swing.JButton();
         PMjPanel7 = new javax.swing.JPanel();
         jButton10 = new javax.swing.JButton();
         jButton11 = new javax.swing.JButton();
@@ -409,6 +415,57 @@ public class NewJFrame extends javax.swing.JFrame {
         phone_val_U1 = new javax.swing.JLabel();
         address_val_U2 = new javax.swing.JLabel();
         email_val_U3 = new javax.swing.JLabel();
+        IMsearch = new javax.swing.JPanel();
+        jScrollPane12 = new javax.swing.JScrollPane();
+        IM_Stable = new javax.swing.JTable();
+        IM_serch_by = new javax.swing.JLabel();
+        IM_key = new javax.swing.JTextField();
+        IM_Sby = new javax.swing.JComboBox();
+        IM_search_btn = new javax.swing.JButton();
+        IMupdate = new javax.swing.JPanel();
+        IM_name_lbl = new javax.swing.JLabel();
+        IM_type_lbl = new javax.swing.JLabel();
+        IM_qty_lbl = new javax.swing.JLabel();
+        IM_bprice_lbl = new javax.swing.JLabel();
+        IM_sprice_lbl = new javax.swing.JLabel();
+        IM_ID_lbl = new javax.swing.JLabel();
+        I_ID = new javax.swing.JLabel();
+        I_Uname = new javax.swing.JTextField();
+        I_Uqty = new javax.swing.JTextField();
+        I_Utype = new javax.swing.JTextField();
+        I_USprice = new javax.swing.JTextField();
+        I_UBprice = new javax.swing.JTextField();
+        IM_update_btn = new javax.swing.JButton();
+        jScrollPane13 = new javax.swing.JScrollPane();
+        IM_Utable = new javax.swing.JTable();
+        IM_delete_btn = new javax.swing.JButton();
+        IM_U_qty_error_lbl = new javax.swing.JLabel();
+        IM_U_Bprice_error_lbl = new javax.swing.JLabel();
+        IM_U_Sprice_error_lbl = new javax.swing.JLabel();
+        IM_U_update = new javax.swing.JLabel();
+        IM_U_name_error_lbl = new javax.swing.JLabel();
+        IM_U_brand_error_lbl = new javax.swing.JLabel();
+        IM_U_delete = new javax.swing.JLabel();
+        IMadd = new javax.swing.JPanel();
+        IM_name = new javax.swing.JLabel();
+        IM_type = new javax.swing.JLabel();
+        IM_qty = new javax.swing.JLabel();
+        IM_bprice = new javax.swing.JLabel();
+        IM_sprice = new javax.swing.JLabel();
+        I_name = new javax.swing.JTextField();
+        I_qty = new javax.swing.JTextField();
+        I_type = new javax.swing.JTextField();
+        I_Sprice = new javax.swing.JTextField();
+        I_Bprice = new javax.swing.JTextField();
+        IM_add_btn = new javax.swing.JButton();
+        jScrollPane14 = new javax.swing.JScrollPane();
+        IM_Atable = new javax.swing.JTable();
+        IM_A_qty_error_lbl = new javax.swing.JLabel();
+        IM_A_Bprice_error_lbl = new javax.swing.JLabel();
+        IM_A_Sprice_error_lbl = new javax.swing.JLabel();
+        IM_A_success = new javax.swing.JLabel();
+        IM_A_name_error_lbl = new javax.swing.JLabel();
+        IM_A_brand_error_lbl = new javax.swing.JLabel();
 
         jLabel2.setText("jLabel2");
 
@@ -772,21 +829,58 @@ public class NewJFrame extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
         jLabel5.setText("Inventory management");
 
+        IM_search.setText("search");
+        IM_search.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                IM_searchActionPerformed(evt);
+            }
+        });
+
+        IM_update_delete.setText("update / delete");
+        IM_update_delete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                IM_update_deleteActionPerformed(evt);
+            }
+        });
+
+        IM_add.setText("add item");
+        IM_add.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                IM_addActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout IMjPanel5Layout = new javax.swing.GroupLayout(IMjPanel5);
         IMjPanel5.setLayout(IMjPanel5Layout);
         IMjPanel5Layout.setHorizontalGroup(
             IMjPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(IMjPanel5Layout.createSequentialGroup()
-                .addGap(546, 546, 546)
-                .addComponent(jLabel5)
-                .addContainerGap(989, Short.MAX_VALUE))
+                .addGroup(IMjPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(IMjPanel5Layout.createSequentialGroup()
+                        .addGap(546, 546, 546)
+                        .addComponent(jLabel5))
+                    .addGroup(IMjPanel5Layout.createSequentialGroup()
+                        .addGap(233, 233, 233)
+                        .addGroup(IMjPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(IM_search, javax.swing.GroupLayout.PREFERRED_SIZE, 365, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(IMjPanel5Layout.createSequentialGroup()
+                                .addComponent(IM_add, javax.swing.GroupLayout.PREFERRED_SIZE, 365, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(107, 107, 107)
+                                .addComponent(IM_update_delete, javax.swing.GroupLayout.PREFERRED_SIZE, 365, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(961, Short.MAX_VALUE))
         );
         IMjPanel5Layout.setVerticalGroup(
             IMjPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(IMjPanel5Layout.createSequentialGroup()
                 .addGap(47, 47, 47)
                 .addComponent(jLabel5)
-                .addContainerGap(1163, Short.MAX_VALUE))
+                .addGap(202, 202, 202)
+                .addGroup(IMjPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(IM_add, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(IM_update_delete, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(112, 112, 112)
+                .addComponent(IM_search, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(705, Short.MAX_VALUE))
         );
 
         jPanel3.add(IMjPanel5, "card3");
@@ -2833,6 +2927,353 @@ public class NewJFrame extends javax.swing.JFrame {
 
         jPanel3.add(cmUDCus, "cmUDCus");
 
+        IM_Stable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane12.setViewportView(IM_Stable);
+
+        IM_serch_by.setText("search by : ");
+
+        IM_Sby.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "id", "name", "brand", "less than qty", "greater than qty" }));
+
+        IM_search_btn.setText("search");
+        IM_search_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                IM_search_btnActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout IMsearchLayout = new javax.swing.GroupLayout(IMsearch);
+        IMsearch.setLayout(IMsearchLayout);
+        IMsearchLayout.setHorizontalGroup(
+            IMsearchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(IMsearchLayout.createSequentialGroup()
+                .addGap(233, 233, 233)
+                .addComponent(IM_serch_by)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(IM_Sby, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32)
+                .addComponent(IM_key, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28)
+                .addComponent(IM_search_btn)
+                .addContainerGap(1275, Short.MAX_VALUE))
+            .addGroup(IMsearchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(IMsearchLayout.createSequentialGroup()
+                    .addGap(111, 111, 111)
+                    .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 1062, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(858, Short.MAX_VALUE)))
+        );
+        IMsearchLayout.setVerticalGroup(
+            IMsearchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(IMsearchLayout.createSequentialGroup()
+                .addGap(69, 69, 69)
+                .addGroup(IMsearchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(IM_serch_by)
+                    .addComponent(IM_key, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(IM_Sby, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(IM_search_btn))
+                .addContainerGap(1174, Short.MAX_VALUE))
+            .addGroup(IMsearchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(IMsearchLayout.createSequentialGroup()
+                    .addGap(119, 119, 119)
+                    .addComponent(jScrollPane12, javax.swing.GroupLayout.DEFAULT_SIZE, 1136, Short.MAX_VALUE)
+                    .addContainerGap()))
+        );
+
+        jPanel3.add(IMsearch, "IM_search");
+
+        IM_name_lbl.setText("Name");
+
+        IM_type_lbl.setText("Brand");
+
+        IM_qty_lbl.setText("Qty");
+
+        IM_bprice_lbl.setText("Buying price");
+
+        IM_sprice_lbl.setText("Selling price");
+
+        IM_ID_lbl.setText("ID");
+
+        IM_update_btn.setBackground(new java.awt.Color(51, 255, 0));
+        IM_update_btn.setText("UPDATE");
+        IM_update_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                IM_update_btnActionPerformed(evt);
+            }
+        });
+
+        IM_Utable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        IM_Utable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                IM_UtableMouseClicked(evt);
+            }
+        });
+        jScrollPane13.setViewportView(IM_Utable);
+
+        IM_delete_btn.setBackground(new java.awt.Color(255, 51, 51));
+        IM_delete_btn.setText("DELETE");
+        IM_delete_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                IM_delete_btnActionPerformed(evt);
+            }
+        });
+
+        IM_U_qty_error_lbl.setForeground(new java.awt.Color(255, 0, 0));
+
+        IM_U_Bprice_error_lbl.setForeground(new java.awt.Color(255, 0, 0));
+
+        IM_U_Sprice_error_lbl.setForeground(new java.awt.Color(255, 0, 0));
+
+        IM_U_update.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        IM_U_update.setForeground(new java.awt.Color(0, 204, 51));
+
+        IM_U_name_error_lbl.setForeground(new java.awt.Color(255, 0, 0));
+
+        IM_U_brand_error_lbl.setForeground(new java.awt.Color(255, 0, 0));
+
+        IM_U_delete.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        IM_U_delete.setForeground(new java.awt.Color(255, 0, 0));
+
+        javax.swing.GroupLayout IMupdateLayout = new javax.swing.GroupLayout(IMupdate);
+        IMupdate.setLayout(IMupdateLayout);
+        IMupdateLayout.setHorizontalGroup(
+            IMupdateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(IMupdateLayout.createSequentialGroup()
+                .addGap(76, 76, 76)
+                .addGroup(IMupdateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(IMupdateLayout.createSequentialGroup()
+                        .addGroup(IMupdateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(IMupdateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(IM_name_lbl)
+                                .addComponent(IM_sprice_lbl, javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(IM_ID_lbl)
+                                .addComponent(IM_qty_lbl)
+                                .addComponent(IM_bprice_lbl))
+                            .addComponent(IM_type_lbl)
+                            .addComponent(IM_update_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(IMupdateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(IM_U_name_error_lbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(IM_U_Bprice_error_lbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(IMupdateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, IMupdateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(I_Uname)
+                                    .addComponent(I_ID, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(I_USprice)
+                                    .addComponent(I_Uqty)
+                                    .addComponent(I_UBprice)
+                                    .addComponent(I_Utype)
+                                    .addComponent(IM_U_brand_error_lbl, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(IM_U_qty_error_lbl, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(IM_U_Sprice_error_lbl, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(IM_delete_btn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addComponent(IM_U_delete, javax.swing.GroupLayout.PREFERRED_SIZE, 313, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(IM_U_update, javax.swing.GroupLayout.PREFERRED_SIZE, 313, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(66, 66, 66)
+                .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 685, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(843, Short.MAX_VALUE))
+        );
+        IMupdateLayout.setVerticalGroup(
+            IMupdateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(IMupdateLayout.createSequentialGroup()
+                .addGap(38, 38, 38)
+                .addGroup(IMupdateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(IM_ID_lbl)
+                    .addComponent(I_ID, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(26, 26, 26)
+                .addGroup(IMupdateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(IMupdateLayout.createSequentialGroup()
+                        .addGroup(IMupdateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(I_Uname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(IM_name_lbl))
+                        .addGroup(IMupdateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(IMupdateLayout.createSequentialGroup()
+                                .addGap(29, 29, 29)
+                                .addGroup(IMupdateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(IM_type_lbl)
+                                    .addComponent(I_Utype, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(IMupdateLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(IM_U_name_error_lbl, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(IM_U_brand_error_lbl, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(3, 3, 3)
+                        .addGroup(IMupdateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(I_Uqty, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(IM_qty_lbl))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(IM_U_qty_error_lbl, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(1, 1, 1)
+                        .addGroup(IMupdateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(I_UBprice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(IM_bprice_lbl))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(IM_U_Bprice_error_lbl, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(1, 1, 1)
+                        .addGroup(IMupdateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(I_USprice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(IM_sprice_lbl))
+                        .addGap(6, 6, 6)
+                        .addComponent(IM_U_Sprice_error_lbl, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(IMupdateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(IM_update_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(IM_delete_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(IM_U_update, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(IM_U_delete, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(813, Short.MAX_VALUE))
+        );
+
+        jPanel3.add(IMupdate, "IM_update");
+
+        IM_name.setText("Name");
+
+        IM_type.setText("Brand");
+
+        IM_qty.setText("Qty");
+
+        IM_bprice.setText("Buying price");
+
+        IM_sprice.setText("Selling price");
+
+        IM_add_btn.setBackground(new java.awt.Color(0, 102, 255));
+        IM_add_btn.setText("ADD");
+        IM_add_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                IM_add_btnActionPerformed(evt);
+            }
+        });
+
+        IM_Atable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane14.setViewportView(IM_Atable);
+
+        IM_A_qty_error_lbl.setForeground(new java.awt.Color(255, 0, 0));
+
+        IM_A_Bprice_error_lbl.setForeground(new java.awt.Color(255, 0, 0));
+
+        IM_A_Sprice_error_lbl.setForeground(new java.awt.Color(255, 0, 0));
+
+        IM_A_success.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        IM_A_success.setForeground(new java.awt.Color(0, 204, 51));
+
+        IM_A_name_error_lbl.setForeground(new java.awt.Color(255, 0, 0));
+
+        IM_A_brand_error_lbl.setForeground(new java.awt.Color(255, 0, 0));
+
+        javax.swing.GroupLayout IMaddLayout = new javax.swing.GroupLayout(IMadd);
+        IMadd.setLayout(IMaddLayout);
+        IMaddLayout.setHorizontalGroup(
+            IMaddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(IMaddLayout.createSequentialGroup()
+                .addGap(76, 76, 76)
+                .addGroup(IMaddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(IMaddLayout.createSequentialGroup()
+                        .addComponent(IM_qty)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(IMaddLayout.createSequentialGroup()
+                        .addGroup(IMaddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(IM_name)
+                            .addComponent(IM_type)
+                            .addComponent(IM_bprice)
+                            .addComponent(IM_sprice))
+                        .addGap(32, 32, 32)
+                        .addGroup(IMaddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(IM_A_Sprice_error_lbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(IMaddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(IMaddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(I_Sprice, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 352, Short.MAX_VALUE)
+                                    .addComponent(IM_A_Bprice_error_lbl, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(I_Bprice, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(IM_A_qty_error_lbl, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(I_qty, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(IM_A_brand_error_lbl, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(IM_A_name_error_lbl, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(I_name, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(I_type, javax.swing.GroupLayout.Alignment.LEADING))
+                                .addGroup(IMaddLayout.createSequentialGroup()
+                                    .addGap(218, 218, 218)
+                                    .addComponent(IM_add_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(IM_A_success, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 351, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(92, 92, 92)))
+                .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, 685, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(724, Short.MAX_VALUE))
+        );
+        IMaddLayout.setVerticalGroup(
+            IMaddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(IMaddLayout.createSequentialGroup()
+                .addGap(55, 55, 55)
+                .addGroup(IMaddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(IMaddLayout.createSequentialGroup()
+                        .addGroup(IMaddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(IM_name)
+                            .addComponent(I_name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(IM_A_name_error_lbl, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(6, 6, 6)
+                        .addGroup(IMaddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(IM_type)
+                            .addComponent(I_type, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(5, 5, 5)
+                        .addComponent(IM_A_brand_error_lbl, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(IMaddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(IM_qty)
+                            .addComponent(I_qty, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(IM_A_qty_error_lbl, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(IMaddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(IM_bprice)
+                            .addComponent(I_Bprice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(IM_A_Bprice_error_lbl, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(IMaddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(IM_sprice, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(I_Sprice, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(IM_A_Sprice_error_lbl, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(IM_add_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(36, 36, 36)
+                        .addComponent(IM_A_success, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(838, Short.MAX_VALUE))
+        );
+
+        jPanel3.add(IMadd, "IM_add");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -3938,6 +4379,328 @@ public class NewJFrame extends javax.swing.JFrame {
 
     }//GEN-LAST:event_cus_view_tableMouseClicked
 
+    private void IM_searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IM_searchActionPerformed
+
+        viewPanel("IM_search");
+        IM_Stable.setModel(DbUtils.resultSetToTableModel(IM_table.IM_tableload()));
+
+    }//GEN-LAST:event_IM_searchActionPerformed
+
+    private void IM_update_deleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IM_update_deleteActionPerformed
+
+        viewPanel("IM_update");
+        IM_Utable.setModel(DbUtils.resultSetToTableModel(IM_table.IM_tableload()));
+
+    }//GEN-LAST:event_IM_update_deleteActionPerformed
+
+    private void IM_addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IM_addActionPerformed
+
+        viewPanel("IM_add");
+        IM_Atable.setModel(DbUtils.resultSetToTableModel(IM_table.IM_tableload()));
+
+    }//GEN-LAST:event_IM_addActionPerformed
+
+    private void IM_search_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IM_search_btnActionPerformed
+
+        IM_Service service = new IM_Service();
+
+        String by = IM_Sby.getSelectedItem().toString();
+        String key = IM_key.getText();
+
+        IM_Stable.setModel(DbUtils.resultSetToTableModel(service.search_item(by,key)));
+
+    }//GEN-LAST:event_IM_search_btnActionPerformed
+
+    private void IM_update_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IM_update_btnActionPerformed
+
+        int ans = JOptionPane.showConfirmDialog(null, "are you sure you want to update current recode ?");
+        int Uvalid = 0;
+        IM_Service service = new IM_Service();
+
+        String Iid = I_ID.getText();
+        String Iname = I_Uname.getText();
+        String Itype = I_Utype.getText();
+        int Iqty = 0;
+        String IBprice = I_UBprice.getText();
+        String ISprice = I_USprice.getText();
+
+        if( Iname == null || Iname.length() == 0 )
+        {
+
+            IM_U_name_error_lbl.setText("*this field is empty");
+            Uvalid = 1;
+
+        }
+        else
+        {
+
+            IM_U_name_error_lbl.setText("");
+
+        }
+
+        if(Itype == null || Itype.length() == 0)
+        {
+
+            IM_U_brand_error_lbl.setText("*this field is empty");
+            Uvalid = 1;
+
+        }
+        else
+        {
+
+            IM_U_brand_error_lbl.setText("");
+
+        }
+
+        if(ISprice == null || ISprice.length() == 0)
+        {
+
+            IM_U_Sprice_error_lbl.setText("*this field is empty");
+            Uvalid = 1;
+
+        }
+        else
+        {
+
+            IM_U_Sprice_error_lbl.setText("");
+
+        }
+
+        if(I_Uqty.getText() == null || I_Uqty.getText().length() == 0)
+        {
+
+            IM_U_qty_error_lbl.setText("*this field is empty");
+            Uvalid = 1;
+
+        }
+        else
+        {
+
+            Iqty =  Integer.parseInt(I_Uqty.getText()) ;
+            IM_U_qty_error_lbl.setText("");
+        }
+
+        if(IBprice == null || IBprice.length() == 0 )
+        {
+
+            IM_U_Bprice_error_lbl.setText("*this field is empty");
+            Uvalid = 1;
+
+        }
+        else
+        {
+
+            IM_U_Bprice_error_lbl.setText("");
+        }
+
+        if(Iqty < 0)
+        {
+
+            IM_U_qty_error_lbl.setText("*invalid qty");
+            Uvalid = 1;
+
+        }
+        try
+        {
+            
+        
+        if(Double.parseDouble(IBprice)  < 0 )
+        {
+
+            IM_U_Bprice_error_lbl.setText("*invalid ammount");
+            Uvalid = 1;
+
+        }
+
+        if(Double.parseDouble(ISprice)  < 0 )
+        {
+
+            IM_U_Sprice_error_lbl.setText("*invalid ammount");
+            Uvalid = 1;
+
+        }
+
+        if(Uvalid == 0){
+
+            service.update_items(ans,Iid,Iname,Itype,Iqty,IBprice,ISprice);
+            IM_U_Bprice_error_lbl.setText("");
+            IM_U_Sprice_error_lbl.setText("");
+            IM_U_qty_error_lbl.setText("");
+            IM_U_brand_error_lbl.setText("");
+            IM_U_name_error_lbl.setText("");
+
+            IM_Utable.setModel(DbUtils.resultSetToTableModel(IM_table.IM_tableload()));
+            IM_U_update.setText("item added successfully");
+
+        }
+        } catch (Exception e) {
+            System.out.println("e");
+            IM_U_Sprice_error_lbl.setText("*this field is empty");
+            IM_U_Bprice_error_lbl.setText("*this field is empty");
+        }
+
+    }//GEN-LAST:event_IM_update_btnActionPerformed
+
+    private void IM_UtableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_IM_UtableMouseClicked
+
+        int IM_row = IM_Utable.getSelectedRow();
+
+        String ID = IM_Utable.getValueAt(IM_row, 0).toString();
+        String Iname = IM_Utable.getValueAt(IM_row, 1).toString();
+        String Itype = IM_Utable.getValueAt(IM_row, 2).toString();
+        String Iqty = IM_Utable.getValueAt(IM_row, 3).toString();
+        String IBprice = IM_Utable.getValueAt(IM_row, 4).toString();
+        String ISprice = IM_Utable.getValueAt(IM_row, 5).toString();
+
+        I_ID.setText(ID);
+        I_Uname.setText(Iname);
+        I_Utype.setText(Itype);
+        I_Uqty.setText(Iqty);
+        I_UBprice.setText(IBprice);
+        I_USprice.setText(ISprice);
+         
+        IM_U_Bprice_error_lbl.setText("");
+        IM_U_Sprice_error_lbl.setText("");
+        IM_U_qty_error_lbl.setText("");
+        IM_U_brand_error_lbl.setText("");
+        IM_U_name_error_lbl.setText("");
+        IM_U_update.setText("");
+        IM_U_delete.setText("");
+    }//GEN-LAST:event_IM_UtableMouseClicked
+
+    private void IM_delete_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IM_delete_btnActionPerformed
+
+        int ans = JOptionPane.showConfirmDialog(null, "are you sure you want to delete selected recode ?");
+
+        IM_Service service = new IM_Service();
+
+        String Iid = I_ID.getText();
+
+        service.update_items(Iid,ans);
+        IM_Utable.setModel(DbUtils.resultSetToTableModel(IM_table.IM_tableload()));
+        IM_U_delete.setText("item deleted");
+    }//GEN-LAST:event_IM_delete_btnActionPerformed
+
+    private void IM_add_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IM_add_btnActionPerformed
+
+        IM_Service service = new IM_Service();
+
+        int valid = 0;
+        String Iname = I_name.getText();
+        String Itype = I_type.getText();
+        int Iqty = 0;
+        double IBprice = 0;
+        double ISprice = 0;
+
+        if( Iname == null || Iname.length() == 0 )
+        {
+
+            IM_A_name_error_lbl.setText("*this field is empty");
+            valid = 1;
+
+        }
+        else
+        {
+
+            IM_A_name_error_lbl.setText("");
+
+        }
+
+        if(Itype == null || Itype.length() == 0)
+        {
+
+            IM_A_brand_error_lbl.setText("*this field is empty");
+            valid = 1;
+
+        }
+        else
+        {
+
+            IM_A_brand_error_lbl.setText("");
+
+        }
+
+        if(I_Sprice.getText() == null || I_Sprice.getText().length() == 0)
+        {
+
+            IM_A_Sprice_error_lbl.setText("*this field is empty");
+            valid = 1;
+
+        }
+        else
+        {
+            ISprice = Double.parseDouble(I_Sprice.getText());
+            IM_A_Sprice_error_lbl.setText("");
+
+        }
+
+        if(I_qty.getText() == null || I_qty.getText().length() == 0)
+        {
+
+            IM_A_qty_error_lbl.setText("*this field is empty");
+            valid = 1;
+
+        }
+        else
+        {
+
+            Iqty = Integer.parseInt(I_qty.getText()) ;
+            IM_A_qty_error_lbl.setText("");
+        }
+
+        if(I_Bprice.getText() == null || I_Bprice.getText().length() == 0 )
+        {
+
+            IM_A_Bprice_error_lbl.setText("*this field is empty");
+            valid = 1;
+
+        }
+        else
+        {
+            IBprice = Double.parseDouble(I_Bprice.getText());
+            IM_A_Bprice_error_lbl.setText("");
+        }
+
+        if(Iqty < 0)
+        {
+
+            IM_A_qty_error_lbl.setText("*invalid qty");
+            valid = 1;
+
+        }
+
+        if(IBprice < 0 )
+        {
+
+            IM_A_Bprice_error_lbl.setText("*invalid ammount");
+            valid = 1;
+
+        }
+
+        if(ISprice < 0 )
+        {
+
+            IM_A_Sprice_error_lbl.setText("*invalid ammount");
+            valid = 1;
+
+        }
+
+        if(valid == 0){
+
+            service.add_item(Iname,Itype,Iqty,IBprice,ISprice);
+            IM_A_Bprice_error_lbl.setText("");
+            IM_A_Sprice_error_lbl.setText("");
+            IM_A_qty_error_lbl.setText("");
+            IM_A_brand_error_lbl.setText("");
+            IM_A_name_error_lbl.setText("");
+
+            IM_Atable.setModel(DbUtils.resultSetToTableModel(IM_table.IM_tableload()));
+            IM_A_success.setText("item added successfully");
+
+        }
+
+    }//GEN-LAST:event_IM_add_btnActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -3981,8 +4744,59 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JPanel FMjPanel11;
     private javax.swing.JLabel ID_Val;
     private javax.swing.JLabel ID_cus;
+    private javax.swing.JLabel IM_A_Bprice_error_lbl;
+    private javax.swing.JLabel IM_A_Sprice_error_lbl;
+    private javax.swing.JLabel IM_A_brand_error_lbl;
+    private javax.swing.JLabel IM_A_name_error_lbl;
+    private javax.swing.JLabel IM_A_qty_error_lbl;
+    private javax.swing.JLabel IM_A_success;
+    private javax.swing.JTable IM_Atable;
+    private javax.swing.JLabel IM_ID_lbl;
+    private javax.swing.JComboBox IM_Sby;
+    private javax.swing.JTable IM_Stable;
+    private javax.swing.JLabel IM_U_Bprice_error_lbl;
+    private javax.swing.JLabel IM_U_Sprice_error_lbl;
+    private javax.swing.JLabel IM_U_brand_error_lbl;
+    private javax.swing.JLabel IM_U_delete;
+    private javax.swing.JLabel IM_U_name_error_lbl;
+    private javax.swing.JLabel IM_U_qty_error_lbl;
+    private javax.swing.JLabel IM_U_update;
+    private javax.swing.JTable IM_Utable;
+    private javax.swing.JButton IM_add;
+    private javax.swing.JButton IM_add_btn;
+    private javax.swing.JLabel IM_bprice;
+    private javax.swing.JLabel IM_bprice_lbl;
+    private javax.swing.JButton IM_delete_btn;
+    private javax.swing.JTextField IM_key;
+    private javax.swing.JLabel IM_name;
+    private javax.swing.JLabel IM_name_lbl;
+    private javax.swing.JLabel IM_qty;
+    private javax.swing.JLabel IM_qty_lbl;
+    private javax.swing.JButton IM_search;
+    private javax.swing.JButton IM_search_btn;
+    private javax.swing.JLabel IM_serch_by;
+    private javax.swing.JLabel IM_sprice;
+    private javax.swing.JLabel IM_sprice_lbl;
+    private javax.swing.JLabel IM_type;
+    private javax.swing.JLabel IM_type_lbl;
+    private javax.swing.JButton IM_update_btn;
+    private javax.swing.JButton IM_update_delete;
+    private javax.swing.JPanel IMadd;
     private javax.swing.JPanel IMjPanel5;
+    private javax.swing.JPanel IMsearch;
+    private javax.swing.JPanel IMupdate;
     private javax.persistence.EntityManager ITPPUEntityManager;
+    private javax.swing.JTextField I_Bprice;
+    private javax.swing.JLabel I_ID;
+    private javax.swing.JTextField I_Sprice;
+    private javax.swing.JTextField I_UBprice;
+    private javax.swing.JTextField I_USprice;
+    private javax.swing.JTextField I_Uname;
+    private javax.swing.JTextField I_Uqty;
+    private javax.swing.JTextField I_Utype;
+    private javax.swing.JTextField I_name;
+    private javax.swing.JTextField I_qty;
+    private javax.swing.JTextField I_type;
     private javax.swing.JButton ManageCustomers;
     private javax.swing.JLabel PMjLabel6;
     private javax.swing.JPanel PMjPanel7;
@@ -4165,6 +4979,9 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane11;
+    private javax.swing.JScrollPane jScrollPane12;
+    private javax.swing.JScrollPane jScrollPane13;
+    private javax.swing.JScrollPane jScrollPane14;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
