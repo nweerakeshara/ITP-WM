@@ -189,11 +189,12 @@ public class NewJFrame extends javax.swing.JFrame {
         Reports = new javax.swing.JButton();
         FMjPanel11 = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
-        IMjPanel5 = new javax.swing.JPanel();
+        IM_report = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         IM_search = new javax.swing.JButton();
         IM_update_delete = new javax.swing.JButton();
         IM_add = new javax.swing.JButton();
+        IM_search1 = new javax.swing.JButton();
         PMjPanel7 = new javax.swing.JPanel();
         jButton10 = new javax.swing.JButton();
         jButton11 = new javax.swing.JButton();
@@ -217,6 +218,7 @@ public class NewJFrame extends javax.swing.JFrame {
         jButton14 = new javax.swing.JButton();
         jTextField4 = new javax.swing.JTextField();
         jLabel17 = new javax.swing.JLabel();
+        jSeparator6 = new javax.swing.JSeparator();
         DMjPanel9 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         EMjPanel4 = new javax.swing.JPanel();
@@ -271,6 +273,7 @@ public class NewJFrame extends javax.swing.JFrame {
         empRequestTable = new javax.swing.JTable();
         empLeaveStatusLabel = new javax.swing.JLabel();
         empLeaveStatusBox = new javax.swing.JTextField();
+        jSeparator7 = new javax.swing.JSeparator();
         addCatergoryPanel = new javax.swing.JPanel();
         empAddTypeLabel = new javax.swing.JLabel();
         empTypeIdBox = new javax.swing.JTextField();
@@ -285,6 +288,7 @@ public class NewJFrame extends javax.swing.JFrame {
         empCatergoryTable = new javax.swing.JTable();
         empTypeIdLabel = new javax.swing.JLabel();
         empTypeBox1 = new javax.swing.JTextField();
+        jSeparator8 = new javax.swing.JSeparator();
         empLeaveMgmtPanel = new javax.swing.JPanel();
         empReasonLabel_mgmt = new javax.swing.JLabel();
         jScrollPane6 = new javax.swing.JScrollPane();
@@ -305,15 +309,14 @@ public class NewJFrame extends javax.swing.JFrame {
         empRejectRequestBtn_mgmt = new javax.swing.JButton();
         empLeaveReqIDLabel_mgmt = new javax.swing.JLabel();
         empLeaveReqID_mgmt = new javax.swing.JTextField();
+        jSeparator3 = new javax.swing.JSeparator();
         smViewReports = new javax.swing.JPanel();
         smGenerateBills = new javax.swing.JPanel();
         smjLabel4 = new javax.swing.JLabel();
         custp = new javax.swing.JTextField();
         smjLabel5 = new javax.swing.JLabel();
         btnNxtGenerateBill = new javax.swing.JButton();
-        btnBackGenerateBill1 = new javax.swing.JButton();
         custpaymentmethod = new javax.swing.JComboBox<>();
-        btnChkCustId = new javax.swing.JButton();
         smCustIdStatus = new javax.swing.JLabel();
         smjLabel6 = new javax.swing.JLabel();
         smdisref = new javax.swing.JTextField();
@@ -328,6 +331,7 @@ public class NewJFrame extends javax.swing.JFrame {
         smqtystatus = new javax.swing.JLabel();
         smdisrefstatus = new javax.swing.JLabel();
         smreset = new javax.swing.JButton();
+        jSeparator9 = new javax.swing.JSeparator();
         smRegisterCustomers = new javax.swing.JPanel();
         smReturnHandle = new javax.swing.JPanel();
         jScrollPane10 = new javax.swing.JScrollPane();
@@ -342,6 +346,7 @@ public class NewJFrame extends javax.swing.JFrame {
         smbtndeleteitemreturns = new javax.swing.JButton();
         smsalesidreturns = new javax.swing.JLabel();
         smsalesidreturnsbox = new javax.swing.JTextField();
+        jSeparator11 = new javax.swing.JSeparator();
         smGenerateBills2 = new javax.swing.JPanel();
         smjLabel9 = new javax.swing.JLabel();
         smtotbillamt = new javax.swing.JTextField();
@@ -398,6 +403,7 @@ public class NewJFrame extends javax.swing.JFrame {
         phone_val_U1 = new javax.swing.JLabel();
         address_val_U2 = new javax.swing.JLabel();
         email_val_U3 = new javax.swing.JLabel();
+        jSeparator5 = new javax.swing.JSeparator();
         IMsearch = new javax.swing.JPanel();
         jScrollPane12 = new javax.swing.JScrollPane();
         IM_Stable = new javax.swing.JTable();
@@ -405,6 +411,7 @@ public class NewJFrame extends javax.swing.JFrame {
         IM_key = new javax.swing.JTextField();
         IM_Sby = new javax.swing.JComboBox();
         IM_search_btn = new javax.swing.JButton();
+        IM_SEARCH_txt = new javax.swing.JLabel();
         IMupdate = new javax.swing.JPanel();
         IM_name_lbl = new javax.swing.JLabel();
         IM_type_lbl = new javax.swing.JLabel();
@@ -429,6 +436,8 @@ public class NewJFrame extends javax.swing.JFrame {
         IM_U_name_error_lbl = new javax.swing.JLabel();
         IM_U_brand_error_lbl = new javax.swing.JLabel();
         IM_U_delete = new javax.swing.JLabel();
+        jSeparator4 = new javax.swing.JSeparator();
+        IM_UPDATE_txt = new javax.swing.JLabel();
         IMadd = new javax.swing.JPanel();
         IM_name = new javax.swing.JLabel();
         IM_type = new javax.swing.JLabel();
@@ -449,6 +458,7 @@ public class NewJFrame extends javax.swing.JFrame {
         IM_A_success = new javax.swing.JLabel();
         IM_A_name_error_lbl = new javax.swing.JLabel();
         IM_A_brand_error_lbl = new javax.swing.JLabel();
+        IM_ADD_txt = new javax.swing.JLabel();
         sumPanel16 = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
         SuMOrder = new javax.swing.JButton();
@@ -470,6 +480,7 @@ public class NewJFrame extends javax.swing.JFrame {
         OrderIdlabel = new javax.swing.JLabel();
         amountLabel = new javax.swing.JLabel();
         placeOrder = new javax.swing.JButton();
+        jSeparator12 = new javax.swing.JSeparator();
         supAddDetails = new javax.swing.JPanel();
         supPno = new javax.swing.JTextField();
         supEmail = new javax.swing.JTextField();
@@ -486,6 +497,7 @@ public class NewJFrame extends javax.swing.JFrame {
         supTble = new javax.swing.JScrollPane();
         supTable = new javax.swing.JTable();
         supDeletebtn = new javax.swing.JButton();
+        jSeparator13 = new javax.swing.JSeparator();
 
         jLabel2.setText("jLabel2");
 
@@ -604,7 +616,7 @@ public class NewJFrame extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(574, 574, 574)
                 .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -635,9 +647,12 @@ public class NewJFrame extends javax.swing.JFrame {
         jPanel3.setMaximumSize(new java.awt.Dimension(0, 0));
         jPanel3.setLayout(new java.awt.CardLayout());
 
+        SaMjPanel8.setBackground(new java.awt.Color(153, 153, 153));
+
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
         jLabel8.setText("Sales management");
 
+        btnViewReports.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/view reports for sales and inventory  and other all managements.png"))); // NOI18N
         btnViewReports.setText("View Reports");
         btnViewReports.setPreferredSize(new java.awt.Dimension(232, 232));
         btnViewReports.addActionListener(new java.awt.event.ActionListener() {
@@ -655,6 +670,7 @@ public class NewJFrame extends javax.swing.JFrame {
             }
         });
 
+        btnRegisterCustomers.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/add cus for customer management.png"))); // NOI18N
         btnRegisterCustomers.setText("Register Customers");
         btnRegisterCustomers.setPreferredSize(new java.awt.Dimension(232, 232));
         btnRegisterCustomers.addActionListener(new java.awt.event.ActionListener() {
@@ -690,47 +706,55 @@ public class NewJFrame extends javax.swing.JFrame {
                     .addGroup(SaMjPanel8Layout.createSequentialGroup()
                         .addGap(605, 605, 605)
                         .addComponent(jLabel8)))
-                .addContainerGap(561, Short.MAX_VALUE))
+                .addContainerGap(605, Short.MAX_VALUE))
         );
         SaMjPanel8Layout.setVerticalGroup(
             SaMjPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(SaMjPanel8Layout.createSequentialGroup()
-                .addGap(68, 68, 68)
+                .addGap(55, 55, 55)
                 .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(SaMjPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(SaMjPanel8Layout.createSequentialGroup()
-                        .addGap(135, 135, 135)
+                        .addGap(170, 170, 170)
                         .addGroup(SaMjPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnRegisterCustomers, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnGenerateBills, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(SaMjPanel8Layout.createSequentialGroup()
-                        .addGap(131, 131, 131)
+                        .addGap(170, 170, 170)
                         .addGroup(SaMjPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnViewReports, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnHandleReturns, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(749, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel3.add(SaMjPanel8, "card6");
 
+        CMjPanel10.setBackground(new java.awt.Color(153, 153, 153));
+
         jLabel10.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
         jLabel10.setText("Customer management");
 
+        AddCustomers.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/add cus for customer management.png"))); // NOI18N
         AddCustomers.setText("Add Customers");
+        AddCustomers.setPreferredSize(new java.awt.Dimension(232, 232));
         AddCustomers.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AddCustomersActionPerformed(evt);
             }
         });
 
+        ManageCustomers.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/manage customers.png"))); // NOI18N
         ManageCustomers.setText("Manage Customers");
+        ManageCustomers.setPreferredSize(new java.awt.Dimension(232, 232));
         ManageCustomers.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ManageCustomersActionPerformed(evt);
             }
         });
 
+        Reports.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/view reports for sales and inventory  and other all managements.png"))); // NOI18N
         Reports.setText("Reports");
+        Reports.setPreferredSize(new java.awt.Dimension(232, 232));
 
         javax.swing.GroupLayout CMjPanel10Layout = new javax.swing.GroupLayout(CMjPanel10);
         CMjPanel10.setLayout(CMjPanel10Layout);
@@ -742,28 +766,30 @@ public class NewJFrame extends javax.swing.JFrame {
                         .addGap(534, 534, 534)
                         .addComponent(jLabel10))
                     .addGroup(CMjPanel10Layout.createSequentialGroup()
-                        .addGap(428, 428, 428)
-                        .addComponent(AddCustomers)
+                        .addGap(220, 220, 220)
+                        .addComponent(AddCustomers, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(156, 156, 156)
-                        .addComponent(ManageCustomers)
+                        .addComponent(ManageCustomers, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(166, 166, 166)
-                        .addComponent(Reports)))
-                .addContainerGap(942, Short.MAX_VALUE))
+                        .addComponent(Reports, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(837, Short.MAX_VALUE))
         );
         CMjPanel10Layout.setVerticalGroup(
             CMjPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(CMjPanel10Layout.createSequentialGroup()
-                .addGap(49, 49, 49)
+                .addGap(55, 55, 55)
                 .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(151, 151, 151)
+                .addGap(170, 170, 170)
                 .addGroup(CMjPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(AddCustomers)
-                    .addComponent(ManageCustomers)
-                    .addComponent(Reports))
-                .addContainerGap(946, Short.MAX_VALUE))
+                    .addComponent(AddCustomers, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ManageCustomers, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Reports, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(6844, Short.MAX_VALUE))
         );
 
         jPanel3.add(CMjPanel10, "card8");
+
+        FMjPanel11.setBackground(new java.awt.Color(153, 153, 153));
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
         jLabel11.setText("Feedback management");
@@ -775,76 +801,94 @@ public class NewJFrame extends javax.swing.JFrame {
             .addGroup(FMjPanel11Layout.createSequentialGroup()
                 .addGap(550, 550, 550)
                 .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 502, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(979, Short.MAX_VALUE))
+                .addContainerGap(1023, Short.MAX_VALUE))
         );
         FMjPanel11Layout.setVerticalGroup(
             FMjPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(FMjPanel11Layout.createSequentialGroup()
-                .addGap(64, 64, 64)
+                .addGap(55, 55, 55)
                 .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(1146, Short.MAX_VALUE))
+                .addContainerGap(7285, Short.MAX_VALUE))
         );
 
         jPanel3.add(FMjPanel11, "card9");
 
+        IM_report.setBackground(new java.awt.Color(153, 153, 153));
+
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
         jLabel5.setText("Inventory management");
 
+        IM_search.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/search items for inventory.png"))); // NOI18N
         IM_search.setText("search");
+        IM_search.setPreferredSize(new java.awt.Dimension(232, 232));
         IM_search.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 IM_searchActionPerformed(evt);
             }
         });
 
+        IM_update_delete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/update delete items of inventory.png"))); // NOI18N
         IM_update_delete.setText("update / delete");
+        IM_update_delete.setPreferredSize(new java.awt.Dimension(232, 232));
         IM_update_delete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 IM_update_deleteActionPerformed(evt);
             }
         });
 
+        IM_add.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/add items for inventory.png"))); // NOI18N
         IM_add.setText("add item");
+        IM_add.setPreferredSize(new java.awt.Dimension(232, 232));
         IM_add.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 IM_addActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout IMjPanel5Layout = new javax.swing.GroupLayout(IMjPanel5);
-        IMjPanel5.setLayout(IMjPanel5Layout);
-        IMjPanel5Layout.setHorizontalGroup(
-            IMjPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(IMjPanel5Layout.createSequentialGroup()
-                .addGroup(IMjPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(IMjPanel5Layout.createSequentialGroup()
+        IM_search1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/view reports for sales and inventory  and other all managements.png"))); // NOI18N
+        IM_search1.setText("report");
+        IM_search1.setPreferredSize(new java.awt.Dimension(232, 232));
+        IM_search1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                IM_search1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout IM_reportLayout = new javax.swing.GroupLayout(IM_report);
+        IM_report.setLayout(IM_reportLayout);
+        IM_reportLayout.setHorizontalGroup(
+            IM_reportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(IM_reportLayout.createSequentialGroup()
+                .addGroup(IM_reportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(IM_reportLayout.createSequentialGroup()
                         .addGap(546, 546, 546)
                         .addComponent(jLabel5))
-                    .addGroup(IMjPanel5Layout.createSequentialGroup()
-                        .addGap(233, 233, 233)
-                        .addGroup(IMjPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(IM_search, javax.swing.GroupLayout.PREFERRED_SIZE, 365, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(IMjPanel5Layout.createSequentialGroup()
-                                .addComponent(IM_add, javax.swing.GroupLayout.PREFERRED_SIZE, 365, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(107, 107, 107)
-                                .addComponent(IM_update_delete, javax.swing.GroupLayout.PREFERRED_SIZE, 365, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(961, Short.MAX_VALUE))
+                    .addGroup(IM_reportLayout.createSequentialGroup()
+                        .addGap(220, 220, 220)
+                        .addComponent(IM_add, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(121, 121, 121)
+                        .addComponent(IM_update_delete, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(121, 121, 121)
+                        .addComponent(IM_search, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(121, 121, 121)
+                        .addComponent(IM_search1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(564, Short.MAX_VALUE))
         );
-        IMjPanel5Layout.setVerticalGroup(
-            IMjPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(IMjPanel5Layout.createSequentialGroup()
-                .addGap(47, 47, 47)
+        IM_reportLayout.setVerticalGroup(
+            IM_reportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(IM_reportLayout.createSequentialGroup()
+                .addGap(55, 55, 55)
                 .addComponent(jLabel5)
-                .addGap(202, 202, 202)
-                .addGroup(IMjPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(IM_add, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(IM_update_delete, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(112, 112, 112)
-                .addComponent(IM_search, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(705, Short.MAX_VALUE))
+                .addGap(155, 155, 155)
+                .addGroup(IM_reportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(IM_update_delete, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(IM_search, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(IM_search1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(IM_add, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel3.add(IMjPanel5, "card3");
+        jPanel3.add(IM_report, "card3");
 
         PMjPanel7.setBackground(new java.awt.Color(153, 153, 153));
 
@@ -895,7 +939,7 @@ public class NewJFrame extends javax.swing.JFrame {
                         .addComponent(jButton12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(110, 110, 110)
                         .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(546, Short.MAX_VALUE))
+                .addContainerGap(590, Short.MAX_VALUE))
         );
 
         PMjPanel7Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jButton10, jButton11, jButton12, jButton13});
@@ -911,10 +955,12 @@ public class NewJFrame extends javax.swing.JFrame {
                     .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(753, Short.MAX_VALUE))
+                .addContainerGap(6883, Short.MAX_VALUE))
         );
 
         jPanel3.add(PMjPanel7, "card5");
+
+        pmInsertBillPayments.setBackground(new java.awt.Color(153, 153, 153));
 
         org.jdesktop.swingbinding.JTableBinding jTableBinding = org.jdesktop.swingbinding.SwingBindings.createJTableBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, billpaymentList, jTable1);
         org.jdesktop.swingbinding.JTableBinding.ColumnBinding columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${pid}"));
@@ -1081,28 +1127,39 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addGap(33, 33, 33))
         );
 
+        jSeparator6.setOrientation(javax.swing.SwingConstants.VERTICAL);
+
         javax.swing.GroupLayout pmInsertBillPaymentsLayout = new javax.swing.GroupLayout(pmInsertBillPayments);
         pmInsertBillPayments.setLayout(pmInsertBillPaymentsLayout);
         pmInsertBillPaymentsLayout.setHorizontalGroup(
             pmInsertBillPaymentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pmInsertBillPaymentsLayout.createSequentialGroup()
-                .addGap(87, 87, 87)
+                .addGap(136, 136, 136)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(148, 148, 148)
+                .addGap(72, 72, 72)
+                .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 629, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(622, Short.MAX_VALUE))
+                .addContainerGap(617, Short.MAX_VALUE))
         );
         pmInsertBillPaymentsLayout.setVerticalGroup(
             pmInsertBillPaymentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pmInsertBillPaymentsLayout.createSequentialGroup()
-                .addGap(72, 72, 72)
-                .addGroup(pmInsertBillPaymentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane1)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(603, Short.MAX_VALUE))
+                .addGroup(pmInsertBillPaymentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pmInsertBillPaymentsLayout.createSequentialGroup()
+                        .addGap(147, 147, 147)
+                        .addGroup(pmInsertBillPaymentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jScrollPane1)
+                            .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(pmInsertBillPaymentsLayout.createSequentialGroup()
+                        .addGap(89, 89, 89)
+                        .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, 697, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(6612, Short.MAX_VALUE))
         );
 
         jPanel3.add(pmInsertBillPayments, "card10");
+
+        DMjPanel9.setBackground(new java.awt.Color(153, 153, 153));
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
         jLabel9.setText("Delivery management");
@@ -1114,18 +1171,19 @@ public class NewJFrame extends javax.swing.JFrame {
             .addGroup(DMjPanel9Layout.createSequentialGroup()
                 .addGap(372, 372, 372)
                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 543, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(1116, Short.MAX_VALUE))
+                .addContainerGap(1160, Short.MAX_VALUE))
         );
         DMjPanel9Layout.setVerticalGroup(
             DMjPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(DMjPanel9Layout.createSequentialGroup()
                 .addGap(228, 228, 228)
                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(961, Short.MAX_VALUE))
+                .addContainerGap(7091, Short.MAX_VALUE))
         );
 
         jPanel3.add(DMjPanel9, "card7");
 
+        EMjPanel4.setBackground(new java.awt.Color(153, 153, 153));
         EMjPanel4.setPreferredSize(new java.awt.Dimension(1143, 707));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
@@ -1186,18 +1244,17 @@ public class NewJFrame extends javax.swing.JFrame {
                         .addGap(479, 479, 479)
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 553, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(EMjPanel4Layout.createSequentialGroup()
-                        .addGap(253, 253, 253)
-                        .addGroup(EMjPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(EMjPanel4Layout.createSequentialGroup()
-                                .addComponent(attendanceEmpNavBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(addEmpCatNavBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(220, 220, 220)
+                        .addGroup(EMjPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(addEmpCatNavBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(EMjPanel4Layout.createSequentialGroup()
                                 .addComponent(regEmpNavBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(142, 142, 142)
-                                .addComponent(leaveEmpNavBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(160, 160, 160)
-                        .addComponent(empLeaveMgmtNavBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(leaveEmpNavBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(160, 160, 160)
+                                .addComponent(empLeaveMgmtNavBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(74, 74, 74)
+                                .addComponent(attendanceEmpNavBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         EMjPanel4Layout.setVerticalGroup(
@@ -1205,22 +1262,23 @@ public class NewJFrame extends javax.swing.JFrame {
             .addGroup(EMjPanel4Layout.createSequentialGroup()
                 .addGroup(EMjPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(EMjPanel4Layout.createSequentialGroup()
-                        .addGap(26, 26, 26)
+                        .addGap(55, 55, 55)
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(EMjPanel4Layout.createSequentialGroup()
-                        .addGap(190, 190, 190)
+                        .addGap(257, 257, 257)
                         .addGroup(EMjPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(regEmpNavBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(leaveEmpNavBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(empLeaveMgmtNavBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(114, 114, 114)
-                .addGroup(EMjPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(addEmpCatNavBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(attendanceEmpNavBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(empLeaveMgmtNavBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(attendanceEmpNavBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(113, 113, 113)
+                .addComponent(addEmpCatNavBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel3.add(EMjPanel4, "card2");
+
+        addEmpCard1.setBackground(new java.awt.Color(153, 153, 153));
 
         addEmpTitleTxt.setFont(new java.awt.Font("SansSerif", 1, 36)); // NOI18N
         addEmpTitleTxt.setForeground(new java.awt.Color(255, 255, 255));
@@ -1376,7 +1434,7 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 737, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(458, Short.MAX_VALUE))
+                .addContainerGap(502, Short.MAX_VALUE))
         );
         addEmpCard1Layout.setVerticalGroup(
             addEmpCard1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1423,12 +1481,12 @@ public class NewJFrame extends javax.swing.JFrame {
                             .addComponent(deleteEmpBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(updateEmpBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(registerEmpBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(606, Short.MAX_VALUE))
+                .addContainerGap(6736, Short.MAX_VALUE))
         );
 
         jPanel3.add(addEmpCard1, "addEmpCard1");
 
-        attendanceEmpCard.setBackground(new java.awt.Color(51, 51, 51));
+        attendanceEmpCard.setBackground(new java.awt.Color(153, 153, 153));
 
         empDateLabel.setFont(new java.awt.Font("SansSerif", 0, 36)); // NOI18N
         empDateLabel.setForeground(new java.awt.Color(255, 255, 255));
@@ -1472,33 +1530,37 @@ public class NewJFrame extends javax.swing.JFrame {
         attendanceEmpCardLayout.setHorizontalGroup(
             attendanceEmpCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(attendanceEmpCardLayout.createSequentialGroup()
-                .addGap(567, 567, 567)
-                .addGroup(attendanceEmpCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(attendanceEmpCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(attendanceEmpCardLayout.createSequentialGroup()
-                        .addComponent(empSignInBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 226, Short.MAX_VALUE)
-                        .addComponent(empSignOutBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(empDateLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane3))
-                .addContainerGap(766, Short.MAX_VALUE))
+                        .addGap(567, 567, 567)
+                        .addComponent(empDateLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 698, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(attendanceEmpCardLayout.createSequentialGroup()
+                        .addGap(537, 537, 537)
+                        .addGroup(attendanceEmpCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(attendanceEmpCardLayout.createSequentialGroup()
+                                .addComponent(empSignInBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(empSignOutBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 698, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(810, Short.MAX_VALUE))
         );
         attendanceEmpCardLayout.setVerticalGroup(
             attendanceEmpCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(attendanceEmpCardLayout.createSequentialGroup()
                 .addGap(85, 85, 85)
                 .addComponent(empDateLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 557, Short.MAX_VALUE)
+                .addGap(31, 31, 31)
                 .addGroup(attendanceEmpCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(empSignInBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(empSignOutBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(44, 44, 44)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(52, 52, 52))
+                .addContainerGap())
         );
 
         jPanel3.add(attendanceEmpCard, "attendanceEmpCard");
 
-        empLeaveCard.setBackground(new java.awt.Color(51, 51, 51));
+        empLeaveCard.setBackground(new java.awt.Color(153, 153, 153));
 
         empRemLeaveLabel.setFont(new java.awt.Font("SansSerif", 0, 24)); // NOI18N
         empRemLeaveLabel.setForeground(new java.awt.Color(255, 255, 255));
@@ -1573,6 +1635,8 @@ public class NewJFrame extends javax.swing.JFrame {
         empLeaveStatusBox.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         empLeaveStatusBox.setBorder(null);
 
+        jSeparator7.setOrientation(javax.swing.SwingConstants.VERTICAL);
+
         javax.swing.GroupLayout empLeaveCardLayout = new javax.swing.GroupLayout(empLeaveCard);
         empLeaveCard.setLayout(empLeaveCardLayout);
         empLeaveCardLayout.setHorizontalGroup(
@@ -1593,25 +1657,28 @@ public class NewJFrame extends javax.swing.JFrame {
                             .addComponent(empEndDateBox, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(empDaysBox, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 460, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(empRemLeavBox, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(empstartDateBox, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(empLeaveStatusBox, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(219, 219, 219)
+                            .addComponent(empLeaveStatusBox, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(empRemLeavBox, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(124, 124, 124)
+                        .addComponent(jSeparator7, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(45, 45, 45)
                         .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(empLeaveCardLayout.createSequentialGroup()
                         .addGap(602, 602, 602)
                         .addComponent(empLeaveRequestBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(412, Short.MAX_VALUE))
+                .addContainerGap(456, Short.MAX_VALUE))
         );
         empLeaveCardLayout.setVerticalGroup(
             empLeaveCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(empLeaveCardLayout.createSequentialGroup()
                 .addGap(119, 119, 119)
+                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 497, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(empLeaveCardLayout.createSequentialGroup()
                 .addGroup(empLeaveCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, empLeaveCardLayout.createSequentialGroup()
-                        .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 497, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(empLeaveCardLayout.createSequentialGroup()
+                        .addGap(119, 119, 119)
                         .addGroup(empLeaveCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(empRemLeaveLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(empRemLeavBox, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -1634,15 +1701,18 @@ public class NewJFrame extends javax.swing.JFrame {
                         .addGap(27, 27, 27)
                         .addGroup(empLeaveCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(empLeaveStatusLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(empLeaveStatusBox, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 491, Short.MAX_VALUE)
-                        .addComponent(empLeaveRequestBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(89, 89, 89))))
+                            .addComponent(empLeaveStatusBox, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(empLeaveCardLayout.createSequentialGroup()
+                        .addGap(53, 53, 53)
+                        .addComponent(jSeparator7, javax.swing.GroupLayout.PREFERRED_SIZE, 667, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 0, 0)
+                .addComponent(empLeaveRequestBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(89, 89, 89))
         );
 
         jPanel3.add(empLeaveCard, "empLeaveCard");
 
-        addCatergoryPanel.setBackground(new java.awt.Color(51, 51, 51));
+        addCatergoryPanel.setBackground(new java.awt.Color(153, 153, 153));
 
         empAddTypeLabel.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
         empAddTypeLabel.setForeground(new java.awt.Color(255, 255, 255));
@@ -1717,6 +1787,8 @@ public class NewJFrame extends javax.swing.JFrame {
 
         empTypeBox1.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
 
+        jSeparator8.setOrientation(javax.swing.SwingConstants.VERTICAL);
+
         javax.swing.GroupLayout addCatergoryPanelLayout = new javax.swing.GroupLayout(addCatergoryPanel);
         addCatergoryPanel.setLayout(addCatergoryPanelLayout);
         addCatergoryPanelLayout.setHorizontalGroup(
@@ -1748,49 +1820,53 @@ public class NewJFrame extends javax.swing.JFrame {
                         .addGap(26, 26, 26)
                         .addComponent(empTypeIdBox, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(156, 156, 156)))
-                .addGap(487, 487, 487)
+                .addGap(234, 234, 234)
+                .addComponent(jSeparator8, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(204, 204, 204)
                 .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 442, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(504, Short.MAX_VALUE))
+                .addContainerGap(547, Short.MAX_VALUE))
         );
         addCatergoryPanelLayout.setVerticalGroup(
             addCatergoryPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(addCatergoryPanelLayout.createSequentialGroup()
-                .addGroup(addCatergoryPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(addCatergoryPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(addCatergoryPanelLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 408, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, addCatergoryPanelLayout.createSequentialGroup()
                         .addGap(160, 160, 160)
                         .addGroup(addCatergoryPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(empTypeIdLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(empTypeIdBox, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(addCatergoryPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(65, 65, 65)
+                        .addGroup(addCatergoryPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(addCatergoryPanelLayout.createSequentialGroup()
-                                .addGap(65, 65, 65)
                                 .addComponent(empAddTypeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(63, 63, 63))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addCatergoryPanelLayout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGap(63, 63, 63)
+                                .addGroup(addCatergoryPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(empSalaryLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(empSalaryBox, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(54, 54, 54)
+                                .addGroup(addCatergoryPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(empLeaveLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(empLeaveBox, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(63, 63, 63)
+                                .addGroup(addCatergoryPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(addEmpTypeBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(updateEmpTypeBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(deleteEmpTypeBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(addCatergoryPanelLayout.createSequentialGroup()
                                 .addComponent(empTypeBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(53, 53, 53)))
-                        .addGroup(addCatergoryPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(empSalaryLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(empSalaryBox, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(54, 54, 54)
-                        .addGroup(addCatergoryPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(empLeaveLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(empLeaveBox, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(63, 63, 63)
-                        .addGroup(addCatergoryPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(addEmpTypeBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(updateEmpTypeBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(deleteEmpTypeBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(663, Short.MAX_VALUE))
+                                .addGap(53, 53, 53))))
+                    .addGroup(addCatergoryPanelLayout.createSequentialGroup()
+                        .addGap(47, 47, 47)
+                        .addComponent(jSeparator8, javax.swing.GroupLayout.PREFERRED_SIZE, 633, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(addCatergoryPanelLayout.createSequentialGroup()
+                        .addGap(163, 163, 163)
+                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 408, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
         );
 
         jPanel3.add(addCatergoryPanel, "addCatergoryPanel");
 
-        empLeaveMgmtPanel.setBackground(new java.awt.Color(51, 51, 51));
+        empLeaveMgmtPanel.setBackground(new java.awt.Color(153, 153, 153));
 
         empReasonLabel_mgmt.setFont(new java.awt.Font("SansSerif", 0, 24)); // NOI18N
         empReasonLabel_mgmt.setForeground(new java.awt.Color(255, 255, 255));
@@ -1890,45 +1966,52 @@ public class NewJFrame extends javax.swing.JFrame {
         empLeaveReqID_mgmt.setEditable(false);
         empLeaveReqID_mgmt.setFont(new java.awt.Font("SansSerif", 0, 24)); // NOI18N
 
+        jSeparator3.setOrientation(javax.swing.SwingConstants.VERTICAL);
+
         javax.swing.GroupLayout empLeaveMgmtPanelLayout = new javax.swing.GroupLayout(empLeaveMgmtPanel);
         empLeaveMgmtPanel.setLayout(empLeaveMgmtPanelLayout);
         empLeaveMgmtPanelLayout.setHorizontalGroup(
             empLeaveMgmtPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(empLeaveMgmtPanelLayout.createSequentialGroup()
                 .addGap(170, 170, 170)
-                .addGroup(empLeaveMgmtPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(empReasonLabel_mgmt, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(empDaysLabel_mgmt, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(empEndDateLabel_mgmt, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(empstartDateLabel_mgmt, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(empEndDateLabel_mgmt1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(empstartDateLabel_mgmt1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(empLeaveReqIDLabel_mgmt, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
                 .addGroup(empLeaveMgmtPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(empLeaveMgmtPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(empLeaveMgmtPanelLayout.createSequentialGroup()
-                            .addComponent(empApproveRequestBtn_mgmt, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(empRejectRequestBtn_mgmt, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(empEndDateBox_mgmt1, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(empID_mgmt1, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(empEndDateBox_mgmt, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(empDaysBox_mgmt, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 460, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(empstartDateBox_mgmt, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(empLeaveReqID_mgmt, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(99, 99, 99)
+                    .addGroup(empLeaveMgmtPanelLayout.createSequentialGroup()
+                        .addGroup(empLeaveMgmtPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(empEndDateLabel_mgmt1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(empstartDateLabel_mgmt1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(empLeaveReqIDLabel_mgmt, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(empLeaveMgmtPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(empEndDateBox_mgmt1, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(empLeaveReqID_mgmt, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(empID_mgmt1, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(empLeaveMgmtPanelLayout.createSequentialGroup()
+                        .addGroup(empLeaveMgmtPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(empReasonLabel_mgmt, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(empDaysLabel_mgmt, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(empEndDateLabel_mgmt, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(empstartDateLabel_mgmt, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(empLeaveMgmtPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(empEndDateBox_mgmt, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(empDaysBox_mgmt, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(empstartDateBox_mgmt, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(empLeaveMgmtPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(empLeaveMgmtPanelLayout.createSequentialGroup()
+                                    .addComponent(empApproveRequestBtn_mgmt)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(empRejectRequestBtn_mgmt, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 383, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
+                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 588, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(396, Short.MAX_VALUE))
+                .addContainerGap(503, Short.MAX_VALUE))
         );
         empLeaveMgmtPanelLayout.setVerticalGroup(
             empLeaveMgmtPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, empLeaveMgmtPanelLayout.createSequentialGroup()
+            .addGroup(empLeaveMgmtPanelLayout.createSequentialGroup()
                 .addGroup(empLeaveMgmtPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(empLeaveMgmtPanelLayout.createSequentialGroup()
-                        .addGap(60, 60, 60)
-                        .addComponent(jScrollPane8))
                     .addGroup(empLeaveMgmtPanelLayout.createSequentialGroup()
                         .addGap(28, 28, 28)
                         .addGroup(empLeaveMgmtPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -1944,27 +2027,35 @@ public class NewJFrame extends javax.swing.JFrame {
                                 .addComponent(empstartDateLabel_mgmt1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(30, 30, 30)
                                 .addComponent(empEndDateLabel_mgmt1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 456, Short.MAX_VALUE)
-                        .addGroup(empLeaveMgmtPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(empstartDateBox_mgmt, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(empstartDateLabel_mgmt, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(30, 30, 30)
-                        .addGroup(empLeaveMgmtPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(empEndDateLabel_mgmt, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(empEndDateBox_mgmt, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(30, 30, 30)
-                        .addGroup(empLeaveMgmtPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(empDaysLabel_mgmt, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(empDaysBox_mgmt, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(34, 34, 34)
+                        .addGap(29, 29, 29)
+                        .addGroup(empLeaveMgmtPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(empLeaveMgmtPanelLayout.createSequentialGroup()
+                                .addComponent(empstartDateLabel_mgmt, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(30, 30, 30)
+                                .addComponent(empEndDateLabel_mgmt, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(41, 41, 41)
+                                .addComponent(empDaysLabel_mgmt, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(empLeaveMgmtPanelLayout.createSequentialGroup()
+                                .addComponent(empstartDateBox_mgmt, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(30, 30, 30)
+                                .addComponent(empEndDateBox_mgmt, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(30, 30, 30)
+                                .addComponent(empDaysBox_mgmt, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(empLeaveMgmtPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(empReasonLabel_mgmt, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(37, 37, 37)
-                .addGroup(empLeaveMgmtPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(empApproveRequestBtn_mgmt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(empRejectRequestBtn_mgmt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(112, 112, 112))
+                            .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(35, 35, 35)
+                        .addGroup(empLeaveMgmtPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(empApproveRequestBtn_mgmt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(empRejectRequestBtn_mgmt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(empLeaveMgmtPanelLayout.createSequentialGroup()
+                        .addGap(44, 44, 44)
+                        .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 602, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(empLeaveMgmtPanelLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 691, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
         );
 
         jPanel3.add(empLeaveMgmtPanel, "empLeaveMgmtPanel");
@@ -1975,18 +2066,24 @@ public class NewJFrame extends javax.swing.JFrame {
         smViewReports.setLayout(smViewReportsLayout);
         smViewReportsLayout.setHorizontalGroup(
             smViewReportsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 2031, Short.MAX_VALUE)
+            .addGap(0, 2075, Short.MAX_VALUE)
         );
         smViewReportsLayout.setVerticalGroup(
             smViewReportsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1268, Short.MAX_VALUE)
+            .addGap(0, 7398, Short.MAX_VALUE)
         );
 
         jPanel3.add(smViewReports, "smViewReports");
 
-        smGenerateBills.setBackground(new java.awt.Color(255, 255, 255));
+        smGenerateBills.setBackground(new java.awt.Color(153, 153, 153));
 
         smjLabel4.setText("Enter Customer Mobile Number");
+
+        custp.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                custpKeyReleased(evt);
+            }
+        });
 
         smjLabel5.setText("Enter Payment Method for Bill");
 
@@ -1997,21 +2094,7 @@ public class NewJFrame extends javax.swing.JFrame {
             }
         });
 
-        btnBackGenerateBill1.setText("Back");
-        btnBackGenerateBill1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBackGenerateBill1ActionPerformed(evt);
-            }
-        });
-
         custpaymentmethod.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cash", "Cheque", "Card" }));
-
-        btnChkCustId.setText("Go");
-        btnChkCustId.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnChkCustIdActionPerformed(evt);
-            }
-        });
 
         smCustIdStatus.setForeground(new java.awt.Color(255, 0, 0));
 
@@ -2094,110 +2177,111 @@ public class NewJFrame extends javax.swing.JFrame {
             }
         });
 
+        jSeparator9.setOrientation(javax.swing.SwingConstants.VERTICAL);
+
         javax.swing.GroupLayout smGenerateBillsLayout = new javax.swing.GroupLayout(smGenerateBills);
         smGenerateBills.setLayout(smGenerateBillsLayout);
         smGenerateBillsLayout.setHorizontalGroup(
             smGenerateBillsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(smGenerateBillsLayout.createSequentialGroup()
-                .addGap(37, 37, 37)
-                .addGroup(smGenerateBillsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, smGenerateBillsLayout.createSequentialGroup()
-                        .addComponent(smjLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(custpaymentmethod, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(smGenerateBillsLayout.createSequentialGroup()
-                        .addComponent(btnBackGenerateBill1, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(95, 95, 95)
-                        .addComponent(smreset, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnNxtGenerateBill, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(smGenerateBillsLayout.createSequentialGroup()
-                        .addComponent(smjLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(smdisref, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(smGenerateBillsLayout.createSequentialGroup()
-                        .addComponent(smjLabel4)
-                        .addGap(51, 51, 51)
-                        .addComponent(custp, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnChkCustId))
-                    .addGroup(smGenerateBillsLayout.createSequentialGroup()
-                        .addGroup(smGenerateBillsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(smjLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(smjLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(smGenerateBillsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(smitemid, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(smitemqty, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(31, 31, 31)
-                        .addGroup(smGenerateBillsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(smbtnadditem, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(smbtndeleteitem, javax.swing.GroupLayout.DEFAULT_SIZE, 124, Short.MAX_VALUE))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addGap(1508, 1508, 1508))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, smGenerateBillsLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(smCustIdStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 403, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(1543, 1543, 1543))
+                .addGap(104, 104, 104)
+                .addComponent(smdisrefstatus, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(smGenerateBillsLayout.createSequentialGroup()
                 .addGroup(smGenerateBillsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(smGenerateBillsLayout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(smCustIdStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 403, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(165, 165, 165))
+                    .addGroup(smGenerateBillsLayout.createSequentialGroup()
                         .addGap(139, 139, 139)
                         .addComponent(smqtystatus, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 553, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(smGenerateBillsLayout.createSequentialGroup()
-                        .addGap(104, 104, 104)
-                        .addComponent(smdisrefstatus, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(918, 918, 918))
+                        .addGap(37, 37, 37)
+                        .addGroup(smGenerateBillsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(smGenerateBillsLayout.createSequentialGroup()
+                                .addComponent(smjLabel4)
+                                .addGap(51, 51, 51)
+                                .addComponent(custp, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, smGenerateBillsLayout.createSequentialGroup()
+                                .addComponent(smjLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(custpaymentmethod, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(smGenerateBillsLayout.createSequentialGroup()
+                                .addComponent(smreset, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnNxtGenerateBill, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(smGenerateBillsLayout.createSequentialGroup()
+                                .addGroup(smGenerateBillsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(smjLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(smGenerateBillsLayout.createSequentialGroup()
+                                        .addGroup(smGenerateBillsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(smjLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(smjLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(smGenerateBillsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(smitemid, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(smitemqty, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(31, 31, 31)
+                                        .addGroup(smGenerateBillsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(smbtnadditem, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(smbtndeleteitem, javax.swing.GroupLayout.DEFAULT_SIZE, 124, Short.MAX_VALUE)))
+                                    .addGroup(smGenerateBillsLayout.createSequentialGroup()
+                                        .addGap(734, 734, 734)
+                                        .addComponent(smdisref, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(46, 46, 46)))
+                .addComponent(jSeparator9, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 553, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(776, 776, 776))
         );
         smGenerateBillsLayout.setVerticalGroup(
             smGenerateBillsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(smGenerateBillsLayout.createSequentialGroup()
-                .addGap(49, 49, 49)
                 .addGroup(smGenerateBillsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(smGenerateBillsLayout.createSequentialGroup()
-                        .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 401, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(smGenerateBillsLayout.createSequentialGroup()
+                        .addGap(49, 49, 49)
                         .addGroup(smGenerateBillsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(smjLabel4)
-                            .addGroup(smGenerateBillsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(custp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(btnChkCustId)))
-                        .addGap(18, 18, 18)
-                        .addComponent(smCustIdStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(109, 109, 109)
-                        .addGroup(smGenerateBillsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(smbtnadditem)
-                            .addComponent(smitemid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(smjLabel7))
-                        .addGap(18, 18, 18)
-                        .addGroup(smGenerateBillsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(smjLabel8)
-                            .addComponent(smitemqty, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(smbtndeleteitem))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(smqtystatus, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 660, Short.MAX_VALUE)
-                        .addGroup(smGenerateBillsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(smjLabel5)
-                            .addComponent(custpaymentmethod, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(23, 23, 23)
-                        .addGroup(smGenerateBillsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(smjLabel6)
-                            .addComponent(smdisref, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(smGenerateBillsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 401, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(smGenerateBillsLayout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(smdisrefstatus, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(smGenerateBillsLayout.createSequentialGroup()
+                                .addGroup(smGenerateBillsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(smjLabel4)
+                                    .addComponent(custp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addComponent(smCustIdStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(109, 109, 109)
+                                .addGroup(smGenerateBillsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(smbtnadditem)
+                                    .addComponent(smitemid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(smjLabel7))
+                                .addGap(18, 18, 18)
+                                .addGroup(smGenerateBillsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(smjLabel8)
+                                    .addComponent(smitemqty, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(smbtndeleteitem))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(smqtystatus, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(45, 45, 45)
+                                .addGroup(smGenerateBillsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(smjLabel5)
+                                    .addComponent(custpaymentmethod, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(23, 23, 23)
+                                .addComponent(smdisref, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(75, 75, 75)
                                 .addGroup(smGenerateBillsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(btnNxtGenerateBill)
-                                    .addComponent(smreset)
-                                    .addComponent(btnBackGenerateBill1))))
-                        .addGap(102, 102, 102))))
+                                    .addComponent(smreset)))))
+                    .addGroup(smGenerateBillsLayout.createSequentialGroup()
+                        .addGap(37, 37, 37)
+                        .addComponent(jSeparator9, javax.swing.GroupLayout.PREFERRED_SIZE, 662, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(326, 326, 326)
+                .addComponent(smjLabel6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(smdisrefstatus, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(168, 168, 168))
         );
 
         jPanel3.add(smGenerateBills, "smGenerateBills");
@@ -2208,16 +2292,16 @@ public class NewJFrame extends javax.swing.JFrame {
         smRegisterCustomers.setLayout(smRegisterCustomersLayout);
         smRegisterCustomersLayout.setHorizontalGroup(
             smRegisterCustomersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 2031, Short.MAX_VALUE)
+            .addGap(0, 2075, Short.MAX_VALUE)
         );
         smRegisterCustomersLayout.setVerticalGroup(
             smRegisterCustomersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1268, Short.MAX_VALUE)
+            .addGap(0, 7398, Short.MAX_VALUE)
         );
 
         jPanel3.add(smRegisterCustomers, "smRegisterCustomers");
 
-        smReturnHandle.setBackground(new java.awt.Color(255, 255, 255));
+        smReturnHandle.setBackground(new java.awt.Color(153, 153, 153));
 
         smviewreturnstable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -2259,11 +2343,13 @@ public class NewJFrame extends javax.swing.JFrame {
 
         smsalesidreturns.setText("Sales Id");
 
+        jSeparator11.setOrientation(javax.swing.SwingConstants.VERTICAL);
+
         javax.swing.GroupLayout smReturnHandleLayout = new javax.swing.GroupLayout(smReturnHandle);
         smReturnHandle.setLayout(smReturnHandleLayout);
         smReturnHandleLayout.setHorizontalGroup(
             smReturnHandleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, smReturnHandleLayout.createSequentialGroup()
+            .addGroup(smReturnHandleLayout.createSequentialGroup()
                 .addGap(30, 30, 30)
                 .addGroup(smReturnHandleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(smenterbillid, javax.swing.GroupLayout.DEFAULT_SIZE, 232, Short.MAX_VALUE)
@@ -2278,9 +2364,11 @@ public class NewJFrame extends javax.swing.JFrame {
                     .addComponent(smtxtitemid)
                     .addComponent(smtxtitemname)
                     .addComponent(smsalesidreturnsbox))
-                .addGap(85, 85, 85)
+                .addGap(108, 108, 108)
+                .addComponent(jSeparator11, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(57, 57, 57)
                 .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(1031, Short.MAX_VALUE))
+                .addContainerGap(945, Short.MAX_VALUE))
         );
         smReturnHandleLayout.setVerticalGroup(
             smReturnHandleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2288,32 +2376,37 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addGroup(smReturnHandleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(smReturnHandleLayout.createSequentialGroup()
                         .addGap(183, 183, 183)
-                        .addGroup(smReturnHandleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(smenterbillid, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(smtxtfieldenterbillid, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(smReturnHandleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(smReturnHandleLayout.createSequentialGroup()
+                                .addGroup(smReturnHandleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(smenterbillid, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(smtxtfieldenterbillid, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addComponent(smbtnsearchbillid, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(102, 102, 102)
+                                .addGroup(smReturnHandleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(smsalesidreturns, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(smsalesidreturnsbox, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE))
+                                .addGap(18, 18, 18)
+                                .addGroup(smReturnHandleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(smtxtitemid, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(smshowitemid, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addComponent(smbtnsearchbillid, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(102, 102, 102)
-                        .addGroup(smReturnHandleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(smsalesidreturns, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(smsalesidreturnsbox, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE))
-                        .addGap(18, 18, 18)
                         .addGroup(smReturnHandleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(smtxtitemid, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(smshowitemid, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(smtxtitemname, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(smshowitemname, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(29, 29, 29)
+                        .addComponent(smbtndeleteitemreturns, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(smReturnHandleLayout.createSequentialGroup()
-                        .addGap(195, 195, 195)
-                        .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
-                .addGroup(smReturnHandleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(smtxtitemname, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(smshowitemname, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(29, 29, 29)
-                .addComponent(smbtndeleteitemreturns, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(663, Short.MAX_VALUE))
+                        .addGap(83, 83, 83)
+                        .addComponent(jSeparator11, javax.swing.GroupLayout.PREFERRED_SIZE, 598, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(6717, Short.MAX_VALUE))
         );
 
         jPanel3.add(smReturnHandle, "smReturnHandle");
+
+        smGenerateBills2.setBackground(new java.awt.Color(153, 153, 153));
 
         smjLabel9.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
         smjLabel9.setText("Total Bill Amount");
@@ -2355,7 +2448,7 @@ public class NewJFrame extends javax.swing.JFrame {
                     .addComponent(smtotbillamt)
                     .addComponent(smcashamtpaid)
                     .addComponent(smchangedis, javax.swing.GroupLayout.DEFAULT_SIZE, 455, Short.MAX_VALUE))
-                .addContainerGap(973, Short.MAX_VALUE))
+                .addContainerGap(1017, Short.MAX_VALUE))
         );
         smGenerateBills2Layout.setVerticalGroup(
             smGenerateBills2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2375,10 +2468,12 @@ public class NewJFrame extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, smGenerateBills2Layout.createSequentialGroup()
                         .addGap(63, 63, 63)
                         .addComponent(smchangedis, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(821, Short.MAX_VALUE))
+                .addContainerGap(6951, Short.MAX_VALUE))
         );
 
         jPanel3.add(smGenerateBills2, "smGenerateBills2");
+
+        pmSearchBillPayments.setBackground(new java.awt.Color(153, 153, 153));
 
         jLabel19.setText("Search");
 
@@ -2444,7 +2539,7 @@ public class NewJFrame extends javax.swing.JFrame {
                                 .addGap(64, 64, 64)
                                 .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(1208, Short.MAX_VALUE))
+                .addContainerGap(1252, Short.MAX_VALUE))
         );
         pmSearchBillPaymentsLayout.setVerticalGroup(
             pmSearchBillPaymentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2460,27 +2555,29 @@ public class NewJFrame extends javax.swing.JFrame {
                     .addComponent(jRadioButton3))
                 .addGap(99, 99, 99)
                 .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 384, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(599, Short.MAX_VALUE))
+                .addContainerGap(6729, Short.MAX_VALUE))
         );
 
         jPanel3.add(pmSearchBillPayments, "pmSearchBillPayments");
 
+        cmAddCus.setBackground(new java.awt.Color(153, 153, 153));
+
         head_add_cus.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         head_add_cus.setText("Add Customers");
 
-        id_cus.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        id_cus.setFont(new java.awt.Font("Tahoma", 1, 30)); // NOI18N
         id_cus.setText("ID");
 
-        name_cus.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        name_cus.setFont(new java.awt.Font("Tahoma", 1, 30)); // NOI18N
         name_cus.setText("Name");
 
-        phone_cus.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        phone_cus.setFont(new java.awt.Font("Tahoma", 1, 30)); // NOI18N
         phone_cus.setText("Address");
 
-        address_cus_ad.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        address_cus_ad.setFont(new java.awt.Font("Tahoma", 1, 30)); // NOI18N
         address_cus_ad.setText("Phone");
 
-        email_cus_ad.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        email_cus_ad.setFont(new java.awt.Font("Tahoma", 1, 30)); // NOI18N
         email_cus_ad.setText("Email");
 
         reset_cus_add.setBackground(new java.awt.Color(255, 51, 51));
@@ -2493,6 +2590,7 @@ public class NewJFrame extends javax.swing.JFrame {
             }
         });
 
+        submit_cuss_add.setBackground(new java.awt.Color(0, 102, 51));
         submit_cuss_add.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         submit_cuss_add.setText("Submit");
         submit_cuss_add.addActionListener(new java.awt.event.ActionListener() {
@@ -2500,6 +2598,16 @@ public class NewJFrame extends javax.swing.JFrame {
                 submit_cuss_addActionPerformed(evt);
             }
         });
+
+        cusEmailAdd.setFont(new java.awt.Font("Tahoma", 1, 30)); // NOI18N
+
+        cusNameAdd.setFont(new java.awt.Font("Tahoma", 1, 30)); // NOI18N
+
+        cusPhoneAdd.setFont(new java.awt.Font("Tahoma", 1, 30)); // NOI18N
+
+        cusIdAdd.setFont(new java.awt.Font("Tahoma", 1, 30)); // NOI18N
+
+        cusAddAdd.setFont(new java.awt.Font("Tahoma", 1, 30)); // NOI18N
 
         message.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         message.setForeground(new java.awt.Color(102, 51, 255));
@@ -2524,48 +2632,43 @@ public class NewJFrame extends javax.swing.JFrame {
         cmAddCusLayout.setHorizontalGroup(
             cmAddCusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(cmAddCusLayout.createSequentialGroup()
-                .addGap(67, 67, 67)
-                .addGroup(cmAddCusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, cmAddCusLayout.createSequentialGroup()
-                        .addComponent(head_add_cus, javax.swing.GroupLayout.PREFERRED_SIZE, 431, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, cmAddCusLayout.createSequentialGroup()
-                        .addGroup(cmAddCusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(id_cus)
-                            .addComponent(name_cus)
-                            .addComponent(address_cus_ad)
-                            .addComponent(phone_cus)
-                            .addComponent(email_cus_ad))
-                        .addGap(75, 75, 75)
-                        .addGroup(cmAddCusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(400, 400, 400)
+                .addGroup(cmAddCusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(id_cus)
+                    .addComponent(name_cus)
+                    .addComponent(address_cus_ad)
+                    .addComponent(phone_cus)
+                    .addComponent(email_cus_ad))
+                .addGap(75, 75, 75)
+                .addGroup(cmAddCusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(head_add_cus, javax.swing.GroupLayout.PREFERRED_SIZE, 431, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(cmAddCusLayout.createSequentialGroup()
+                        .addGroup(cmAddCusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(cmAddCusLayout.createSequentialGroup()
-                                .addComponent(reset_cus_add, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(32, 32, 32)
-                                .addComponent(submit_cuss_add, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(cmAddCusLayout.createSequentialGroup()
-                                .addGroup(cmAddCusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(cusNameAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(cusIdAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(cusPhoneAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(cusEmailAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(cusAddAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(message, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addGroup(cmAddCusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(email_val)
-                                    .addComponent(phone_val)
-                                    .addComponent(address_val)
-                                    .addComponent(name_val)
-                                    .addComponent(ID_Val))
-                                .addContainerGap(1456, Short.MAX_VALUE))))))
+                                .addComponent(reset_cus_add, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(81, 81, 81)
+                                .addComponent(submit_cuss_add, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(cusNameAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cusIdAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cusPhoneAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cusEmailAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cusAddAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(message, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(cmAddCusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(email_val)
+                            .addComponent(phone_val)
+                            .addComponent(address_val)
+                            .addComponent(name_val)
+                            .addComponent(ID_Val))))
+                .addContainerGap(1049, Short.MAX_VALUE))
         );
         cmAddCusLayout.setVerticalGroup(
             cmAddCusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(cmAddCusLayout.createSequentialGroup()
-                .addGap(32, 32, 32)
+                .addGap(91, 91, 91)
                 .addComponent(head_add_cus, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(77, 77, 77)
+                .addGap(146, 146, 146)
                 .addGroup(cmAddCusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(id_cus)
                     .addComponent(cusIdAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -2592,22 +2695,28 @@ public class NewJFrame extends javax.swing.JFrame {
                     .addComponent(email_val))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(message, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(24, 24, 24)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(cmAddCusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(reset_cus_add, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(submit_cuss_add, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(761, Short.MAX_VALUE))
+                    .addComponent(reset_cus_add, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(submit_cuss_add, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(6753, Short.MAX_VALUE))
         );
 
         jPanel3.add(cmAddCus, "cmAddCus");
 
-        ID_cus.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        cmUDCus.setBackground(new java.awt.Color(153, 153, 153));
+
+        phoneBoxCus.setFont(new java.awt.Font("SansSerif", 0, 30)); // NOI18N
+
+        emailBoxCus.setFont(new java.awt.Font("SansSerif", 0, 30)); // NOI18N
+
+        ID_cus.setFont(new java.awt.Font("SansSerif", 0, 30)); // NOI18N
         ID_cus.setText("ID");
 
         manage_cus.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         manage_cus.setText("Manage Customers");
 
-        cancel_cus.setBackground(new java.awt.Color(255, 255, 255));
+        cancel_cus.setBackground(new java.awt.Color(255, 173, 67));
         cancel_cus.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         cancel_cus.setForeground(new java.awt.Color(51, 51, 0));
         cancel_cus.setText("Cancel");
@@ -2617,16 +2726,20 @@ public class NewJFrame extends javax.swing.JFrame {
             }
         });
 
-        address_cus.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        address_cus.setFont(new java.awt.Font("SansSerif", 0, 30)); // NOI18N
         address_cus.setText("Address");
 
-        phone_cus_u.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        name_cus_u.setFont(new java.awt.Font("SansSerif", 0, 30)); // NOI18N
+
+        phone_cus_u.setFont(new java.awt.Font("SansSerif", 0, 30)); // NOI18N
         phone_cus_u.setText("Phone");
 
-        email_cus_U.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        email_cus_U.setFont(new java.awt.Font("SansSerif", 0, 30)); // NOI18N
         email_cus_U.setText("Email");
 
-        name_cus_t.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        adress_cus_u.setFont(new java.awt.Font("Tahoma", 0, 30)); // NOI18N
+
+        name_cus_t.setFont(new java.awt.Font("SansSerif", 0, 30)); // NOI18N
         name_cus_t.setText("Name");
 
         delete_cus_U.setBackground(new java.awt.Color(255, 51, 51));
@@ -2668,7 +2781,7 @@ public class NewJFrame extends javax.swing.JFrame {
         });
         cus_view_scroll.setViewportView(cus_view_table);
 
-        labCusID.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        labCusID.setFont(new java.awt.Font("SansSerif", 0, 30)); // NOI18N
         labCusID.setForeground(new java.awt.Color(255, 0, 51));
         labCusID.setText("Customer ID");
 
@@ -2684,6 +2797,8 @@ public class NewJFrame extends javax.swing.JFrame {
         email_val_U3.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         email_val_U3.setForeground(new java.awt.Color(255, 0, 0));
 
+        jSeparator5.setOrientation(javax.swing.SwingConstants.VERTICAL);
+
         javax.swing.GroupLayout cmUDCusLayout = new javax.swing.GroupLayout(cmUDCus);
         cmUDCus.setLayout(cmUDCusLayout);
         cmUDCusLayout.setHorizontalGroup(
@@ -2693,80 +2808,88 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addGroup(cmUDCusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(cmUDCusLayout.createSequentialGroup()
                         .addGroup(cmUDCusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(ID_cus)
+                            .addComponent(name_cus_t)
+                            .addComponent(email_cus_U)
+                            .addComponent(phone_cus_u)
+                            .addComponent(address_cus))
+                        .addGap(75, 75, 75)
+                        .addGroup(cmUDCusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addGroup(cmUDCusLayout.createSequentialGroup()
-                                .addComponent(cancel_cus, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(39, 39, 39)
-                                .addComponent(delete_cus_U, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(30, 30, 30)
-                                .addComponent(update_cus_u, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(cmUDCusLayout.createSequentialGroup()
-                                .addGroup(cmUDCusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(ID_cus)
-                                    .addComponent(name_cus_t)
-                                    .addComponent(email_cus_U)
-                                    .addComponent(phone_cus_u)
-                                    .addComponent(address_cus))
-                                .addGap(75, 75, 75)
-                                .addGroup(cmUDCusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(name_cus_u, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(phoneBoxCus, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(emailBoxCus, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(adress_cus_u, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(labCusID, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addGroup(cmUDCusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(name_val_U)
-                                    .addComponent(email_val_U3)
-                                    .addComponent(address_val_U2)
-                                    .addComponent(phone_val_U1))))
-                        .addGap(109, 109, 109)
-                        .addComponent(cus_view_scroll, javax.swing.GroupLayout.PREFERRED_SIZE, 907, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(cancel_cus, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(delete_cus_U, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(update_cus_u, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(name_cus_u, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(phoneBoxCus, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(emailBoxCus, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(adress_cus_u, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(labCusID, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(cmUDCusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(name_val_U)
+                            .addComponent(email_val_U3)
+                            .addComponent(address_val_U2)
+                            .addComponent(phone_val_U1))
+                        .addGap(38, 38, 38)
+                        .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(32, 32, 32)
+                        .addComponent(cus_view_scroll, javax.swing.GroupLayout.PREFERRED_SIZE, 778, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, cmUDCusLayout.createSequentialGroup()
                         .addComponent(manage_cus, javax.swing.GroupLayout.PREFERRED_SIZE, 566, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 2087, Short.MAX_VALUE))))
+                        .addGap(0, 1442, Short.MAX_VALUE))))
         );
         cmUDCusLayout.setVerticalGroup(
             cmUDCusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(cmUDCusLayout.createSequentialGroup()
                 .addGap(32, 32, 32)
                 .addComponent(manage_cus, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(77, 77, 77)
                 .addGroup(cmUDCusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(cmUDCusLayout.createSequentialGroup()
-                        .addGroup(cmUDCusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(ID_cus)
-                            .addComponent(labCusID, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(cmUDCusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(name_cus_u, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(name_cus_t)
-                            .addComponent(name_val_U))
-                        .addGap(18, 18, 18)
-                        .addGroup(cmUDCusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(phoneBoxCus, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(phone_cus_u)
-                            .addComponent(phone_val_U1))
-                        .addGap(18, 18, 18)
-                        .addGroup(cmUDCusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(address_cus)
-                            .addComponent(adress_cus_u, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(address_val_U2))
-                        .addGap(18, 18, 18)
-                        .addGroup(cmUDCusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(emailBoxCus, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(email_cus_U)
-                            .addComponent(email_val_U3))
-                        .addGap(41, 41, 41)
-                        .addGroup(cmUDCusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(cancel_cus, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(delete_cus_U, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(update_cus_u, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(cus_view_scroll, javax.swing.GroupLayout.PREFERRED_SIZE, 410, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(447, Short.MAX_VALUE))
+                        .addGap(77, 77, 77)
+                        .addGroup(cmUDCusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(cmUDCusLayout.createSequentialGroup()
+                                .addGroup(cmUDCusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(ID_cus)
+                                    .addComponent(labCusID, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(18, 18, 18)
+                                .addGroup(cmUDCusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(name_cus_u, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(name_cus_t)
+                                    .addComponent(name_val_U))
+                                .addGap(18, 18, 18)
+                                .addGroup(cmUDCusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(phoneBoxCus, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(phone_cus_u)
+                                    .addComponent(phone_val_U1))
+                                .addGap(18, 18, 18)
+                                .addGroup(cmUDCusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(address_cus)
+                                    .addComponent(adress_cus_u, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(address_val_U2))
+                                .addGap(18, 18, 18)
+                                .addGroup(cmUDCusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(emailBoxCus, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(email_cus_U)
+                                    .addComponent(email_val_U3))
+                                .addGap(59, 59, 59)
+                                .addGroup(cmUDCusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(cancel_cus, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(delete_cus_U, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(update_cus_u, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(cus_view_scroll, javax.swing.GroupLayout.PREFERRED_SIZE, 410, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(6828, Short.MAX_VALUE))
+                    .addGroup(cmUDCusLayout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 533, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
         jPanel3.add(cmUDCus, "cmUDCus");
+
+        IMsearch.setBackground(new java.awt.Color(153, 153, 153));
 
         IM_Stable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -2781,10 +2904,15 @@ public class NewJFrame extends javax.swing.JFrame {
         ));
         jScrollPane12.setViewportView(IM_Stable);
 
+        IM_serch_by.setFont(new java.awt.Font("Tahoma", 0, 30)); // NOI18N
         IM_serch_by.setText("search by : ");
 
+        IM_key.setFont(new java.awt.Font("Tahoma", 0, 30)); // NOI18N
+
+        IM_Sby.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         IM_Sby.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "id", "name", "brand", "less than qty", "greater than qty" }));
 
+        IM_search_btn.setFont(new java.awt.Font("Tahoma", 0, 30)); // NOI18N
         IM_search_btn.setText("search");
         IM_search_btn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2792,58 +2920,86 @@ public class NewJFrame extends javax.swing.JFrame {
             }
         });
 
+        IM_SEARCH_txt.setFont(new java.awt.Font("SansSerif", 1, 36)); // NOI18N
+        IM_SEARCH_txt.setForeground(new java.awt.Color(255, 255, 255));
+        IM_SEARCH_txt.setText("SEARCH ITEM");
+
         javax.swing.GroupLayout IMsearchLayout = new javax.swing.GroupLayout(IMsearch);
         IMsearch.setLayout(IMsearchLayout);
         IMsearchLayout.setHorizontalGroup(
             IMsearchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(IMsearchLayout.createSequentialGroup()
-                .addGap(233, 233, 233)
-                .addComponent(IM_serch_by)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(IM_Sby, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32)
-                .addComponent(IM_key, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28)
-                .addComponent(IM_search_btn)
-                .addContainerGap(1275, Short.MAX_VALUE))
-            .addGroup(IMsearchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(IMsearchLayout.createSequentialGroup()
-                    .addGap(111, 111, 111)
-                    .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 1062, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(858, Short.MAX_VALUE)))
+                .addGroup(IMsearchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(IMsearchLayout.createSequentialGroup()
+                        .addGap(525, 525, 525)
+                        .addComponent(IM_serch_by)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(IM_Sby, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(32, 32, 32)
+                        .addComponent(IM_key, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(28, 28, 28)
+                        .addComponent(IM_search_btn))
+                    .addGroup(IMsearchLayout.createSequentialGroup()
+                        .addGap(311, 311, 311)
+                        .addGroup(IMsearchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(IM_SEARCH_txt)
+                            .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 1062, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(702, Short.MAX_VALUE))
         );
         IMsearchLayout.setVerticalGroup(
             IMsearchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(IMsearchLayout.createSequentialGroup()
-                .addGap(69, 69, 69)
+                .addGap(52, 52, 52)
+                .addComponent(IM_SEARCH_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(44, 44, 44)
                 .addGroup(IMsearchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(IM_serch_by)
                     .addComponent(IM_key, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(IM_Sby, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(IM_search_btn))
-                .addContainerGap(1174, Short.MAX_VALUE))
-            .addGroup(IMsearchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(IMsearchLayout.createSequentialGroup()
-                    .addGap(119, 119, 119)
-                    .addComponent(jScrollPane12, javax.swing.GroupLayout.DEFAULT_SIZE, 1136, Short.MAX_VALUE)
-                    .addContainerGap()))
+                    .addComponent(IM_search_btn)
+                    .addGroup(IMsearchLayout.createSequentialGroup()
+                        .addComponent(IM_Sby, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(13, 13, 13)))
+                .addGap(52, 52, 52)
+                .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 402, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(6750, Short.MAX_VALUE))
         );
 
         jPanel3.add(IMsearch, "IM_search");
 
+        IMupdate.setBackground(new java.awt.Color(153, 153, 153));
+
+        IM_name_lbl.setFont(new java.awt.Font("Tahoma", 0, 30)); // NOI18N
         IM_name_lbl.setText("Name");
 
+        IM_type_lbl.setFont(new java.awt.Font("Tahoma", 0, 30)); // NOI18N
         IM_type_lbl.setText("Brand");
 
+        IM_qty_lbl.setFont(new java.awt.Font("Tahoma", 0, 30)); // NOI18N
         IM_qty_lbl.setText("Qty");
 
+        IM_bprice_lbl.setFont(new java.awt.Font("Tahoma", 0, 30)); // NOI18N
         IM_bprice_lbl.setText("Buying price");
 
+        IM_sprice_lbl.setFont(new java.awt.Font("Tahoma", 0, 30)); // NOI18N
         IM_sprice_lbl.setText("Selling price");
 
+        IM_ID_lbl.setFont(new java.awt.Font("Tahoma", 0, 30)); // NOI18N
         IM_ID_lbl.setText("ID");
 
-        IM_update_btn.setBackground(new java.awt.Color(51, 255, 0));
+        I_ID.setFont(new java.awt.Font("Tahoma", 0, 30)); // NOI18N
+
+        I_Uname.setFont(new java.awt.Font("Tahoma", 0, 30)); // NOI18N
+
+        I_Uqty.setFont(new java.awt.Font("Tahoma", 0, 30)); // NOI18N
+
+        I_Utype.setFont(new java.awt.Font("Tahoma", 0, 30)); // NOI18N
+
+        I_USprice.setFont(new java.awt.Font("Tahoma", 0, 30)); // NOI18N
+
+        I_UBprice.setFont(new java.awt.Font("Tahoma", 0, 30)); // NOI18N
+
+        IM_update_btn.setBackground(new java.awt.Color(28, 47, 123));
+        IM_update_btn.setFont(new java.awt.Font("Tahoma", 0, 30)); // NOI18N
         IM_update_btn.setText("UPDATE");
         IM_update_btn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2869,7 +3025,8 @@ public class NewJFrame extends javax.swing.JFrame {
         });
         jScrollPane13.setViewportView(IM_Utable);
 
-        IM_delete_btn.setBackground(new java.awt.Color(255, 51, 51));
+        IM_delete_btn.setBackground(new java.awt.Color(160, 31, 38));
+        IM_delete_btn.setFont(new java.awt.Font("Tahoma", 0, 30)); // NOI18N
         IM_delete_btn.setText("DELETE");
         IM_delete_btn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2893,29 +3050,35 @@ public class NewJFrame extends javax.swing.JFrame {
         IM_U_delete.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         IM_U_delete.setForeground(new java.awt.Color(255, 0, 0));
 
+        jSeparator4.setOrientation(javax.swing.SwingConstants.VERTICAL);
+
+        IM_UPDATE_txt.setFont(new java.awt.Font("SansSerif", 1, 36)); // NOI18N
+        IM_UPDATE_txt.setForeground(new java.awt.Color(255, 255, 255));
+        IM_UPDATE_txt.setText("UPDATE / DELETE ITEM");
+
         javax.swing.GroupLayout IMupdateLayout = new javax.swing.GroupLayout(IMupdate);
         IMupdate.setLayout(IMupdateLayout);
         IMupdateLayout.setHorizontalGroup(
             IMupdateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(IMupdateLayout.createSequentialGroup()
-                .addGap(76, 76, 76)
+                .addGap(200, 200, 200)
                 .addGroup(IMupdateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(IM_UPDATE_txt)
                     .addGroup(IMupdateLayout.createSequentialGroup()
                         .addGroup(IMupdateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(IMupdateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(IM_name_lbl)
-                                .addComponent(IM_sprice_lbl, javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(IM_ID_lbl)
-                                .addComponent(IM_qty_lbl)
-                                .addComponent(IM_bprice_lbl))
-                            .addComponent(IM_type_lbl)
-                            .addComponent(IM_update_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(IMupdateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(IM_U_name_error_lbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(IM_U_Bprice_error_lbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(IMupdateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, IMupdateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(IMupdateLayout.createSequentialGroup()
+                                .addGroup(IMupdateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(IM_name_lbl)
+                                    .addComponent(IM_sprice_lbl, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(IM_ID_lbl)
+                                    .addComponent(IM_qty_lbl)
+                                    .addComponent(IM_bprice_lbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(IM_type_lbl)
+                                    .addComponent(IM_update_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(IMupdateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(IM_U_name_error_lbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(IM_U_Bprice_error_lbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(I_Uname)
                                     .addComponent(I_ID, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(I_USprice)
@@ -2924,81 +3087,109 @@ public class NewJFrame extends javax.swing.JFrame {
                                     .addComponent(I_Utype)
                                     .addComponent(IM_U_brand_error_lbl, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(IM_U_qty_error_lbl, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(IM_U_Sprice_error_lbl, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addComponent(IM_delete_btn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addComponent(IM_U_delete, javax.swing.GroupLayout.PREFERRED_SIZE, 313, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(IM_U_update, javax.swing.GroupLayout.PREFERRED_SIZE, 313, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(66, 66, 66)
-                .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 685, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(843, Short.MAX_VALUE))
+                                    .addComponent(IM_U_Sprice_error_lbl, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(IM_delete_btn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(IM_U_delete, javax.swing.GroupLayout.PREFERRED_SIZE, 313, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(IM_U_update, javax.swing.GroupLayout.PREFERRED_SIZE, 313, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(91, 91, 91)
+                        .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(60, 60, 60)
+                        .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 685, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(596, Short.MAX_VALUE))
         );
         IMupdateLayout.setVerticalGroup(
             IMupdateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(IMupdateLayout.createSequentialGroup()
-                .addGap(38, 38, 38)
-                .addGroup(IMupdateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(IM_ID_lbl)
-                    .addComponent(I_ID, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(26, 26, 26)
-                .addGroup(IMupdateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(IMupdateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(IMupdateLayout.createSequentialGroup()
-                        .addGroup(IMupdateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(I_Uname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(IM_name_lbl))
-                        .addGroup(IMupdateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(50, 50, 50)
+                        .addComponent(IM_UPDATE_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(84, 84, 84)
+                        .addGroup(IMupdateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(IM_ID_lbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(I_ID, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(26, 26, 26)
+                        .addGroup(IMupdateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(IMupdateLayout.createSequentialGroup()
-                                .addGap(29, 29, 29)
-                                .addGroup(IMupdateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(IM_type_lbl)
-                                    .addComponent(I_Utype, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(IMupdateLayout.createSequentialGroup()
+                                .addGroup(IMupdateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(I_Uname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(IM_name_lbl))
+                                .addGroup(IMupdateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(IMupdateLayout.createSequentialGroup()
+                                        .addGap(29, 29, 29)
+                                        .addComponent(IM_type_lbl))
+                                    .addGroup(IMupdateLayout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(IM_U_name_error_lbl, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(I_Utype, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(IM_U_name_error_lbl, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(IM_U_brand_error_lbl, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(3, 3, 3)
-                        .addGroup(IMupdateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(I_Uqty, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(IM_qty_lbl))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(IM_U_qty_error_lbl, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(1, 1, 1)
-                        .addGroup(IMupdateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(I_UBprice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(IM_bprice_lbl))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(IM_U_Bprice_error_lbl, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(1, 1, 1)
-                        .addGroup(IMupdateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(I_USprice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(IM_sprice_lbl))
-                        .addGap(6, 6, 6)
-                        .addComponent(IM_U_Sprice_error_lbl, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(IMupdateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(IM_update_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(IM_delete_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(IM_U_update, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(IM_U_delete, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(813, Short.MAX_VALUE))
+                                .addComponent(IM_U_brand_error_lbl, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(3, 3, 3)
+                                .addGroup(IMupdateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(I_Uqty, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(IM_qty_lbl))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(IM_U_qty_error_lbl, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(1, 1, 1)
+                                .addGroup(IMupdateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(I_UBprice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(IM_bprice_lbl))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(IM_U_Bprice_error_lbl, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(1, 1, 1)
+                                .addGroup(IMupdateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(I_USprice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(IM_sprice_lbl))
+                                .addGap(6, 6, 6)
+                                .addComponent(IM_U_Sprice_error_lbl, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(IMupdateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(IM_update_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(IM_delete_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(IM_U_update, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(IM_U_delete, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(IMupdateLayout.createSequentialGroup()
+                        .addGap(153, 153, 153)
+                        .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 605, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(6640, Short.MAX_VALUE))
         );
 
         jPanel3.add(IMupdate, "IM_update");
 
+        IMadd.setBackground(new java.awt.Color(153, 153, 153));
+
+        IM_name.setFont(new java.awt.Font("Tahoma", 0, 30)); // NOI18N
         IM_name.setText("Name");
 
+        IM_type.setFont(new java.awt.Font("Tahoma", 0, 30)); // NOI18N
         IM_type.setText("Brand");
 
+        IM_qty.setFont(new java.awt.Font("Tahoma", 0, 30)); // NOI18N
         IM_qty.setText("Qty");
 
+        IM_bprice.setFont(new java.awt.Font("Tahoma", 0, 30)); // NOI18N
         IM_bprice.setText("Buying price");
 
+        IM_sprice.setFont(new java.awt.Font("Tahoma", 0, 30)); // NOI18N
         IM_sprice.setText("Selling price");
 
-        IM_add_btn.setBackground(new java.awt.Color(0, 102, 255));
+        I_name.setFont(new java.awt.Font("Tahoma", 0, 30)); // NOI18N
+
+        I_qty.setFont(new java.awt.Font("Tahoma", 0, 30)); // NOI18N
+
+        I_type.setFont(new java.awt.Font("Tahoma", 0, 30)); // NOI18N
+
+        I_Sprice.setFont(new java.awt.Font("Tahoma", 0, 30)); // NOI18N
+
+        I_Bprice.setFont(new java.awt.Font("Tahoma", 0, 30)); // NOI18N
+
+        IM_add_btn.setBackground(new java.awt.Color(0, 102, 51));
+        IM_add_btn.setFont(new java.awt.Font("Tahoma", 0, 30)); // NOI18N
+        IM_add_btn.setForeground(new java.awt.Color(255, 255, 255));
         IM_add_btn.setText("ADD");
         IM_add_btn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -3032,16 +3223,17 @@ public class NewJFrame extends javax.swing.JFrame {
 
         IM_A_brand_error_lbl.setForeground(new java.awt.Color(255, 0, 0));
 
+        IM_ADD_txt.setFont(new java.awt.Font("SansSerif", 1, 36)); // NOI18N
+        IM_ADD_txt.setForeground(new java.awt.Color(255, 255, 255));
+        IM_ADD_txt.setText("ADD ITEM ");
+
         javax.swing.GroupLayout IMaddLayout = new javax.swing.GroupLayout(IMadd);
         IMadd.setLayout(IMaddLayout);
         IMaddLayout.setHorizontalGroup(
             IMaddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(IMaddLayout.createSequentialGroup()
-                .addGap(76, 76, 76)
+                .addGap(222, 222, 222)
                 .addGroup(IMaddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(IMaddLayout.createSequentialGroup()
-                        .addComponent(IM_qty)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(IMaddLayout.createSequentialGroup()
                         .addGroup(IMaddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(IM_name)
@@ -3053,7 +3245,7 @@ public class NewJFrame extends javax.swing.JFrame {
                             .addComponent(IM_A_Sprice_error_lbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(IMaddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(IMaddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(I_Sprice, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 352, Short.MAX_VALUE)
+                                    .addComponent(I_Sprice, javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(IM_A_Bprice_error_lbl, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(I_Bprice, javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(IM_A_qty_error_lbl, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -3061,21 +3253,27 @@ public class NewJFrame extends javax.swing.JFrame {
                                     .addComponent(IM_A_brand_error_lbl, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(IM_A_name_error_lbl, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(I_name, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(I_type, javax.swing.GroupLayout.Alignment.LEADING))
+                                    .addComponent(I_type, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 352, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGroup(IMaddLayout.createSequentialGroup()
                                     .addGap(218, 218, 218)
                                     .addComponent(IM_add_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addComponent(IM_A_success, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 351, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(92, 92, 92)))
+                                .addComponent(IM_A_success, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 351, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(IMaddLayout.createSequentialGroup()
+                        .addGroup(IMaddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(IM_ADD_txt)
+                            .addComponent(IM_qty))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, 685, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(724, Short.MAX_VALUE))
+                .addGap(918, 918, 918))
         );
         IMaddLayout.setVerticalGroup(
             IMaddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(IMaddLayout.createSequentialGroup()
-                .addGap(55, 55, 55)
+                .addGap(102, 102, 102)
+                .addComponent(IM_ADD_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(85, 85, 85)
                 .addGroup(IMaddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(IMaddLayout.createSequentialGroup()
                         .addGroup(IMaddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(IM_name)
@@ -3107,27 +3305,36 @@ public class NewJFrame extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(IM_A_Sprice_error_lbl, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(IM_add_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(36, 36, 36)
-                        .addComponent(IM_A_success, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(838, Short.MAX_VALUE))
+                        .addComponent(IM_add_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(36, 36, 36)
+                .addComponent(IM_A_success, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(6678, Short.MAX_VALUE))
         );
 
         jPanel3.add(IMadd, "IM_add");
 
+        sumPanel16.setBackground(new java.awt.Color(153, 153, 153));
+
         jLabel12.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
         jLabel12.setText("Suppliers management");
 
+        SuMOrder.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/view edit supplier.png"))); // NOI18N
         SuMOrder.setText("ORDER DETAILS");
+        SuMOrder.setPreferredSize(new java.awt.Dimension(232, 232));
         SuMOrder.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SuMOrderActionPerformed(evt);
             }
         });
 
+        SuMPlace.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/view reports for sales and inventory  and other all managements.png"))); // NOI18N
         SuMPlace.setText("REPORT");
+        SuMPlace.setPreferredSize(new java.awt.Dimension(232, 232));
 
+        SuMAdd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/add supplier.png"))); // NOI18N
         SuMAdd.setText("SUPPLIER DETAILS");
+        SuMAdd.setPreferredSize(new java.awt.Dimension(232, 232));
         SuMAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SuMAddActionPerformed(evt);
@@ -3144,29 +3351,30 @@ public class NewJFrame extends javax.swing.JFrame {
                         .addGap(382, 382, 382)
                         .addComponent(jLabel12))
                     .addGroup(sumPanel16Layout.createSequentialGroup()
-                        .addGap(247, 247, 247)
-                        .addComponent(SuMAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(58, 58, 58)
-                        .addComponent(SuMOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 318, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(47, 47, 47)
-                        .addComponent(SuMPlace, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(1024, Short.MAX_VALUE))
+                        .addGap(220, 220, 220)
+                        .addComponent(SuMAdd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(121, 121, 121)
+                        .addComponent(SuMOrder, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(121, 121, 121)
+                        .addComponent(SuMPlace, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(917, Short.MAX_VALUE))
         );
         sumPanel16Layout.setVerticalGroup(
             sumPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(sumPanel16Layout.createSequentialGroup()
-                .addGap(163, 163, 163)
+                .addGap(55, 55, 55)
                 .addComponent(jLabel12)
                 .addGap(114, 114, 114)
                 .addGroup(sumPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(SuMAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(SuMOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(SuMPlace, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(897, Short.MAX_VALUE))
+                    .addComponent(SuMAdd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(SuMOrder, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(SuMPlace, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(6939, Short.MAX_VALUE))
         );
 
         jPanel3.add(sumPanel16, "sumPanel16");
 
+        supOrderDetails.setBackground(new java.awt.Color(153, 153, 153));
         supOrderDetails.setPreferredSize(new java.awt.Dimension(2291, 974));
 
         orderTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -3305,6 +3513,8 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addGap(96, 96, 96))
         );
 
+        jSeparator12.setOrientation(javax.swing.SwingConstants.VERTICAL);
+
         javax.swing.GroupLayout supOrderDetailsLayout = new javax.swing.GroupLayout(supOrderDetails);
         supOrderDetails.setLayout(supOrderDetailsLayout);
         supOrderDetailsLayout.setHorizontalGroup(
@@ -3312,21 +3522,30 @@ public class NewJFrame extends javax.swing.JFrame {
             .addGroup(supOrderDetailsLayout.createSequentialGroup()
                 .addGap(32, 32, 32)
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(99, 99, 99)
+                .addGap(31, 31, 31)
+                .addComponent(jSeparator12, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(Ordrtble, javax.swing.GroupLayout.PREFERRED_SIZE, 751, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(406, Short.MAX_VALUE))
+                .addContainerGap(450, Short.MAX_VALUE))
         );
         supOrderDetailsLayout.setVerticalGroup(
             supOrderDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(supOrderDetailsLayout.createSequentialGroup()
-                .addGap(158, 158, 158)
                 .addGroup(supOrderDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Ordrtble, javax.swing.GroupLayout.PREFERRED_SIZE, 537, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(481, Short.MAX_VALUE))
+                    .addGroup(supOrderDetailsLayout.createSequentialGroup()
+                        .addGap(158, 158, 158)
+                        .addGroup(supOrderDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Ordrtble, javax.swing.GroupLayout.PREFERRED_SIZE, 537, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(supOrderDetailsLayout.createSequentialGroup()
+                        .addGap(93, 93, 93)
+                        .addComponent(jSeparator12, javax.swing.GroupLayout.PREFERRED_SIZE, 763, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(6542, Short.MAX_VALUE))
         );
 
         jPanel3.add(supOrderDetails, "supOrderDetails");
+
+        supAddDetails.setBackground(new java.awt.Color(153, 153, 153));
 
         supName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -3407,6 +3626,8 @@ public class NewJFrame extends javax.swing.JFrame {
             }
         });
 
+        jSeparator13.setOrientation(javax.swing.SwingConstants.VERTICAL);
+
         javax.swing.GroupLayout supAddDetailsLayout = new javax.swing.GroupLayout(supAddDetails);
         supAddDetails.setLayout(supAddDetailsLayout);
         supAddDetailsLayout.setHorizontalGroup(
@@ -3435,14 +3656,22 @@ public class NewJFrame extends javax.swing.JFrame {
                                 .addComponent(supPno)
                                 .addComponent(supAddress))
                             .addComponent(supID, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(102, 102, 102)
+                .addGap(51, 51, 51)
+                .addComponent(jSeparator13, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(47, 47, 47)
                 .addComponent(supTble, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(954, Short.MAX_VALUE))
+                .addContainerGap(952, Short.MAX_VALUE))
         );
         supAddDetailsLayout.setVerticalGroup(
             supAddDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(supAddDetailsLayout.createSequentialGroup()
                 .addGroup(supAddDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(supAddDetailsLayout.createSequentialGroup()
+                        .addGap(451, 451, 451)
+                        .addGroup(supAddDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE, false)
+                            .addComponent(supDeletebtn, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(supUpdatebtn, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(supAddbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(supAddDetailsLayout.createSequentialGroup()
                         .addGap(118, 118, 118)
                         .addGroup(supAddDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -3463,17 +3692,14 @@ public class NewJFrame extends javax.swing.JFrame {
                         .addGap(44, 44, 44)
                         .addGroup(supAddDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(supAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(supAddresslabel, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(50, 50, 50))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, supAddDetailsLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(supTble, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
-                .addGroup(supAddDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE, false)
-                    .addComponent(supDeletebtn, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(supUpdatebtn, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(supAddbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(669, Short.MAX_VALUE))
+                            .addComponent(supAddresslabel, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(supAddDetailsLayout.createSequentialGroup()
+                        .addGap(124, 124, 124)
+                        .addComponent(supTble, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(supAddDetailsLayout.createSequentialGroup()
+                        .addGap(38, 38, 38)
+                        .addComponent(jSeparator13, javax.swing.GroupLayout.PREFERRED_SIZE, 576, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(6784, Short.MAX_VALUE))
         );
 
         jPanel3.add(supAddDetails, "supAddDetails");
@@ -3486,14 +3712,14 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 2031, Short.MAX_VALUE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 2031, Short.MAX_VALUE)))
+                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 2075, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -3542,1525 +3768,6 @@ public class NewJFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
         viewPanel("card7");
     }//GEN-LAST:event_jButton6ActionPerformed
-
-    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
-        // TODO add your handling code here:
-        Billpayment b = new Billpayment();
-        
-        try{
-           String amount = jTextField2.getText();
-           String month = jTextField1.getText();
-           
-           if(amount.equals("")|| month.equals("")){   
-               JOptionPane.showMessageDialog(null, "Please fill all form fields!");
-           }
-           else{
-                b.setType((Billtype) jComboBox1.getSelectedItem());
-                b.setMonth(Integer.parseInt(jTextField1.getText()));
-                b.setAmount(Integer.parseInt(jTextField2.getText()));
-                b.setEid((Employee) jComboBox2.getSelectedItem());
-
-                ITPPUEntityManager.getTransaction().begin();
-                ITPPUEntityManager.persist(b);
-                ITPPUEntityManager.getTransaction().commit();
-
-                JOptionPane.showMessageDialog(rootPane, "Record inserted", "Info", 1);
-
-                billpaymentList.clear();
-                billpaymentList = billpaymentQuery.getResultList();
-                refreshTable(billtypeList);
-           }
-       }catch(NumberFormatException e){
-           JOptionPane.showMessageDialog(null, "Amount and month must be numeric!");
-       }
-    }//GEN-LAST:event_jButton9ActionPerformed
-
-    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-        // TODO add your handling code here:
-        viewPanel("card10");
-    }//GEN-LAST:event_jButton10ActionPerformed
-
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
-
-    private void attendanceEmpNavBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_attendanceEmpNavBtnActionPerformed
-
-        viewPanel("attendanceEmpCard");
-        globalEmpDB.empAttendanceTableLoad(jTable1);
-
-        //set system date for attendance
-        empDateLabel.setText(java.util.Calendar.getInstance().getTime().toString());
-    }//GEN-LAST:event_attendanceEmpNavBtnActionPerformed
-
-    private void leaveEmpNavBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_leaveEmpNavBtnActionPerformed
-
-        viewPanel("empLeaveCard");
-
-        globalEmpDB.empLeaveRequestTableLoad(empRequestTable);
-
-        //calc remaining leave
-        int remLeave = globalEmpDB.calcRemLeave(5);
-
-        empRemLeavBox.setText(Integer.toString(remLeave));
-
-        empLeaveStatusBox.setBackground(Color.DARK_GRAY);
-        empLeaveStatusLabel.setText("");
-        empLeaveStatusBox.setText("");
-
-    }//GEN-LAST:event_leaveEmpNavBtnActionPerformed
-
-    private void regEmpNavBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_regEmpNavBtnActionPerformed
-
-        viewPanel("addEmpCard1");
-
-        globalEmpDB.empTableLoad(empTable);
-        
-        ResultSet typeRS = globalEmpDB.getEmpCatergory();
-        
-        try {
-            
-            Vector<EmployeeType> vector = new Vector<>();
-            
-            while(typeRS.next()){
-                                
-                EmployeeType e1 = new EmployeeType(typeRS.getInt("id"), typeRS.getString("description"));
-                
-                vector.addElement(e1);
-                
-                
-            }
-            
-            emptypeComboBox.setModel(new DefaultComboBoxModel(vector));
-            
-            
-        } catch (SQLException ex) {
-            Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-    }//GEN-LAST:event_regEmpNavBtnActionPerformed
-
-    private void addEmpCatNavBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addEmpCatNavBtnActionPerformed
-        viewPanel("addCatergoryPanel");
-        globalEmpDB.empCatergoryTableLoad(empCatergoryTable);
-    }//GEN-LAST:event_addEmpCatNavBtnActionPerformed
-
-    private void empLeaveMgmtNavBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_empLeaveMgmtNavBtnActionPerformed
-        viewPanel("empLeaveMgmtPanel");
-        globalEmpDB.empLeaveRequestTableLoad(empLeaveRequestTable);
-    }//GEN-LAST:event_empLeaveMgmtNavBtnActionPerformed
-
-    private void empAddressBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_empAddressBoxActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_empAddressBoxActionPerformed
-
-    private void deleteEmpBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteEmpBtnActionPerformed
-
-        int response = JOptionPane.showConfirmDialog(null, "Do you really want to delete selected employee?");
-
-        if(response == 0){
-
-            String id  = empIdBox.getText();
-
-            globalEmpDB.deleteEmp(id);
-            globalEmpDB.empTableLoad(empTable);
-        }
-    }//GEN-LAST:event_deleteEmpBtnActionPerformed
-
-    private void registerEmpBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerEmpBtn1ActionPerformed
-
-        //Get data from form
-        try{
-            
-            EmployeeType e2;
-            e2 = (EmployeeType)emptypeComboBox.getSelectedItem();
-            
-            String name = empNameBox.getText();
-            String nic = empNICBox.getText();
-            String address = empAddressBox.getText();
-            int phone = Integer.parseInt(empPhoneBox.getText());
-            String email = empEmailBox.getText();
-            int type = e2.getEmpTypeId();
-            int phoneLength = Integer.toString(phone).length();
-
-            EmpDB db = new EmpDB();
-
-            //Check for duplicate entries
-            if(db.checkRepeat(nic) == false){
-                //Form field validation
-                //Check empty fields
-                if(name.equals("")||nic.equals("")||address.equals("")||email.equals("")|| phoneLength == 0){
-
-                    JOptionPane.showMessageDialog(addEmpCard1, "Fill all form fields! Enter 'None' if non-existant");
-
-                }
-                //Validate email
-                else if(!employeeValidator.isValidEmailAddress(email)){
-
-                    JOptionPane.showMessageDialog(addEmpCard1, "Enter valid email address!");
-                }
-                else if(phoneLength != 10){
-
-                    JOptionPane.showMessageDialog(addEmpCard1, "Enter phone number with 10 digits!");
-                }
-                else if(nic.length() < 10 || nic.length() > 12){
-
-                    JOptionPane.showMessageDialog(addEmpCard1, "NIC must contain between 10-12 characters!");
-                }
-
-                //If no errors
-                else{
-                    int response = JOptionPane.showConfirmDialog(null, "Do you really want to register this employee?");
-                    if(response == 0){
-                        //Send data to model
-                        EmployeeModel e1 = new EmployeeModel(name, nic, address, email, type, phone);
-
-                        //Call method to access DB
-
-                        db.addEmployee(e1);
-
-                        globalEmpDB.empTableLoad(empTable);
-                    }
-                }
-            }
-            else{
-
-                JOptionPane.showMessageDialog(addEmpCard1, "Employee already exists!");
-            }
-        }
-        //Catch converting invalid phone numbers
-        catch(NumberFormatException e){
-            JOptionPane.showMessageDialog(addEmpCard1, "Enter valid phone number!");
-        }
-
-    }//GEN-LAST:event_registerEmpBtn1ActionPerformed
-
-    private void updateEmpBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateEmpBtnActionPerformed
-
-        int response = JOptionPane.showConfirmDialog(null, "Do you really want to update?");
-        if(response == 0){
-
-            String empID = empIdBox.getText();
-            String empName = empNameBox.getText();
-            String empNic = empNICBox.getText();
-            String empAddress = empAddressBox.getText();
-            int phone = Integer.parseInt(empPhoneBox.getText());
-            String empEmail = empEmailBox.getText();
-            int empType = emptypeComboBox.getSelectedIndex();
-            int phoneLength = Integer.toString(phone).length();
-
-            if(empName.equals("")||empNic.equals("")||empAddress.equals("")||empEmail.equals("")|| phoneLength == 0){
-
-                JOptionPane.showMessageDialog(addEmpCard1, "Fill all form fields! Enter 'None' if non-existant");
-
-            }
-            //Validate email
-            else if(!employeeValidator.isValidEmailAddress(empEmail)){
-
-                JOptionPane.showMessageDialog(addEmpCard1, "Enter valid email address!");
-            }
-            else if(phoneLength != 10){
-
-                JOptionPane.showMessageDialog(addEmpCard1, "Enter phone number with 10 digits!");
-            }
-            else if(empNic.length() < 10 || empNic.length() > 12){
-
-                JOptionPane.showMessageDialog(addEmpCard1, "NIC must contain between 10-12 characters!");
-            }
-
-            else{
-                //Send data to model
-                EmployeeModel e1 = new EmployeeModel(empName, empNic, empAddress, empEmail,empType, phone);
-                e1.setEmpId(Integer.parseInt(empID));
-                //Call method to access DB
-
-                globalEmpDB.updateEmployee(e1);
-
-                globalEmpDB.empTableLoad(empTable);
-            }
-
-        }
-    }//GEN-LAST:event_updateEmpBtnActionPerformed
-
-    private void empTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_empTableMouseClicked
-
-        //Access emp table row
-
-        int empTableRow = empTable.getSelectedRow();
-
-        String empID = empTable.getValueAt(empTableRow, 0).toString();
-        String empName = empTable.getValueAt(empTableRow, 1).toString();
-        String empNic = empTable.getValueAt(empTableRow, 2).toString();
-        String empAddress = empTable.getValueAt(empTableRow, 3).toString();
-        String empPhone = empTable.getValueAt(empTableRow, 4).toString();;
-        String empEmail = empTable.getValueAt(empTableRow, 5).toString();
-        String empType = empTable.getValueAt(empTableRow, 6).toString();
-
-        int empTypeIndex = Integer.parseInt(empType);
-
-        empIdBox.setText(empID);
-        empNameBox.setText(empName);
-        empNICBox.setText(empNic);
-        empAddressBox.setText(empAddress);
-        empPhoneBox.setText(empPhone);
-        empEmailBox.setText(empEmail);
-        emptypeComboBox.setSelectedIndex(empTypeIndex);
-
-    }//GEN-LAST:event_empTableMouseClicked
-
-    private void empIdBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_empIdBoxActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_empIdBoxActionPerformed
-
-    private void empSignOutBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_empSignOutBtnActionPerformed
-
-        String popupMsg = "Sign out for "+java.util.Calendar.getInstance().getTime().toString()+" ?";
-
-        int signInResponse = JOptionPane.showConfirmDialog(null, popupMsg);
-
-        //temp hard coded id must be changed
-        int id = 5;
-
-        if(signInResponse == 0){
-
-            globalEmpDB.empSignIn(id);
-
-        }
-
-        globalEmpDB.empAttendanceTableLoad(jTable1);
-
-    }//GEN-LAST:event_empSignOutBtnActionPerformed
-
-    private void empSignInBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_empSignInBtnActionPerformed
-
-        String popupMsg = "Sign in for "+java.util.Calendar.getInstance().getTime().toString()+" ?";
-
-        int signInResponse = JOptionPane.showConfirmDialog(null, popupMsg);
-
-        //temp hard coded id must be changed
-        int id = 5;
-
-        if(signInResponse == 0){
-
-            globalEmpDB.empSignIn(id);
-
-        }
-
-        globalEmpDB.empAttendanceTableLoad(empAttendanceTable);
-
-    }//GEN-LAST:event_empSignInBtnActionPerformed
-
-    private void empLeaveRequestBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_empLeaveRequestBtnActionPerformed
-        try{
-            int empID = 5;
-            int remLeave = Integer.parseInt(empRemLeavBox.getText());
-            String startDate = empstartDateBox.getText();
-            String endDate = empEndDateBox.getText();
-            String reason = empReasonText.getText();
-            int noOfDays = Integer.parseInt(empDaysBox.getText());
-
-            Calendar cal = Calendar.getInstance();
-            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-            String currentDate = sdf.format(cal.getTime());
-
-            //Validate empty fields
-            if(startDate.equals("") || endDate.equals("") || reason.equals("")){
-                JOptionPane.showMessageDialog(null, "Please fill all form fields!");
-            }
-            //Validate number of days
-            else if(noOfDays == 0 || noOfDays > remLeave){
-                JOptionPane.showMessageDialog(null, "Number of days cannot be zero or exceed remaining leave amount!");
-            }
-            //Validate date format
-            else if(!employeeValidator.isValidDate(startDate)){
-
-                JOptionPane.showMessageDialog(null, "Please use yyyy/MM/dd format to enter starting date and ending date!");
-            }
-            //Validate date format
-            else if(!employeeValidator.isValidDate(endDate)){
-
-                JOptionPane.showMessageDialog(null, "Please use yyyy/MM/dd format to enter starting date and ending date!");
-            }
-            //Validate start date before end date
-            else if(!employeeValidator.isDateGreater(startDate, endDate)){
-
-                JOptionPane.showMessageDialog(null, "Starting date must be before ending date!");
-
-            }
-            //Validate startDate is greater than current date
-            else if(employeeValidator.isDateGreater(startDate, currentDate)){
-
-                JOptionPane.showMessageDialog(null, "Starting date cannot be before todays date!");
-
-            }
-            //Check overlap
-            else if (globalEmpDB.checkLeaveRequestOverlap(empID, startDate, endDate)){
-
-                JOptionPane.showMessageDialog(null, "Request overlaps a previous request!");
-
-            }
-            else{
-                EmployeeLeaveModel empLeave = new EmployeeLeaveModel(empID, startDate, endDate, noOfDays, reason);
-
-                globalEmpDB.addEmpLeaveRequest(empLeave);
-
-                globalEmpDB.empLeaveRequestTableLoad(empRequestTable);
-            }
-        }
-        catch(NumberFormatException e){
-            JOptionPane.showMessageDialog(null, "Number of days must be an integer!");
-        }
-
-    }//GEN-LAST:event_empLeaveRequestBtnActionPerformed
-
-    private void empRequestTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_empRequestTableMouseClicked
-
-        int leaveTableRow = empRequestTable.getSelectedRow();
-
-        String startDate = empRequestTable.getValueAt(leaveTableRow, 2).toString();
-        String endDate = empRequestTable.getValueAt(leaveTableRow, 3).toString();
-        String nDays = empRequestTable.getValueAt(leaveTableRow, 4).toString();
-        String reason = empRequestTable.getValueAt(leaveTableRow, 7).toString();
-
-        String approved = empRequestTable.getValueAt(leaveTableRow, 5).toString();
-        String rejected = empRequestTable.getValueAt(leaveTableRow, 6).toString();
-
-        empstartDateBox.setText(startDate);
-        empEndDateBox.setText(endDate);
-        empDaysBox.setText(nDays);
-        empReasonText.setText(reason);
-        empLeaveStatusLabel.setText("Request Status");
-
-        if(approved.equals("true")){
-
-            empLeaveStatusBox.setText("  Request Approved  ");
-            empLeaveStatusBox.setBackground(Color.GREEN);
-            empLeaveStatusBox.setForeground(Color.WHITE);
-        }
-        else if(rejected.equals("true")){
-            empLeaveStatusBox.setText("  Request Rejected  ");
-            empLeaveStatusBox.setBackground(Color.RED);
-            empLeaveStatusBox.setForeground(Color.WHITE);
-        }
-        else{
-            empLeaveStatusBox.setText("  Request Pending  ");
-            empLeaveStatusBox.setBackground(Color.BLUE);
-            empLeaveStatusBox.setForeground(Color.WHITE);
-        }
-
-    }//GEN-LAST:event_empRequestTableMouseClicked
-
-    private void updateEmpTypeBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateEmpTypeBtnActionPerformed
-
-        try{
-
-            int typeId = Integer.parseInt(empTypeIdBox.getText());
-            String typeName = empTypeBox1.getText();
-            double basicSal = Double.parseDouble(empSalaryBox.getText());
-            int vacationDays = Integer.parseInt(empLeaveBox.getText());
-
-            if(typeName.equals("")){
-
-                JOptionPane.showMessageDialog(addEmpCard1, "Employee type cannot be empty!");
-            }
-            else{
-                EmployeeType empType = new EmployeeType(typeName, basicSal, vacationDays);
-                empType.setEmpTypeId(typeId);
-
-                globalEmpDB.updateEmpType(empType);
-
-                globalEmpDB.empCatergoryTableLoad(empCatergoryTable);
-            }
-        }
-        catch(NumberFormatException e){
-
-            JOptionPane.showMessageDialog(addEmpCard1, "Please ensure salary and vacation days are numeric!");
-
-        }
-
-    }//GEN-LAST:event_updateEmpTypeBtnActionPerformed
-
-    private void deleteEmpTypeBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteEmpTypeBtnActionPerformed
-
-        int typeId = Integer.parseInt(empTypeIdBox.getText());
-
-        globalEmpDB.deleteEmpType(typeId);
-
-        globalEmpDB.empCatergoryTableLoad(empCatergoryTable);
-
-    }//GEN-LAST:event_deleteEmpTypeBtnActionPerformed
-
-    private void addEmpTypeBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addEmpTypeBtnActionPerformed
-
-        try{
-            String empType = empTypeBox1.getText();
-            double empSalary = Double.parseDouble(empSalaryBox.getText());
-            int empLeave = Integer.parseInt(empLeaveBox.getText());
-
-            if(empType.equals("")){
-
-                JOptionPane.showMessageDialog(null, "Employee Type cannot be empty!");
-
-            }
-            else{
-
-                EmployeeType empTypeObj = new EmployeeType(empType,empSalary,empLeave);
-
-                globalEmpDB.addEmpType(empTypeObj);
-                globalEmpDB.empCatergoryTableLoad(empCatergoryTable);
-            }
-        }catch(NumberFormatException e){
-
-            JOptionPane.showMessageDialog(null, "Salary and vaction days must be numeric!");
-
-        }
-
-    }//GEN-LAST:event_addEmpTypeBtnActionPerformed
-
-    private void empCatergoryTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_empCatergoryTableMouseClicked
-
-        int selectedRow = empCatergoryTable.getSelectedRow();
-
-        String typeId = empCatergoryTable.getValueAt(selectedRow, 0).toString();
-        String type = empCatergoryTable.getValueAt(selectedRow, 1).toString();
-        String basicSal = empCatergoryTable.getValueAt(selectedRow, 2).toString();
-        String vacDays = empCatergoryTable.getValueAt(selectedRow, 3).toString();
-
-        empTypeIdBox.setText(typeId);
-        empTypeBox1.setText(type);
-        empSalaryBox.setText(basicSal);
-        empLeaveBox.setText(vacDays);
-
-    }//GEN-LAST:event_empCatergoryTableMouseClicked
-
-    private void empApproveRequestBtn_mgmtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_empApproveRequestBtn_mgmtActionPerformed
-
-        try{
-            int requestId = Integer.parseInt(empLeaveReqID_mgmt.getText());
-
-            globalEmpDB.approveLeaveRequest(requestId);
-
-            globalEmpDB.empLeaveRequestTableLoad(empLeaveRequestTable);
-
-        }
-        catch(Exception e){
-
-            JOptionPane.showMessageDialog(null, "Please select a request first!");
-
-        }
-
-    }//GEN-LAST:event_empApproveRequestBtn_mgmtActionPerformed
-
-    private void empLeaveRequestTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_empLeaveRequestTableMouseClicked
-
-        int leaveTableRow = empLeaveRequestTable.getSelectedRow();
-        EmployeeModel e1;
-
-        String empId = empLeaveRequestTable.getValueAt(leaveTableRow, 1).toString();
-        String requestId = empLeaveRequestTable.getValueAt(leaveTableRow, 0).toString();
-        String empName ;
-        String startDate = empLeaveRequestTable.getValueAt(leaveTableRow, 2).toString();
-        String endDate = empLeaveRequestTable.getValueAt(leaveTableRow, 3).toString();
-        String nDays = empLeaveRequestTable.getValueAt(leaveTableRow, 4).toString();
-        String reason = empLeaveRequestTable.getValueAt(leaveTableRow, 7).toString();
-
-        empID_mgmt1.setText(empId);
-        empLeaveReqID_mgmt.setText(requestId);
-        empstartDateBox_mgmt.setText(startDate);
-        empEndDateBox_mgmt.setText(endDate);
-        empDaysBox_mgmt.setText(nDays);
-        empReasonText_mgmt.setText(reason);
-
-        e1 = globalEmpDB.findEmpById(Integer.parseInt(empId));
-
-        empEndDateBox_mgmt1.setText(e1.getName());
-
-    }//GEN-LAST:event_empLeaveRequestTableMouseClicked
-
-    private void empRejectRequestBtn_mgmtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_empRejectRequestBtn_mgmtActionPerformed
-
-        try{
-            int requestId = Integer.parseInt(empLeaveReqID_mgmt.getText());
-
-            globalEmpDB.rejectLeaveRequest(requestId);
-
-            globalEmpDB.empLeaveRequestTableLoad(empLeaveRequestTable);
-
-        }
-        catch(Exception e){
-
-            JOptionPane.showMessageDialog(null, "Please select a request first!");
-
-        }
-    }//GEN-LAST:event_empRejectRequestBtn_mgmtActionPerformed
-
-    private void btnViewReportsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewReportsActionPerformed
-        // TODO add your handling code here:
-        viewPanel("smViewReports");
-    }//GEN-LAST:event_btnViewReportsActionPerformed
-
-    private void btnHandleReturnsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHandleReturnsActionPerformed
-        // TODO add your handling code here:
-        SMServiceImpl sms1 = new SMServiceImpl();
-        smviewreturnstable.setModel(DbUtils.resultSetToTableModel(sms1.deleteallfrmsalestable()));
-        smsalesidreturnsbox.setText("");
-        smtxtitemid.setText("");
-        smtxtitemname.setText("");
-        smtxtfieldenterbillid.setText("");
-        viewPanel("smReturnHandle");
-    }//GEN-LAST:event_btnHandleReturnsActionPerformed
-
-    private void btnRegisterCustomersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegisterCustomersActionPerformed
-        // TODO add your handling code here:
-        viewPanel("smRegisterCustomers");
-    }//GEN-LAST:event_btnRegisterCustomersActionPerformed
-
-    private void btnGenerateBillsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerateBillsActionPerformed
-        // TODO add your handling code here:
-        custp.setText("");
-        smCustIdStatus.setText("");
-        smdisref.setText("");
-        smitemqty.setText("");
-        smqtystatus.setText("");
-        smdisrefstatus.setText("");
-        smitemid.setText("");
-        smitemqty.setText("");
-        SMServiceImpl sms1 = new SMServiceImpl();
-        sms1.deleteallfrmbill();
-        smbilltable.setModel(DbUtils.resultSetToTableModel(sms1.getbillitems()));
-
-        viewPanel("smGenerateBills");
-    }//GEN-LAST:event_btnGenerateBillsActionPerformed
-
-    private void btnNxtGenerateBillActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNxtGenerateBillActionPerformed
-        // TODO add your handling code here:
-        smtotbillamt.setText("");
-        smcashamtpaid.setText("");
-        smchangedis.setText("");
-
-        SMModel sm = new SMModel();
-        sm.setcustp(custp.getText());
-        sm.setReturnAmt(Double.parseDouble(smdisref.getText()));
-        sm.setPayType((String) custpaymentmethod.getSelectedItem());
-        SMServiceImpl sms1 = new SMServiceImpl();
-        sms1.generatebill(sm);
-        sms1.deleteallfrmbill();
-        viewPanel("smGenerateBills2");
-    }//GEN-LAST:event_btnNxtGenerateBillActionPerformed
-
-    private void btnBackGenerateBill1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackGenerateBill1ActionPerformed
-        // TODO add your handling code here:
-        viewPanel("smMain");
-    }//GEN-LAST:event_btnBackGenerateBill1ActionPerformed
-
-    private void btnChkCustIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChkCustIdActionPerformed
-        // TODO add your handling code here:
-        SMModel sm1 = new SMModel();
-        sm1.setcustp(custp.getText());
-        SMServiceImpl sms1 = new SMServiceImpl();
-        if(sms1.customerTableLoad(sm1)){
-            smCustIdStatus.setText("  Valid Customer, Please Continue With the Ongoing Bill");
-        }
-        else{
-            smCustIdStatus.setText("Invalid Customer, Use Anonymous Id or Register Customer");
-        }
-    }//GEN-LAST:event_btnChkCustIdActionPerformed
-
-    private void smdisrefKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_smdisrefKeyReleased
-        // TODO add your handling code here:
-        try{
-            double disref = Double.parseDouble(smdisref.getText());
-            smdisrefstatus.setText("");
-
-        }catch(NumberFormatException e){
-            smdisrefstatus.setText("Enter a Valid Value");
-        }
-    }//GEN-LAST:event_smdisrefKeyReleased
-
-    private void smitemqtyKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_smitemqtyKeyPressed
-        // TODO add your handling code here:
-
-    }//GEN-LAST:event_smitemqtyKeyPressed
-
-    private void smitemqtyKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_smitemqtyKeyReleased
-        // TODO add your handling code here:
-        try{
-            int qtyno = Integer.parseInt(smitemqty.getText());
-            smqtystatus.setText("");
-
-        }catch(NumberFormatException e){
-            smqtystatus.setText("Enter a Valid Value");
-        }
-    }//GEN-LAST:event_smitemqtyKeyReleased
-
-    private void smitemqtyKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_smitemqtyKeyTyped
-        // TODO add your handling code here:
-
-    }//GEN-LAST:event_smitemqtyKeyTyped
-
-    private void smbtnadditemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_smbtnadditemActionPerformed
-        // TODO add your handling code here:
-        SMModel sm1 = new SMModel();
-        sm1.setItemId(Integer.parseInt(smitemid.getText()));
-        sm1.setQty(Integer.parseInt(smitemqty.getText()));
-        SMServiceImpl sms1 = new SMServiceImpl();
-        if(sms1.addtobill(sm1)){
-            smqtystatus.setText("");
-        }
-        else{
-            smqtystatus.setText("Error");
-        }
-
-        smbilltable.setModel(DbUtils.resultSetToTableModel(sms1.getbillitems()));
-    }//GEN-LAST:event_smbtnadditemActionPerformed
-
-    private void smbtndeleteitemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_smbtndeleteitemActionPerformed
-        // TODO add your handling code here:
-        SMModel sm1 = new SMModel();
-        sm1.setItemId(Integer.parseInt(smitemid.getText()));
-        SMServiceImpl sms1 = new SMServiceImpl();
-        sms1.deleteitemfrmbill(sm1);
-        smbilltable.setModel(DbUtils.resultSetToTableModel(sms1.getbillitems()));
-    }//GEN-LAST:event_smbtndeleteitemActionPerformed
-
-    private void smbilltableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_smbilltableMouseClicked
-        // TODO add your handling code here:
-        int smrow = smbilltable.getSelectedRow();
-        String smitemid1;
-        String smqty1;
-        smitemid1 = smbilltable.getValueAt(smrow, 0).toString();
-        smqty1 = smbilltable.getValueAt(smrow, 2).toString();
-        smitemid.setText(smitemid1);
-        smitemqty.setText(smqty1);
-
-    }//GEN-LAST:event_smbilltableMouseClicked
-
-    private void smresetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_smresetActionPerformed
-        // TODO add your handling code here:
-        SMServiceImpl sms1 = new SMServiceImpl();
-        sms1.deleteallfrmbill();
-        smbilltable.setModel(DbUtils.resultSetToTableModel(sms1.getbillitems()));
-    }//GEN-LAST:event_smresetActionPerformed
-
-    private void smviewreturnstableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_smviewreturnstableMouseClicked
-        // TODO add your handling code here:
-        int smrowselected = smviewreturnstable.getSelectedRow();
-        String smsalesidr;
-        String smitemidr;
-        String smqtyr;
-        smsalesidr = smviewreturnstable.getValueAt(smrowselected, 0).toString();
-        smitemidr = smviewreturnstable.getValueAt(smrowselected, 1).toString();
-        smqtyr = smviewreturnstable.getValueAt(smrowselected, 2).toString();
-        smsalesidreturnsbox.setText(smsalesidr);
-        smtxtitemid.setText(smitemidr);
-        smtxtitemname.setText(smqtyr);
-    }//GEN-LAST:event_smviewreturnstableMouseClicked
-
-    private void smbtnsearchbillidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_smbtnsearchbillidActionPerformed
-        // TODO add your handling code here:
-        SMModel sm1 = new SMModel();
-        sm1.setBillId(Integer.parseInt(smtxtfieldenterbillid.getText()));
-        SMServiceImpl sms1 = new SMServiceImpl();
-        sms1.getbillitemsforreturns(sm1);
-        smviewreturnstable.setModel(DbUtils.resultSetToTableModel(sms1.getbillitemsforreturns(sm1)));
-    }//GEN-LAST:event_smbtnsearchbillidActionPerformed
-
-    private void smbtndeleteitemreturnsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_smbtndeleteitemreturnsActionPerformed
-        // TODO add your handling code here:
-        SMModel sm1 = new SMModel();
-        sm1.setsalesId(Integer.parseInt(smsalesidreturnsbox.getText()));
-        sm1.setBillId(Integer.parseInt(smtxtfieldenterbillid.getText()));
-        SMServiceImpl sms1 = new SMServiceImpl();
-        sms1.deleteitemfrmsales(sm1);
-        sms1.getbillitemsforreturns(sm1);
-        smviewreturnstable.setModel(DbUtils.resultSetToTableModel(sms1.getbillitemsforreturns(sm1)));
-    }//GEN-LAST:event_smbtndeleteitemreturnsActionPerformed
-
-    private void smtotbillamtMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_smtotbillamtMouseMoved
-        // TODO add your handling code here:
-        SMServiceImpl sms1 = new SMServiceImpl();
-        smtotbillamt.setText(Double.toString(sms1.returnbillamt()));
-        String smcashpaid = smcashamtpaid.getText();
-        smchangedis.setText(Double.toString(-sms1.returnbillamt() + Double.parseDouble(smcashpaid)));
-    }//GEN-LAST:event_smtotbillamtMouseMoved
-
-    private void smchangedisMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_smchangedisMouseMoved
-        // TODO add your handling code here:
-        SMServiceImpl sms1 = new SMServiceImpl();
-        smtotbillamt.setText(Double.toString(sms1.returnbillamt()));
-        String smcashpaid = smcashamtpaid.getText();
-        smchangedis.setText(Double.toString(-sms1.returnbillamt() + Double.parseDouble(smcashpaid)));
-    }//GEN-LAST:event_smchangedisMouseMoved
-
-    private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
-        // TODO add your handling code here:
-        Billpayment b = ITPPUEntityManager.find(Billpayment.class, Integer.parseInt(jTextField4.getText()));
-        
-        int r = JOptionPane.showConfirmDialog(rootPane, "Remove : " + b.getPid(),
-        "Confirmation", JOptionPane.YES_NO_CANCEL_OPTION);
-        if (r == JOptionPane.YES_OPTION) {
-            ITPPUEntityManager.getTransaction().begin();
-            ITPPUEntityManager.remove(b);
-            ITPPUEntityManager.getTransaction().commit();
-            JOptionPane.showMessageDialog(rootPane, "Record Removed", "Info", 1);
-
-            billpaymentList.clear();
-            billpaymentList = billpaymentQuery.getResultList();
-            refreshTable(billtypeList);
-        }
-    }//GEN-LAST:event_jButton15ActionPerformed
-
-    private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
-        // TODO add your handling code here:
-               String amount = jTextField2.getText();
-        String month = jTextField1.getText();
-        
-        try{
-        
-        if(amount.equals("") || month.equals("")){
-            
-            JOptionPane.showMessageDialog(null, "Please fill all form fields!");
-            
-        }
-        
-        else{
-            
-                Billpayment b = ITPPUEntityManager.find(Billpayment.class, Integer.parseInt(jTextField4.getText()));
-
-                int r = JOptionPane.showConfirmDialog(rootPane, "Update"   + b.getPid(), "Confirmation", JOptionPane.YES_NO_CANCEL_OPTION);
-
-                if (r == JOptionPane.YES_OPTION) {
-                    b.setType((Billtype) jComboBox1.getSelectedItem());
-                    b.setMonth(Integer.parseInt(jTextField1.getText()));
-                    b.setAmount(Integer.parseInt(jTextField2.getText()));
-                    b.setEid((Employee) jComboBox2.getSelectedItem());
-
-                    ITPPUEntityManager.getTransaction().begin();
-                    ITPPUEntityManager.persist(b);
-                    ITPPUEntityManager.getTransaction().commit();
-                    JOptionPane.showMessageDialog(rootPane, "Record Updated", "Info", 1);
-
-                    billpaymentList.clear();
-                    billpaymentList = billpaymentQuery.getResultList();
-                    refreshTable(billpaymentList);
-
-                }
-            }
-        }
-        catch(NumberFormatException e){
-            
-            JOptionPane.showMessageDialog(null, "Please ensure amount and month are numneric!");
-        }
-        
-    }//GEN-LAST:event_jButton14ActionPerformed
-
-    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
-        // TODO add your handling code here:
-        viewPanel("pmSearchBillPayments");
-    }//GEN-LAST:event_jButton11ActionPerformed
-
-    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton1ActionPerformed
-
-    private void jTextField3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField3KeyReleased
-        // TODO add your handling code here:
-         if (jRadioButton1.isSelected()) {
-
-            //String se = jTextField3.getText();
-            //int nu = Integer.parseInt(se);
-            try{
-                Query q = ITPPUEntityManager.
-                //createQuery("SELECT b FROM Billpayment b WHERE b.month like :pTitle");
-                createQuery("SELECT b FROM Billpayment b WHERE b.month like :pTitle");
-                q.setParameter("pTitle", Integer.parseInt(jTextField3.getText()));
-                //q.setParameter("pTitle", "%" + jTextField3.getText() + "%");
-                billpaymentList.clear();
-                billpaymentList = q.getResultList();
-                refreshTable2(billpaymentList);
-                
-            }catch(NumberFormatException e){
-                refreshTable2(billpaymentList);
-            }
-            
-
-
-        } else if (jRadioButton2.isSelected()) {
-
-            Query q = ITPPUEntityManager.
-                    createQuery("SELECT b FROM Book b WHERE b.author like :pAuthor");
-            q.setParameter("pAuthor", "%" + jTextField3.getText() + "%");
-            billpaymentList.clear();
-           billpaymentList = q.getResultList();
-            refreshTable2(billpaymentList);
-
-        } else if (jRadioButton3.isSelected()) {
-
-            Query q = ITPPUEntityManager.
-                    createQuery("SELECT b FROM Book b WHERE b.publisher like :pPublisher");
-            q.setParameter("pPublisher", "%" + jTextField3.getText() + "%");
-            billpaymentList.clear();
-            billpaymentList = q.getResultList();
-            refreshTable2(billpaymentList);
-
-        } else {
-            JOptionPane.showMessageDialog(rootPane, "Select a criteria",
-                    "Info", 0);
-        }
-        
-    }//GEN-LAST:event_jTextField3KeyReleased
-
-    private void AddCustomersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddCustomersActionPerformed
-        // TODO add your handling code here:
-        viewPanel("cmAddCus");
-        
-    }//GEN-LAST:event_AddCustomersActionPerformed
-
-    private void ManageCustomersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ManageCustomersActionPerformed
-        // TODO add your handling code here:
-        CusDB.CustableLoad(cus_view_table);
-        viewPanel("cmUDCus");
-        System.out.println("I am in");
-        
-    }//GEN-LAST:event_ManageCustomersActionPerformed
-
-    private void reset_cus_addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reset_cus_addActionPerformed
-        // TODO add your handling code here:
-        cusIdAdd.setText("");
-        cusNameAdd.setText("");
-        cusPhoneAdd.setText("");
-        cusAddAdd.setText("");
-        cusEmailAdd.setText("");
-
-    }//GEN-LAST:event_reset_cus_addActionPerformed
-
-    private void submit_cuss_addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submit_cuss_addActionPerformed
-        // TODO add your handling code here:
-        String Id = cusIdAdd.getText();
-        String name = cusNameAdd.getText();
-        String phone = cusPhoneAdd.getText();
-        String address = cusAddAdd.getText();
-        String email = cusEmailAdd.getText();
-
-        CustomersModel c1 = new CustomersModel(Id, name, phone, address, email);
-
-        int vali = 0;
-        if(Id == null || Id.length() == 0){
-            vali = 1;
-            ID_Val.setText("*Empty");
-
-        }
-        else{
-            ID_Val.setText("");
-        }
-        if(name == null || name.length() == 0){
-            vali = 1;
-            name_val.setText("*Empty");
-        }
-        else{
-            name_val.setText("");
-        }
-        if(phone == null || phone.length() == 0){
-            vali = 1;
-            phone_val.setText("*Empty");
-        }
-        else{
-            phone_val.setText("");
-        }
-        if(email == null || email.length() == 0){
-            vali = 1;
-            email_val.setText("*Empty");
-        }
-        else{
-            email_val.setText("");
-        }
-        if(address == null || address.length() == 0){
-            vali = 1;
-            address_val.setText("*Empty");
-        }
-        else{
-            address_val.setText("");
-        }
-        if(vali == 0){
-            CusDB db = new CusDB();
-            db.addCustomers(c1);
-            message.setText("Sucessfully Added");
-            CusDB.CustableLoad(cus_view_table);
-        }
-    }//GEN-LAST:event_submit_cuss_addActionPerformed
-
-    private void cancel_cusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancel_cusActionPerformed
-        // TODO add your handling code here:
-        name_cus_u.setText("");
-        phoneBoxCus.setText("");
-        adress_cus_u.setText("");
-        emailBoxCus.setText("");
-        labCusID.setText("Customer ID");
-
-    }//GEN-LAST:event_cancel_cusActionPerformed
-
-    private void delete_cus_UActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delete_cus_UActionPerformed
-        // TODO add your handling code here:
-        int x = JOptionPane.showConfirmDialog(null, "Do you really want to update");
-
-        if(x == 0){
-            String id = labCusID.getText();
-
-            CustomersModel c1 = new CustomersModel(id);
-
-            CusDB db = new CusDB();
-            db.deleteCustomers(c1);
-            CusDB.CustableLoad(cus_view_table);
-
-        }
-
-    }//GEN-LAST:event_delete_cus_UActionPerformed
-
-    private void update_cus_uActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_update_cus_uActionPerformed
-        // TODO add your handling code here:
-        int x = JOptionPane.showConfirmDialog(null, "Do you really want to update");
-
-        if(x == 0){
-            String id = labCusID.getText();
-            String name = name_cus_u.getText();
-            String phone = phoneBoxCus.getText();
-            String email = emailBoxCus.getText();
-            String address = adress_cus_u.getText();
-
-            CustomersModel c1 = new CustomersModel(id, name, phone, address, email);
-
-            int vali =0;
-
-            if(name == null || name.length() == 0){
-                vali = 1;
-                name_val_U.setText("*Empty");
-            }
-            else{
-                name_val_U.setText("");
-            }
-            if(phone == null || phone.length() == 0){
-                vali = 1;
-                phone_val_U1.setText("*Empty");
-            }
-            else{
-                phone_val_U1.setText("");
-            }
-            if(email == null || email.length() == 0){
-                vali = 1;
-                email_val_U3.setText("*Empty");
-            }
-            else{
-                email_val_U3.setText("");
-            }
-            if(address == null || address.length() == 0){
-                vali = 1;
-                address_val_U2.setText("*Empty");
-            }
-            else{
-                address_val_U2.setText("");
-            }
-            if(vali == 0){
-                CusDB db = new CusDB();
-                db.updateCustomers(c1);
-                CusDB.CustableLoad(cus_view_table);
-
-            }
-        }
-
-    }//GEN-LAST:event_update_cus_uActionPerformed
-
-    private void cus_view_tableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cus_view_tableMouseClicked
-        // TODO add your handling code here:
-        int r =cus_view_table.getSelectedRow();
-        String id =  cus_view_table.getValueAt(r,0).toString();
-        String name =  cus_view_table.getValueAt(r,1).toString();
-        String phone =  cus_view_table.getValueAt(r,2).toString();
-        String email =  cus_view_table.getValueAt(r,3).toString();
-        String address =  cus_view_table.getValueAt(r,4).toString();
-
-        name_cus_u.setText(name);
-        phoneBoxCus.setText(phone);
-        adress_cus_u.setText(address);
-        emailBoxCus.setText(email);
-        labCusID.setText(id);
-
-    }//GEN-LAST:event_cus_view_tableMouseClicked
-
-    private void IM_searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IM_searchActionPerformed
-
-        viewPanel("IM_search");
-        IM_Stable.setModel(DbUtils.resultSetToTableModel(IM_table.IM_tableload()));
-
-    }//GEN-LAST:event_IM_searchActionPerformed
-
-    private void IM_update_deleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IM_update_deleteActionPerformed
-
-        viewPanel("IM_update");
-        IM_Utable.setModel(DbUtils.resultSetToTableModel(IM_table.IM_tableload()));
-
-    }//GEN-LAST:event_IM_update_deleteActionPerformed
-
-    private void IM_addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IM_addActionPerformed
-
-        viewPanel("IM_add");
-        IM_Atable.setModel(DbUtils.resultSetToTableModel(IM_table.IM_tableload()));
-
-    }//GEN-LAST:event_IM_addActionPerformed
-
-    private void IM_search_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IM_search_btnActionPerformed
-
-        IM_Service service = new IM_Service();
-
-        String by = IM_Sby.getSelectedItem().toString();
-        String key = IM_key.getText();
-
-        IM_Stable.setModel(DbUtils.resultSetToTableModel(service.search_item(by,key)));
-
-    }//GEN-LAST:event_IM_search_btnActionPerformed
-
-    private void IM_update_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IM_update_btnActionPerformed
-
-        int ans = JOptionPane.showConfirmDialog(null, "are you sure you want to update current recode ?");
-        int Uvalid = 0;
-        IM_Service service = new IM_Service();
-
-        String Iid = I_ID.getText();
-        String Iname = I_Uname.getText();
-        String Itype = I_Utype.getText();
-        int Iqty = 0;
-        String IBprice = I_UBprice.getText();
-        String ISprice = I_USprice.getText();
-
-        if( Iname == null || Iname.length() == 0 )
-        {
-
-            IM_U_name_error_lbl.setText("*this field is empty");
-            Uvalid = 1;
-
-        }
-        else
-        {
-
-            IM_U_name_error_lbl.setText("");
-
-        }
-
-        if(Itype == null || Itype.length() == 0)
-        {
-
-            IM_U_brand_error_lbl.setText("*this field is empty");
-            Uvalid = 1;
-
-        }
-        else
-        {
-
-            IM_U_brand_error_lbl.setText("");
-
-        }
-
-        if(ISprice == null || ISprice.length() == 0)
-        {
-
-            IM_U_Sprice_error_lbl.setText("*this field is empty");
-            Uvalid = 1;
-
-        }
-        else
-        {
-
-            IM_U_Sprice_error_lbl.setText("");
-
-        }
-
-        if(I_Uqty.getText() == null || I_Uqty.getText().length() == 0)
-        {
-
-            IM_U_qty_error_lbl.setText("*this field is empty");
-            Uvalid = 1;
-
-        }
-        else
-        {
-
-            Iqty =  Integer.parseInt(I_Uqty.getText()) ;
-            IM_U_qty_error_lbl.setText("");
-        }
-
-        if(IBprice == null || IBprice.length() == 0 )
-        {
-
-            IM_U_Bprice_error_lbl.setText("*this field is empty");
-            Uvalid = 1;
-
-        }
-        else
-        {
-
-            IM_U_Bprice_error_lbl.setText("");
-        }
-
-        if(Iqty < 0)
-        {
-
-            IM_U_qty_error_lbl.setText("*invalid qty");
-            Uvalid = 1;
-
-        }
-        try
-        {
-            
-        
-        if(Double.parseDouble(IBprice)  < 0 )
-        {
-
-            IM_U_Bprice_error_lbl.setText("*invalid ammount");
-            Uvalid = 1;
-
-        }
-
-        if(Double.parseDouble(ISprice)  < 0 )
-        {
-
-            IM_U_Sprice_error_lbl.setText("*invalid ammount");
-            Uvalid = 1;
-
-        }
-
-        if(Uvalid == 0){
-
-            service.update_items(ans,Iid,Iname,Itype,Iqty,IBprice,ISprice);
-            IM_U_Bprice_error_lbl.setText("");
-            IM_U_Sprice_error_lbl.setText("");
-            IM_U_qty_error_lbl.setText("");
-            IM_U_brand_error_lbl.setText("");
-            IM_U_name_error_lbl.setText("");
-
-            IM_Utable.setModel(DbUtils.resultSetToTableModel(IM_table.IM_tableload()));
-            IM_U_update.setText("item added successfully");
-
-        }
-        } catch (Exception e) {
-            System.out.println("e");
-            IM_U_Sprice_error_lbl.setText("*this field is empty");
-            IM_U_Bprice_error_lbl.setText("*this field is empty");
-        }
-
-    }//GEN-LAST:event_IM_update_btnActionPerformed
-
-    private void IM_UtableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_IM_UtableMouseClicked
-
-        int IM_row = IM_Utable.getSelectedRow();
-
-        String ID = IM_Utable.getValueAt(IM_row, 0).toString();
-        String Iname = IM_Utable.getValueAt(IM_row, 1).toString();
-        String Itype = IM_Utable.getValueAt(IM_row, 2).toString();
-        String Iqty = IM_Utable.getValueAt(IM_row, 3).toString();
-        String IBprice = IM_Utable.getValueAt(IM_row, 4).toString();
-        String ISprice = IM_Utable.getValueAt(IM_row, 5).toString();
-
-        I_ID.setText(ID);
-        I_Uname.setText(Iname);
-        I_Utype.setText(Itype);
-        I_Uqty.setText(Iqty);
-        I_UBprice.setText(IBprice);
-        I_USprice.setText(ISprice);
-         
-        IM_U_Bprice_error_lbl.setText("");
-        IM_U_Sprice_error_lbl.setText("");
-        IM_U_qty_error_lbl.setText("");
-        IM_U_brand_error_lbl.setText("");
-        IM_U_name_error_lbl.setText("");
-        IM_U_update.setText("");
-        IM_U_delete.setText("");
-    }//GEN-LAST:event_IM_UtableMouseClicked
-
-    private void IM_delete_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IM_delete_btnActionPerformed
-
-        int ans = JOptionPane.showConfirmDialog(null, "are you sure you want to delete selected recode ?");
-
-        IM_Service service = new IM_Service();
-
-        String Iid = I_ID.getText();
-
-        service.update_items(Iid,ans);
-        IM_Utable.setModel(DbUtils.resultSetToTableModel(IM_table.IM_tableload()));
-        IM_U_delete.setText("item deleted");
-    }//GEN-LAST:event_IM_delete_btnActionPerformed
-
-    private void IM_add_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IM_add_btnActionPerformed
-
-        IM_Service service = new IM_Service();
-
-        int valid = 0;
-        String Iname = I_name.getText();
-        String Itype = I_type.getText();
-        int Iqty = 0;
-        double IBprice = 0;
-        double ISprice = 0;
-
-        if( Iname == null || Iname.length() == 0 )
-        {
-
-            IM_A_name_error_lbl.setText("*this field is empty");
-            valid = 1;
-
-        }
-        else
-        {
-
-            IM_A_name_error_lbl.setText("");
-
-        }
-
-        if(Itype == null || Itype.length() == 0)
-        {
-
-            IM_A_brand_error_lbl.setText("*this field is empty");
-            valid = 1;
-
-        }
-        else
-        {
-
-            IM_A_brand_error_lbl.setText("");
-
-        }
-
-        if(I_Sprice.getText() == null || I_Sprice.getText().length() == 0)
-        {
-
-            IM_A_Sprice_error_lbl.setText("*this field is empty");
-            valid = 1;
-
-        }
-        else
-        {
-            ISprice = Double.parseDouble(I_Sprice.getText());
-            IM_A_Sprice_error_lbl.setText("");
-
-        }
-
-        if(I_qty.getText() == null || I_qty.getText().length() == 0)
-        {
-
-            IM_A_qty_error_lbl.setText("*this field is empty");
-            valid = 1;
-
-        }
-        else
-        {
-
-            Iqty = Integer.parseInt(I_qty.getText()) ;
-            IM_A_qty_error_lbl.setText("");
-        }
-
-        if(I_Bprice.getText() == null || I_Bprice.getText().length() == 0 )
-        {
-
-            IM_A_Bprice_error_lbl.setText("*this field is empty");
-            valid = 1;
-
-        }
-        else
-        {
-            IBprice = Double.parseDouble(I_Bprice.getText());
-            IM_A_Bprice_error_lbl.setText("");
-        }
-
-        if(Iqty < 0)
-        {
-
-            IM_A_qty_error_lbl.setText("*invalid qty");
-            valid = 1;
-
-        }
-
-        if(IBprice < 0 )
-        {
-
-            IM_A_Bprice_error_lbl.setText("*invalid ammount");
-            valid = 1;
-
-        }
-
-        if(ISprice < 0 )
-        {
-
-            IM_A_Sprice_error_lbl.setText("*invalid ammount");
-            valid = 1;
-
-        }
-
-        if(valid == 0){
-
-            service.add_item(Iname,Itype,Iqty,IBprice,ISprice);
-            IM_A_Bprice_error_lbl.setText("");
-            IM_A_Sprice_error_lbl.setText("");
-            IM_A_qty_error_lbl.setText("");
-            IM_A_brand_error_lbl.setText("");
-            IM_A_name_error_lbl.setText("");
-
-            IM_Atable.setModel(DbUtils.resultSetToTableModel(IM_table.IM_tableload()));
-            IM_A_success.setText("item added successfully");
-
-        }
-
-    }//GEN-LAST:event_IM_add_btnActionPerformed
-
-    private void SuMOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SuMOrderActionPerformed
-        // TODO add your handling code here:
-        globalSupDB.orderTableLoad(orderTable);
-        viewPanel("supOrderDetails");
-
-        ResultSet type = globalSupDB.getSupCategory();
-        ResultSet type1 = globalSupDB.getItemCategory();
-
-        try{
-
-            Vector<SupplyModel> vector = new Vector<>();
-
-            while(type.next()){
-
-                SupplyModel s1 = new SupplyModel(type.getInt("supplierId"),type.getString("supplierName"));
-
-                vector.addElement(s1);
-
-            }
-
-            supIDcombo.setModel(new DefaultComboBoxModel(vector));
-
-        }catch(SQLException ex){
-
-            System.out.println("ex");
-
-        }
-
-        try{
-
-            Vector<ItemSupModel> vector2 = new Vector<>();
-
-            while(type1.next()){
-
-                ItemSupModel i1 = new ItemSupModel(type1.getInt("itemId"),type1.getString("itemName"));
-
-                vector2.addElement(i1);
-
-            }
-
-            Itemcombo.setModel(new DefaultComboBoxModel(vector2));
-
-        }catch(SQLException ex){
-
-            System.out.println("ex");
-
-        }
-
-    }//GEN-LAST:event_SuMOrderActionPerformed
-
-    private void SuMAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SuMAddActionPerformed
-        // TODO add your handling code here:
-        globalSupDB.supTableLoad(supTable);
-        viewPanel("supAddDetails");
-    }//GEN-LAST:event_SuMAddActionPerformed
-
-    private void orderIDtxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_orderIDtxtActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_orderIDtxtActionPerformed
-
-    private void placeOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_placeOrderActionPerformed
-        // TODO add your handling code here:
-
-        try{
-
-            SupplyModel s1;
-            ItemSupModel i2;
-            String amount = amounttxt.getText();
-            String qty = quantitytxt.getText();
-            s1 = (SupplyModel)supIDcombo.getSelectedItem();
-            i2 = (ItemSupModel)Itemcombo.getSelectedItem();
-            int sid = s1.getSupId();
-            int Iid = i2.getId();
-
-            if(amount.equals("")|| qty.equals("")){
-
-                JOptionPane.showMessageDialog(supOrderDetails,"Enter positive values to the fields");
-
-            }
-            else if(Double.parseDouble(amount) == 0 || Integer.parseInt(qty) == 0){
-
-                JOptionPane.showMessageDialog(supOrderDetails,"Fields should not be zero...Enter a positive Value!");
-
-            }
-
-            else{
-
-                int response = JOptionPane.showConfirmDialog(null, "Do you really want to Place the order");
-
-                if(response == 0){
-                    //Send data to model
-                    try{
-                        orderModel o2 = new orderModel(Integer.parseInt(qty),Double.parseDouble(amount));
-
-                        //Call method to access DB
-
-                        globalSupDB.addOrder(o2,sid,Iid);
-
-                        globalSupDB.orderTableLoad(orderTable);}catch(NumberFormatException e){
-
-                        JOptionPane.showMessageDialog(supOrderDetails, "Enter valid inputs!");
-
-                    }
-                }
-
-            }
-
-        }catch(Exception e){
-
-            JOptionPane.showMessageDialog(supOrderDetails, "Enter valid inputs!");
-
-        }
-    }//GEN-LAST:event_placeOrderActionPerformed
-
-    private void orderTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_orderTableMouseClicked
-        // TODO add your handling code here:
-        int ordrowselected = orderTable.getSelectedRow();
-        String orderID;
-        String itemID;
-        String qty;
-        String supID;
-        String amount;
-        orderID = orderTable.getValueAt(ordrowselected, 0).toString();
-        itemID = orderTable.getValueAt(ordrowselected, 1).toString();
-        qty = orderTable.getValueAt(ordrowselected, 2).toString();
-        amount = orderTable.getValueAt(ordrowselected, 3).toString();
-        supID = orderTable.getValueAt(ordrowselected, 4).toString();
-
-        orderIDtxt.setText(orderID);
-        Itemcombo.setSelectedItem(itemID);
-        supIDcombo.setSelectedItem(supID);
-        quantitytxt.setText(qty);
-        amounttxt.setText(amount);
-
-    }//GEN-LAST:event_orderTableMouseClicked
-
-    private void supIDcomboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_supIDcomboActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_supIDcomboActionPerformed
-
-    private void DeletebtnorderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeletebtnorderActionPerformed
-        // TODO add your handling code here:
-        int response = JOptionPane.showConfirmDialog(null, "Do you really want to delete selected order?");
-
-        if(response == 0){
-
-            String id  = orderIDtxt.getText();
-
-            globalSupDB.deleteorder(id);
-            globalSupDB.orderTableLoad(orderTable);
-        }
-
-    }//GEN-LAST:event_DeletebtnorderActionPerformed
 
     private void supNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_supNameActionPerformed
         // TODO add your handling code here:
@@ -5209,6 +3916,1506 @@ public class NewJFrame extends javax.swing.JFrame {
 
     }//GEN-LAST:event_supDeletebtnActionPerformed
 
+    private void submit_cuss_addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submit_cuss_addActionPerformed
+        // TODO add your handling code here:
+        String Id = cusIdAdd.getText();
+        String name = cusNameAdd.getText();
+        String phone = cusPhoneAdd.getText();
+        String address = cusAddAdd.getText();
+        String email = cusEmailAdd.getText();
+
+        CustomersModel c1 = new CustomersModel(Id, name, phone, address, email);
+
+        int vali = 0;
+        if(Id == null || Id.length() == 0){
+            vali = 1;
+            ID_Val.setText("*Empty");
+
+        }
+        else{
+            ID_Val.setText("");
+        }
+        if(name == null || name.length() == 0){
+            vali = 1;
+            name_val.setText("*Empty");
+        }
+        else{
+            name_val.setText("");
+        }
+        if(phone == null || phone.length() == 0){
+            vali = 1;
+            phone_val.setText("*Empty");
+        }
+        else{
+            phone_val.setText("");
+        }
+        if(email == null || email.length() == 0){
+            vali = 1;
+            email_val.setText("*Empty");
+        }
+        else{
+            email_val.setText("");
+        }
+        if(address == null || address.length() == 0){
+            vali = 1;
+            address_val.setText("*Empty");
+        }
+        else{
+            address_val.setText("");
+        }
+        if(vali == 0){
+            CusDB db = new CusDB();
+            db.addCustomers(c1);
+            message.setText("Sucessfully Added");
+            CusDB.CustableLoad(cus_view_table);
+        }
+    }//GEN-LAST:event_submit_cuss_addActionPerformed
+
+    private void reset_cus_addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reset_cus_addActionPerformed
+        // TODO add your handling code here:
+        cusIdAdd.setText("");
+        cusNameAdd.setText("");
+        cusPhoneAdd.setText("");
+        cusAddAdd.setText("");
+        cusEmailAdd.setText("");
+    }//GEN-LAST:event_reset_cus_addActionPerformed
+
+    private void IM_search1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IM_search1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_IM_search1ActionPerformed
+
+    private void IM_addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IM_addActionPerformed
+
+        viewPanel("IM_add");
+        IM_Atable.setModel(DbUtils.resultSetToTableModel(IM_table.IM_tableload()));
+    }//GEN-LAST:event_IM_addActionPerformed
+
+    private void IM_update_deleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IM_update_deleteActionPerformed
+
+        viewPanel("IM_update");
+        IM_Utable.setModel(DbUtils.resultSetToTableModel(IM_table.IM_tableload()));
+    }//GEN-LAST:event_IM_update_deleteActionPerformed
+
+    private void IM_searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IM_searchActionPerformed
+
+        viewPanel("IM_search");
+        IM_Stable.setModel(DbUtils.resultSetToTableModel(IM_table.IM_tableload()));
+    }//GEN-LAST:event_IM_searchActionPerformed
+
+    private void empLeaveMgmtNavBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_empLeaveMgmtNavBtnActionPerformed
+        viewPanel("empLeaveMgmtPanel");
+        globalEmpDB.empLeaveRequestTableLoad(empLeaveRequestTable);
+    }//GEN-LAST:event_empLeaveMgmtNavBtnActionPerformed
+
+    private void addEmpCatNavBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addEmpCatNavBtnActionPerformed
+        viewPanel("addCatergoryPanel");
+        globalEmpDB.empCatergoryTableLoad(empCatergoryTable);
+    }//GEN-LAST:event_addEmpCatNavBtnActionPerformed
+
+    private void regEmpNavBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_regEmpNavBtnActionPerformed
+
+        viewPanel("addEmpCard1");
+
+        globalEmpDB.empTableLoad(empTable);
+
+        ResultSet typeRS = globalEmpDB.getEmpCatergory();
+
+        try {
+
+            Vector<EmployeeType> vector = new Vector<>();
+
+            while(typeRS.next()){
+
+                EmployeeType e1 = new EmployeeType(typeRS.getInt("id"), typeRS.getString("description"));
+
+                vector.addElement(e1);
+
+            }
+
+            emptypeComboBox.setModel(new DefaultComboBoxModel(vector));
+
+        } catch (SQLException ex) {
+            Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_regEmpNavBtnActionPerformed
+
+    private void leaveEmpNavBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_leaveEmpNavBtnActionPerformed
+
+        viewPanel("empLeaveCard");
+
+        globalEmpDB.empLeaveRequestTableLoad(empRequestTable);
+
+        //calc remaining leave
+        int remLeave = globalEmpDB.calcRemLeave(5);
+
+        empRemLeavBox.setText(Integer.toString(remLeave));
+
+        empLeaveStatusBox.setBackground(Color.DARK_GRAY);
+        empLeaveStatusLabel.setText("");
+        empLeaveStatusBox.setText("");
+    }//GEN-LAST:event_leaveEmpNavBtnActionPerformed
+
+    private void attendanceEmpNavBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_attendanceEmpNavBtnActionPerformed
+
+        viewPanel("attendanceEmpCard");
+        globalEmpDB.empAttendanceTableLoad(jTable1);
+
+        //set system date for attendance
+        empDateLabel.setText(java.util.Calendar.getInstance().getTime().toString());
+    }//GEN-LAST:event_attendanceEmpNavBtnActionPerformed
+
+    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButton1ActionPerformed
+
+    private void jTextField3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField3KeyReleased
+        // TODO add your handling code here:
+        if (jRadioButton1.isSelected()) {
+
+            //String se = jTextField3.getText();
+            //int nu = Integer.parseInt(se);
+            try{
+                Query q = ITPPUEntityManager.
+                //createQuery("SELECT b FROM Billpayment b WHERE b.month like :pTitle");
+                createQuery("SELECT b FROM Billpayment b WHERE b.month like :pTitle");
+                q.setParameter("pTitle", Integer.parseInt(jTextField3.getText()));
+                //q.setParameter("pTitle", "%" + jTextField3.getText() + "%");
+                billpaymentList.clear();
+                billpaymentList = q.getResultList();
+                refreshTable2(billpaymentList);
+
+            }catch(NumberFormatException e){
+                refreshTable2(billpaymentList);
+            }
+
+        } else if (jRadioButton2.isSelected()) {
+
+            Query q = ITPPUEntityManager.
+            createQuery("SELECT b FROM Book b WHERE b.author like :pAuthor");
+            q.setParameter("pAuthor", "%" + jTextField3.getText() + "%");
+            billpaymentList.clear();
+            billpaymentList = q.getResultList();
+            refreshTable2(billpaymentList);
+
+        } else if (jRadioButton3.isSelected()) {
+
+            Query q = ITPPUEntityManager.
+            createQuery("SELECT b FROM Book b WHERE b.publisher like :pPublisher");
+            q.setParameter("pPublisher", "%" + jTextField3.getText() + "%");
+            billpaymentList.clear();
+            billpaymentList = q.getResultList();
+            refreshTable2(billpaymentList);
+
+        } else {
+            JOptionPane.showMessageDialog(rootPane, "Select a criteria",
+                "Info", 0);
+        }
+
+    }//GEN-LAST:event_jTextField3KeyReleased
+
+    private void empIdBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_empIdBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_empIdBoxActionPerformed
+
+    private void empTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_empTableMouseClicked
+
+        //Access emp table row
+
+        int empTableRow = empTable.getSelectedRow();
+
+        String empID = empTable.getValueAt(empTableRow, 0).toString();
+        String empName = empTable.getValueAt(empTableRow, 1).toString();
+        String empNic = empTable.getValueAt(empTableRow, 2).toString();
+        String empAddress = empTable.getValueAt(empTableRow, 3).toString();
+        String empPhone = empTable.getValueAt(empTableRow, 4).toString();;
+        String empEmail = empTable.getValueAt(empTableRow, 5).toString();
+        String empType = empTable.getValueAt(empTableRow, 6).toString();
+
+        int empTypeIndex = Integer.parseInt(empType);
+
+        empIdBox.setText(empID);
+        empNameBox.setText(empName);
+        empNICBox.setText(empNic);
+        empAddressBox.setText(empAddress);
+        empPhoneBox.setText(empPhone);
+        empEmailBox.setText(empEmail);
+        emptypeComboBox.setSelectedIndex(empTypeIndex);
+    }//GEN-LAST:event_empTableMouseClicked
+
+    private void updateEmpBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateEmpBtnActionPerformed
+
+        int response = JOptionPane.showConfirmDialog(null, "Do you really want to update?");
+        if(response == 0){
+
+            String empID = empIdBox.getText();
+            String empName = empNameBox.getText();
+            String empNic = empNICBox.getText();
+            String empAddress = empAddressBox.getText();
+            int phone = Integer.parseInt(empPhoneBox.getText());
+            String empEmail = empEmailBox.getText();
+            int empType = emptypeComboBox.getSelectedIndex();
+            int phoneLength = Integer.toString(phone).length();
+
+            if(empName.equals("")||empNic.equals("")||empAddress.equals("")||empEmail.equals("")|| phoneLength == 0){
+
+                JOptionPane.showMessageDialog(addEmpCard1, "Fill all form fields! Enter 'None' if non-existant");
+
+            }
+            //Validate email
+            else if(!employeeValidator.isValidEmailAddress(empEmail)){
+
+                JOptionPane.showMessageDialog(addEmpCard1, "Enter valid email address!");
+            }
+            else if(phoneLength != 10){
+
+                JOptionPane.showMessageDialog(addEmpCard1, "Enter phone number with 10 digits!");
+            }
+            else if(empNic.length() < 10 || empNic.length() > 12){
+
+                JOptionPane.showMessageDialog(addEmpCard1, "NIC must contain between 10-12 characters!");
+            }
+
+            else{
+                //Send data to model
+                EmployeeModel e1 = new EmployeeModel(empName, empNic, empAddress, empEmail,empType, phone);
+                e1.setEmpId(Integer.parseInt(empID));
+                //Call method to access DB
+
+                globalEmpDB.updateEmployee(e1);
+
+                globalEmpDB.empTableLoad(empTable);
+            }
+
+        }
+    }//GEN-LAST:event_updateEmpBtnActionPerformed
+
+    private void registerEmpBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerEmpBtn1ActionPerformed
+
+        //Get data from form
+        try{
+
+            EmployeeType e2;
+            e2 = (EmployeeType)emptypeComboBox.getSelectedItem();
+
+            String name = empNameBox.getText();
+            String nic = empNICBox.getText();
+            String address = empAddressBox.getText();
+            int phone = Integer.parseInt(empPhoneBox.getText());
+            String email = empEmailBox.getText();
+            int type = e2.getEmpTypeId();
+            int phoneLength = Integer.toString(phone).length();
+
+            EmpDB db = new EmpDB();
+
+            //Check for duplicate entries
+            if(db.checkRepeat(nic) == false){
+                //Form field validation
+                //Check empty fields
+                if(name.equals("")||nic.equals("")||address.equals("")||email.equals("")|| phoneLength == 0){
+
+                    JOptionPane.showMessageDialog(addEmpCard1, "Fill all form fields! Enter 'None' if non-existant");
+
+                }
+                //Validate email
+                else if(!employeeValidator.isValidEmailAddress(email)){
+
+                    JOptionPane.showMessageDialog(addEmpCard1, "Enter valid email address!");
+                }
+                else if(phoneLength != 10){
+
+                    JOptionPane.showMessageDialog(addEmpCard1, "Enter phone number with 10 digits!");
+                }
+                else if(nic.length() < 10 || nic.length() > 12){
+
+                    JOptionPane.showMessageDialog(addEmpCard1, "NIC must contain between 10-12 characters!");
+                }
+
+                //If no errors
+                else{
+                    int response = JOptionPane.showConfirmDialog(null, "Do you really want to register this employee?");
+                    if(response == 0){
+                        //Send data to model
+                        EmployeeModel e1 = new EmployeeModel(name, nic, address, email, type, phone);
+
+                        //Call method to access DB
+
+                        db.addEmployee(e1);
+
+                        globalEmpDB.empTableLoad(empTable);
+                    }
+                }
+            }
+            else{
+
+                JOptionPane.showMessageDialog(addEmpCard1, "Employee already exists!");
+            }
+        }
+        //Catch converting invalid phone numbers
+        catch(NumberFormatException e){
+            JOptionPane.showMessageDialog(addEmpCard1, "Enter valid phone number!");
+        }
+    }//GEN-LAST:event_registerEmpBtn1ActionPerformed
+
+    private void deleteEmpBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteEmpBtnActionPerformed
+
+        int response = JOptionPane.showConfirmDialog(null, "Do you really want to delete selected employee?");
+
+        if(response == 0){
+
+            String id  = empIdBox.getText();
+
+            globalEmpDB.deleteEmp(id);
+            globalEmpDB.empTableLoad(empTable);
+        }
+    }//GEN-LAST:event_deleteEmpBtnActionPerformed
+
+    private void empAddressBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_empAddressBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_empAddressBoxActionPerformed
+
+    private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
+        // TODO add your handling code here:
+        String amount = jTextField2.getText();
+        String month = jTextField1.getText();
+
+        try{
+
+            if(amount.equals("") || month.equals("")){
+
+                JOptionPane.showMessageDialog(null, "Please fill all form fields!");
+
+            }
+
+            else{
+
+                Billpayment b = ITPPUEntityManager.find(Billpayment.class, Integer.parseInt(jTextField4.getText()));
+
+                int r = JOptionPane.showConfirmDialog(rootPane, "Update"   + b.getPid(), "Confirmation", JOptionPane.YES_NO_CANCEL_OPTION);
+
+                if (r == JOptionPane.YES_OPTION) {
+                    b.setType((Billtype) jComboBox1.getSelectedItem());
+                    b.setMonth(Integer.parseInt(jTextField1.getText()));
+                    b.setAmount(Integer.parseInt(jTextField2.getText()));
+                    b.setEid((Employee) jComboBox2.getSelectedItem());
+
+                    ITPPUEntityManager.getTransaction().begin();
+                    ITPPUEntityManager.persist(b);
+                    ITPPUEntityManager.getTransaction().commit();
+                    JOptionPane.showMessageDialog(rootPane, "Record Updated", "Info", 1);
+
+                    billpaymentList.clear();
+                    billpaymentList = billpaymentQuery.getResultList();
+                    refreshTable(billpaymentList);
+
+                }
+            }
+        }
+        catch(NumberFormatException e){
+
+            JOptionPane.showMessageDialog(null, "Please ensure amount and month are numneric!");
+        }
+
+    }//GEN-LAST:event_jButton14ActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
+        // TODO add your handling code here:
+        Billpayment b = ITPPUEntityManager.find(Billpayment.class, Integer.parseInt(jTextField4.getText()));
+
+        int r = JOptionPane.showConfirmDialog(rootPane, "Remove : " + b.getPid(),
+            "Confirmation", JOptionPane.YES_NO_CANCEL_OPTION);
+        if (r == JOptionPane.YES_OPTION) {
+            ITPPUEntityManager.getTransaction().begin();
+            ITPPUEntityManager.remove(b);
+            ITPPUEntityManager.getTransaction().commit();
+            JOptionPane.showMessageDialog(rootPane, "Record Removed", "Info", 1);
+
+            billpaymentList.clear();
+            billpaymentList = billpaymentQuery.getResultList();
+            refreshTable(billtypeList);
+        }
+    }//GEN-LAST:event_jButton15ActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        // TODO add your handling code here:
+        Billpayment b = new Billpayment();
+
+        try{
+            String amount = jTextField2.getText();
+            String month = jTextField1.getText();
+
+            if(amount.equals("")|| month.equals("")){
+                JOptionPane.showMessageDialog(null, "Please fill all form fields!");
+            }
+            else{
+                b.setType((Billtype) jComboBox1.getSelectedItem());
+                b.setMonth(Integer.parseInt(jTextField1.getText()));
+                b.setAmount(Integer.parseInt(jTextField2.getText()));
+                b.setEid((Employee) jComboBox2.getSelectedItem());
+
+                ITPPUEntityManager.getTransaction().begin();
+                ITPPUEntityManager.persist(b);
+                ITPPUEntityManager.getTransaction().commit();
+
+                JOptionPane.showMessageDialog(rootPane, "Record inserted", "Info", 1);
+
+                billpaymentList.clear();
+                billpaymentList = billpaymentQuery.getResultList();
+                refreshTable(billtypeList);
+            }
+        }catch(NumberFormatException e){
+            JOptionPane.showMessageDialog(null, "Amount and month must be numeric!");
+        }
+    }//GEN-LAST:event_jButton9ActionPerformed
+
+    private void IM_search_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IM_search_btnActionPerformed
+
+        IM_Service service = new IM_Service();
+
+        String by = IM_Sby.getSelectedItem().toString();
+        String key = IM_key.getText();
+
+        IM_Stable.setModel(DbUtils.resultSetToTableModel(service.search_item(by,key)));
+    }//GEN-LAST:event_IM_search_btnActionPerformed
+
+    private void cus_view_tableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cus_view_tableMouseClicked
+        // TODO add your handling code here:
+        int r =cus_view_table.getSelectedRow();
+        String id =  cus_view_table.getValueAt(r,0).toString();
+        String name =  cus_view_table.getValueAt(r,1).toString();
+        String phone =  cus_view_table.getValueAt(r,2).toString();
+        String email =  cus_view_table.getValueAt(r,3).toString();
+        String address =  cus_view_table.getValueAt(r,4).toString();
+
+        name_cus_u.setText(name);
+        phoneBoxCus.setText(phone);
+        adress_cus_u.setText(address);
+        emailBoxCus.setText(email);
+        labCusID.setText(id);
+    }//GEN-LAST:event_cus_view_tableMouseClicked
+
+    private void update_cus_uActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_update_cus_uActionPerformed
+        // TODO add your handling code here:
+        int x = JOptionPane.showConfirmDialog(null, "Do you really want to update");
+
+        if(x == 0){
+            String id = labCusID.getText();
+            String name = name_cus_u.getText();
+            String phone = phoneBoxCus.getText();
+            String email = emailBoxCus.getText();
+            String address = adress_cus_u.getText();
+
+            CustomersModel c1 = new CustomersModel(id, name, phone, address, email);
+
+            int vali =0;
+
+            if(name == null || name.length() == 0){
+                vali = 1;
+                name_val_U.setText("*Empty");
+            }
+            else{
+                name_val_U.setText("");
+            }
+            if(phone == null || phone.length() == 0){
+                vali = 1;
+                phone_val_U1.setText("*Empty");
+            }
+            else{
+                phone_val_U1.setText("");
+            }
+            if(email == null || email.length() == 0){
+                vali = 1;
+                email_val_U3.setText("*Empty");
+            }
+            else{
+                email_val_U3.setText("");
+            }
+            if(address == null || address.length() == 0){
+                vali = 1;
+                address_val_U2.setText("*Empty");
+            }
+            else{
+                address_val_U2.setText("");
+            }
+            if(vali == 0){
+                CusDB db = new CusDB();
+                db.updateCustomers(c1);
+                CusDB.CustableLoad(cus_view_table);
+
+            }
+        }
+    }//GEN-LAST:event_update_cus_uActionPerformed
+
+    private void delete_cus_UActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delete_cus_UActionPerformed
+        // TODO add your handling code here:
+        int x = JOptionPane.showConfirmDialog(null, "Do you really want to update");
+
+        if(x == 0){
+            String id = labCusID.getText();
+
+            CustomersModel c1 = new CustomersModel(id);
+
+            CusDB db = new CusDB();
+            db.deleteCustomers(c1);
+            CusDB.CustableLoad(cus_view_table);
+
+        }
+    }//GEN-LAST:event_delete_cus_UActionPerformed
+
+    private void cancel_cusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancel_cusActionPerformed
+        // TODO add your handling code here:
+        name_cus_u.setText("");
+        phoneBoxCus.setText("");
+        adress_cus_u.setText("");
+        emailBoxCus.setText("");
+        labCusID.setText("Customer ID");
+    }//GEN-LAST:event_cancel_cusActionPerformed
+
+    private void placeOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_placeOrderActionPerformed
+        // TODO add your handling code here:
+
+        try{
+
+            SupplyModel s1;
+            ItemSupModel i2;
+            String amount = amounttxt.getText();
+            String qty = quantitytxt.getText();
+            s1 = (SupplyModel)supIDcombo.getSelectedItem();
+            i2 = (ItemSupModel)Itemcombo.getSelectedItem();
+            int sid = s1.getSupId();
+            int Iid = i2.getId();
+
+            if(amount.equals("")|| qty.equals("")){
+
+                JOptionPane.showMessageDialog(supOrderDetails,"Enter positive values to the fields");
+
+            }
+            else if(Double.parseDouble(amount) == 0 || Integer.parseInt(qty) == 0){
+
+                JOptionPane.showMessageDialog(supOrderDetails,"Fields should not be zero...Enter a positive Value!");
+
+            }
+
+            else{
+
+                int response = JOptionPane.showConfirmDialog(null, "Do you really want to Place the order");
+
+                if(response == 0){
+                    //Send data to model
+                    try{
+                        orderModel o2 = new orderModel(Integer.parseInt(qty),Double.parseDouble(amount));
+
+                        //Call method to access DB
+
+                        globalSupDB.addOrder(o2,sid,Iid);
+
+                        globalSupDB.orderTableLoad(orderTable);}catch(NumberFormatException e){
+
+                        JOptionPane.showMessageDialog(supOrderDetails, "Enter valid inputs!");
+
+                    }
+                }
+
+            }
+
+        }catch(Exception e){
+
+            JOptionPane.showMessageDialog(supOrderDetails, "Enter valid inputs!");
+
+        }
+    }//GEN-LAST:event_placeOrderActionPerformed
+
+    private void supIDcomboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_supIDcomboActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_supIDcomboActionPerformed
+
+    private void DeletebtnorderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeletebtnorderActionPerformed
+        // TODO add your handling code here:
+        int response = JOptionPane.showConfirmDialog(null, "Do you really want to delete selected order?");
+
+        if(response == 0){
+
+            String id  = orderIDtxt.getText();
+
+            globalSupDB.deleteorder(id);
+            globalSupDB.orderTableLoad(orderTable);
+        }
+    }//GEN-LAST:event_DeletebtnorderActionPerformed
+
+    private void orderIDtxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_orderIDtxtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_orderIDtxtActionPerformed
+
+    private void orderTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_orderTableMouseClicked
+        // TODO add your handling code here:
+        int ordrowselected = orderTable.getSelectedRow();
+        String orderID;
+        String itemID;
+        String qty;
+        String supID;
+        String amount;
+        orderID = orderTable.getValueAt(ordrowselected, 0).toString();
+        itemID = orderTable.getValueAt(ordrowselected, 1).toString();
+        qty = orderTable.getValueAt(ordrowselected, 2).toString();
+        amount = orderTable.getValueAt(ordrowselected, 3).toString();
+        supID = orderTable.getValueAt(ordrowselected, 4).toString();
+
+        orderIDtxt.setText(orderID);
+        Itemcombo.setSelectedItem(itemID);
+        supIDcombo.setSelectedItem(supID);
+        quantitytxt.setText(qty);
+        amounttxt.setText(amount);
+    }//GEN-LAST:event_orderTableMouseClicked
+
+    private void empRequestTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_empRequestTableMouseClicked
+
+        int leaveTableRow = empRequestTable.getSelectedRow();
+
+        String startDate = empRequestTable.getValueAt(leaveTableRow, 2).toString();
+        String endDate = empRequestTable.getValueAt(leaveTableRow, 3).toString();
+        String nDays = empRequestTable.getValueAt(leaveTableRow, 4).toString();
+        String reason = empRequestTable.getValueAt(leaveTableRow, 7).toString();
+
+        String approved = empRequestTable.getValueAt(leaveTableRow, 5).toString();
+        String rejected = empRequestTable.getValueAt(leaveTableRow, 6).toString();
+
+        empstartDateBox.setText(startDate);
+        empEndDateBox.setText(endDate);
+        empDaysBox.setText(nDays);
+        empReasonText.setText(reason);
+        empLeaveStatusLabel.setText("Request Status");
+
+        if(approved.equals("true")){
+
+            empLeaveStatusBox.setText("  Request Approved  ");
+            empLeaveStatusBox.setBackground(Color.GREEN);
+            empLeaveStatusBox.setForeground(Color.WHITE);
+        }
+        else if(rejected.equals("true")){
+            empLeaveStatusBox.setText("  Request Rejected  ");
+            empLeaveStatusBox.setBackground(Color.RED);
+            empLeaveStatusBox.setForeground(Color.WHITE);
+        }
+        else{
+            empLeaveStatusBox.setText("  Request Pending  ");
+            empLeaveStatusBox.setBackground(Color.BLUE);
+            empLeaveStatusBox.setForeground(Color.WHITE);
+        }
+    }//GEN-LAST:event_empRequestTableMouseClicked
+
+    private void empLeaveRequestBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_empLeaveRequestBtnActionPerformed
+        try{
+            int empID = 5;
+            int remLeave = Integer.parseInt(empRemLeavBox.getText());
+            String startDate = empstartDateBox.getText();
+            String endDate = empEndDateBox.getText();
+            String reason = empReasonText.getText();
+            int noOfDays = Integer.parseInt(empDaysBox.getText());
+
+            Calendar cal = Calendar.getInstance();
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            String currentDate = sdf.format(cal.getTime());
+
+            //Validate empty fields
+            if(startDate.equals("") || endDate.equals("") || reason.equals("")){
+                JOptionPane.showMessageDialog(null, "Please fill all form fields!");
+            }
+            //Validate number of days
+            else if(noOfDays == 0 || noOfDays > remLeave){
+                JOptionPane.showMessageDialog(null, "Number of days cannot be zero or exceed remaining leave amount!");
+            }
+            //Validate date format
+            else if(!employeeValidator.isValidDate(startDate)){
+
+                JOptionPane.showMessageDialog(null, "Please use yyyy/MM/dd format to enter starting date and ending date!");
+            }
+            //Validate date format
+            else if(!employeeValidator.isValidDate(endDate)){
+
+                JOptionPane.showMessageDialog(null, "Please use yyyy/MM/dd format to enter starting date and ending date!");
+            }
+            //Validate start date before end date
+            else if(!employeeValidator.isDateGreater(startDate, endDate)){
+
+                JOptionPane.showMessageDialog(null, "Starting date must be before ending date!");
+
+            }
+            //Validate startDate is greater than current date
+            else if(employeeValidator.isDateGreater(startDate, currentDate)){
+
+                JOptionPane.showMessageDialog(null, "Starting date cannot be before todays date!");
+
+            }
+            //Check overlap
+            else if (globalEmpDB.checkLeaveRequestOverlap(empID, startDate, endDate)){
+
+                JOptionPane.showMessageDialog(null, "Request overlaps a previous request!");
+
+            }
+            else{
+                EmployeeLeaveModel empLeave = new EmployeeLeaveModel(empID, startDate, endDate, noOfDays, reason);
+
+                globalEmpDB.addEmpLeaveRequest(empLeave);
+
+                globalEmpDB.empLeaveRequestTableLoad(empRequestTable);
+            }
+        }
+        catch(NumberFormatException e){
+            JOptionPane.showMessageDialog(null, "Number of days must be an integer!");
+        }
+    }//GEN-LAST:event_empLeaveRequestBtnActionPerformed
+
+    private void smbtndeleteitemreturnsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_smbtndeleteitemreturnsActionPerformed
+        // TODO add your handling code here:
+        SMModel sm1 = new SMModel();
+        sm1.setsalesId(Integer.parseInt(smsalesidreturnsbox.getText()));
+        sm1.setBillId(Integer.parseInt(smtxtfieldenterbillid.getText()));
+        SMServiceImpl sms1 = new SMServiceImpl();
+        sms1.deleteitemfrmsales(sm1);
+        sms1.getbillitemsforreturns(sm1);
+        smviewreturnstable.setModel(DbUtils.resultSetToTableModel(sms1.getbillitemsforreturns(sm1)));
+    }//GEN-LAST:event_smbtndeleteitemreturnsActionPerformed
+
+    private void smbtnsearchbillidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_smbtnsearchbillidActionPerformed
+        // TODO add your handling code here:
+        try{
+           
+           String billid = smtxtfieldenterbillid.getText();
+           
+           
+           
+           if(billid.equals("")){
+               
+               JOptionPane.showMessageDialog(null, "Please fill all the fields!");
+           
+           }
+           int billidint = Integer.parseInt(smtxtfieldenterbillid.getText());
+       }catch(NumberFormatException e){
+           JOptionPane.showMessageDialog(null, "Must be numeric!");
+       }
+        SMModel sm1 = new SMModel();
+        sm1.setBillId(Integer.parseInt(smtxtfieldenterbillid.getText()));
+        SMServiceImpl sms1 = new SMServiceImpl();
+        sms1.getbillitemsforreturns(sm1);
+        smviewreturnstable.setModel(DbUtils.resultSetToTableModel(sms1.getbillitemsforreturns(sm1)));
+                                                   
+
+    }//GEN-LAST:event_smbtnsearchbillidActionPerformed
+
+    private void smviewreturnstableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_smviewreturnstableMouseClicked
+        // TODO add your handling code here:
+        int smrowselected = smviewreturnstable.getSelectedRow();
+        String smsalesidr;
+        String smitemidr;
+        String smqtyr;
+        smsalesidr = smviewreturnstable.getValueAt(smrowselected, 0).toString();
+        smitemidr = smviewreturnstable.getValueAt(smrowselected, 1).toString();
+        smqtyr = smviewreturnstable.getValueAt(smrowselected, 2).toString();
+        smsalesidreturnsbox.setText(smsalesidr);
+        smtxtitemid.setText(smitemidr);
+        smtxtitemname.setText(smqtyr);
+    }//GEN-LAST:event_smviewreturnstableMouseClicked
+
+    private void empSignInBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_empSignInBtnActionPerformed
+
+        String popupMsg = "Sign in for "+java.util.Calendar.getInstance().getTime().toString()+" ?";
+
+        int signInResponse = JOptionPane.showConfirmDialog(null, popupMsg);
+
+        //temp hard coded id must be changed
+        int id = 5;
+
+        if(signInResponse == 0){
+
+            globalEmpDB.empSignIn(id);
+
+        }
+
+        globalEmpDB.empAttendanceTableLoad(empAttendanceTable);
+    }//GEN-LAST:event_empSignInBtnActionPerformed
+
+    private void empSignOutBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_empSignOutBtnActionPerformed
+
+        String popupMsg = "Sign out for "+java.util.Calendar.getInstance().getTime().toString()+" ?";
+
+        int signInResponse = JOptionPane.showConfirmDialog(null, popupMsg);
+
+        //temp hard coded id must be changed
+        int id = 5;
+
+        if(signInResponse == 0){
+
+            globalEmpDB.empSignIn(id);
+
+        }
+
+        globalEmpDB.empAttendanceTableLoad(jTable1);
+    }//GEN-LAST:event_empSignOutBtnActionPerformed
+
+    private void btnGenerateBillsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerateBillsActionPerformed
+        // TODO add your handling code here:
+        custp.setText("");
+        smCustIdStatus.setText("");
+        smdisref.setText("");
+        smitemqty.setText("");
+        smqtystatus.setText("");
+        smdisrefstatus.setText("");
+        smitemid.setText("");
+        smitemqty.setText("");
+        SMServiceImpl sms1 = new SMServiceImpl();
+        sms1.deleteallfrmbill();
+        smbilltable.setModel(DbUtils.resultSetToTableModel(sms1.getbillitems()));
+
+        viewPanel("smGenerateBills");
+    }//GEN-LAST:event_btnGenerateBillsActionPerformed
+
+    private void btnRegisterCustomersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegisterCustomersActionPerformed
+        // TODO add your handling code here:
+        viewPanel("smRegisterCustomers");
+    }//GEN-LAST:event_btnRegisterCustomersActionPerformed
+
+    private void btnHandleReturnsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHandleReturnsActionPerformed
+        // TODO add your handling code here:
+        SMServiceImpl sms1 = new SMServiceImpl();
+        smviewreturnstable.setModel(DbUtils.resultSetToTableModel(sms1.deleteallfrmsalestable()));
+        smsalesidreturnsbox.setText("");
+        smtxtitemid.setText("");
+        smtxtitemname.setText("");
+        smtxtfieldenterbillid.setText("");
+        viewPanel("smReturnHandle");
+    }//GEN-LAST:event_btnHandleReturnsActionPerformed
+
+    private void btnViewReportsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewReportsActionPerformed
+        // TODO add your handling code here:
+        viewPanel("smViewReports");
+    }//GEN-LAST:event_btnViewReportsActionPerformed
+
+    private void IM_delete_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IM_delete_btnActionPerformed
+
+        int ans = JOptionPane.showConfirmDialog(null, "are you sure you want to delete selected recode ?");
+
+        IM_Service service = new IM_Service();
+
+        String Iid = I_ID.getText();
+
+        service.update_items(Iid,ans);
+        IM_Utable.setModel(DbUtils.resultSetToTableModel(IM_table.IM_tableload()));
+        IM_U_delete.setText("item deleted");
+    }//GEN-LAST:event_IM_delete_btnActionPerformed
+
+    private void IM_UtableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_IM_UtableMouseClicked
+
+        int IM_row = IM_Utable.getSelectedRow();
+
+        String ID = IM_Utable.getValueAt(IM_row, 0).toString();
+        String Iname = IM_Utable.getValueAt(IM_row, 1).toString();
+        String Itype = IM_Utable.getValueAt(IM_row, 2).toString();
+        String Iqty = IM_Utable.getValueAt(IM_row, 3).toString();
+        String IBprice = IM_Utable.getValueAt(IM_row, 4).toString();
+        String ISprice = IM_Utable.getValueAt(IM_row, 5).toString();
+
+        I_ID.setText(ID);
+        I_Uname.setText(Iname);
+        I_Utype.setText(Itype);
+        I_Uqty.setText(Iqty);
+        I_UBprice.setText(IBprice);
+        I_USprice.setText(ISprice);
+
+        IM_U_Bprice_error_lbl.setText("");
+        IM_U_Sprice_error_lbl.setText("");
+        IM_U_qty_error_lbl.setText("");
+        IM_U_brand_error_lbl.setText("");
+        IM_U_name_error_lbl.setText("");
+        IM_U_update.setText("");
+        IM_U_delete.setText("");
+    }//GEN-LAST:event_IM_UtableMouseClicked
+
+    private void IM_update_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IM_update_btnActionPerformed
+
+        int ans = JOptionPane.showConfirmDialog(null, "are you sure you want to update current recode ?");
+        int Uvalid = 0;
+        IM_Service service = new IM_Service();
+
+        String Iid = I_ID.getText();
+        String Iname = I_Uname.getText();
+        String Itype = I_Utype.getText();
+        int Iqty = 0;
+        String IBprice = I_UBprice.getText();
+        String ISprice = I_USprice.getText();
+
+        if( Iname == null || Iname.length() == 0 )
+        {
+
+            IM_U_name_error_lbl.setText("*this field is empty");
+            Uvalid = 1;
+
+        }
+        else
+        {
+
+            IM_U_name_error_lbl.setText("");
+
+        }
+
+        if(Itype == null || Itype.length() == 0)
+        {
+
+            IM_U_brand_error_lbl.setText("*this field is empty");
+            Uvalid = 1;
+
+        }
+        else
+        {
+
+            IM_U_brand_error_lbl.setText("");
+
+        }
+
+        if(ISprice == null || ISprice.length() == 0)
+        {
+
+            IM_U_Sprice_error_lbl.setText("*this field is empty");
+            Uvalid = 1;
+
+        }
+        else
+        {
+
+            IM_U_Sprice_error_lbl.setText("");
+
+        }
+
+        if(I_Uqty.getText() == null || I_Uqty.getText().length() == 0)
+        {
+
+            IM_U_qty_error_lbl.setText("*this field is empty");
+            Uvalid = 1;
+
+        }
+        else
+        {
+
+            Iqty =  Integer.parseInt(I_Uqty.getText()) ;
+            IM_U_qty_error_lbl.setText("");
+        }
+
+        if(IBprice == null || IBprice.length() == 0 )
+        {
+
+            IM_U_Bprice_error_lbl.setText("*this field is empty");
+            Uvalid = 1;
+
+        }
+        else
+        {
+
+            IM_U_Bprice_error_lbl.setText("");
+        }
+
+        if(Iqty < 0)
+        {
+
+            IM_U_qty_error_lbl.setText("*invalid qty");
+            Uvalid = 1;
+
+        }
+        try
+        {
+
+            if(Double.parseDouble(IBprice)  < 0 )
+            {
+
+                IM_U_Bprice_error_lbl.setText("*invalid ammount");
+                Uvalid = 1;
+
+            }
+
+            if(Double.parseDouble(ISprice)  < 0 )
+            {
+
+                IM_U_Sprice_error_lbl.setText("*invalid ammount");
+                Uvalid = 1;
+
+            }
+
+            if(Uvalid == 0){
+
+                service.update_items(ans,Iid,Iname,Itype,Iqty,IBprice,ISprice);
+                IM_U_Bprice_error_lbl.setText("");
+                IM_U_Sprice_error_lbl.setText("");
+                IM_U_qty_error_lbl.setText("");
+                IM_U_brand_error_lbl.setText("");
+                IM_U_name_error_lbl.setText("");
+
+                IM_Utable.setModel(DbUtils.resultSetToTableModel(IM_table.IM_tableload()));
+                IM_U_update.setText("item added successfully");
+
+            }
+        } catch (Exception e) {
+            System.out.println("e");
+            IM_U_Sprice_error_lbl.setText("*this field is empty");
+            IM_U_Bprice_error_lbl.setText("*this field is empty");
+        }
+    }//GEN-LAST:event_IM_update_btnActionPerformed
+
+    private void SuMAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SuMAddActionPerformed
+        // TODO add your handling code here:
+        globalSupDB.supTableLoad(supTable);
+        viewPanel("supAddDetails");
+    }//GEN-LAST:event_SuMAddActionPerformed
+
+    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+        // TODO add your handling code here:
+        viewPanel("pmSearchBillPayments");
+    }//GEN-LAST:event_jButton11ActionPerformed
+
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+        // TODO add your handling code here:
+        viewPanel("card10");
+    }//GEN-LAST:event_jButton10ActionPerformed
+
+    private void smresetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_smresetActionPerformed
+        // TODO add your handling code here:
+        SMServiceImpl sms1 = new SMServiceImpl();
+        sms1.deleteallfrmbill();
+        smbilltable.setModel(DbUtils.resultSetToTableModel(sms1.getbillitems()));
+    }//GEN-LAST:event_smresetActionPerformed
+
+    private void smbilltableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_smbilltableMouseClicked
+        // TODO add your handling code here:
+        int smrow = smbilltable.getSelectedRow();
+        String smitemid1;
+        String smqty1;
+        smitemid1 = smbilltable.getValueAt(smrow, 0).toString();
+        smqty1 = smbilltable.getValueAt(smrow, 2).toString();
+        smitemid.setText(smitemid1);
+        smitemqty.setText(smqty1);
+    }//GEN-LAST:event_smbilltableMouseClicked
+
+    private void smbtndeleteitemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_smbtndeleteitemActionPerformed
+        // TODO add your handling code here:
+        SMModel sm1 = new SMModel();
+        sm1.setItemId(Integer.parseInt(smitemid.getText()));
+        SMServiceImpl sms1 = new SMServiceImpl();
+        sms1.deleteitemfrmbill(sm1);
+        smbilltable.setModel(DbUtils.resultSetToTableModel(sms1.getbillitems()));
+    }//GEN-LAST:event_smbtndeleteitemActionPerformed
+
+    private void smbtnadditemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_smbtnadditemActionPerformed
+        // TODO add your handling code here:
+        SMModel sm1 = new SMModel();
+        sm1.setItemId(Integer.parseInt(smitemid.getText()));
+        sm1.setQty(Integer.parseInt(smitemqty.getText()));
+        SMServiceImpl sms1 = new SMServiceImpl();
+        if(sms1.addtobill(sm1)){
+            smqtystatus.setText("");
+        }
+        else{
+            smqtystatus.setText("Error");
+        }
+
+        smbilltable.setModel(DbUtils.resultSetToTableModel(sms1.getbillitems()));
+    }//GEN-LAST:event_smbtnadditemActionPerformed
+
+    private void smitemqtyKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_smitemqtyKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_smitemqtyKeyTyped
+
+    private void smitemqtyKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_smitemqtyKeyReleased
+        // TODO add your handling code here:
+        try{
+            int qtyno = Integer.parseInt(smitemqty.getText());
+            smqtystatus.setText("");
+
+        }catch(NumberFormatException e){
+            smqtystatus.setText("Enter a Valid Value");
+        }
+    }//GEN-LAST:event_smitemqtyKeyReleased
+
+    private void smitemqtyKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_smitemqtyKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_smitemqtyKeyPressed
+
+    private void smdisrefKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_smdisrefKeyReleased
+        // TODO add your handling code here:
+        try{
+            double disref = Double.parseDouble(smdisref.getText());
+            smdisrefstatus.setText("");
+
+        }catch(NumberFormatException e){
+            smdisrefstatus.setText("Enter a Valid Value");
+        }
+    }//GEN-LAST:event_smdisrefKeyReleased
+
+    private void btnNxtGenerateBillActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNxtGenerateBillActionPerformed
+        // TODO add your handling code here:
+        smtotbillamt.setText("");
+        smcashamtpaid.setText("");
+        smchangedis.setText("");
+
+        SMModel sm = new SMModel();
+        sm.setcustp(custp.getText());
+        sm.setReturnAmt(Double.parseDouble(smdisref.getText()));
+        sm.setPayType((String) custpaymentmethod.getSelectedItem());
+        SMServiceImpl sms1 = new SMServiceImpl();
+        sms1.generatebill(sm);
+        sms1.deleteallfrmbill();
+        viewPanel("smGenerateBills2");
+    }//GEN-LAST:event_btnNxtGenerateBillActionPerformed
+
+    private void smchangedisMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_smchangedisMouseMoved
+        // TODO add your handling code here:
+        SMServiceImpl sms1 = new SMServiceImpl();
+        smtotbillamt.setText(Double.toString(sms1.returnbillamt()));
+        String smcashpaid = smcashamtpaid.getText();
+        smchangedis.setText(Double.toString(-sms1.returnbillamt() + Double.parseDouble(smcashpaid)));
+    }//GEN-LAST:event_smchangedisMouseMoved
+
+    private void smtotbillamtMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_smtotbillamtMouseMoved
+        // TODO add your handling code here:
+        SMServiceImpl sms1 = new SMServiceImpl();
+        smtotbillamt.setText(Double.toString(sms1.returnbillamt()));
+        String smcashpaid = smcashamtpaid.getText();
+        smchangedis.setText(Double.toString(-sms1.returnbillamt() + Double.parseDouble(smcashpaid)));
+    }//GEN-LAST:event_smtotbillamtMouseMoved
+
+    private void empCatergoryTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_empCatergoryTableMouseClicked
+
+        int selectedRow = empCatergoryTable.getSelectedRow();
+
+        String typeId = empCatergoryTable.getValueAt(selectedRow, 0).toString();
+        String type = empCatergoryTable.getValueAt(selectedRow, 1).toString();
+        String basicSal = empCatergoryTable.getValueAt(selectedRow, 2).toString();
+        String vacDays = empCatergoryTable.getValueAt(selectedRow, 3).toString();
+
+        empTypeIdBox.setText(typeId);
+        empTypeBox1.setText(type);
+        empSalaryBox.setText(basicSal);
+        empLeaveBox.setText(vacDays);
+    }//GEN-LAST:event_empCatergoryTableMouseClicked
+
+    private void addEmpTypeBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addEmpTypeBtnActionPerformed
+
+        try{
+            String empType = empTypeBox1.getText();
+            double empSalary = Double.parseDouble(empSalaryBox.getText());
+            int empLeave = Integer.parseInt(empLeaveBox.getText());
+
+            if(empType.equals("")){
+
+                JOptionPane.showMessageDialog(null, "Employee Type cannot be empty!");
+
+            }
+            else{
+
+                EmployeeType empTypeObj = new EmployeeType(empType,empSalary,empLeave);
+
+                globalEmpDB.addEmpType(empTypeObj);
+                globalEmpDB.empCatergoryTableLoad(empCatergoryTable);
+            }
+        }catch(NumberFormatException e){
+
+            JOptionPane.showMessageDialog(null, "Salary and vaction days must be numeric!");
+
+        }
+    }//GEN-LAST:event_addEmpTypeBtnActionPerformed
+
+    private void deleteEmpTypeBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteEmpTypeBtnActionPerformed
+
+        int typeId = Integer.parseInt(empTypeIdBox.getText());
+
+        globalEmpDB.deleteEmpType(typeId);
+
+        globalEmpDB.empCatergoryTableLoad(empCatergoryTable);
+    }//GEN-LAST:event_deleteEmpTypeBtnActionPerformed
+
+    private void updateEmpTypeBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateEmpTypeBtnActionPerformed
+
+        try{
+
+            int typeId = Integer.parseInt(empTypeIdBox.getText());
+            String typeName = empTypeBox1.getText();
+            double basicSal = Double.parseDouble(empSalaryBox.getText());
+            int vacationDays = Integer.parseInt(empLeaveBox.getText());
+
+            if(typeName.equals("")){
+
+                JOptionPane.showMessageDialog(addEmpCard1, "Employee type cannot be empty!");
+            }
+            else{
+                EmployeeType empType = new EmployeeType(typeName, basicSal, vacationDays);
+                empType.setEmpTypeId(typeId);
+
+                globalEmpDB.updateEmpType(empType);
+
+                globalEmpDB.empCatergoryTableLoad(empCatergoryTable);
+            }
+        }
+        catch(NumberFormatException e){
+
+            JOptionPane.showMessageDialog(addEmpCard1, "Please ensure salary and vacation days are numeric!");
+
+        }
+    }//GEN-LAST:event_updateEmpTypeBtnActionPerformed
+
+    private void SuMOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SuMOrderActionPerformed
+        // TODO add your handling code here:
+        globalSupDB.orderTableLoad(orderTable);
+        viewPanel("supOrderDetails");
+
+        ResultSet type = globalSupDB.getSupCategory();
+        ResultSet type1 = globalSupDB.getItemCategory();
+
+        try{
+
+            Vector<SupplyModel> vector = new Vector<>();
+
+            while(type.next()){
+
+                SupplyModel s1 = new SupplyModel(type.getInt("supplierId"),type.getString("supplierName"));
+
+                vector.addElement(s1);
+
+            }
+
+            supIDcombo.setModel(new DefaultComboBoxModel(vector));
+
+        }catch(SQLException ex){
+
+            System.out.println("ex");
+
+        }
+
+        try{
+
+            Vector<ItemSupModel> vector2 = new Vector<>();
+
+            while(type1.next()){
+
+                ItemSupModel i1 = new ItemSupModel(type1.getInt("itemId"),type1.getString("itemName"));
+
+                vector2.addElement(i1);
+
+            }
+
+            Itemcombo.setModel(new DefaultComboBoxModel(vector2));
+
+        }catch(SQLException ex){
+
+            System.out.println("ex");
+
+        }
+    }//GEN-LAST:event_SuMOrderActionPerformed
+
+    private void IM_add_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IM_add_btnActionPerformed
+
+        IM_Service service = new IM_Service();
+
+        int valid = 0;
+        String Iname = I_name.getText();
+        String Itype = I_type.getText();
+        int Iqty = 0;
+        double IBprice = 0;
+        double ISprice = 0;
+
+        if( Iname == null || Iname.length() == 0 )
+        {
+
+            IM_A_name_error_lbl.setText("*this field is empty");
+            valid = 1;
+
+        }
+        else
+        {
+
+            IM_A_name_error_lbl.setText("");
+
+        }
+
+        if(Itype == null || Itype.length() == 0)
+        {
+
+            IM_A_brand_error_lbl.setText("*this field is empty");
+            valid = 1;
+
+        }
+        else
+        {
+
+            IM_A_brand_error_lbl.setText("");
+
+        }
+
+        if(I_Sprice.getText() == null || I_Sprice.getText().length() == 0)
+        {
+
+            IM_A_Sprice_error_lbl.setText("*this field is empty");
+            valid = 1;
+
+        }
+        else
+        {
+            ISprice = Double.parseDouble(I_Sprice.getText());
+            IM_A_Sprice_error_lbl.setText("");
+
+        }
+
+        if(I_qty.getText() == null || I_qty.getText().length() == 0)
+        {
+
+            IM_A_qty_error_lbl.setText("*this field is empty");
+            valid = 1;
+
+        }
+        else
+        {
+
+            Iqty = Integer.parseInt(I_qty.getText()) ;
+            IM_A_qty_error_lbl.setText("");
+        }
+
+        if(I_Bprice.getText() == null || I_Bprice.getText().length() == 0 )
+        {
+
+            IM_A_Bprice_error_lbl.setText("*this field is empty");
+            valid = 1;
+
+        }
+        else
+        {
+            IBprice = Double.parseDouble(I_Bprice.getText());
+            IM_A_Bprice_error_lbl.setText("");
+        }
+
+        if(Iqty < 0)
+        {
+
+            IM_A_qty_error_lbl.setText("*invalid qty");
+            valid = 1;
+
+        }
+
+        if(IBprice < 0 )
+        {
+
+            IM_A_Bprice_error_lbl.setText("*invalid ammount");
+            valid = 1;
+
+        }
+
+        if(ISprice < 0 )
+        {
+
+            IM_A_Sprice_error_lbl.setText("*invalid ammount");
+            valid = 1;
+
+        }
+
+        if(valid == 0){
+
+            service.add_item(Iname,Itype,Iqty,IBprice,ISprice);
+            IM_A_Bprice_error_lbl.setText("");
+            IM_A_Sprice_error_lbl.setText("");
+            IM_A_qty_error_lbl.setText("");
+            IM_A_brand_error_lbl.setText("");
+            IM_A_name_error_lbl.setText("");
+
+            IM_Atable.setModel(DbUtils.resultSetToTableModel(IM_table.IM_tableload()));
+            IM_A_success.setText("item added successfully");
+
+        }
+    }//GEN-LAST:event_IM_add_btnActionPerformed
+
+    private void ManageCustomersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ManageCustomersActionPerformed
+        // TODO add your handling code here:
+        CusDB.CustableLoad(cus_view_table);
+        viewPanel("cmUDCus");
+        System.out.println("I am in");
+
+    }//GEN-LAST:event_ManageCustomersActionPerformed
+
+    private void AddCustomersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddCustomersActionPerformed
+        // TODO add your handling code here:
+        viewPanel("cmAddCus");
+
+    }//GEN-LAST:event_AddCustomersActionPerformed
+
+    private void empRejectRequestBtn_mgmtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_empRejectRequestBtn_mgmtActionPerformed
+
+        try{
+            int requestId = Integer.parseInt(empLeaveReqID_mgmt.getText());
+
+            globalEmpDB.rejectLeaveRequest(requestId);
+
+            globalEmpDB.empLeaveRequestTableLoad(empLeaveRequestTable);
+
+        }
+        catch(Exception e){
+
+            JOptionPane.showMessageDialog(null, "Please select a request first!");
+
+        }
+    }//GEN-LAST:event_empRejectRequestBtn_mgmtActionPerformed
+
+    private void empLeaveRequestTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_empLeaveRequestTableMouseClicked
+
+        int leaveTableRow = empLeaveRequestTable.getSelectedRow();
+        EmployeeModel e1;
+
+        String empId = empLeaveRequestTable.getValueAt(leaveTableRow, 1).toString();
+        String requestId = empLeaveRequestTable.getValueAt(leaveTableRow, 0).toString();
+        String empName ;
+        String startDate = empLeaveRequestTable.getValueAt(leaveTableRow, 2).toString();
+        String endDate = empLeaveRequestTable.getValueAt(leaveTableRow, 3).toString();
+        String nDays = empLeaveRequestTable.getValueAt(leaveTableRow, 4).toString();
+        String reason = empLeaveRequestTable.getValueAt(leaveTableRow, 7).toString();
+
+        empID_mgmt1.setText(empId);
+        empLeaveReqID_mgmt.setText(requestId);
+        empstartDateBox_mgmt.setText(startDate);
+        empEndDateBox_mgmt.setText(endDate);
+        empDaysBox_mgmt.setText(nDays);
+        empReasonText_mgmt.setText(reason);
+
+        e1 = globalEmpDB.findEmpById(Integer.parseInt(empId));
+
+        empEndDateBox_mgmt1.setText(e1.getName());
+    }//GEN-LAST:event_empLeaveRequestTableMouseClicked
+
+    private void empApproveRequestBtn_mgmtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_empApproveRequestBtn_mgmtActionPerformed
+
+        try{
+            int requestId = Integer.parseInt(empLeaveReqID_mgmt.getText());
+
+            globalEmpDB.approveLeaveRequest(requestId);
+
+            globalEmpDB.empLeaveRequestTableLoad(empLeaveRequestTable);
+
+        }
+        catch(Exception e){
+
+            JOptionPane.showMessageDialog(null, "Please select a request first!");
+
+        }
+    }//GEN-LAST:event_empApproveRequestBtn_mgmtActionPerformed
+
+    private void custpKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_custpKeyReleased
+        // TODO add your handling code here:
+        SMModel sm1 = new SMModel();
+        sm1.setcustp(custp.getText());
+        SMServiceImpl sms1 = new SMServiceImpl();
+        if(sms1.customerTableLoad(sm1)){
+            smCustIdStatus.setText(" ");
+        }
+        else{
+            smCustIdStatus.setText("Invalid Customer, Use Anonymous Id or Register Customer");
+        }                 
+
+    }//GEN-LAST:event_custpKeyReleased
+
     /**
      * @param args the command line arguments
      */
@@ -5253,6 +5460,7 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JPanel FMjPanel11;
     private javax.swing.JLabel ID_Val;
     private javax.swing.JLabel ID_cus;
+    private javax.swing.JLabel IM_ADD_txt;
     private javax.swing.JLabel IM_A_Bprice_error_lbl;
     private javax.swing.JLabel IM_A_Sprice_error_lbl;
     private javax.swing.JLabel IM_A_brand_error_lbl;
@@ -5261,8 +5469,10 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel IM_A_success;
     private javax.swing.JTable IM_Atable;
     private javax.swing.JLabel IM_ID_lbl;
+    private javax.swing.JLabel IM_SEARCH_txt;
     private javax.swing.JComboBox IM_Sby;
     private javax.swing.JTable IM_Stable;
+    private javax.swing.JLabel IM_UPDATE_txt;
     private javax.swing.JLabel IM_U_Bprice_error_lbl;
     private javax.swing.JLabel IM_U_Sprice_error_lbl;
     private javax.swing.JLabel IM_U_brand_error_lbl;
@@ -5281,7 +5491,9 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel IM_name_lbl;
     private javax.swing.JLabel IM_qty;
     private javax.swing.JLabel IM_qty_lbl;
+    private javax.swing.JPanel IM_report;
     private javax.swing.JButton IM_search;
+    private javax.swing.JButton IM_search1;
     private javax.swing.JButton IM_search_btn;
     private javax.swing.JLabel IM_serch_by;
     private javax.swing.JLabel IM_sprice;
@@ -5291,7 +5503,6 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JButton IM_update_btn;
     private javax.swing.JButton IM_update_delete;
     private javax.swing.JPanel IMadd;
-    private javax.swing.JPanel IMjPanel5;
     private javax.swing.JPanel IMsearch;
     private javax.swing.JPanel IMupdate;
     private javax.persistence.EntityManager ITPPUEntityManager;
@@ -5335,8 +5546,6 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.persistence.Query billpaymentQuery;
     private java.util.List<model.Billtype> billtypeList;
     private javax.persistence.Query billtypeQuery;
-    private javax.swing.JButton btnBackGenerateBill1;
-    private javax.swing.JButton btnChkCustId;
     private javax.swing.JButton btnGenerateBills;
     private javax.swing.JButton btnHandleReturns;
     private javax.swing.JButton btnNxtGenerateBill;
@@ -5489,7 +5698,17 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator11;
+    private javax.swing.JSeparator jSeparator12;
+    private javax.swing.JSeparator jSeparator13;
     private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JSeparator jSeparator5;
+    private javax.swing.JSeparator jSeparator6;
+    private javax.swing.JSeparator jSeparator7;
+    private javax.swing.JSeparator jSeparator8;
+    private javax.swing.JSeparator jSeparator9;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
     private javax.swing.JTextField jTextField1;
