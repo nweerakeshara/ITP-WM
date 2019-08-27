@@ -30,6 +30,8 @@ public class EmployeeModel {
         this.type = type;
         this.phone = phone;
     }
+    
+    
 
     public int getEmpId() {
         return empId;

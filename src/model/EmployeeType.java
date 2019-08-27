@@ -21,6 +21,13 @@ public class EmployeeType {
         this.empSalary = empSalary;
         this.empLeave = empLeave;
     }
+    
+    public EmployeeType(int empID, String empType) {
+        
+        this.empTypeId = empID;
+        this.empType = empType;
+        
+    }
 
     public String getEmpType() {
         return empType;
@@ -54,7 +61,10 @@ public class EmployeeType {
         this.empTypeId = empTypeId;
     }
     
-    
+    @Override
+    public String toString() {
+        return empType;
+    }
     
     
 }

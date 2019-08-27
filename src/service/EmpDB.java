@@ -442,5 +442,23 @@ public class EmpDB {
        
    
    }
+   
+   public ResultSet getEmpCatergory(){
+       
+       ResultSet rs = null;
+   
+        String query = "SELECT * FROM employeetype";
+        
+        try {
+            pst = conn.prepareStatement(query);
+            rs = pst.executeQuery();
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(EmpDB.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        return rs;
+   
+   }
     
 }

@@ -190,7 +190,8 @@ public class Employee implements Serializable {
 
     @Override
     public String toString() {
-        return "model.Employee[ empId=" + empId + " ]";
+        //return "model.Employee[ empId=" + empId + " ]";
+        return empId.toString();
     }
 
     public void addPropertyChangeListener(PropertyChangeListener listener) {

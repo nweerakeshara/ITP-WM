@@ -115,7 +115,8 @@ public class Billtype implements Serializable {
 
     @Override
     public String toString() {
-        return "model.Billtype[ id=" + id + " ]";
+        //return "model.Billtype[ id=" + id + " ]";
+        return description;
     }
 
     public void addPropertyChangeListener(PropertyChangeListener listener) {
