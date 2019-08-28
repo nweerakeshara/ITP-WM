@@ -1,0 +1,4 @@
+Aug 28, 2019 1:58:47 AM view.NewJFrame1 jButton1ActionPerformed
+SEVERE: Severe.msg qwe
+Aug 28, 2019 9:03:26 AM view.NewJFrame1 jButton1ActionPerformed
+SEVERE: Severe.msg qwe
