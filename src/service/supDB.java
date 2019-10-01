@@ -5,10 +5,21 @@
  */
 package service;
 
+import com.itextpdf.text.BaseColor;
+import com.itextpdf.text.Document;
+import com.itextpdf.text.Element;
+import com.itextpdf.text.FontFactory;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfPCell;
+import com.itextpdf.text.pdf.PdfPTable;
+import com.itextpdf.text.pdf.PdfWriter;
+import java.awt.Font;
+import java.io.FileOutputStream;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.SupplyModel;
@@ -23,6 +34,7 @@ import util.DBConnect;
 public class supDB {
     private Connection conn =DBConnect.DBConn();
     private PreparedStatement pst = null;
+    private PreparedStatement pst1 = null;
     
     
     public void addSupply(SupplyModel s1 ){
@@ -141,7 +153,7 @@ public class supDB {
     
         ResultSet rs = null;
         
-        String query = "SELECT * from suppliers";
+        String query = "select * from suppliers";
         
         try{
         
@@ -230,8 +242,192 @@ public class supDB {
         }
     }
     
-       
+    public ResultSet search_item(String by, String key) {
+        
+        try {
+            switch (by) {
+                case "id":
+                {
+                     ResultSet rs = null;
+                     String query = "SELECT * from suppliers where supplierId  LIKE '%" + key + "%' ";
+                     try{
+                     
+                            pst = conn.prepareStatement(query);
+                            rs = pst.executeQuery();
+                     
+                     }catch(Exception e){}
+                     
+                      return rs;
+                      
+                     
+                    }
+                case "name":
+                    {
+                        ResultSet rs = null;
+                        String query = "SELECT * from suppliers where supplierName  LIKE '%" + key + "%' ";
+                    
+                     
+                            pst = conn.prepareStatement(query);
+                            rs = pst.executeQuery();
+                     
+                    
+                     
+                      return rs;
+                    }
+           
+            }
+           
+        } catch (Exception e) {
+            
+            System.out.println(e);
+        }
+        return null;
     }
+    public ResultSet search_item_order(String by, String key) {
+        
+        try {
+            switch (by) {
+                case "orderid":
+                {
+                     ResultSet rs = null;
+                     String query = "SELECT * from orders where orderId  LIKE '%" + key + "%' ";
+                     try{
+                     
+                            pst = conn.prepareStatement(query);
+                            rs = pst.executeQuery();
+                     
+                     }catch(Exception e){}
+                     
+                      return rs;
+                      
+                     
+                    }
+                case "itemId":
+                    {
+                        ResultSet rs = null;
+                        String query = "SELECT * from orders where itemId  LIKE '%" + key + "%' ";
+                    
+                     
+                            pst = conn.prepareStatement(query);
+                            rs = pst.executeQuery();
+                     
+                    
+                     
+                      return rs;
+                    }
+                case "supId":
+                    {
+                        ResultSet rs = null;
+                        String query = "SELECT * from orders where supplierId  LIKE '%" + key + "%' ";
+                    
+                     
+                            pst = conn.prepareStatement(query);
+                            rs = pst.executeQuery();
+                     
+                    
+                     
+                      return rs;
+                    }
+           
+            }
+           
+        } catch (Exception e) {
+            
+            System.out.println(e);
+        }
+        return null;
+    }
+    public void generateReport(String path){
+        
+        ResultSet rs,rs1;
+        try {
+            Document document = new Document();
+            PdfWriter.getInstance(document, new FileOutputStream(path + "\\ReportSup.pdf"));
+            document.open();
+
+           com.itextpdf.text.Image image = com.itextpdf.text.Image.getInstance("C:\\Users\\Chathura Harshanga\\Documents\\NetBeansProjects\\ITP\\src\\images\\Untitled-3.png");
+            
+           document.add(image);
+
+            
+            document.add(new Paragraph(new Date().toString()));
+            document.add(new Paragraph("---------------------------------------------------------------------------------------"));
+
+            PdfPTable table = new PdfPTable(5);
+
+            PdfPCell cell = new PdfPCell(new Paragraph("Report - Suppliers"));
+            cell.setColspan(5);
+            cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+            cell.setBackgroundColor(BaseColor.GREEN);
+            table.addCell(cell);
+            
+            table.addCell("SupplierId");
+            table.addCell("SupplierName");
+            table.addCell("SupplierId");
+            table.addCell("SupplierIEmail");
+            table.addCell("PhoneNumber");
+            String query = "SELECT * FROM suppliers";
+            pst = conn.prepareStatement(query);
+            rs = pst.executeQuery();
+            
+            
+            while (rs.next()) {
+                table.addCell(Integer.toString(rs.getInt("supplierId")));
+                table.addCell(rs.getString("supplierName"));
+                table.addCell(rs.getString("email"));
+                table.addCell(Integer.toString(rs.getInt("supplierPhone")));
+                table.addCell(rs.getString("supplierAddress"));
+            }
+            
+            
+            
+            document.add(table);
+            
+//            document.add(new Paragraph("---------------------------------------------------------------------------------------"));
+//
+//            PdfPTable table1 = new PdfPTable(5);
+//
+//            PdfPCell cell1 = new PdfPCell(new Paragraph("Report - Orders"));
+//            cell1.setColspan(5);
+//            cell1.setHorizontalAlignment(Element.ALIGN_CENTER);
+//            cell1.setBackgroundColor(BaseColor.GREEN);
+//            table1.addCell(cell1);
+//            
+//            table1.addCell("orderId");
+//            table1.addCell("itemId");
+//            table1.addCell("orderQty");
+//            table1.addCell("nettAmt");
+//            table1.addCell("supplierId");
+//            String query1 = "SELECT orderId,itemId,orderQty,nettAmt,supplierId FROM orders";
+//            pst1 = conn.prepareStatement(query1);
+//            rs1 = pst1.executeQuery();
+//            
+//            
+//            while (rs1.next()) {
+//                table1.addCell(Integer.toString(rs.getInt("orderId")));
+//                table1.addCell(Integer.toString(rs.getInt("itemId")));
+//                table1.addCell(Integer.toString(rs.getInt("orderQty")));
+//                table1.addCell(Double.toString(rs.getInt("nettAmt")));
+//                table1.addCell(Integer.toString(rs.getInt("supplierId")));
+//            }
+//            
+//            document.add(table1);
+//            
+//
+            document.close();
+            //deleted from here
+            
+        } catch (Exception e) {
+
+        }
+            
+        
+        
+        
+    }
+    
+       
+}    
     
     
 

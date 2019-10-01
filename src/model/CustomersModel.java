@@ -25,6 +25,14 @@ public class CustomersModel {
         this.email = email;
         
     }
+    public CustomersModel(String name, String phone, String address, String email) {
+        this.Id = Id;
+        this.name = name;
+        this.phone = phone;
+        this.address = address;
+        this.email = email;
+        
+    }
 
     public CustomersModel(String Id) {
         this.Id = Id;

@@ -5,10 +5,21 @@
  */
 package service;
 
+import com.itextpdf.text.BaseColor;
+import com.itextpdf.text.Document;
+import com.itextpdf.text.Element;
+import com.itextpdf.text.Font;
+import com.itextpdf.text.FontFactory;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfPCell;
+import com.itextpdf.text.pdf.PdfPTable;
+import com.itextpdf.text.pdf.PdfWriter;
+import java.io.FileOutputStream;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.EmployeeLeaveModel;
@@ -460,5 +471,165 @@ public class EmpDB {
         return rs;
    
    }
+   
+   //lEve management table
+   public ResultSet empLeaveRequestMgmtLoad(javax.swing.JTable table){
+        
+        ResultSet rs = null;
+        
+        try {
+            String query = "SELECT * FROM empleave WHERE approved = 0 and rejected = 0";
+            pst = conn.prepareStatement(query);
+            rs = pst.executeQuery();
+            
+            table.setModel(DbUtils.resultSetToTableModel(rs));
+            
+             return rs;
+        } catch (SQLException ex) {
+            Logger.getLogger(EmpDB.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+       return rs;
+    
+    }
+   
+   public void generateReport(String path) {
+       
+    
+        ResultSet rs = null;
+                    
+        
+
+        try {
+            Document document = new Document();
+            PdfWriter.getInstance(document, new FileOutputStream(path + "\\EMPReport.pdf"));
+            document.open();
+
+            com.itextpdf.text.Image image = com.itextpdf.text.Image.getInstance("C:\\Users\\Chathura Harshanga\\Documents\\NetBeansProjects\\ITP\\src\\images\\Untitled-3.png");
+            //document.add(new Paragraph("image"));
+            document.add(image);
+
+            document.add(new Paragraph("Wijesinghe Motors", FontFactory.getFont(FontFactory.TIMES_BOLD, 18, Font.BOLD, BaseColor.RED)));
+            document.add(new Paragraph(new Date().toString()));
+            document.add(new Paragraph("----------------------------------------------------------------------------------------------------------------------------------"));
+            
+            //Put column number
+            PdfPTable table = new PdfPTable(7);
+
+            PdfPCell cell = new PdfPCell(new Paragraph("Employee Details!"));
+            cell.setColspan(7);
+            cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+            cell.setBackgroundColor(BaseColor.YELLOW);
+            table.addCell(cell);
+            
+            String query = "SELECT * FROM EMPLOYEE";
+            pst = conn.prepareStatement(query);
+            rs = pst.executeQuery();
+            
+                table.addCell("ID");
+                table.addCell("Name");
+                table.addCell("NIC");
+                table.addCell("Address");
+                table.addCell("Phone");
+                table.addCell("Email");
+                table.addCell("Type");
+            
+            while (rs.next()) {
+                table.addCell(Integer.toString(rs.getInt("empId")));
+                table.addCell((rs.getString("empName")));
+                table.addCell(rs.getString("nic"));
+                table.addCell(rs.getString("empAddress"));
+                table.addCell(Integer.toString(rs.getInt("empPhone")));
+                table.addCell(rs.getString("empEmail"));
+                table.addCell(Integer.toString(rs.getInt("empType")));
+                
+                
+            }
+            //table.addCell("item7");
+            
+                        
+            //table 2
+            PdfPTable tableType = new PdfPTable(4);
+
+            PdfPCell cellType = new PdfPCell(new Paragraph("Employee Type"));
+            cellType.setColspan(4);
+            cellType.setHorizontalAlignment(Element.ALIGN_CENTER);
+            cellType.setBackgroundColor(BaseColor.YELLOW);
+            
+            tableType.addCell(cellType);
+            
+            String queryType = "SELECT * FROM EMPLOYEETYPE";
+            pst = conn.prepareStatement(queryType);
+            rs = pst.executeQuery();
+            
+                tableType.addCell("ID");
+                tableType.addCell("Type");
+                tableType.addCell("Salary");
+                tableType.addCell("Vacation Days");
+                
+            
+            while (rs.next()) {
+                tableType.addCell(Integer.toString(rs.getInt("id")));
+                tableType.addCell((rs.getString("description")));
+                tableType.addCell(rs.getString("basicSalary"));
+                tableType.addCell(Integer.toString(rs.getInt("vacationDays")));
+                
+                
+                
+            }
+            //table.addCell("item7");
+           // document.add(table);
+            document.add(table);
+            //document.add(new Paragraph("           "));
+            document.add(tableType);
+            
+            String mostVacationDaysQuery = "SELECT e.empId, x.empName, COUNT(*) AS freq FROM empleave e, employee x WHERE e.empId = x.empId GROUP BY e.empId, x.empName";
+            
+            //document.add(new Paragraph("Employee Vacation Request Frequency: "));
+            
+            //table 3
+            
+            PdfPTable vacReq = new PdfPTable(3);
+
+            PdfPCell cellReq = new PdfPCell(new Paragraph("Employee Vacation Request Frequency"));
+            cellReq.setColspan(3);
+            cellReq.setHorizontalAlignment(Element.ALIGN_CENTER);
+            cellReq.setBackgroundColor(BaseColor.YELLOW);
+            
+            vacReq.addCell(cellReq);
+            
+            
+            pst = conn.prepareStatement(mostVacationDaysQuery);
+            rs = pst.executeQuery();
+            
+                vacReq.addCell("ID");
+                vacReq.addCell("Name");
+                vacReq.addCell("Frequency");
+                
+                
+            
+            while (rs.next()) {
+                vacReq.addCell(Integer.toString(rs.getInt("empId")));
+                vacReq.addCell((rs.getString("empName")));
+                vacReq.addCell(Integer.toString(rs.getInt("freq")));
+                
+                
+                
+                
+            }
+            
+            document.add(vacReq);
+
+            document.close();
+            //deleted from here
+            
+        } catch (Exception e) {
+               System.out.println(e);
+        }
+            
+            
+        
+        
+    }
     
 }

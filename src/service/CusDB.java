@@ -19,8 +19,9 @@ import util.DBConnect;
  */
 public class CusDB {
     
-    private static Connection con = null;
+   private static Connection con = null;
     private static PreparedStatement pst = null;
+    ResultSet rs = null;
     
     public void addCustomers(CustomersModel c){
         
@@ -28,7 +29,7 @@ public class CusDB {
     
         
         try {
-            String q = "INSERT INTO customers (custId,custName,custPhone,custEmail,custAddress) values('"+ c.getId() +"','"+ c.getName() +"','"+ c.getPhone() +"','"+ c.getEmail() +"','"+ c.getAddress() +"')";
+            String q = "INSERT INTO customers (custName,custPhone,custEmail,custAddress) values('"+ c.getName() +"','"+ c.getPhone() +"','"+ c.getEmail() +"','"+ c.getAddress() +"')";
             pst = con.prepareStatement(q);
             pst.execute();
             
@@ -81,5 +82,17 @@ public class CusDB {
             System.out.println(e);
         }
     }
+         public ResultSet searchCUS(String name) {
+            String sql  = "SELECT custId, custName, custPhone, custEmail, custAddress FROM customers WHERE custName LIKE '%" + name + "%' ";
+            
+            try {
+                pst = con.prepareStatement(sql);
+                rs = pst.executeQuery(); 
+                
+            } catch (Exception e) {
+            }
+            return rs;
+            
+        }
     
 }
