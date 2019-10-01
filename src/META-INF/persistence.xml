@@ -6,6 +6,8 @@
     <class>model.Billpayment</class>
     <class>model.Billtype</class>
     <class>model.Suppliers</class>
+    <class>model.Accounttype</class>
+    <class>model.Consumers</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/itp?zeroDateTimeBehavior=convertToNull"/>
       <property name="javax.persistence.jdbc.user" value="root"/>

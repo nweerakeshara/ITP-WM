@@ -450,20 +450,15 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
                       <Component id="jLabel8" min="-2" pref="84" max="-2" attributes="0"/>
+                      <EmptySpace min="170" pref="170" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="170" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="btnRegisterCustomers" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="btnGenerateBills" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
+                          <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                              <Component id="btnRegisterCustomers" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnGenerateBills" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="170" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="btnViewReports" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="btnHandleReturns" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
+                          <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                              <Component id="btnViewReports" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnHandleReturns" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
@@ -1974,53 +1969,56 @@
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="119" max="-2" attributes="0"/>
-                      <Component id="jScrollPane7" min="-2" pref="497" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
+                  <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="119" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="empRemLeaveLabel" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
-                                  <Component id="empRemLeavBox" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="empstartDateBox" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
-                                  <Component id="empstartDateLabel" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="empEndDateLabel" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
-                                  <Component id="empEndDateBox" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="empDaysLabel" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
-                                  <Component id="empDaysBox" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="empReasonLabel" alignment="0" min="-2" pref="38" max="-2" attributes="0"/>
-                                  <Component id="jScrollPane4" alignment="0" min="-2" pref="192" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="empLeaveStatusLabel" alignment="1" min="-2" pref="38" max="-2" attributes="0"/>
-                                  <Component id="empLeaveStatusBox" alignment="1" min="-2" pref="38" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="jScrollPane7" min="-2" pref="497" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
-                              <Component id="jSeparator7" min="-2" pref="667" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <EmptySpace min="-2" pref="119" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="empRemLeaveLabel" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
+                                          <Component id="empRemLeavBox" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="empstartDateBox" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
+                                          <Component id="empstartDateLabel" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="empEndDateLabel" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
+                                          <Component id="empEndDateBox" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="empDaysLabel" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
+                                          <Component id="empDaysBox" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="empReasonLabel" alignment="0" min="-2" pref="38" max="-2" attributes="0"/>
+                                          <Component id="jScrollPane4" alignment="0" min="-2" pref="192" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="1" attributes="0">
+                                          <Component id="empLeaveStatusLabel" alignment="1" min="-2" pref="38" max="-2" attributes="0"/>
+                                          <Component id="empLeaveStatusBox" alignment="1" min="-2" pref="38" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
+                                      <Component id="jSeparator7" min="-2" pref="667" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                              <Component id="empLeaveRequestBtn" min="-2" pref="40" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                      <Component id="empLeaveRequestBtn" min="-2" pref="40" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="89" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -2877,7 +2875,6 @@
                                       <Component id="smjLabel4" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
                                       <Component id="custp" min="-2" pref="173" max="-2" attributes="0"/>
-                                      <EmptySpace min="84" max="32767" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="1" attributes="0">
                                       <Component id="smjLabel5" min="-2" pref="179" max="-2" attributes="0"/>
@@ -4212,13 +4209,15 @@
                       <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
                       <Component id="IM_SEARCH_txt" min="-2" pref="53" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="IM_serch_by" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="IM_key" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="IM_search_btn" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
                               <Component id="IM_Sby" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="IM_serch_by" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="IM_key" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="IM_search_btn" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
@@ -4706,13 +4705,8 @@
                                   </Group>
                               </Group>
                           </Group>
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="IM_ADD_txt" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="IM_qty" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="32767" attributes="0"/>
-                          </Group>
+                          <Component id="IM_ADD_txt" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="IM_qty" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jScrollPane14" min="-2" pref="685" max="-2" attributes="0"/>
