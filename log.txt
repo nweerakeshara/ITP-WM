@@ -1,26 +1,9 @@
-Aug 28, 2019 1:58:47 AM view.NewJFrame1 jButton1ActionPerformed
-SEVERE: Severe.msg qwe
-Aug 28, 2019 9:03:26 AM view.NewJFrame1 jButton1ActionPerformed
-SEVERE: Severe.msg qwe
-Aug 28, 2019 1:58:08 PM view.NewJFrame1 jButton1ActionPerformed
-SEVERE: Severe.msg qwe
-Aug 28, 2019 2:00:01 PM view.NewJFrame1 jButton1ActionPerformed
-SEVERE: Severe.msg qwe
-Aug 28, 2019 2:01:42 PM view.NewJFrame1 jButton1ActionPerformed
-SEVERE: Severe.msg qwe
-Aug 28, 2019 2:05:29 PM view.NewJFrame1 jButton1ActionPerformed
-SEVERE: Severe.msg qwe
-Aug 28, 2019 3:07:06 PM view.NewJFrame1 jButton1ActionPerformed
-SEVERE: Severe.msg qwe
-Aug 28, 2019 3:08:24 PM view.NewJFrame1 jButton1ActionPerformed
-SEVERE: Severe.msg qwe
-Aug 28, 2019 3:39:43 PM view.NewJFrame1 jButton1ActionPerformed
-SEVERE: Severe.msg qwe
-Aug 28, 2019 3:40:40 PM view.NewJFrame1 jButton1ActionPerformed
-SEVERE: Severe.msg qwe
-Aug 28, 2019 4:03:27 PM view.NewJFrame1 jButton1ActionPerformed
+
+Sep 25, 2019 3:09:14 PM view.NewJFrame1 jButton1ActionPerformed
+SEVERE: Severe.msg thanuja
+Sep 25, 2019 3:10:14 PM view.NewJFrame1 jButton1ActionPerformed
+SEVERE: Severe.msg thanuja
+Sep 25, 2019 4:08:24 PM view.NewJFrame1 jButton1ActionPerformed
+SEVERE: Severe.msg thanuja
+Sep 25, 2019 5:03:59 PM view.NewJFrame1 jButton1ActionPerformed
 SEVERE: Severe.msg sliit
-Aug 28, 2019 4:10:03 PM view.NewJFrame1 jButton1ActionPerformed
-SEVERE: Severe.msg qwe
-Aug 28, 2019 5:22:27 PM view.NewJFrame1 jButton1ActionPerformed
-SEVERE: Severe.msg qwe

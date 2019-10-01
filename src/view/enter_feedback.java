@@ -1,6 +1,5 @@
 package view;
 
-
 import java.awt.Color;
 import static java.awt.Color.yellow;
 import java.sql.Connection;
@@ -13,6 +12,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -26,12 +26,13 @@ import javax.swing.JOptionPane;
 public class enter_feedback extends javax.swing.JFrame {
 
     int x;
-    
+
     Color myWhite = new Color(240, 240, 240);
-    
-    int rating=0;
-    
+
+    int rating = 0;
+
     JFrame frame;
+
     /**
      * Creates new form enter_feedback
      */
@@ -40,6 +41,7 @@ public class enter_feedback extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         prathapicusTxt.setText("");
         optionTxt.setText("");
+        prathapijLabel1.grabFocus();
     }
 
     /**
@@ -74,7 +76,7 @@ public class enter_feedback extends javax.swing.JFrame {
         prathapijLabel1.setText(" ENTER FEEDBACK");
 
         prathapijLabel2.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
-        prathapijLabel2.setText(" Customer ID :");
+        prathapijLabel2.setText("Customer ID :");
 
         prathapijLabel3.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
         prathapijLabel3.setText(" Select Category :");
@@ -98,8 +100,14 @@ public class enter_feedback extends javax.swing.JFrame {
             }
         });
         prathapicusTxt.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                prathapicusTxtKeyPressed(evt);
+            }
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 prathapicusTxtKeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                prathapicusTxtKeyTyped(evt);
             }
         });
 
@@ -214,9 +222,11 @@ public class enter_feedback extends javax.swing.JFrame {
                         .addGap(23, 23, 23)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(prathapijLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(prathapijLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(prathapijLabel3)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(8, 8, 8)
+                                        .addComponent(prathapijLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGap(33, 33, 33)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(prathapicusTxt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -288,7 +298,8 @@ public class enter_feedback extends javax.swing.JFrame {
     }//GEN-LAST:event_prathapicusTxtActionPerformed
 
     private void prathapicusTxtFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_prathapicusTxtFocusGained
-      /*   if(textField1.getText().trim().toLowerCase().equals("enter your customer id"))
+        prathapicusTxt.setText("0");
+        /*   if(textField1.getText().trim().toLowerCase().equals("enter your customer id"))
          {
              textField1.setText("");
              textField1.setForeground(Color.black);
@@ -302,150 +313,147 @@ public class enter_feedback extends javax.swing.JFrame {
              textField1.setText("Enter Your Customer ID");
              textField1.setForeground(new Color(153,153,153));
          }
-          */   
+         */
     }//GEN-LAST:event_prathapicusTxtFocusLost
 
     private void optionTxtFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_optionTxtFocusGained
-         //if(jTextArea1.getText().trim().toLowerCase().equals("say something....."))
-         //{
-              //jTextArea1.setText("");
-              //jTextArea1.setForeground(Color.black);
-         //}
+        //if(jTextArea1.getText().trim().toLowerCase().equals("say something....."))
+        //{
+        //jTextArea1.setText("");
+        //jTextArea1.setForeground(Color.black);
+        //}
     }//GEN-LAST:event_optionTxtFocusGained
 
     private void optionTxtFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_optionTxtFocusLost
-          //if(jTextArea1 .getText().trim().equals("")||
-                 // jTextArea1.getText().trim().toLowerCase().equals(" say something....."));
-         //{
-             // jTextArea1.setText("Say Something.....");
-             // jTextArea1.setForeground(new Color(153,153,153));
-         //}
+        //if(jTextArea1 .getText().trim().equals("")||
+        // jTextArea1.getText().trim().toLowerCase().equals(" say something....."));
+        //{
+        // jTextArea1.setText("Say Something.....");
+        // jTextArea1.setForeground(new Color(153,153,153));
+        //}
     }//GEN-LAST:event_optionTxtFocusLost
 
     private void prathapijButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_prathapijButton2MouseClicked
-         main_page mp = new main_page();
-         mp.setVisible(true);
-         mp.pack();
-         mp.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-         this.dispose();
+        main_page mp = new main_page();
+        mp.setVisible(true);
+        mp.pack();
+        mp.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.dispose();
     }//GEN-LAST:event_prathapijButton2MouseClicked
 
     private void prathapirating2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_prathapirating2MouseClicked
-      if(prathapirating2.getBackground() == (yellow)) {
+        if (prathapirating2.getBackground() == (yellow)) {
             prathapirating2.setBackground(myWhite);
             prathapirating3.setBackground(myWhite);
             prathapirating4.setBackground(myWhite);
             prathapirating5.setBackground(myWhite);
             rating = 1;
-        }
-        else {
-              prathapirating2.setBackground(Color.yellow);
-              prathapirating1.setBackground(Color.yellow);
-              rating = 2;
+        } else {
+            prathapirating2.setBackground(Color.yellow);
+            prathapirating1.setBackground(Color.yellow);
+            rating = 2;
         }
     }//GEN-LAST:event_prathapirating2MouseClicked
 
     private void prathapirating3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_prathapirating3MouseClicked
-      if(prathapirating3.getBackground() == (yellow)) {
+        if (prathapirating3.getBackground() == (yellow)) {
             prathapirating3.setBackground(myWhite);
             prathapirating4.setBackground(myWhite);
             prathapirating5.setBackground(myWhite);
             rating = 2;
-        }
-        else {
-              prathapirating3.setBackground(Color.yellow);
-              prathapirating2.setBackground(Color.yellow);
-              prathapirating1.setBackground(Color.yellow);
-              rating = 3;
+        } else {
+            prathapirating3.setBackground(Color.yellow);
+            prathapirating2.setBackground(Color.yellow);
+            prathapirating1.setBackground(Color.yellow);
+            rating = 3;
         }
     }//GEN-LAST:event_prathapirating3MouseClicked
 
     private void prathapirating4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_prathapirating4MouseClicked
-        if(prathapirating4.getBackground() == (yellow)) {
+        if (prathapirating4.getBackground() == (yellow)) {
             prathapirating4.setBackground(myWhite);
             prathapirating5.setBackground(myWhite);
             rating = 3;
-        }
-        else {
-              prathapirating4.setBackground(Color.yellow);
-              prathapirating3.setBackground(Color.yellow);
-              prathapirating2.setBackground(Color.yellow);
-              prathapirating1.setBackground(Color.yellow);
-              rating = 4;
+        } else {
+            prathapirating4.setBackground(Color.yellow);
+            prathapirating3.setBackground(Color.yellow);
+            prathapirating2.setBackground(Color.yellow);
+            prathapirating1.setBackground(Color.yellow);
+            rating = 4;
         }
     }//GEN-LAST:event_prathapirating4MouseClicked
 
     private void prathapirating5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_prathapirating5MouseClicked
-        if(prathapirating5.getBackground() == (yellow)) {
+        if (prathapirating5.getBackground() == (yellow)) {
             prathapirating5.setBackground(myWhite);
             rating = 4;
-        }
-        else {
-              prathapirating5.setBackground(Color.yellow);
-              prathapirating4.setBackground(Color.yellow);
-              prathapirating3.setBackground(Color.yellow);
-              prathapirating2.setBackground(Color.yellow);
-              prathapirating1.setBackground(Color.yellow);
-              rating = 5;
+        } else {
+            prathapirating5.setBackground(Color.yellow);
+            prathapirating4.setBackground(Color.yellow);
+            prathapirating3.setBackground(Color.yellow);
+            prathapirating2.setBackground(Color.yellow);
+            prathapirating1.setBackground(Color.yellow);
+            rating = 5;
         }
     }//GEN-LAST:event_prathapirating5MouseClicked
 
     private void prathapirating1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_prathapirating1MouseClicked
-        if(prathapirating1.getBackground() == (yellow)) {
+        if (prathapirating1.getBackground() == (yellow)) {
             prathapirating1.setBackground(myWhite);
             prathapirating2.setBackground(myWhite);
             prathapirating3.setBackground(myWhite);
             prathapirating4.setBackground(myWhite);
             prathapirating5.setBackground(myWhite);
             rating = 0;
+        } else {
+            prathapirating1.setBackground(Color.yellow);
+            rating = 1;
         }
-        else {
-              prathapirating1.setBackground(Color.yellow);
-              rating = 1;
-        }
-                
+
     }//GEN-LAST:event_prathapirating1MouseClicked
 
     private void prathapijButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_prathapijButton1ActionPerformed
-        if(prathapicusTxt.getText().toString().equals("")||prathapicusTxt.getText() == null){
-            JOptionPane.showMessageDialog(frame, "Customer ID Required!");
-        }else if(prathapicatBox.getSelectedIndex() == 0){
+
+        if (prathapicusTxt.getText().toString().equals("") || prathapicusTxt.getText() == null) {
+            JOptionPane.showMessageDialog(frame, "Phone No Required!");
+        
+        } else if (prathapicatBox.getSelectedIndex() == 0) {
             JOptionPane.showMessageDialog(frame, "Please Select Category!");
-        }else if(rating == 0){
+        } else if (rating == 0) {
             JOptionPane.showMessageDialog(frame, "Please Select Rating!");
-        }else{
+        } else {
             Connection connection;
             PreparedStatement preparedStatement;
-		
-		try {
-			connection = FBDBConnect.getDBConnection();
-			
-                        //insert value
-                        preparedStatement = connection.prepareStatement("insert into feedback  (custId, category, rating, options) VALUES (?, ?, ?, ?)");
-                        preparedStatement.setInt(1, Integer.parseInt(prathapicusTxt.getText().toString()));
-                        preparedStatement.setString(2, prathapicatBox.getSelectedItem().toString());
-                        preparedStatement.setInt(3, rating);
-                        preparedStatement.setString(4, optionTxt.getText().toString());
-                        preparedStatement.execute();
-                        preparedStatement.close();
-                        connection.close();
-                        
-                        prathapirating1.setBackground(myWhite);
-                        prathapirating2.setBackground(myWhite);
-                        prathapirating3.setBackground(myWhite);
-                        prathapirating4.setBackground(myWhite);
-                        prathapirating5.setBackground(myWhite);
-                        
-                        prathapicusTxt.setText("");
-                        prathapicatBox.setSelectedIndex(0);
-                        optionTxt.setText("");
-                        rating = 0;
-                        
-                        JOptionPane.showMessageDialog(frame, "Send Feedback Successful!");
-                        
-                    }catch (ClassNotFoundException | SQLException  e) {
-                    System.out.println(e.getMessage());
-		}
+
+            try {
+                connection = FBDBConnect.getDBConnection();
+
+                //insert value
+                preparedStatement = connection.prepareStatement("insert into feedback  (custId, category, rating, options) VALUES (?, ?, ?, ?)");
+                preparedStatement.setInt(1, Integer.parseInt(prathapicusTxt.getText().toString()));
+                preparedStatement.setString(2, prathapicatBox.getSelectedItem().toString());
+                preparedStatement.setInt(3, rating);
+                preparedStatement.setString(4, optionTxt.getText().toString());
+                preparedStatement.execute();
+                preparedStatement.close();
+                connection.close();
+
+                prathapirating1.setBackground(myWhite);
+                prathapirating2.setBackground(myWhite);
+                prathapirating3.setBackground(myWhite);
+                prathapirating4.setBackground(myWhite);
+                prathapirating5.setBackground(myWhite);
+
+                prathapicusTxt.setText("");
+                prathapicatBox.setSelectedIndex(0);
+                optionTxt.setText("");
+                rating = 0;
+
+                JOptionPane.showMessageDialog(frame, "Send Feedback Successful!");
+
+            } catch (ClassNotFoundException | SQLException e) {
+                System.out.println(e.getMessage());
+            }
         }
     }//GEN-LAST:event_prathapijButton1ActionPerformed
 
@@ -481,6 +489,22 @@ public class enter_feedback extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_prathapirating2ActionPerformed
 
+    private void prathapicusTxtKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_prathapicusTxtKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_prathapicusTxtKeyPressed
+
+    private void prathapicusTxtKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_prathapicusTxtKeyTyped
+
+        if (!(Character.isDigit(evt.getKeyChar()))) {
+            evt.consume();
+        }
+        if (prathapicusTxt.getText().length() == 10) {
+            evt.consume();
+        }
+
+
+    }//GEN-LAST:event_prathapicusTxtKeyTyped
+
     /**
      * @param args the command line arguments
      */
@@ -506,6 +530,9 @@ public class enter_feedback extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(enter_feedback.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */

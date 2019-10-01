@@ -88,7 +88,7 @@ public class update_feedback extends javax.swing.JFrame {
         prathapijLabel1.setText(" UPDATE FEEDBACK");
 
         prathapijLabel2.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
-        prathapijLabel2.setText(" Customer Phone Number :");
+        prathapijLabel2.setText(" Customer ID :");
 
         prathapiphnTxt.setFont(new java.awt.Font("SansSerif", 0, 24)); // NOI18N
         prathapiphnTxt.setText(" ");
@@ -198,7 +198,7 @@ public class update_feedback extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(266, 266, 266)
                         .addComponent(prathapijButton2)))
-                .addContainerGap(71, Short.MAX_VALUE))
+                .addContainerGap(218, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -223,7 +223,7 @@ public class update_feedback extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void prathapiphnTxtFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_prathapiphnTxtFocusGained
-         
+prathapiphnTxt.setText("0");       
         //String PhNumber;
         //PhNumber = String.valueOf(jTextField1.getText());
         
@@ -250,7 +250,9 @@ public class update_feedback extends javax.swing.JFrame {
     private void prathapijButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_prathapijButton1ActionPerformed
         if(prathapiphnTxt.getText().toString().equals("")){
             JOptionPane.showMessageDialog(frame, "Please Enter Your Phone Number!");
-        }else{
+        
+        }
+        else{
             displayFeedbackTable(Integer.parseInt(prathapiphnTxt.getText().toString()));
         }
         

@@ -1,15 +1,29 @@
 package view;
 
-
+import com.itextpdf.text.BaseColor;
+import com.itextpdf.text.Document;
+import com.itextpdf.text.Element;
+import com.itextpdf.text.FontFactory;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfPCell;
+import com.itextpdf.text.pdf.PdfPTable;
+import com.itextpdf.text.pdf.PdfWriter;
 import util.FBDBConnect;
 import model.TableModel;
 import model.feedback;
 import service.feedbacksql;
 import java.awt.Color;
+import java.awt.Font;
+import java.io.FileOutputStream;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -18,79 +32,81 @@ import javax.swing.JOptionPane;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author SRI
  */
 public class admin_view extends javax.swing.JFrame {
 
-    int x,feedbackId=-1;
-    
+    int x, feedbackId = -1;
+
     JFrame frame;
-    
+
+    private Connection conn;
+    private PreparedStatement pst;
+
     /**
      * Creates new form admin_view
      */
     public admin_view() {
         initComponents();
-         this.setLocationRelativeTo(null);
-         displayFeedbackTable();
-         prathapicusID.setText("");
+        this.setLocationRelativeTo(null);
+        displayFeedbackTable();
+        prathapicusID.setText("");
     }
-    
-    public void displayFeedbackTable(){
-    
+
+    public void displayFeedbackTable() {
+
         feedbacksql feed = new feedbacksql();
         ArrayList<feedback> feedList = feed.feedbackList();
-        
-        String[] colNames = {"Feedback ID","Customer ID","Phone Number","Category","Feedback","Rating"};
-        Object[][]rows= new Object[feedList.size()][6];
-        
-        for(int i=0;i<feedList.size();i++){
-            
+
+        String[] colNames = {"Feedback ID", "Customer ID", "Phone Number", "Category", "Feedback", "Rating"};
+        Object[][] rows = new Object[feedList.size()][6];
+
+        for (int i = 0; i < feedList.size(); i++) {
+
             rows[i][0] = feedList.get(i).getId();
             rows[i][1] = feedList.get(i).getCustomerId();
             rows[i][2] = feedList.get(i).getPhone();
             rows[i][3] = feedList.get(i).getCategory();
             rows[i][4] = feedList.get(i).getOption();
             rows[i][5] = feedList.get(i).getRating();
-            
+
         }
-        
-        TableModel tbm= new TableModel(rows,colNames);
+
+        TableModel tbm = new TableModel(rows, colNames);
         feedbackTb.setModel(tbm);
-        
+
         feedbackTb.setShowGrid(true);
         feedbackTb.setGridColor(Color.black);
-        
+
     }
-    
-    public void customerFeedbackTable(int id){
-    
+
+    public void customerFeedbackTable(int id) {
+
         feedbacksql feed = new feedbacksql();
         ArrayList<feedback> feedList = feed.feedbackListCustomer(id);
-        
-        String[] colNames = {"Feedback ID","Customer ID","Phone Number","Category","Feedback","Rating"};
-        Object[][]rows= new Object[feedList.size()][6];
-        
-        for(int i=0;i<feedList.size();i++){
-            
+
+        String[] colNames = {"Feedback ID", "Customer ID", "Phone Number", "Category", "Feedback", "Rating"};
+        Object[][] rows = new Object[feedList.size()][6];
+
+        for (int i = 0; i < feedList.size(); i++) {
+
             rows[i][0] = feedList.get(i).getId();
             rows[i][1] = feedList.get(i).getCustomerId();
             rows[i][2] = feedList.get(i).getPhone();
             rows[i][3] = feedList.get(i).getCategory();
             rows[i][4] = feedList.get(i).getOption();
             rows[i][5] = feedList.get(i).getRating();
-            
+
         }
-        
-        TableModel tbm= new TableModel(rows,colNames);
+
+        TableModel tbm = new TableModel(rows, colNames);
         feedbackTb.setModel(tbm);
-        
+
         feedbackTb.setShowGrid(true);
         feedbackTb.setGridColor(Color.black);
-        
+
     }
 
     /**
@@ -132,6 +148,11 @@ public class admin_view extends javax.swing.JFrame {
         prathapijButton2.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
         prathapijButton2.setText(" GENERATE REPORTS");
         prathapijButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        prathapijButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                prathapijButton2ActionPerformed(evt);
+            }
+        });
 
         feedbackTb.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
         feedbackTb.setModel(new javax.swing.table.DefaultTableModel(
@@ -222,43 +243,43 @@ public class admin_view extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void prathapijButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_prathapijButton1ActionPerformed
-        if(prathapicusID.getText().equals("")){
+        if (prathapicusID.getText().equals("")) {
             JOptionPane.showMessageDialog(frame, "Please Enter Customer ID!");
-        }else{
+        } else {
             customerFeedbackTable(Integer.parseInt(prathapicusID.getText().toString()));
         }
     }//GEN-LAST:event_prathapijButton1ActionPerformed
 
     private void feedbackTbMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_feedbackTbMouseClicked
         int rowIndex = feedbackTb.getSelectedRow();
-        
+
         feedbackId = Integer.parseInt(feedbackTb.getValueAt(rowIndex, 0).toString());
     }//GEN-LAST:event_feedbackTbMouseClicked
 
     private void prathapijButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_prathapijButton3ActionPerformed
-        if(feedbackId == -1){
+        if (feedbackId == -1) {
             JOptionPane.showMessageDialog(frame, "Please Select Feedback!");
-        }else{
+        } else {
             Connection connection;
             PreparedStatement preparedStatement;
-		
-		try {
-			connection = FBDBConnect.getDBConnection();
-			
-                        //insert value
-                        preparedStatement = connection.prepareStatement("DELETE FROM feedback where feedbackId=?");
-                        preparedStatement.setInt(1, feedbackId);
-                        preparedStatement.execute();
-                        preparedStatement.close();
-                        connection.close();
-                        
-                        displayFeedbackTable();
-                        
-                        JOptionPane.showMessageDialog(frame, "Feedback Delete Successful!");
-                        
-                    }catch (ClassNotFoundException | SQLException  e) {
-                    System.out.println(e.getMessage());
-		}
+
+            try {
+                connection = FBDBConnect.getDBConnection();
+
+                //insert value
+                preparedStatement = connection.prepareStatement("DELETE FROM feedback where feedbackId=?");
+                preparedStatement.setInt(1, feedbackId);
+                preparedStatement.execute();
+                preparedStatement.close();
+                connection.close();
+
+                displayFeedbackTable();
+
+                JOptionPane.showMessageDialog(frame, "Feedback Delete Successful!");
+
+            } catch (ClassNotFoundException | SQLException e) {
+                System.out.println(e.getMessage());
+            }
         }
     }//GEN-LAST:event_prathapijButton3ActionPerformed
 
@@ -269,6 +290,28 @@ public class admin_view extends javax.swing.JFrame {
             prathapicusID.setText("");
         }
     }//GEN-LAST:event_prathapicusIDKeyReleased
+
+    private void prathapijButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_prathapijButton2ActionPerformed
+        // TODO add your handling code here:
+        String path = "";
+        JFileChooser j = new JFileChooser();
+        j.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+        int x = j.showSaveDialog(this);
+
+        if (x == JFileChooser.APPROVE_OPTION) {
+            path = j.getSelectedFile().getPath();
+        }
+
+        try {
+            generateReport(path);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(admin_view.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(admin_view.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        JOptionPane.showMessageDialog(rootPane, "Report Generated");
+    }//GEN-LAST:event_prathapijButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -296,6 +339,7 @@ public class admin_view extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(admin_view.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -315,4 +359,52 @@ public class admin_view extends javax.swing.JFrame {
     private javax.swing.JLabel prathapijLabel2;
     private javax.swing.JScrollPane prathapijScrollPane1;
     // End of variables declaration//GEN-END:variables
+
+    public void generateReport(String path) throws ClassNotFoundException, SQLException {
+        conn = FBDBConnect.getDBConnection();
+        ResultSet rs = null;
+
+        //deleted from here
+        try {
+            Document document = new Document();
+            PdfWriter.getInstance(document, new FileOutputStream(path + "\\Report.pdf"));
+            document.open();
+
+            com.itextpdf.text.Image image = com.itextpdf.text.Image.getInstance("C:\\Users\\Chathura Harshanga\\Documents\\NetBeansProjects\\ITP\\src\\images\\Untitled-3.png");
+            //document.add(new Paragraph("image"));
+            document.add(image);
+
+            document.add(new Paragraph("Wijesinghe Motors", FontFactory.getFont(FontFactory.TIMES_BOLD, 18, Font.BOLD, BaseColor.RED)));
+            document.add(new Paragraph(new Date().toString()));
+            document.add(new Paragraph("-----------------------------------------------------------------------------------------------------------------------------"));
+
+            PdfPTable table = new PdfPTable(4);
+
+            PdfPCell cell = new PdfPCell(new Paragraph("FeedBack Details"));
+            cell.setColspan(4);
+            cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+            cell.setBackgroundColor(BaseColor.GREEN);
+            table.addCell(cell);
+
+            String query = "SELECT * FROM feedback";
+            pst = conn.prepareStatement(query);
+            rs = pst.executeQuery();
+
+            while (rs.next()) {
+                table.addCell(Integer.toString(rs.getInt("feedbackId")));
+                table.addCell(Integer.toString(rs.getInt("custId")));
+                table.addCell(rs.getString("category"));
+                table.addCell(rs.getString("options"));
+                table.addCell(Double.toString(rs.getDouble("rating")));
+            }
+            //table.addCell("item7");
+            document.add(table);
+
+            document.close();
+            //deleted from here
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }

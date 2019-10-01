@@ -52,7 +52,7 @@
                       <Component id="prathapijButton2" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="71" max="32767" attributes="0"/>
+              <EmptySpace pref="218" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -92,7 +92,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="SansSerif" size="24" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value=" Customer Phone Number :"/>
+        <Property name="text" type="java.lang.String" value=" Customer ID :"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="prathapiphnTxt">
